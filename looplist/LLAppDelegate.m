@@ -7,12 +7,16 @@
 //
 
 #import "LLAppDelegate.h"
+#import "LLCheckListManager.h"
+
 
 @implementation LLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[LLCheckListManager sharedManager] loadCheckLists];
+    [[LLCheckListManager sharedManager] loadCheckItems];
+
     return YES;
 }
 							

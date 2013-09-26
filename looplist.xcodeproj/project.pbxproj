@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E36126717F3B8DF008CF7E1 /* LLRootFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E36126617F3B8DF008CF7E1 /* LLRootFooterView.xib */; };
+		8E88375D17F255D60063E811 /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E88375A17F255D60063E811 /* checkmark@2x.png */; };
+		8E88375E17F255D60063E811 /* settings-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E88375B17F255D60063E811 /* settings-button.png */; };
+		8E88375F17F255D60063E811 /* tabbar-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E88375C17F255D60063E811 /* tabbar-icon@2x.png */; };
 		8E88502117F0EB340068B13F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88502017F0EB340068B13F /* Foundation.framework */; };
 		8E88502317F0EB340068B13F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88502217F0EB340068B13F /* CoreGraphics.framework */; };
 		8E88502517F0EB340068B13F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88502417F0EB340068B13F /* UIKit.framework */; };
@@ -15,14 +19,47 @@
 		8E88503117F0EB340068B13F /* LLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88503017F0EB340068B13F /* LLAppDelegate.m */; };
 		8E88503417F0EB340068B13F /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E88503217F0EB340068B13F /* Main_iPhone.storyboard */; };
 		8E88503717F0EB340068B13F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E88503517F0EB340068B13F /* Main_iPad.storyboard */; };
-		8E88503A17F0EB340068B13F /* LLFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88503917F0EB340068B13F /* LLFirstViewController.m */; };
-		8E88503D17F0EB340068B13F /* LLSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88503C17F0EB340068B13F /* LLSecondViewController.m */; };
 		8E88503F17F0EB340068B13F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E88503E17F0EB340068B13F /* Images.xcassets */; };
 		8E88504617F0EB340068B13F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88504517F0EB340068B13F /* XCTest.framework */; };
 		8E88504717F0EB340068B13F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88502017F0EB340068B13F /* Foundation.framework */; };
 		8E88504817F0EB340068B13F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88502417F0EB340068B13F /* UIKit.framework */; };
 		8E88505017F0EB340068B13F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E88504E17F0EB340068B13F /* InfoPlist.strings */; };
 		8E88505217F0EB340068B13F /* looplistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88505117F0EB340068B13F /* looplistTests.m */; };
+		8E88505D17F0ECCF0068B13F /* LLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88505C17F0ECCF0068B13F /* LLTabBarController.m */; };
+		8E88506D17F0EF9A0068B13F /* LLCheckItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88506517F0EF9A0068B13F /* LLCheckItem.m */; };
+		8E88506E17F0EF9A0068B13F /* LLCheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88506717F0EF9A0068B13F /* LLCheckList.m */; };
+		8E88506F17F0EF9A0068B13F /* LLCheckListManager+CheckItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88506817F0EF9A0068B13F /* LLCheckListManager+CheckItem.m */; };
+		8E88507017F0EF9A0068B13F /* LLCheckListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88506A17F0EF9A0068B13F /* LLCheckListManager.m */; };
+		8E88507117F0EF9A0068B13F /* LLCheckListSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88506C17F0EF9A0068B13F /* LLCheckListSection.m */; };
+		8E88508217F0F0970068B13F /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88507717F0F0970068B13F /* NSDate+Extension.m */; };
+		8E88508317F0F0970068B13F /* NSFileCoordinator+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88507917F0F0970068B13F /* NSFileCoordinator+Extension.m */; };
+		8E88508417F0F0970068B13F /* NSFileManager+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88507B17F0F0970068B13F /* NSFileManager+Extension.m */; };
+		8E88508517F0F0970068B13F /* NSUbiquitousKeyValueStore+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88507D17F0F0970068B13F /* NSUbiquitousKeyValueStore+Extension.m */; };
+		8E88508617F0F0970068B13F /* UILabel+Align.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88507F17F0F0970068B13F /* UILabel+Align.m */; };
+		8E88508717F0F0970068B13F /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88508117F0F0970068B13F /* UITableView+Extension.m */; };
+		8E88508E17F0F57C0068B13F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E88509017F0F57C0068B13F /* Localizable.strings */; };
+		8E88509617F0F7A40068B13F /* LLRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88509517F0F7A40068B13F /* LLRootViewController.m */; };
+		8E88509A17F0F7D60068B13F /* LLCheckItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88509817F0F7D60068B13F /* LLCheckItemCell.m */; };
+		8E88509B17F0F7D60068B13F /* LLCheckItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E88509917F0F7D60068B13F /* LLCheckItemCell.xib */; };
+		8E8850A417F0F80B0068B13F /* LLRootFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850A017F0F80B0068B13F /* LLRootFooterView.m */; };
+		8E8850A817F0F9F80068B13F /* LLColorLabelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850A717F0F9F80068B13F /* LLColorLabelButton.m */; };
+		8E8850B317F0FB290068B13F /* UIGlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850B017F0FB290068B13F /* UIGlossyButton.m */; };
+		8E8850B417F0FB290068B13F /* UIView+LayerEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850B217F0FB290068B13F /* UIView+LayerEffects.m */; };
+		8E88E64917F1AF0200C9E69A /* MSCellAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E64617F1AF0200C9E69A /* MSCellAccessory.m */; };
+		8E88E64A17F1AF0200C9E69A /* UIView+AccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E64817F1AF0200C9E69A /* UIView+AccessViewController.m */; };
+		8E88E64E17F1B36100C9E69A /* LLCheckItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E64D17F1B36100C9E69A /* LLCheckItemDetailViewController.m */; };
+		8E88E65617F1B40100C9E69A /* LLCheckListDetailViewController+SectionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E65017F1B40100C9E69A /* LLCheckListDetailViewController+SectionTableView.m */; };
+		8E88E65717F1B40100C9E69A /* LLCheckListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E65217F1B40100C9E69A /* LLCheckListDetailViewController.m */; };
+		8E88E65817F1B40100C9E69A /* LLSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E65417F1B40100C9E69A /* LLSectionCell.m */; };
+		8E88E65917F1B40100C9E69A /* LLSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E88E65517F1B40100C9E69A /* LLSectionCell.xib */; };
+		8E88E67017F1B85A00C9E69A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E88E66D17F1B85A00C9E69A /* SVProgressHUD.bundle */; };
+		8E88E67117F1B85A00C9E69A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E66F17F1B85A00C9E69A /* SVProgressHUD.m */; };
+		8ECF983C17F2EE3B0097838A /* LLTouchScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF983917F2EE3B0097838A /* LLTouchScrollView.m */; };
+		8ECF983D17F2EE3B0097838A /* LLTouchTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF983B17F2EE3B0097838A /* LLTouchTextView.m */; };
+		8ECF984217F2EE6E0097838A /* UISettingSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF983F17F2EE6E0097838A /* UISettingSwitchCell.m */; };
+		8ECF984317F2EE6E0097838A /* UISimpleSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984117F2EE6E0097838A /* UISimpleSwitchCell.m */; };
+		8ECF984817F2EE910097838A /* YNActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984517F2EE910097838A /* YNActionSheet.m */; };
+		8ECF984917F2EE910097838A /* YNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984717F2EE910097838A /* YNAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +73,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8E88501D17F0EB340068B13F /* looplist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = looplist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E36126617F3B8DF008CF7E1 /* LLRootFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLRootFooterView.xib; sourceTree = "<group>"; };
+		8E88375A17F255D60063E811 /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
+		8E88375B17F255D60063E811 /* settings-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-button.png"; sourceTree = "<group>"; };
+		8E88375C17F255D60063E811 /* tabbar-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-icon@2x.png"; sourceTree = "<group>"; };
+		8E88501D17F0EB340068B13F /* Looplist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Looplist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E88502017F0EB340068B13F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8E88502217F0EB340068B13F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8E88502417F0EB340068B13F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -48,16 +89,81 @@
 		8E88503017F0EB340068B13F /* LLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLAppDelegate.m; sourceTree = "<group>"; };
 		8E88503317F0EB340068B13F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		8E88503617F0EB340068B13F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		8E88503817F0EB340068B13F /* LLFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLFirstViewController.h; sourceTree = "<group>"; };
-		8E88503917F0EB340068B13F /* LLFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLFirstViewController.m; sourceTree = "<group>"; };
-		8E88503B17F0EB340068B13F /* LLSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLSecondViewController.h; sourceTree = "<group>"; };
-		8E88503C17F0EB340068B13F /* LLSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLSecondViewController.m; sourceTree = "<group>"; };
 		8E88503E17F0EB340068B13F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8E88504417F0EB340068B13F /* looplistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = looplistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E88504517F0EB340068B13F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8E88504D17F0EB340068B13F /* looplistTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "looplistTests-Info.plist"; sourceTree = "<group>"; };
 		8E88504F17F0EB340068B13F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8E88505117F0EB340068B13F /* looplistTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = looplistTests.m; sourceTree = "<group>"; };
+		8E88505B17F0ECCF0068B13F /* LLTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLTabBarController.h; sourceTree = "<group>"; };
+		8E88505C17F0ECCF0068B13F /* LLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLTabBarController.m; sourceTree = "<group>"; };
+		8E88506417F0EF9A0068B13F /* LLCheckItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCheckItem.h; sourceTree = "<group>"; };
+		8E88506517F0EF9A0068B13F /* LLCheckItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCheckItem.m; sourceTree = "<group>"; };
+		8E88506617F0EF9A0068B13F /* LLCheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCheckList.h; sourceTree = "<group>"; };
+		8E88506717F0EF9A0068B13F /* LLCheckList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCheckList.m; sourceTree = "<group>"; };
+		8E88506817F0EF9A0068B13F /* LLCheckListManager+CheckItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LLCheckListManager+CheckItem.m"; sourceTree = "<group>"; };
+		8E88506917F0EF9A0068B13F /* LLCheckListManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCheckListManager.h; sourceTree = "<group>"; };
+		8E88506A17F0EF9A0068B13F /* LLCheckListManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCheckListManager.m; sourceTree = "<group>"; };
+		8E88506B17F0EF9A0068B13F /* LLCheckListSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCheckListSection.h; sourceTree = "<group>"; };
+		8E88506C17F0EF9A0068B13F /* LLCheckListSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCheckListSection.m; sourceTree = "<group>"; };
+		8E88507217F0F0520068B13F /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		8E88507617F0F0970068B13F /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		8E88507717F0F0970068B13F /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		8E88507817F0F0970068B13F /* NSFileCoordinator+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileCoordinator+Extension.h"; sourceTree = "<group>"; };
+		8E88507917F0F0970068B13F /* NSFileCoordinator+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileCoordinator+Extension.m"; sourceTree = "<group>"; };
+		8E88507A17F0F0970068B13F /* NSFileManager+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Extension.h"; sourceTree = "<group>"; };
+		8E88507B17F0F0970068B13F /* NSFileManager+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Extension.m"; sourceTree = "<group>"; };
+		8E88507C17F0F0970068B13F /* NSUbiquitousKeyValueStore+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUbiquitousKeyValueStore+Extension.h"; sourceTree = "<group>"; };
+		8E88507D17F0F0970068B13F /* NSUbiquitousKeyValueStore+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUbiquitousKeyValueStore+Extension.m"; sourceTree = "<group>"; };
+		8E88507E17F0F0970068B13F /* UILabel+Align.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Align.h"; sourceTree = "<group>"; };
+		8E88507F17F0F0970068B13F /* UILabel+Align.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Align.m"; sourceTree = "<group>"; };
+		8E88508017F0F0970068B13F /* UITableView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extension.h"; sourceTree = "<group>"; };
+		8E88508117F0F0970068B13F /* UITableView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extension.m"; sourceTree = "<group>"; };
+		8E88508B17F0F5690068B13F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		8E88508C17F0F5690068B13F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8E88508D17F0F5690068B13F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8E88508F17F0F57C0068B13F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8E88509117F0F5840068B13F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8E88509417F0F7A40068B13F /* LLRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLRootViewController.h; sourceTree = "<group>"; };
+		8E88509517F0F7A40068B13F /* LLRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLRootViewController.m; sourceTree = "<group>"; };
+		8E88509717F0F7D60068B13F /* LLCheckItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCheckItemCell.h; sourceTree = "<group>"; };
+		8E88509817F0F7D60068B13F /* LLCheckItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCheckItemCell.m; sourceTree = "<group>"; };
+		8E88509917F0F7D60068B13F /* LLCheckItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLCheckItemCell.xib; sourceTree = "<group>"; };
+		8E88509F17F0F80B0068B13F /* LLRootFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLRootFooterView.h; sourceTree = "<group>"; };
+		8E8850A017F0F80B0068B13F /* LLRootFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLRootFooterView.m; sourceTree = "<group>"; };
+		8E8850A617F0F9F80068B13F /* LLColorLabelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLColorLabelButton.h; path = Classes/LLColorLabelButton.h; sourceTree = "<group>"; };
+		8E8850A717F0F9F80068B13F /* LLColorLabelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLColorLabelButton.m; path = Classes/LLColorLabelButton.m; sourceTree = "<group>"; };
+		8E8850AF17F0FB290068B13F /* UIGlossyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGlossyButton.h; sourceTree = "<group>"; };
+		8E8850B017F0FB290068B13F /* UIGlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGlossyButton.m; sourceTree = "<group>"; };
+		8E8850B117F0FB290068B13F /* UIView+LayerEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayerEffects.h"; sourceTree = "<group>"; };
+		8E8850B217F0FB290068B13F /* UIView+LayerEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayerEffects.m"; sourceTree = "<group>"; };
+		8E88E64517F1AF0200C9E69A /* MSCellAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCellAccessory.h; sourceTree = "<group>"; };
+		8E88E64617F1AF0200C9E69A /* MSCellAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCellAccessory.m; sourceTree = "<group>"; };
+		8E88E64717F1AF0200C9E69A /* UIView+AccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AccessViewController.h"; sourceTree = "<group>"; };
+		8E88E64817F1AF0200C9E69A /* UIView+AccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AccessViewController.m"; sourceTree = "<group>"; };
+		8E88E64C17F1B36100C9E69A /* LLCheckItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCheckItemDetailViewController.h; sourceTree = "<group>"; };
+		8E88E64D17F1B36100C9E69A /* LLCheckItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCheckItemDetailViewController.m; sourceTree = "<group>"; };
+		8E88E65017F1B40100C9E69A /* LLCheckListDetailViewController+SectionTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LLCheckListDetailViewController+SectionTableView.m"; sourceTree = "<group>"; };
+		8E88E65117F1B40100C9E69A /* LLCheckListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCheckListDetailViewController.h; sourceTree = "<group>"; };
+		8E88E65217F1B40100C9E69A /* LLCheckListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCheckListDetailViewController.m; sourceTree = "<group>"; };
+		8E88E65317F1B40100C9E69A /* LLSectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSectionCell.h; sourceTree = "<group>"; };
+		8E88E65417F1B40100C9E69A /* LLSectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSectionCell.m; sourceTree = "<group>"; };
+		8E88E65517F1B40100C9E69A /* LLSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLSectionCell.xib; sourceTree = "<group>"; };
+		8E88E66D17F1B85A00C9E69A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		8E88E66E17F1B85A00C9E69A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		8E88E66F17F1B85A00C9E69A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		8ECF983817F2EE3B0097838A /* LLTouchScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLTouchScrollView.h; path = Classes/LLTouchScrollView.h; sourceTree = "<group>"; };
+		8ECF983917F2EE3B0097838A /* LLTouchScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLTouchScrollView.m; path = Classes/LLTouchScrollView.m; sourceTree = "<group>"; };
+		8ECF983A17F2EE3B0097838A /* LLTouchTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLTouchTextView.h; path = Classes/LLTouchTextView.h; sourceTree = "<group>"; };
+		8ECF983B17F2EE3B0097838A /* LLTouchTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLTouchTextView.m; path = Classes/LLTouchTextView.m; sourceTree = "<group>"; };
+		8ECF983E17F2EE6E0097838A /* UISettingSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UISettingSwitchCell.h; path = Classes/UISettingSwitchCell.h; sourceTree = "<group>"; };
+		8ECF983F17F2EE6E0097838A /* UISettingSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UISettingSwitchCell.m; path = Classes/UISettingSwitchCell.m; sourceTree = "<group>"; };
+		8ECF984017F2EE6E0097838A /* UISimpleSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UISimpleSwitchCell.h; path = Classes/UISimpleSwitchCell.h; sourceTree = "<group>"; };
+		8ECF984117F2EE6E0097838A /* UISimpleSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UISimpleSwitchCell.m; path = Classes/UISimpleSwitchCell.m; sourceTree = "<group>"; };
+		8ECF984417F2EE910097838A /* YNActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNActionSheet.h; path = Classes/YNActionSheet.h; sourceTree = "<group>"; };
+		8ECF984517F2EE910097838A /* YNActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YNActionSheet.m; path = Classes/YNActionSheet.m; sourceTree = "<group>"; };
+		8ECF984617F2EE910097838A /* YNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNAlertView.h; path = Classes/YNAlertView.h; sourceTree = "<group>"; };
+		8ECF984717F2EE910097838A /* YNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YNAlertView.m; path = Classes/YNAlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +190,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E88375917F255D60063E811 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				8E88375A17F255D60063E811 /* checkmark@2x.png */,
+				8E88375B17F255D60063E811 /* settings-button.png */,
+				8E88375C17F255D60063E811 /* tabbar-icon@2x.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		8E88501417F0EB340068B13F = {
 			isa = PBXGroup;
 			children = (
@@ -97,7 +213,7 @@
 		8E88501E17F0EB340068B13F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E88501D17F0EB340068B13F /* looplist.app */,
+				8E88501D17F0EB340068B13F /* Looplist.app */,
 				8E88504417F0EB340068B13F /* looplistTests.xctest */,
 			);
 			name = Products;
@@ -117,15 +233,20 @@
 		8E88502617F0EB340068B13F /* looplist */ = {
 			isa = PBXGroup;
 			children = (
+				8E8850AC17F0FA5C0068B13F /* Library */,
+				8E88507217F0F0520068B13F /* Define.h */,
 				8E88502F17F0EB340068B13F /* LLAppDelegate.h */,
 				8E88503017F0EB340068B13F /* LLAppDelegate.m */,
 				8E88503217F0EB340068B13F /* Main_iPhone.storyboard */,
 				8E88503517F0EB340068B13F /* Main_iPad.storyboard */,
-				8E88503817F0EB340068B13F /* LLFirstViewController.h */,
-				8E88503917F0EB340068B13F /* LLFirstViewController.m */,
-				8E88503B17F0EB340068B13F /* LLSecondViewController.h */,
-				8E88503C17F0EB340068B13F /* LLSecondViewController.m */,
+				8E88505B17F0ECCF0068B13F /* LLTabBarController.h */,
+				8E88505C17F0ECCF0068B13F /* LLTabBarController.m */,
+				8E88509317F0F7A40068B13F /* RootView */,
+				8E88E64F17F1B40100C9E69A /* CheckListDetailView */,
+				8E88506317F0EF9A0068B13F /* DataModel */,
+				8E8850A917F0FA010068B13F /* Classes */,
 				8E88503E17F0EB340068B13F /* Images.xcassets */,
+				8E88507517F0F0970068B13F /* Category */,
 				8E88502717F0EB340068B13F /* Supporting Files */,
 			);
 			path = looplist;
@@ -134,10 +255,12 @@
 		8E88502717F0EB340068B13F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8E88375917F255D60063E811 /* Image */,
 				8E88502817F0EB340068B13F /* looplist-Info.plist */,
 				8E88502917F0EB340068B13F /* InfoPlist.strings */,
 				8E88502C17F0EB340068B13F /* main.m */,
 				8E88502E17F0EB340068B13F /* looplist-Prefix.pch */,
+				8E88509017F0F57C0068B13F /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -160,6 +283,147 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8E88506317F0EF9A0068B13F /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				8E88506917F0EF9A0068B13F /* LLCheckListManager.h */,
+				8E88506A17F0EF9A0068B13F /* LLCheckListManager.m */,
+				8E88506817F0EF9A0068B13F /* LLCheckListManager+CheckItem.m */,
+				8E88506617F0EF9A0068B13F /* LLCheckList.h */,
+				8E88506717F0EF9A0068B13F /* LLCheckList.m */,
+				8E88506B17F0EF9A0068B13F /* LLCheckListSection.h */,
+				8E88506C17F0EF9A0068B13F /* LLCheckListSection.m */,
+				8E88506417F0EF9A0068B13F /* LLCheckItem.h */,
+				8E88506517F0EF9A0068B13F /* LLCheckItem.m */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		8E88507517F0F0970068B13F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				8E88507617F0F0970068B13F /* NSDate+Extension.h */,
+				8E88507717F0F0970068B13F /* NSDate+Extension.m */,
+				8E88507817F0F0970068B13F /* NSFileCoordinator+Extension.h */,
+				8E88507917F0F0970068B13F /* NSFileCoordinator+Extension.m */,
+				8E88507A17F0F0970068B13F /* NSFileManager+Extension.h */,
+				8E88507B17F0F0970068B13F /* NSFileManager+Extension.m */,
+				8E88507C17F0F0970068B13F /* NSUbiquitousKeyValueStore+Extension.h */,
+				8E88507D17F0F0970068B13F /* NSUbiquitousKeyValueStore+Extension.m */,
+				8E88507E17F0F0970068B13F /* UILabel+Align.h */,
+				8E88507F17F0F0970068B13F /* UILabel+Align.m */,
+				8E88508017F0F0970068B13F /* UITableView+Extension.h */,
+				8E88508117F0F0970068B13F /* UITableView+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		8E88509317F0F7A40068B13F /* RootView */ = {
+			isa = PBXGroup;
+			children = (
+				8E88509417F0F7A40068B13F /* LLRootViewController.h */,
+				8E88509517F0F7A40068B13F /* LLRootViewController.m */,
+				8E88509717F0F7D60068B13F /* LLCheckItemCell.h */,
+				8E88509817F0F7D60068B13F /* LLCheckItemCell.m */,
+				8E88509917F0F7D60068B13F /* LLCheckItemCell.xib */,
+				8E88509F17F0F80B0068B13F /* LLRootFooterView.h */,
+				8E8850A017F0F80B0068B13F /* LLRootFooterView.m */,
+				8E36126617F3B8DF008CF7E1 /* LLRootFooterView.xib */,
+				8E88E64B17F1B36100C9E69A /* DetailView */,
+			);
+			path = RootView;
+			sourceTree = "<group>";
+		};
+		8E8850A917F0FA010068B13F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8ECF983E17F2EE6E0097838A /* UISettingSwitchCell.h */,
+				8ECF984417F2EE910097838A /* YNActionSheet.h */,
+				8ECF984517F2EE910097838A /* YNActionSheet.m */,
+				8ECF984617F2EE910097838A /* YNAlertView.h */,
+				8ECF984717F2EE910097838A /* YNAlertView.m */,
+				8ECF983F17F2EE6E0097838A /* UISettingSwitchCell.m */,
+				8ECF984017F2EE6E0097838A /* UISimpleSwitchCell.h */,
+				8ECF984117F2EE6E0097838A /* UISimpleSwitchCell.m */,
+				8E8850A617F0F9F80068B13F /* LLColorLabelButton.h */,
+				8E8850A717F0F9F80068B13F /* LLColorLabelButton.m */,
+				8ECF983817F2EE3B0097838A /* LLTouchScrollView.h */,
+				8ECF983917F2EE3B0097838A /* LLTouchScrollView.m */,
+				8ECF983A17F2EE3B0097838A /* LLTouchTextView.h */,
+				8ECF983B17F2EE3B0097838A /* LLTouchTextView.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		8E8850AC17F0FA5C0068B13F /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				8E88E66C17F1B85A00C9E69A /* SVProgressHUD */,
+				8E88E64417F1AF0200C9E69A /* MSCellAccessory */,
+				8E8850AE17F0FB290068B13F /* UIGlossyButton */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		8E8850AE17F0FB290068B13F /* UIGlossyButton */ = {
+			isa = PBXGroup;
+			children = (
+				8E8850AF17F0FB290068B13F /* UIGlossyButton.h */,
+				8E8850B017F0FB290068B13F /* UIGlossyButton.m */,
+				8E8850B117F0FB290068B13F /* UIView+LayerEffects.h */,
+				8E8850B217F0FB290068B13F /* UIView+LayerEffects.m */,
+			);
+			name = UIGlossyButton;
+			path = ../../Library/UIGlossyButton;
+			sourceTree = "<group>";
+		};
+		8E88E64417F1AF0200C9E69A /* MSCellAccessory */ = {
+			isa = PBXGroup;
+			children = (
+				8E88E64517F1AF0200C9E69A /* MSCellAccessory.h */,
+				8E88E64617F1AF0200C9E69A /* MSCellAccessory.m */,
+				8E88E64717F1AF0200C9E69A /* UIView+AccessViewController.h */,
+				8E88E64817F1AF0200C9E69A /* UIView+AccessViewController.m */,
+			);
+			name = MSCellAccessory;
+			path = ../../Library/MSCellAccessory;
+			sourceTree = "<group>";
+		};
+		8E88E64B17F1B36100C9E69A /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				8E88E64C17F1B36100C9E69A /* LLCheckItemDetailViewController.h */,
+				8E88E64D17F1B36100C9E69A /* LLCheckItemDetailViewController.m */,
+			);
+			name = DetailView;
+			path = looplist/DetailView;
+			sourceTree = SOURCE_ROOT;
+		};
+		8E88E64F17F1B40100C9E69A /* CheckListDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				8E88E65117F1B40100C9E69A /* LLCheckListDetailViewController.h */,
+				8E88E65217F1B40100C9E69A /* LLCheckListDetailViewController.m */,
+				8E88E65017F1B40100C9E69A /* LLCheckListDetailViewController+SectionTableView.m */,
+				8E88E65317F1B40100C9E69A /* LLSectionCell.h */,
+				8E88E65417F1B40100C9E69A /* LLSectionCell.m */,
+				8E88E65517F1B40100C9E69A /* LLSectionCell.xib */,
+			);
+			name = CheckListDetailView;
+			path = looplist/CheckListDetailView;
+			sourceTree = SOURCE_ROOT;
+		};
+		8E88E66C17F1B85A00C9E69A /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8E88E66D17F1B85A00C9E69A /* SVProgressHUD.bundle */,
+				8E88E66E17F1B85A00C9E69A /* SVProgressHUD.h */,
+				8E88E66F17F1B85A00C9E69A /* SVProgressHUD.m */,
+			);
+			name = SVProgressHUD;
+			path = ../../Library/SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,7 +441,7 @@
 			);
 			name = looplist;
 			productName = looplist;
-			productReference = 8E88501D17F0EB340068B13F /* looplist.app */;
+			productReference = 8E88501D17F0EB340068B13F /* Looplist.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8E88504317F0EB340068B13F /* looplistTests */ = {
@@ -220,6 +484,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 8E88501417F0EB340068B13F;
 			productRefGroup = 8E88501E17F0EB340068B13F /* Products */;
@@ -237,9 +502,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E88E65917F1B40100C9E69A /* LLSectionCell.xib in Resources */,
+				8E88E67017F1B85A00C9E69A /* SVProgressHUD.bundle in Resources */,
+				8E88508E17F0F57C0068B13F /* Localizable.strings in Resources */,
+				8E36126717F3B8DF008CF7E1 /* LLRootFooterView.xib in Resources */,
+				8E88375D17F255D60063E811 /* checkmark@2x.png in Resources */,
+				8E88375F17F255D60063E811 /* tabbar-icon@2x.png in Resources */,
+				8E88375E17F255D60063E811 /* settings-button.png in Resources */,
 				8E88503717F0EB340068B13F /* Main_iPad.storyboard in Resources */,
 				8E88503F17F0EB340068B13F /* Images.xcassets in Resources */,
 				8E88503417F0EB340068B13F /* Main_iPhone.storyboard in Resources */,
+				8E88509B17F0F7D60068B13F /* LLCheckItemCell.xib in Resources */,
 				8E88502B17F0EB340068B13F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,10 +532,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E8850B317F0FB290068B13F /* UIGlossyButton.m in Sources */,
+				8ECF984317F2EE6E0097838A /* UISimpleSwitchCell.m in Sources */,
+				8E8850A417F0F80B0068B13F /* LLRootFooterView.m in Sources */,
+				8E8850A817F0F9F80068B13F /* LLColorLabelButton.m in Sources */,
+				8E88506E17F0EF9A0068B13F /* LLCheckList.m in Sources */,
+				8E88E65817F1B40100C9E69A /* LLSectionCell.m in Sources */,
+				8E88506D17F0EF9A0068B13F /* LLCheckItem.m in Sources */,
+				8E88E65617F1B40100C9E69A /* LLCheckListDetailViewController+SectionTableView.m in Sources */,
+				8ECF984817F2EE910097838A /* YNActionSheet.m in Sources */,
+				8E88E65717F1B40100C9E69A /* LLCheckListDetailViewController.m in Sources */,
 				8E88503117F0EB340068B13F /* LLAppDelegate.m in Sources */,
+				8E88508417F0F0970068B13F /* NSFileManager+Extension.m in Sources */,
+				8E88E64A17F1AF0200C9E69A /* UIView+AccessViewController.m in Sources */,
+				8E88508717F0F0970068B13F /* UITableView+Extension.m in Sources */,
+				8E88507017F0EF9A0068B13F /* LLCheckListManager.m in Sources */,
+				8E8850B417F0FB290068B13F /* UIView+LayerEffects.m in Sources */,
+				8ECF983D17F2EE3B0097838A /* LLTouchTextView.m in Sources */,
+				8E88E64917F1AF0200C9E69A /* MSCellAccessory.m in Sources */,
+				8E88509617F0F7A40068B13F /* LLRootViewController.m in Sources */,
+				8E88E67117F1B85A00C9E69A /* SVProgressHUD.m in Sources */,
+				8ECF983C17F2EE3B0097838A /* LLTouchScrollView.m in Sources */,
+				8E88508617F0F0970068B13F /* UILabel+Align.m in Sources */,
+				8E88506F17F0EF9A0068B13F /* LLCheckListManager+CheckItem.m in Sources */,
+				8E88508217F0F0970068B13F /* NSDate+Extension.m in Sources */,
+				8E88509A17F0F7D60068B13F /* LLCheckItemCell.m in Sources */,
+				8E88508317F0F0970068B13F /* NSFileCoordinator+Extension.m in Sources */,
+				8E88505D17F0ECCF0068B13F /* LLTabBarController.m in Sources */,
+				8E88508517F0F0970068B13F /* NSUbiquitousKeyValueStore+Extension.m in Sources */,
+				8E88E64E17F1B36100C9E69A /* LLCheckItemDetailViewController.m in Sources */,
 				8E88502D17F0EB340068B13F /* main.m in Sources */,
-				8E88503D17F0EB340068B13F /* LLSecondViewController.m in Sources */,
-				8E88503A17F0EB340068B13F /* LLFirstViewController.m in Sources */,
+				8ECF984217F2EE6E0097838A /* UISettingSwitchCell.m in Sources */,
+				8E88507117F0EF9A0068B13F /* LLCheckListSection.m in Sources */,
+				8ECF984917F2EE910097838A /* YNAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +591,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8E88502A17F0EB340068B13F /* en */,
+				8E88508C17F0F5690068B13F /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -305,6 +608,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8E88503617F0EB340068B13F /* Base */,
+				8E88508B17F0F5690068B13F /* ja */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
@@ -313,8 +617,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				8E88504F17F0EB340068B13F /* en */,
+				8E88508D17F0F5690068B13F /* ja */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8E88509017F0F57C0068B13F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E88508F17F0F57C0068B13F /* Base */,
+				8E88509117F0F5840068B13F /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -402,7 +716,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "looplist/looplist-Prefix.pch";
 				INFOPLIST_FILE = "looplist/looplist-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Looplist;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -415,7 +729,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "looplist/looplist-Prefix.pch";
 				INFOPLIST_FILE = "looplist/looplist-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Looplist;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -481,6 +795,7 @@
 				8E88505717F0EB340068B13F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E88505817F0EB340068B13F /* Build configuration list for PBXNativeTarget "looplistTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +804,7 @@
 				8E88505A17F0EB340068B13F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

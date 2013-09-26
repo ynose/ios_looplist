@@ -1,0 +1,157 @@
+/* 
+  Localizable.strings
+  looplist
+
+  Created by Yoshio Nose on 2013/09/24.
+  Copyright (c) 2013年 Yoshio Nose. All rights reserved.
+*/
+
+"NewCheckListCaption" = "New List";
+"NewCheckCaption" = "New Item";
+"NewSectionCaption" = "New Group";
+
+
+/* アラート・アクションシート */
+"actionOK" = "OK";
+"actionCancel" = "Cancel";
+"actionDelete" = "Delete";
+"actionCopy" = "Copy";
+
+
+/* ----- 日付フォーマット ----- */
+"BeforeDay" = "%d day";
+"BeforeHour" = "%d hour";
+"BeforeMinute" = "%d min";
+"WithinMinute" = "one min";
+"JustNow" = "Just Now";
+
+/* 今日 */
+"TimeStampToday" = "'Today'";
+
+/* 昨日 */
+"TimeStampYesterday" = "'Yesterday'";
+
+/* 日時(24時間表記) */
+"24TimeFormat" = "H:mm";
+"24TimeFullFormat" = "H:mm:ss";
+
+/* 日時(12時間表記) */
+"12TimeFormat" = "h:mm a";
+"12TimeFullFormat" = "h:mm:ss a";
+
+/* リマインダー日付 */
+"ReminderDateFormat" = "dMMMYYYY";
+
+/* リマインダー曜日 */
+"ReminderWeekdayFormat" = "EEEE";
+
+/* リマインダー月日 */
+"ReminderMonthFormat" = "%d";
+
+
+/* ----- チェックリスト ヘッダー ----- */
+/* フィルター */
+"AllList" = "All";
+"UncheckedList" = "Unchecked";
+
+
+/* ----- チェックリスト フッター ----- */
+"CheckCompleteSwitchCaption" = "Complete";
+"CheckListDetailButtonCaption" = "Edit List....";
+
+
+/* ----- リスト詳細画面 ----- */
+/* プレースホルダ */
+"ListTitlePlaceholder" = "Title";
+"GroupTitlePlaceholder" = "Group";
+
+/* セクション */
+"SectionCaptiom" = "Group";
+"AddSection" = "Add";
+
+/* Evernoteに保存 */
+"SaveToEvernoteCaption" = "Save to Evernote";
+
+/* チェックリスト作成日 */
+"CreateDate" = "Create: d.MMM.YYYY";
+
+/* チェックリスト完了回数 */
+"FinishCount" = "Checked: %d";
+
+/* リスト削除ボタン */
+"DeleteCheckListCaption" = "Delete List";
+
+
+/* ----- チェックアイテム詳細画面 ----- */
+"MemoCaption" = "Memo";
+
+
+/* ----- 設定画面用 ----- */
+/* 設定-チェック日時の表示 */
+"SettingSection-CheckedDate" = "Checked Date";
+/* 設定-チェック日時の表示-簡易表示 */
+"Setting-CheckedDateSimpleDate" = "Simple Date";
+/* 設定-チェック日時の表示-24時間表示 */
+"Setting-CheckedDate24Hour" = "24-Hour Time";
+
+/* 設定-チェックリスト */
+"SettingSection-CheckList" = "Check List";
+/* 設定-リストを追加 */
+"Setting-AddCheckList" = "Add List";
+/* 設定-Evernoteアカウント */
+"Setting-EvernoteAccount" = "Evernote Account";
+
+/* 設定-iCLoud */
+"SettingSection-iCloud" = "iCloud";
+/* 設定-iCLoud-Backup & Restore */
+"Setting-iCloud" = "Backup & Restore";
+
+
+/* 設定-購入 */
+"SettingSection-InAppPurchase" = "Purchase";
+/* 設定-購入-TapMailer Pro */
+"Setting-InAppPurchase" = "%@ Pro";
+/* 設定-購入-未購入 */
+"Setting-InAppPurchase-NotYet" = "Not Yet";
+/* 設定-購入-購入済み */
+"Setting-InAppPurchase-Purchased" = "Purchased";
+/* 設定-購入-購入禁止 */
+"Setting-InAppPurchase-Cannot" = "Cannot";
+/* 設定-購入-アップグレード機能 */
+"Setting-InAppPurchase-ProFunctions" = "You can use the following features when you upgrade to Pro version.";
+
+/* InAppPurchaseViewControllerのタイトル */
+"titleInAppPurchase" = "Purchase";
+
+/* ----- 購入画面用 ----- */
+/* 購入-接続中 */
+"InAppPurchase-Connecting" = "Connecting...";
+/* 購入-購入ボタン */
+"InAppPurchase-Purchase" = "BUY";
+/* 購入-プロダクト情報エラー */
+"InAppPurchase-ProductError" = "Error";
+/* 購入-プロダクト情報エラー-メッセージ */
+"InAppPurchase-ProductErrorMessage" = "Now is not available for purchase.";
+
+/* 購入-復元 */
+"InAppPurchase-RestoreCaption" = "For Purchaser only";
+
+/* 購入-復元ボタン*/
+"InAppPurchase-Restore" = "Restore";
+
+
+/* ----- iCloudバックアップ画面用 ----- */
+"titleiCloud" = "iCloud";
+"iCloud-Backup-Footer" = "Last backup:\n%@";
+"iCloud-Restore-Footer" = "\n\nBackup to iCloud.
+You can also restore the device to the same iCloud account(Apple ID).";
+
+"captionBackup" = "Backup";
+"alertBackup" = "";
+"msgBackup" = "Backup to iCloud";
+
+"captionRestore" = "Restore";
+"captionCantRestore" = "No backup";
+"alertRestore" = "";
+"msgRestore" = "Restore from iCloud.";
+"None" = "none";
