@@ -141,8 +141,7 @@ __strong static NSTimer *_timer;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     // バックアップ＆復元の確認アラートを表示
-    YNAlertView *alert = [[YNAlertView alloc] init];
-//    alert.viewController = self;
+    YNAlertView *alert = [YNAlertView new];
 
     // キャンセルボタン
     [alert addButtonWithTitle:LSTR(@"actionCancel")];

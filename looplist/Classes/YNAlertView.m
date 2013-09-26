@@ -33,6 +33,7 @@
 //    return self;
 //}
 
+// addButtonWithTitle:のオーバライド
 -(NSInteger)addButtonWithTitle:(NSString *)title
 {
     [_blocks addObject:^(UIAlertView *alertView){}];
@@ -40,7 +41,7 @@
     return [super addButtonWithTitle:title];
 }
 
--(NSInteger)addButtonWithTitle:(NSString *)title withBlock:(void (^)(UIAlertView *))block
+-(NSInteger)addButtonWithTitle:(NSString *)title withBlock:(void (^)(UIAlertView *alertView))block
 {
     if (block) {
         [_blocks addObject:block];

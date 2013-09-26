@@ -87,12 +87,9 @@
 
 
 /* ----- 設定画面用 ----- */
-/* 設定-チェック日時の表示 */
-"SettingSection-CheckedDate" = "Checked Date";
-/* 設定-チェック日時の表示-簡易表示 */
-"Setting-CheckedDateSimpleDate" = "Simple Date";
-/* 設定-チェック日時の表示-24時間表示 */
-"Setting-CheckedDate24Hour" = "24-Hour Time";
+"Setting-AlertProVersionTitle" = "";
+"Setting-AlertProVersionMessage" = "Pro version only";
+"Setting-AlertProVersionPurchase" = "Purchase";
 
 /* 設定-チェックリスト */
 "SettingSection-CheckList" = "Check List";
@@ -127,6 +124,7 @@
 
 /* InAppPurchaseViewControllerのタイトル */
 "titleInAppPurchase" = "Purchase";
+
 
 /* ----- 購入画面用 ----- */
 /* 購入-接続中 */

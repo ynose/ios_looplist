@@ -14,6 +14,6 @@
 }
 
 //-(id)initWithAlertViewStyle:(UIAlertViewStyle)UIAlertViewStyle;
--(NSInteger)addButtonWithTitle:(NSString *)title withBlock:(void (^)(UIAlertView *))block;
+-(NSInteger)addButtonWithTitle:(NSString *)title withBlock:(void (^)(UIAlertView *alertView))block;
 
 @end

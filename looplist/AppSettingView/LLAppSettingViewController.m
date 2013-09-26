@@ -13,6 +13,9 @@
 
 #import "Define.h"
 
+#import "YNAlertView.h"
+#import "UITableView+Extension.h"
+
 #import "LLCheckListManager.h"
 #import "ProductManager.h"
 
@@ -22,7 +25,6 @@
 
 
 // Segue名の定義
-static NSString *kAddListSegue = @"AddListSegue";
 static NSString *kEvernoteAccountSegue = @"EvernoteAccountSegue";
 static NSString *kICloudSegueSegue = @"iCloudSegue";
 static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
@@ -45,7 +47,11 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 
     // リストの上限数を表示
     NSInteger checkListCount = [[LLCheckListManager sharedManager].arrayCheckLists count];
-    self.addListButtonCell.detailTextLabel.text = [NSString stringWithFormat:@"%d / %d", checkListCount, MAX_CHECKLIST];
+    NSInteger checkListMax = 1;
+    if ([ProductManager isAppPro]) {
+        checkListMax = MAX_CHECKLIST;
+    }
+    self.addListButtonCell.detailTextLabel.text = [NSString stringWithFormat:@"%d / %d", checkListCount, checkListMax];
 
     // Evernoteサインイン状態を表示
     EvernoteSession *session = [EvernoteSession sharedSession];
@@ -56,7 +62,7 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
         self.evernoteButtonCell.detailTextLabel.text = @"";
     }
 
-    // 購入済み状態を表示する
+    // 購入状態を表示する
     if ([ProductManager isAppPro]) {
         // 購入済み
         self.inAppPurchaseButtonCell.detailTextLabel.text = LSTR(@"Setting-InAppPurchase-Purchased");
@@ -70,6 +76,14 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
     DEBUGLOG(@"shouldPerformSegueWithIdentifier:%@", identifier);
+
+    // Evernoteアカウント ***Pro版限定***
+    if ([identifier isEqualToString:kEvernoteAccountSegue]) {
+        if (![self showAlertAppPro]) {
+            return NO;
+        }
+    }
+
 
     // その他は無条件にセル選択可能
     return YES;
@@ -97,15 +111,17 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectSelectedRow:YES];
+
     switch (indexPath.section) {
         case 0:
             switch (indexPath.row) {
                 case 0:
                 {
-                    // リスト追加
+                    // リスト追加 ***Pro版限定***
                     // リスト数の上限を超えていなければ追加可能
                     NSInteger checkListCount = [[LLCheckListManager sharedManager].arrayCheckLists count];
-                    if (checkListCount < MAX_CHECKLIST) {
+                    if ([self showAlertAppPro] && checkListCount < MAX_CHECKLIST) {
                         [self dismissViewControllerAnimated:YES completion:^{
                             if ([self.delegate respondsToSelector:@selector(appSettingViewControllerDidAddCheckList:)]) {
                                 [self.delegate appSettingViewControllerDidAddCheckList:self];
@@ -124,7 +140,6 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
             break;
     }
 }
-
 
 #pragma mark - 完了ボタン
 - (IBAction)doneAction:(id)sender {
@@ -149,5 +164,35 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+#pragma mark -
+// Pro版限定機能を使用可比判定とアラート表示
+-(BOOL)showAlertAppPro
+{
+    if (![ProductManager isAppPro]) {
+
+        YNAlertView *alert = [YNAlertView new];
+
+        alert.title = LSTR(@"Setting-AlertProVersionTitle");
+        alert.message = LSTR(@"Setting-AlertProVersionMessage");
+
+        // キャンセルボタン
+        [alert addButtonWithTitle:LSTR(@"actionCancel")];
+        alert.cancelButtonIndex = 0;
+
+        // 購入画面へボタン
+        [alert addButtonWithTitle:LSTR(@"Setting-AlertProVersionPurchase") withBlock:^(UIAlertView *alertView) {
+            [self performSegueWithIdentifier:kInAppPurchaseSegue sender:self];
+        }];
+
+        [alert show];
+        return NO;
+
+    } else {
+        return YES;
+    }
+}
+
 
 @end

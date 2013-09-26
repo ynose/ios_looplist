@@ -47,6 +47,12 @@ static ProductManager *_sharedInstance = nil;
 +(BOOL)isAppPro
 {
     // Pro版の有無を返す
+#ifdef DEBUG
+#ifdef PROVERSION
+    return YES;
+#endif
+#endif
+
     return [[NSUserDefaults standardUserDefaults] boolForKey:SETTING_APP_PRO];
 }
 
