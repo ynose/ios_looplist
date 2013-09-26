@@ -1,13 +1,13 @@
 //
 //  Define.h
-//  EverList
+//  Looplist
 //
 //  Created by Yoshio Nose on 2013/07/12.
 //  Copyright (c) 2013年 Yoshio Nose. All rights reserved.
 //
 
-#ifndef EverList_Define_h
-#define EverList_Define_h
+#ifndef Looplist_Define_h
+#define Looplist_Define_h
 
 #define LONGPRESS_DURATION 1.0f //0.7f
 
@@ -25,16 +25,13 @@
 #define SETTING_ICLOUD_AVAILABLE @"iCloudAvailable"
 
 // カラー
-#define UIColorMain [UIColor colorWithRed:0.176 green:0.588 blue:0.094 alpha:1.000]
+#define UIColorMain [UIColor colorWithRed:0.196 green:0.439 blue:0.012 alpha:1.000]
+#define UIColorMainTint [UIColor colorWithRed:0.176 green:0.588 blue:0.094 alpha:1.000]
 
 // フォントサイズ
 #define UIFontStandard [UIFont systemFontOfSize:17.0f]
 #define UIFontStandardBold [UIFont boldSystemFontOfSize:17.0f]
 
-// ECSlidingViewControllerの影
-#define SLIDINGVIEW_SHADOWOPACITY 0.75f
-#define SLIDINGVIEW_SHADOWRADIUS 10.0f
-#define SLIDINGVIEW_SHADOWCOLOR [UIColor blackColor].CGColor
 
 // リストのフィルター
 #define FILTER_ALL 0

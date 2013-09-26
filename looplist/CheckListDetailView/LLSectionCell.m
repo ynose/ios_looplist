@@ -1,6 +1,6 @@
 //
 //  LLSectionCell.m
-//  EverList
+//  Looplist
 //
 //  Created by Yoshio Nose on 2013/08/28.
 //  Copyright (c) 2013年 Yoshio Nose. All rights reserved.

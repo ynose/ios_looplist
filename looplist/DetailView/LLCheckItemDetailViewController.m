@@ -1,6 +1,6 @@
 //
 //  LLDetailViewController.m
-//  EverList
+//  Looplist
 //
 //  Created by Yoshio Nose on 2013/07/22.
 //  Copyright (c) 2013年 Yoshio Nose. All rights reserved.

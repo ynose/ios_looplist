@@ -7,6 +7,8 @@
 //
 
 #import "LLTabBarController.h"
+
+#import "LLAppSettingViewController.h"
 #import "LLRootViewController.h"
 
 #import "Define.h"
@@ -14,7 +16,7 @@
 #import "LLCheckListManager.h"
 
 
-@interface LLTabBarController ()  <UITabBarControllerDelegate>
+@interface LLTabBarController ()  <UITabBarControllerDelegate, AppSettingViewControllerDelegate>
 
 @end
 
@@ -134,7 +136,33 @@
 #pragma mark メニューボタン
 -(void)menuAction:(id)sender
 {
-    //    [self.slidingViewController anchorTopViewTo:ECRight];
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    UINavigationController *navigationController = [storyBoard instantiateViewControllerWithIdentifier:@"AppSettingViewController"];
+    LLAppSettingViewController *viewController = (LLAppSettingViewController *)navigationController.topViewController;
+    viewController.delegate = self;
+    navigationController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+
+#pragma mark - AppSettingViewControllerDelegate
+// チェックリスト追加ボタン
+-(void)appSettingViewControllerDidAddCheckList:(id)sender
+{
+    // チェックリストを新規追加
+    NSInteger insertIndex = [[LLCheckListManager sharedManager] addObject:[[LLCheckList alloc] initWithCheckItemsFileName]];
+    [[LLCheckListManager sharedManager] saveCheckLists];
+    [[LLCheckListManager sharedManager] saveCheckItems];
+
+    // タブバーに反映する
+    [self refreshViewControllers];
+    [self setSelectedIndex:insertIndex];
+
+    // 追加したら編集モードにする
+    UINavigationController *navController = (UINavigationController *)self.selectedViewController;
+    LLRootViewController *rootViewController = (LLRootViewController *)navController.topViewController;
+    [rootViewController setEditing:YES];
 }
 
 #pragma mark チェックリスト削除ボタン

@@ -1,6 +1,6 @@
 //
 //  LLCheckListManager+CheckItem.m
-//  EverList
+//  Looplist
 //
 //  Created by Yoshio Nose on 2013/08/27.
 //  Copyright (c) 2013年 Yoshio Nose. All rights reserved.

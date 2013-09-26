@@ -71,6 +71,7 @@ static NSString *kCellIdentifier = @"Cell";
     // ナビゲーションバーの設定
     self.title = self.checkList.caption;
     self.navigationItem.rightBarButtonItem = [self editButtonItem];
+    [self.navigationController.navigationBar setTintColor:UIColorMain];
 
     self.menuButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain
                                                       target:self.tabBarController
@@ -124,10 +125,20 @@ static NSString *kCellIdentifier = @"Cell";
     self.editIndexPath = nil;
 }
 
-- (void)didReceiveMemoryWarning
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewWillAppear:animated];
+
+    // タブバッチの更新(moreViewControllerでの編集に反映させるためviewWillAppearで行う)
+    [self refreshTabBarItem];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    // 選択されたチェックリスト（タブ）を保存
+    [[NSUserDefaults standardUserDefaults] setInteger:self.checkListIndex forKey:SETTING_ACTIVETAB];
 }
 
 

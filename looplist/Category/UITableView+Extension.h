@@ -1,6 +1,6 @@
 //
 //  UITableView+Extension.h
-//  EverList
+//  Looplist
 //
 //  Created by Yoshio Nose on 2013/07/23.
 //  Copyright (c) 2013年 Yoshio Nose. All rights reserved.

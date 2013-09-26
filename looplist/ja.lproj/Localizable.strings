@@ -101,6 +101,10 @@
 "Setting-AddCheckList" = "リストを追加";
 /* 設定-Evernoteアカウント */
 "Setting-EvernoteAccount" = "Evernote アカウント";
+/* 設定-Evernoteアカウント-サインイン済み */
+"Setting-EvernoteAccount-Signed" = "認証済み";
+/* 設定-Evernoteアカウント-サインアウト済み */
+"Setting-EvernoteAccount-SignOut" = "サインアウト";
 
 /* 設定-iCLoud */
 "SettingSection-iCloud" = "iCloud";
@@ -142,7 +146,7 @@
 
 /* ----- iCloudバックアップ画面用 ----- */
 "titleiCloud" = "iCloud";
-"iCloud-Backup-Footer" = "前回のバックアップ:\n%@";
+"iCloud-Backup-Footer" = "前回のバックアップ:%@";
 "iCloud-Restore-Footer" = "\n\nアプリのデータと設定をiCloudにバックアップします。
 バックアップは同じiCloudアカウント(Apple ID)を設定したデバイスに復元することもできます。";
 
