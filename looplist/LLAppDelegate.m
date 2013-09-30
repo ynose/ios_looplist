@@ -150,15 +150,22 @@
 
 -(void)setupAppearance
 {
+    // ステータスバー
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     // ナビゲーションバー
-    [[UINavigationBar appearance] setTintColor:UIColorMainTint];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: UIColorMain}];
+    [[UINavigationBar appearance] setTintColor:UIColorButtonText];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColorButtonText}];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBar"] forBarMetrics:UIBarMetricsDefault];
 
     // タブバー
-    [[UITabBar appearance] setTintColor:UIColorMainTint];
+    [[UITabBar appearance] setTintColor:UIColorMain];
 
     // テーブルビュー
-    [[UITableView appearance] setTintColor:UIColorMainTint];
+    [[UITableView appearance] setTintColor:UIColorMain];
+
+    // スイッチ
+    [[UISwitch appearance] setOnTintColor:UIColorMain];
 }
 
 @end

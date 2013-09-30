@@ -71,7 +71,6 @@ static NSString *kCellIdentifier = @"Cell";
     // ナビゲーションバーの設定
     self.title = self.checkList.caption;
     self.navigationItem.rightBarButtonItem = [self editButtonItem];
-    [self.navigationController.navigationBar setTintColor:UIColorMain];
 
     self.menuButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain
                                                       target:self.tabBarController
@@ -224,9 +223,24 @@ static NSString *kCellIdentifier = @"Cell";
     return [self.checkList.arraySections count];
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return [self.checkList sectionAtIndex:section].caption;
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 24)];
+    [view setBackgroundColor:[UIColor colorWithRed:0.729 green:0.737 blue:0.627 alpha:0.98]];
+
+    UILabel *label = [UILabel new];
+    label.textColor = [UIColor whiteColor];
+    label.text = [self.checkList sectionAtIndex:section].caption;
+    label.font = [UIFont systemFontOfSize:14];
+    [label sizeToFit];
+    label.center = view.center;
+    CGRect frame = label.frame;
+    frame.origin.x = 4;
+    label.frame = frame;
+
+    [view addSubview:label];
+
+    return view;
 }
 
 #pragma mark セル作成

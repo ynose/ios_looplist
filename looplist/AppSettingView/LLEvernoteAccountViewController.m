@@ -11,11 +11,13 @@
 #import "SVProgressHUD.h"
 #import "EvernoteSDK.h"     // Evernote API
 
+#import "Define.h"
+
 #import "UITableView+Extension.h"
 
 @interface LLEvernoteAccountViewController ()
-@property (weak, nonatomic) IBOutlet UITableViewCell *SignInCell;
-@property (weak, nonatomic) IBOutlet UITableViewCell *SignOut;
+@property (weak, nonatomic) IBOutlet UITableViewCell *signInCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *signOutCell;
 @end
 
 @implementation LLEvernoteAccountViewController
@@ -24,10 +26,13 @@
 {
     [super viewDidLoad];
 
+    self.signInCell.textLabel.textColor = UIColorMain;
+    self.signOutCell.textLabel.textColor = UIColorMain;
+
     EvernoteSession *session = [EvernoteSession sharedSession];
     if (session.isAuthenticated) {
         // 認証済み
-        self.SignInCell.detailTextLabel.text = LSTR(@"Setting-EvernoteAccount-Signed");
+        self.signInCell.detailTextLabel.text = LSTR(@"Setting-EvernoteAccount-Signed");
     }
 }
 

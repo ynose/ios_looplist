@@ -8,6 +8,8 @@
 
 #import "LLCheckListDetailViewController.h"
 
+#import "Define.h"
+
 #import "UITableView+Extension.h"
 
 #import "LLCheckListManager.h"
@@ -55,6 +57,7 @@ static NSString *kCellIdentifier = @"Cell";
         //追加ボタン
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         cell.textLabel.text = LSTR(@"AddSection");
+        cell.textLabel.textColor = UIColorMain;
     }
     return cell;
 }

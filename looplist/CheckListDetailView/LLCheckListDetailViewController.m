@@ -35,8 +35,6 @@
 {
     [super viewDidLoad];
 
-    [self.navigationController.navigationBar setTintColor:UIColorMain];
-
     // キャプション編集テキストフィールド
     self.captionTextField.delegate = self;
     self.captionTextField.placeholder = LSTR(@"ListTitlePlaceholder");
@@ -168,9 +166,6 @@
     [UIView animateWithDuration:animationDuration animations:^{
         // ビューのサイズをキーボードの高さを引いた高さに変更する
         UIScrollView *scrollView = (UIScrollView *)self.view;
-//        UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, scrollView.frame.origin.y + scrollView.frame.size.height + scrollView.contentOffset.y - keybordRect.origin.y, 0.0);
-//        scrollView.contentInset = contentInsets;
-//        scrollView.scrollIndicatorInsets = contentInsets;
         UIEdgeInsets insets = scrollView.contentInset;
         insets.bottom = keybordRect.size.height;
         scrollView.contentInset = insets;

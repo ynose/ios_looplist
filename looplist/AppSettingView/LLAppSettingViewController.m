@@ -40,6 +40,12 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 
 @implementation LLAppSettingViewController
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    self.addListButtonCell.textLabel.textColor = UIColorMain;
+}
 
 -(void)viewWillAppear:(BOOL)animated
 {

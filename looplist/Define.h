@@ -25,8 +25,8 @@
 #define SETTING_ICLOUD_AVAILABLE @"iCloudAvailable"
 
 // カラー
-#define UIColorMain [UIColor colorWithRed:0.196 green:0.439 blue:0.012 alpha:1.000]
-#define UIColorMainTint [UIColor colorWithRed:0.176 green:0.588 blue:0.094 alpha:1.000]
+#define UIColorMain [UIColor colorWithRed:0.180 green:0.357 blue:0.129 alpha:1.000]
+#define UIColorButtonText [UIColor whiteColor]
 
 // フォントサイズ
 #define UIFontStandard [UIFont systemFontOfSize:17.0f]
