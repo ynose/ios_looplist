@@ -153,14 +153,18 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - InAppPurchaseViewControllerDelegate
--(void)inAppPurchaseDone:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 #pragma mark - iCloudViewControllerDelegate
 -(void)iCloudViewRestoreDone:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+
+    if ([self.delegate respondsToSelector:@selector(appSettingViewControllerDidRestoreCheckList:)]) {
+        [self.delegate appSettingViewControllerDidRestoreCheckList:self];
+    }
+}
+
+#pragma mark - InAppPurchaseViewControllerDelegate
+-(void)inAppPurchaseDone:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }

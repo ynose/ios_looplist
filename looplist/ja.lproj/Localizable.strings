@@ -57,8 +57,9 @@
 
 
 /* ----- チェックリスト フッター ----- */
-"CheckCompleteSwitchCaption" = "チェック完了";
+"CheckCompleteButtonCaption" = "チェック完了";
 "CheckListDetailButtonCaption" = "リストの編集";
+"actionCheckComplete" = "チェック完了";
 
 
 /* ----- リスト詳細画面 ----- */

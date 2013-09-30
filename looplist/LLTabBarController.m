@@ -165,6 +165,12 @@
     [rootViewController setEditing:YES];
 }
 
+-(void)appSettingViewControllerDidRestoreCheckList:(id)sender
+{
+    // タブバーに反映する
+    [self refreshViewControllers];
+}
+
 #pragma mark チェックリスト削除ボタン
 -(void)deleteCheckListAtIndex:(NSInteger)checkListIndex
 {

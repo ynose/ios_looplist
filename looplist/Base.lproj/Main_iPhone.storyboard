@@ -362,13 +362,13 @@
         <!--Check Item Detail View Controller-->
         <scene sceneID="XoL-1W-MFI">
             <objects>
-                <viewController storyboardIdentifier="CheckItemDetailViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="deB-OE-Y5t" customClass="LLCheckItemDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CheckItemDetailViewController" hidesBottomBarWhenPushed="YES" id="deB-OE-Y5t" customClass="LLCheckItemDetailViewController" sceneMemberID="viewController">
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4UP-dY-esx" customClass="LLTouchScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="g6Z-4u-55k" customClass="LLColorLabelButton">
-                                <rect key="frame" x="9" y="77" width="30" height="30"/>
+                                <rect key="frame" x="9" y="20" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="999">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -378,7 +378,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="b8A-H5-AMg">
-                                <rect key="frame" x="47" y="78" width="253" height="30"/>
+                                <rect key="frame" x="47" y="20" width="253" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -387,14 +387,14 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hhi-aN-Wef">
-                                <rect key="frame" x="9" y="116" width="291" height="21"/>
+                                <rect key="frame" x="9" y="58" width="291" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Old-qK-Y2m" customClass="LLTouchTextView">
-                                <rect key="frame" x="0.0" y="158" width="320" height="410"/>
+                                <rect key="frame" x="0.0" y="116" width="320" height="452"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -406,7 +406,7 @@
                                 </connections>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1b9-G2-1E6">
-                                <rect key="frame" x="9" y="137" width="291" height="21"/>
+                                <rect key="frame" x="9" y="87" width="291" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <nil key="highlightedColor"/>
@@ -415,7 +415,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </scrollView>
                     <navigationItem key="navigationItem" id="jdu-rx-agZ"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="captionTextField" destination="b8A-H5-AMg" id="GrD-H5-vdd"/>
                         <outlet property="checkedDateLabel" destination="Hhi-aN-Wef" id="zzr-KP-FTt"/>
@@ -431,13 +430,13 @@
         <!--Check List Detail View Controller - Edit list-->
         <scene sceneID="EK9-Lz-uTv">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="87A-xJ-9nA" customClass="LLCheckListDetailViewController" sceneMemberID="viewController">
+                <viewController id="87A-xJ-9nA" customClass="LLCheckListDetailViewController" sceneMemberID="viewController">
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" id="aU4-HM-tVG" customClass="LLTouchScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" id="3YO-2V-d3F">
-                                <rect key="frame" x="20" y="74" width="280" height="30"/>
+                                <rect key="frame" x="20" y="20" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -446,7 +445,7 @@
                                 </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3vy-ny-Trh">
-                                <rect key="frame" x="0.0" y="112" width="320" height="306"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="210"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -476,11 +475,20 @@
                                 <state key="normal" title="Delete">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteTouchUp:" destination="87A-xJ-9nA" eventType="touchUpInside" id="kM4-Ep-Ehn"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="aJM-vP-gZH">
                                 <rect key="frame" x="251" y="426" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                             </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grouping" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Il-u5-GEV">
+                                <rect key="frame" x="20" y="79" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </scrollView>
@@ -491,6 +499,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="captionTextField" destination="3YO-2V-d3F" id="1kb-S4-Thh"/>
                         <outlet property="createDateLabel" destination="lA3-f9-pu1" id="qBD-gZ-g3R"/>
@@ -499,6 +508,7 @@
                         <outlet property="saveToEvernoteLabel" destination="u3T-Fu-1CH" id="4NN-4P-YUe"/>
                         <outlet property="saveToEvernoteSwitch" destination="aJM-vP-gZH" id="KnY-Sb-EUI"/>
                         <outlet property="scrollView" destination="aU4-HM-tVG" id="KDE-Md-QJZ"/>
+                        <outlet property="sectionCaptionLabel" destination="9Il-u5-GEV" id="lmn-DD-XJu"/>
                         <outlet property="sectionTableView" destination="3vy-ny-Trh" id="p8Y-C2-bKI"/>
                     </connections>
                 </viewController>

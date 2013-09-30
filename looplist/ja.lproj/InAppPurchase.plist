@@ -10,5 +10,13 @@
 		<key>forsale</key>
 		<true/>
 	</dict>
+	<dict>
+		<key>feature</key>
+		<string>グループ分け</string>
+		<key>description</key>
+		<string>チェック項目をグループ分けすることができるようになります。</string>
+		<key>forsale</key>
+		<true/>
+	</dict>
 </array>
 </plist>

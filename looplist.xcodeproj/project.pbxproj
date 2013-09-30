@@ -1390,7 +1390,7 @@
 				GCC_PREFIX_HEADER = "looplist/looplist-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					DEBUG,
-					_PROVERSION,
+					PROVERSION,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

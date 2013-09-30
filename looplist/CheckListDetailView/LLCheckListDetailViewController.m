@@ -9,18 +9,19 @@
 #import "LLCheckListDetailViewController.h"
 
 #import "Define.h"
-//#import "UIGlossyButton.h"
-//#import "UIView+LayerEffects.h"
+
 #import "LLTouchScrollView.h"
 #import "YNActionSheet.h"
 
-//#import "ProductManager.h"
 #import "NSDate+Extension.h"
+#import "ProductManager.h"
 #import "LLCheckList.h"
+
 
 @interface LLCheckListDetailViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet LLTouchScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *captionTextField;
+@property (weak, nonatomic) IBOutlet UILabel *sectionCaptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *saveToEvernoteLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *saveToEvernoteSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *createDateLabel;
@@ -42,27 +43,27 @@
     self.captionTextField.text = self.checkList.caption;
 
     // セクション編集テーブル
-    [self setupSectionTableView];
+    if ([ProductManager isAppPro]) {
+        [self setupSectionTableView];
+    } else {
+        self.sectionCaptionLabel.hidden = YES;
+        self.sectionTableView.hidden = YES;
+    }
 
-    // Save to Evernote (Pro版のみ)
-//    if (![ProductManager isAppPro]) {
+    // Save to Evernote ***Pro版限定***
+    if (![ProductManager isAppPro]) {
 //        self.saveToEvernoteLabel.text = LSTR(@"SaveToEvernoteCaption");
         self.saveToEvernoteSwitch.on = self.checkList.saveToEvernote;
-//        self.saveToEvernoteLabel.hidden = YES;
-//        self.saveToEvernoteSwitch.hidden = YES;
-//    }
+        self.saveToEvernoteLabel.hidden = YES;
+        self.saveToEvernoteSwitch.hidden = YES;
+    }
 
     // チェックリスト情報
     self.createDateLabel.text = [self.checkList.createDate stringWithDateFormat:LSTR(@"CreateDate")];
     self.finishCountLabel.text = [NSString stringWithFormat:LSTR(@"FinishCount"), self.checkList.finishCount];
 
     // 削除ボタン
-    [self.deleteButton setTitle:LSTR(@"DeleteCheckListCaption") forState:UIControlStateNormal];
-//	UIGlossyButton *b = (UIGlossyButton *)self.deleteButton;
-//	[b useWhiteLabel: YES];
-//    b.buttonCornerRadius = 2.0; b.buttonBorderWidth = 1.0f;
-//	[b setStrokeType: kUIGlossyButtonStrokeTypeGradientFrame];
-//    b.tintColor = b.borderColor = [UIColor redColor];
+//    [self.deleteButton setTitle:LSTR(@"DeleteCheckListCaption") forState:UIControlStateNormal];
 
     // スクロールビューの調整
     self.scrollView.alwaysBounceVertical = YES;
@@ -163,9 +164,13 @@
     [UIView animateWithDuration:animationDuration animations:^{
         // ビューのサイズをキーボードの高さを引いた高さに変更する
         UIScrollView *scrollView = (UIScrollView *)self.view;
-        UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, scrollView.frame.origin.y + scrollView.frame.size.height + scrollView.contentOffset.y - keybordRect.origin.y, 0.0);
-        scrollView.contentInset = contentInsets;
-        scrollView.scrollIndicatorInsets = contentInsets;
+//        UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, scrollView.frame.origin.y + scrollView.frame.size.height + scrollView.contentOffset.y - keybordRect.origin.y, 0.0);
+//        scrollView.contentInset = contentInsets;
+//        scrollView.scrollIndicatorInsets = contentInsets;
+        UIEdgeInsets insets = scrollView.contentInset;
+        insets.bottom = keybordRect.size.height;
+        scrollView.contentInset = insets;
+        scrollView.scrollIndicatorInsets = insets;
 
 
         // フォーカスの当たった入力項目がキーボードに隠れないようにスクロールさせる
@@ -191,11 +196,11 @@
 
     [UIView animateWithDuration:animationDuration animations:^{
         // ビューのサイズを元のサイズに戻す
-        UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
-
         UIScrollView *scrollView = (UIScrollView *)self.view;
-        scrollView.contentInset = contentInsets;
-        scrollView.scrollIndicatorInsets = contentInsets;
+        UIEdgeInsets insets = scrollView.contentInset;
+        insets.bottom = 0;
+        scrollView.contentInset = insets;
+        scrollView.scrollIndicatorInsets = insets;
     }];
 }
 

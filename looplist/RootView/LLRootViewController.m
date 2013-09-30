@@ -131,6 +131,14 @@ static NSString *kCellIdentifier = @"Cell";
 
     // タブバッチの更新(moreViewControllerでの編集に反映させるためviewWillAppearで行う)
     [self refreshTabBarItem];
+
+    // キーボード表示の通知を設定
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyborodWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyborodWasUnshown:)
+                                                 name:UIKeyboardDidHideNotification object:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -139,6 +147,15 @@ static NSString *kCellIdentifier = @"Cell";
 
     // 選択されたチェックリスト（タブ）を保存
     [[NSUserDefaults standardUserDefaults] setInteger:self.checkListIndex forKey:SETTING_ACTIVETAB];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+
+    // キーボード表示の通知を解除
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
 }
 
 
@@ -183,7 +200,6 @@ static NSString *kCellIdentifier = @"Cell";
 
     // 通常時と編集時のジェスチャー入れ替え
     [self exchangeGestureRecognizer:editing];
-
 }
 
 // 通常時と編集時のジェスチャー入れ替え
@@ -431,7 +447,7 @@ static NSString *kCellIdentifier = @"Cell";
 // 未チェックフィルタ時のチェックON行削除
 -(void)rowDeleteAction:(NSArray *)indexPaths
 {
-    [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
 }
 
 
@@ -545,11 +561,25 @@ static NSString *kCellIdentifier = @"Cell";
 #pragma mark チェック完了
 -(void)completeCheckList:(UIControl *)sender
 {
-    // 全行削除
-    [self performSelector:@selector(deleteCheckListRows:) withObject:sender afterDelay:0.1];  // 遅延実行
+    YNActionSheet *actionSheet = [YNActionSheet new];
+
+    // 完了ボタン
+    [actionSheet addButtonWithTitle:LSTR(@"actionCheckComplete") withBlock:^(NSInteger buttonIndex) {
+        // 全行削除
+        [self performSelector:@selector(deleteAllCheckItemRows:) withObject:sender afterDelay:0.1];  // 遅延実行
+    }];
+
+    // キャンセルボタン
+    // iPadではキャンセルボタンは表示されないがイベントは発生する
+    [actionSheet addButtonWithTitle:LSTR(@"actionCancel") withBlock:nil];
+    actionSheet.cancelButtonIndex =  [actionSheet numberOfButtons] - 1;
+
+
+    // TabBarが表示されているとCancelボタンがTabBarにかぶって押せなくなるためTabBarから表示が必要
+    [actionSheet showFromTabBar:self.tabBarController.tabBar];
 }
 
--(void)deleteCheckListRows:(id)sender
+-(void)deleteAllCheckItemRows:(id)sender
 {
     // 全行削除アニメーション
     _finishAction = YES;
@@ -564,7 +594,7 @@ static NSString *kCellIdentifier = @"Cell";
         delay = 1.3;
     }
 
-    [self.tableView deleteRowsAtIndexPaths:indexPaths duration:0.4 withRowAnimation:UITableViewRowAnimationTop
+    [self.tableView deleteRowsAtIndexPaths:indexPaths duration:0.4 withRowAnimation:UITableViewRowAnimationFade
                                 completion:^(BOOL finished) {
                                     // チェック完了処理
                                     [[LLCheckListManager sharedManager] completeCheckList:self.checkListIndex];
@@ -575,7 +605,6 @@ static NSString *kCellIdentifier = @"Cell";
                                     [self performSelector:@selector(setupNewCheckList:) withObject:sender afterDelay:delay];  // 遅延実行 0.3がベスト
                                 }];
 
-    //    [SVProgressHUD showSuccessWithStatus:LSTR(@"CheckComplete")];
     [SVProgressHUD showSuccessWithStatus:nil];
 }
 
@@ -590,12 +619,8 @@ static NSString *kCellIdentifier = @"Cell";
 
     // 全行挿入
     _finishAction = NO;
-    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
 
-    //    self.tableView.contentOffset = CGPointMake(0, self.tableView.tableHeaderView.frame.size.height);
-
-//    // チェック完了スイッチをOffに戻す
-//    [((UISwitch *)sender) setOn:NO animated:YES];
 
     // バッジ更新
     [self refreshTabBarItem];
@@ -685,11 +710,6 @@ static NSString *kCellIdentifier = @"Cell";
     DEBUGLOG_IndexPath(indexPath);
 
     // 次の行に挿入
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft
-//                          atScrollPosition:UITableViewScrollPositionNone animated:YES completion:^(BOOL finished) {
-//                              // カーソルをセット
-//                              [self performSelector:@selector(setCheckItemCellBecomeFirstResponder:) withObject:indexPath afterDelay:0.3];  // 遅延実行 0.3がベスト
-//                          }];
     // 追加行にスクロールしてカーソルをセット
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
@@ -776,23 +796,58 @@ static NSString *kCellIdentifier = @"Cell";
 
     // チェック済みアイテムの表示・非表示を切り替える
     if (segmentedControl.selectedSegmentIndex == FILTER_ALL) {
-        [self.tableView insertRowsAtIndexPaths:rowsArray withRowAnimation:UITableViewRowAnimationTop];
+        [self.tableView insertRowsAtIndexPaths:rowsArray withRowAnimation:UITableViewRowAnimationFade];
     } else {
-        [self.tableView deleteRowsAtIndexPaths:rowsArray withRowAnimation:UITableViewRowAnimationTop];
+        [self.tableView deleteRowsAtIndexPaths:rowsArray withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+#pragma mark - Keyboard Notification
+// キーボードが表示された時
+-(void)keyborodWasShown:(NSNotification *)notification
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSDictionary *userInfo = [notification userInfo];
+
+    // キーボードのサイズを取得
+    CGRect keybordRect = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    keybordRect = [self.view convertRect:keybordRect fromView:nil];
+
+    // ビューのサイズ調整をキーボード表示のアニメーションにシンクロさせる
+    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval animationDuration;
+    [animationDurationValue getValue:&animationDuration];
+
+    [UIView animateWithDuration:animationDuration animations:^{
+        // ビューのサイズをキーボードの高さを引いた高さに変更する
+        UIScrollView *scrollView = (UIScrollView *)self.view;
+        UIEdgeInsets insets = scrollView.contentInset;
+        insets.bottom = keybordRect.size.height;
+        scrollView.scrollIndicatorInsets = insets;
+    }];
+
 }
 
- */
+// キーボードが消された時
+-(void)keyborodWasUnshown:(NSNotification *)notification
+{
+    // ビューのサイズ調整をキーボード表示のアニメーションにシンクロさせる
+    NSDictionary *userInfo = [notification userInfo];
+
+    // キーボードのサイズを取得
+    CGRect keybordRect = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    keybordRect = [self.view convertRect:keybordRect fromView:nil];
+
+    // ビューのサイズ調整をキーボード表示のアニメーションにシンクロさせる
+    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval animationDuration;
+    [animationDurationValue getValue:&animationDuration];
+
+    [UIView animateWithDuration:animationDuration animations:^{
+        // ビューのサイズを元のサイズに戻す
+        UIScrollView *scrollView = (UIScrollView *)self.view;
+        scrollView.scrollIndicatorInsets = scrollView.contentInset;
+    }];
+}
 
 @end

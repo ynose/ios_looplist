@@ -206,7 +206,7 @@ __strong static NSTimer *_timer;
                     for (NSURL *url in array) {
                         NSString *fileName = [url lastPathComponent];
                         DEBUGLOG(@"Old Files:%@", fileName);
-                        if ([fileName hasPrefix:@"checklist_"] && [fileName hasSuffix:@".dat"]) { // checklist_*.datのみ抽出する
+                        if ([fileName hasPrefix:@"checkitems_"] && [fileName hasSuffix:@".dat"]) { // checklist_*.datのみ抽出する
                             [_oldTemplateURLs addObject:url];
                         }
                     }
@@ -501,8 +501,9 @@ __strong static NSTimer *_timer;
         id out = nil;
         NSError *error = nil;
 //        [url getResourceValue:&out forKey:NSURLUbiquitousItemIsDownloadedKey error:&error];
-        [url getResourceValue:&out forKey:NSURLUbiquitousItemDownloadingStatusDownloaded error:&error];
-        if ([out boolValue]) {
+//        if ([out boolValue]) {
+
+        if ([url getResourceValue:&out forKey:NSURLUbiquitousItemDownloadingStatusDownloaded error:&error]) {
             DEBUGLOG(@"NSURLUbiquitousItemIsDownloadedKey:%@", ([out boolValue])? @"True": @"Fales");
             
             // チェックリスト

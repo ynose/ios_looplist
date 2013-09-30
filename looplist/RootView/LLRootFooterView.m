@@ -7,10 +7,8 @@
 //
 
 #import "LLRootFooterView.h"
-#import "Define.h"
-//#import "UIGlossyButton.h"
-//#import "DCRoundSwitch.h"
 
+#import "Define.h"
 
 @interface LLRootFooterView ()
 @property (weak, nonatomic) IBOutlet UIButton *checklistDetailButton;
@@ -39,38 +37,6 @@
     }];
 }
 
-//-(void)layoutSubviews
-//{
-//    [super layoutSubviews];
-//
-//    // チェック完了スイッチ
-//    self.completeSwitch.on = NO;
-//    self.completeSwitch.offText = nil;
-//    self.completeSwitch.onText = LSTR(@"CheckCompleteSwitchCaption");
-//    self.completeSwitch.onTintColor = UIColorMain;
-//
-//    // チェック完了スイッチのTapジェスチャーを無効にする
-//    if (_tapRecognizer == nil) {
-//        _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
-//                                                                 action:@selector(completeSwitchTapAction:)];
-//    }
-//    [self.completeSwitch removeGestureRecognizer:_tapRecognizer];
-//    [self.completeSwitch addGestureRecognizer:_tapRecognizer];
-
-
-//    // リスト編集ボタン
-//    [self.checklistDetailButton setTitle:LSTR(@"CheckListDetailButtonCaption") forState:UIControlStateNormal];
-//	UIGlossyButton *b = (UIGlossyButton *)self.checklistDetailButton;
-//	[b useWhiteLabel: YES];
-//    b.buttonCornerRadius = 2.0; b.buttonBorderWidth = 1.0f;
-//	[b setStrokeType: kUIGlossyButtonStrokeTypeGradientFrame];
-//    b.tintColor = b.borderColor = [UIColor brownColor];
-//}
-//
-//// チェック完了スイッチのTapジェスチャーを無効にする
-//-(void)completeSwitchTapAction:(UITapGestureRecognizer *)gestureRecognizer
-//{
-//}
 
 #pragma mark - ボタン
 #pragma mark チェックリスト設定ボタン
@@ -82,14 +48,6 @@
 }
 
 #pragma mark チェック完了スイッチ
-//- (IBAction)completeSwitchValueChanged:(id)sender
-//{
-//    if (((UISwitch *)sender).on == YES) {
-//        if ([self.delegate respondsToSelector:@selector(completeCheckList:)]) {
-//            [self.delegate completeCheckList:sender];
-//        }
-//    }
-//}
 - (IBAction)completeTouchUp:(id)sender
 {
     if ([self.delegate respondsToSelector:@selector(completeCheckList:)]) {

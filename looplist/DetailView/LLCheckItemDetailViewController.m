@@ -84,7 +84,7 @@
     self.checkItem.caption = self.captionTextField.text;
     self.checkItem.memo = self.memoTextView.text;
 
-
+    // デリゲートに通知
     if ([self.delegate respondsToSelector:@selector(saveDetail:)]) {
         [self.delegate saveDetail:self.checkItem];
     }
@@ -118,10 +118,10 @@
     [UIView animateWithDuration:animationDuration animations:^{
         // ビューのサイズをキーボードの高さを引いた高さに変更する
         UIScrollView *scrollView = (UIScrollView *)self.view;
-        UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, scrollView.frame.origin.y + scrollView.frame.size.height + scrollView.contentOffset.y - keybordRect.origin.y, 0.0);
-        scrollView.contentInset = contentInsets;
-        scrollView.scrollIndicatorInsets = contentInsets;
-
+        UIEdgeInsets insets = scrollView.contentInset;
+        insets.bottom = keybordRect.size.height;
+        scrollView.contentInset = insets;
+        scrollView.scrollIndicatorInsets = insets;
 
         // フォーカスの当たった入力項目がキーボードに隠れないようにスクロールさせる
         CGRect viewFrame = self.view.frame;
@@ -169,11 +169,11 @@
 
     [UIView animateWithDuration:animationDuration animations:^{
         // ビューのサイズを元のサイズに戻す
-        UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
-
         UIScrollView *scrollView = (UIScrollView *)self.view;
-        scrollView.contentInset = contentInsets;
-        scrollView.scrollIndicatorInsets = contentInsets;
+        UIEdgeInsets insets = scrollView.contentInset;
+        insets.bottom = 0;
+        scrollView.contentInset = insets;
+        scrollView.scrollIndicatorInsets = insets;
     }];
 }
 

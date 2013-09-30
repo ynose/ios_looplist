@@ -10,5 +10,13 @@
 		<key>forsale</key>
 		<true/>
 	</dict>
+	<dict>
+		<key>feature</key>
+		<string>Grouping</string>
+		<key>description</key>
+		<string>Grouping</string>
+		<key>forsale</key>
+		<true/>
+	</dict>
 </array>
 </plist>
