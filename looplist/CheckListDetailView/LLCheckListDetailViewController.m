@@ -59,7 +59,11 @@
     }
 
     // チェックリスト情報
-    self.createDateLabel.text = [self.checkList.createDate stringWithDateFormat:LSTR(@"CreateDate")];
+    if (self.checkList.finishDate) {
+        self.createDateLabel.text = [NSString stringWithFormat:LSTR(@"FinishDate"), [self.checkList.finishDate stringFullDateTimeBy24Time:YES]];
+    } else {
+        self.createDateLabel.text = @"";
+    }
     self.finishCountLabel.text = [NSString stringWithFormat:LSTR(@"FinishCount"), self.checkList.finishCount];
 
     // 削除ボタン

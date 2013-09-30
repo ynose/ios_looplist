@@ -386,10 +386,12 @@
 #pragma mark 日付・時刻の文字列展開
 -(NSString *)stringWithDateFormat:(NSString *)format
 {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:format];
 
     NSString *dateString = [dateFormatter stringFromDate:self];
+
+    DEBUGLOG(@"%@ => %@", format, dateString);
 
     return dateString;
 }

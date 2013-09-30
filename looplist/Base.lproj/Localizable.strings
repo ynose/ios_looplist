@@ -78,6 +78,7 @@
 
 /* チェックリスト完了回数 */
 "FinishCount" = "Checked: %d";
+"FinishDate" = "Last: %@";
 
 /* リスト削除ボタン */
 "DeleteCheckListCaption" = "Delete List";

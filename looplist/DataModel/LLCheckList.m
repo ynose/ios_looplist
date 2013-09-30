@@ -21,6 +21,7 @@
     if (self) {
         self.caption = LSTR(@"NewCheckListCaption");
         self.createDate = [NSDate date];
+        self.finishDate = nil;
         self.finishCount = 0;
         self.filterIndex = kFilterAll;
         self.saveToEvernote = NO;
@@ -53,6 +54,7 @@
     if (!self.createDate) {
         self.createDate = [NSDate date];
     }
+    self.finishDate = [aDecoder decodeObjectForKey:@"finishDate"];
     self.finishCount = [aDecoder decodeIntegerForKey:@"finishCount"];
     self.filterIndex = [aDecoder decodeIntegerForKey:@"filterIndex"];
     self.saveToEvernote = [aDecoder decodeBoolForKey:@"saveToEvernote"];
@@ -65,6 +67,7 @@
 {
     [aCoder encodeObject:self.caption forKey:@"caption"];
     [aCoder encodeObject:self.createDate forKey:@"createDate"];
+    [aCoder encodeObject:self.finishDate forKey:@"finishDate"];
     [aCoder encodeInteger:self.finishCount forKey:@"finishCount"];
     [aCoder encodeInteger:self.filterIndex forKey:@"filterIndex"];
     [aCoder encodeBool:self.saveToEvernote forKey:@"saveToEvernote"];
@@ -76,6 +79,7 @@
     LLCheckList *clone = [[[self class] allocWithZone:zone] init];
     clone.caption = [self caption];
     clone.createDate = [self createDate];
+    clone.finishDate = [self finishDate];
     clone.finishCount = [self finishCount];
     clone.filterIndex = [self filterIndex];
     clone.saveToEvernote = [self saveToEvernote];
@@ -87,6 +91,8 @@
 
 -(NSInteger)incrementFinishCount
 {
+    self.finishDate = [NSDate date];
+    
     if (self.finishCount < MAX_FINISHCOUNT) {
         return self.finishCount++;
     } else {

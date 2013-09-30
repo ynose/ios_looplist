@@ -19,6 +19,7 @@ typedef enum _FilterIndex {
 
 @property (copy, nonatomic) NSString *caption;
 @property (strong, nonatomic) NSDate *createDate;
+@property (strong, nonatomic) NSDate *finishDate;
 @property (assign, nonatomic) NSInteger finishCount;
 @property (assign, nonatomic) FilterType filterIndex;
 @property (assign, nonatomic) BOOL saveToEvernote;

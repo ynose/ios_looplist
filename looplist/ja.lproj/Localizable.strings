@@ -76,6 +76,7 @@
 
 /* チェックリスト作成日 */
 "CreateDate" = "作成日: YYYY年M月d日(E)";
+"FinishDate" = "前回: %@";
 
 /* チェックリスト完了回数 */
 "FinishCount" = "チェック: %d回";
