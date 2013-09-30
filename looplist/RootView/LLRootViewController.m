@@ -34,7 +34,7 @@ static NSString *kCellIdentifier = @"Cell";
 @property (strong, nonatomic) UISegmentedControl *filterSegmentedControl;
 @property (strong, nonatomic) NSIndexPath *indexPathOfSelected;
 @property (strong, nonatomic) NSIndexPath *editIndexPath;
-
+@property (strong, nonatomic) UITextField *dummyTextField;
 @end
 
 @implementation LLRootViewController
@@ -200,6 +200,8 @@ static NSString *kCellIdentifier = @"Cell";
 
     // 通常時と編集時のジェスチャー入れ替え
     [self exchangeGestureRecognizer:editing];
+
+    [self.dummyTextField resignFirstResponder];
 }
 
 // 通常時と編集時のジェスチャー入れ替え
@@ -746,6 +748,8 @@ static NSString *kCellIdentifier = @"Cell";
 {
     // アクティブ行を保持
     self.editIndexPath = [self indexPathOfCheckItem:checkItem];   DEBUGLOG_IndexPath(self.editIndexPath);
+    LLCheckItemCell *cell = (LLCheckItemCell *)[self.tableView cellForRowAtIndexPath:self.editIndexPath];
+    self.dummyTextField = cell.captionTextField;
 }
 
 -(void)checkItemCellShouldReturn:(LLCheckItem *)checkItem

@@ -89,8 +89,6 @@
 
     if (editing == NO) {
         // 通常モード
-        [self.captionTextField resignFirstResponder];   // キーボードを非表示
-
         self.colorLabelButton.hidden = (self.checkItem.colorLabelIndex == 0) ? YES : NO;
     } else {
         // 編集モード
