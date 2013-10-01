@@ -77,7 +77,6 @@ static NSString *kCellIdentifier = @"Cell";
                                                       action:@selector(menuAction:)];
     self.navigationItem.leftBarButtonItem = self.menuButton;
 
-
     // 追加[+]ボタンの作成
     self.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                    target:self
@@ -225,22 +224,26 @@ static NSString *kCellIdentifier = @"Cell";
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 24)];
-    [view setBackgroundColor:[UIColor colorWithRed:0.729 green:0.737 blue:0.627 alpha:0.98]];
+    if ([self.checkList sectionAtIndex:section].caption) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 24)];
+        [view setBackgroundColor:[UIColor colorWithRed:0.729 green:0.737 blue:0.627 alpha:0.9]];
 
-    UILabel *label = [UILabel new];
-    label.textColor = [UIColor whiteColor];
-    label.text = [self.checkList sectionAtIndex:section].caption;
-    label.font = [UIFont systemFontOfSize:14];
-    [label sizeToFit];
-    label.center = view.center;
-    CGRect frame = label.frame;
-    frame.origin.x = 4;
-    label.frame = frame;
-
-    [view addSubview:label];
-
-    return view;
+        UILabel *label = [UILabel new];
+        label.textColor = [UIColor whiteColor];
+        label.text = [self.checkList sectionAtIndex:section].caption;
+        label.font = [UIFont systemFontOfSize:14];
+        [label sizeToFit];
+        label.center = view.center;
+        CGRect frame = label.frame;
+        frame.origin.x = 4;
+        label.frame = frame;
+        
+        [view addSubview:label];
+        
+        return view;
+    } else {
+        return nil;
+    }
 }
 
 #pragma mark セル作成

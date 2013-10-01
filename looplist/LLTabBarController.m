@@ -9,6 +9,7 @@
 #import "LLTabBarController.h"
 
 #import "LLAppSettingViewController.h"
+#import "LLNavigationController.h"
 #import "LLRootViewController.h"
 
 #import "Define.h"
@@ -31,6 +32,10 @@
     // タブを選択する
     [self refreshViewControllers];
     [self setSelectedIndex:[[NSUserDefaults standardUserDefaults] integerForKey:SETTING_ACTIVETAB]];
+
+    [self.moreNavigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationBar"] forBarMetrics:UIBarMetricsDefault];
+    [self.moreNavigationController.navigationBar setTintColor:UIColorButtonText];
+    [self.moreNavigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColorButtonText}];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,16 +51,14 @@
     NSMutableArray *viewControllers = [NSMutableArray array];
     for (NSInteger index = 0; index < [[LLCheckListManager sharedManager].arrayCheckLists count]; index++) {
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+        
         UINavigationController *navigationController = [storyBoard instantiateViewControllerWithIdentifier:@"RootNavigationController"];
-
         navigationController.tabBarItem.image = [UIImage imageNamed:@"tabbar-icon"];
         navigationController.tabBarItem.tag = index;
-
 
         LLRootViewController *rootViewController = (LLRootViewController *)navigationController.topViewController;
         rootViewController.checkListIndex = index;
         rootViewController.checkList = (LLCheckList *)[LLCheckListManager sharedManager].arrayCheckLists[index];
-
         [rootViewController refreshTabBarItem];
 
         [viewControllers addObject:navigationController];
