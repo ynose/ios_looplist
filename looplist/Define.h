@@ -28,6 +28,12 @@
 #define UIColorMain [UIColor colorWithRed:0.216 green:0.396 blue:0.078 alpha:1.000]
 #define UIColorButtonText [UIColor whiteColor]
 
+#define UIColorCellUncheck [UIColor whiteColor]
+#define UIColorCellChecked [UIColor colorWithRed:0.902 green:0.902 blue:0.902 alpha:1.000]
+#define UIColorTextUncheck [UIColor blackColor]
+#define UIColorTextChecked [UIColor grayColor]
+
+
 // フォントサイズ
 #define UIFontStandard [UIFont systemFontOfSize:17.0f]
 #define UIFontStandardBold [UIFont boldSystemFontOfSize:17.0f]

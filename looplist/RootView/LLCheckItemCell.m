@@ -20,10 +20,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *checkmarkImageView;
 @end
 
+
 @implementation LLCheckItemCell
 
 
-#pragma mark - KVO
+#pragma mark - チェック状態を監視(KVO)
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     static NSString *KVOCheckedDate = KVO_CHECKEDDATE;
@@ -37,38 +38,17 @@
             self.checkedDate = nil;
         }
 
-        // チェックON/OFFに応じて背景画像を切り替える
-        self.checkmarkImageView.hidden = (self.checkedDate) ? NO : YES;
+        // チェックON/OFF切り替え
+        [self changeCheckState:(self.checkedDate) ? YES : NO];
     }
 }
-
-//-(id)initWithCoder:(NSCoder *)aDecoder
-//{
-//    self = [super initWithCoder:aDecoder];
-//    if (self) {
-////        // セルの背景画像
-////        [self setBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellBackground"]]];
-////        [self setSelectedBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellBackground-selected"]]];
-//        UIView *view = [UIView new];
-//        [view setBackgroundColor:[UIColor whiteColor]];
-//        [self setBackgroundView:view];
-//    }
-//    return self;
-//}
 
 -(void)prepareForReuse
 {
     [super prepareForReuse];
-    
-//    // セルの背景画像
-//    [self setBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellBackground"]]];
-//    UIView *view = [UIView new];
-//    [view setBackgroundColor:[UIColor whiteColor]];
-//    [self setBackgroundView:view];
 
-                             
-    // チェックマーク
-    self.checkmarkImageView.hidden = YES;
+    // チェックON/OFFリセット
+    [self changeCheckState:NO];
 }
 
 -(void)layoutSubviews
@@ -90,16 +70,32 @@
     if (editing == NO) {
         // 通常モード
         self.colorLabelButton.hidden = (self.checkItem.colorLabelIndex == 0) ? YES : NO;
+        [self changeCheckState:(self.checkedDate) ? YES : NO];
     } else {
         // 編集モード
         self.captionTextField.delegate = self;
         self.colorLabelButton.hidden = NO;
+        [self changeCheckState:NO];
     }
+
 
     self.colorLabelButton.enabled = editing;
     self.captionTextField.enabled = editing;
 }
 
+// チェック状態に応じた画面オブジェクトの表示切り替え
+-(void)changeCheckState:(BOOL)checked
+{
+    if (checked) {
+        self.backgroundColor = UIColorCellChecked;
+        self.captionTextField.textColor = UIColorTextChecked;
+        self.checkmarkImageView.hidden = NO;
+    } else {
+        self.backgroundColor = UIColorCellUncheck;
+        self.captionTextField.textColor = UIColorTextUncheck;
+        self.checkmarkImageView.hidden = YES;
+    }
+}
 
 
 #pragma mark - プロパティ

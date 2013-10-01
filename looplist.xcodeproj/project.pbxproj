@@ -141,8 +141,6 @@
 		8ECF984817F2EE910097838A /* YNActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984517F2EE910097838A /* YNActionSheet.m */; };
 		8ECF984917F2EE910097838A /* YNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984717F2EE910097838A /* YNAlertView.m */; };
 		8ED20A5F17FA309E0060C690 /* navigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */; };
-		8ED4341917FADEFF00E112BD /* LLNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4341817FADEFF00E112BD /* LLNavigationBar.m */; };
-		8ED4341C17FADFA900E112BD /* LLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4341B17FADFA900E112BD /* LLNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -409,10 +407,6 @@
 		8ECF984617F2EE910097838A /* YNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNAlertView.h; path = Classes/YNAlertView.h; sourceTree = "<group>"; };
 		8ECF984717F2EE910097838A /* YNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YNAlertView.m; path = Classes/YNAlertView.m; sourceTree = "<group>"; };
 		8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationBar@2x.png"; sourceTree = "<group>"; };
-		8ED4341717FADEFF00E112BD /* LLNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLNavigationBar.h; sourceTree = "<group>"; };
-		8ED4341817FADEFF00E112BD /* LLNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLNavigationBar.m; sourceTree = "<group>"; };
-		8ED4341A17FADFA900E112BD /* LLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLNavigationController.h; sourceTree = "<group>"; };
-		8ED4341B17FADFA900E112BD /* LLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -804,10 +798,6 @@
 				8E88503517F0EB340068B13F /* Main_iPad.storyboard */,
 				8E88505B17F0ECCF0068B13F /* LLTabBarController.h */,
 				8E88505C17F0ECCF0068B13F /* LLTabBarController.m */,
-				8ED4341A17FADFA900E112BD /* LLNavigationController.h */,
-				8ED4341B17FADFA900E112BD /* LLNavigationController.m */,
-				8ED4341717FADEFF00E112BD /* LLNavigationBar.h */,
-				8ED4341817FADEFF00E112BD /* LLNavigationBar.m */,
 				8E36126817F3C576008CF7E1 /* AppSettingView */,
 				8E88509317F0F7A40068B13F /* RootView */,
 				8E88E64F17F1B40100C9E69A /* CheckListDetailView */,
@@ -1211,13 +1201,11 @@
 				8E36133917F3C772008CF7E1 /* EDAMUserStore.m in Sources */,
 				8E36134317F3C772008CF7E1 /* ENAuthenticationRequest.m in Sources */,
 				8E36133C17F3C772008CF7E1 /* EvernoteNoteStore+Extras.m in Sources */,
-				8ED4341C17FADFA900E112BD /* LLNavigationController.m in Sources */,
 				8E36135617F3C772008CF7E1 /* ENAPI.m in Sources */,
 				8E36127E17F3C576008CF7E1 /* UIProductCell.m in Sources */,
 				8E36134217F3C772008CF7E1 /* ENApplicationBridge.m in Sources */,
 				8E36133617F3C772008CF7E1 /* EDAMLimits.m in Sources */,
 				8E88508617F0F0970068B13F /* UILabel+Align.m in Sources */,
-				8ED4341917FADEFF00E112BD /* LLNavigationBar.m in Sources */,
 				8E88506F17F0EF9A0068B13F /* LLCheckListManager+CheckItem.m in Sources */,
 				8E36134917F3C772008CF7E1 /* ENSearchRequest.m in Sources */,
 				8E88508217F0F0970068B13F /* NSDate+Extension.m in Sources */,
