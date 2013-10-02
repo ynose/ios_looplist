@@ -512,12 +512,13 @@ __strong static NSTimer *_timer;
                 [fileCoordinator removeFile:fileURL];
                 
                 if ([[NSFileManager defaultManager] copyItemAtURL:url toURL:fileURL error:&error]) {
+                    _isDownloadedCheckList = YES;
                     DEBUGLOG(@"Success Restore CheckList");
                 } else {
+                    _isDownloadedCheckList = NO;
                     DEBUGLOG(@"Can't Restore CheckList:%@", error.localizedDescription);
                 }
-                _isDownloadedCheckList = YES;
-                
+
             // チェックアイテム
             } else if ([fileName hasPrefix:@"checkitems_"] && [fileName hasSuffix:@".dat"]) {
                 
@@ -525,12 +526,13 @@ __strong static NSTimer *_timer;
                 [fileCoordinator removeFile:fileURL];
                 
                 if ([[NSFileManager defaultManager] copyItemAtURL:url toURL:fileURL error:&error]) {
+                    _isDownloadedCheckItem = YES;
                     DEBUGLOG(@"Success Restore CheckItems");
                 } else {
+                    _isDownloadedCheckItem = NO;
                     DEBUGLOG(@"Can't Restore CheckItems:%@", error.localizedDescription);
                 }
-                _isDownloadedCheckItem = YES;
-                
+
             }
 
         } else {

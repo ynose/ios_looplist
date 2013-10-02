@@ -7,8 +7,6 @@
 */
 
 "NewCheckListCaption" = "New List";
-"NewCheckCaption" = "New Item";
-"NewSectionCaption" = "New Group";
 
 
 /* アラート・アクションシート */
@@ -56,22 +54,13 @@
 
 
 /* ----- チェックリスト フッター ----- */
-"CheckCompleteButtonCaption" = "Complete";
-"CheckListDetailButtonCaption" = "Edit List....";
 "actionCheckComplete" = "Complete";
 
 
 /* ----- リスト詳細画面 ----- */
-/* プレースホルダ */
-"ListTitlePlaceholder" = "Title";
-"GroupTitlePlaceholder" = "Group";
 
 /* セクション */
-"SectionCaptiom" = "Group";
 "AddSection" = "Add";
-
-/* Evernoteに保存 */
-"SaveToEvernoteCaption" = "Save to Evernote";
 
 /* チェックリスト作成日 */
 "CreateDate" = "Create: d.MMM.YYYY";
@@ -80,12 +69,8 @@
 "FinishCount" = "Checked: %d";
 "FinishDate" = "Last: %@";
 
-/* リスト削除ボタン */
-"DeleteCheckListCaption" = "Delete List";
-
 
 /* ----- チェックアイテム詳細画面 ----- */
-"MemoCaption" = "Memo";
 
 
 /* ----- 設定画面用 ----- */
@@ -93,28 +78,13 @@
 "Setting-AlertProVersionMessage" = "Pro version only";
 "Setting-AlertProVersionPurchase" = "Purchase";
 
-/* 設定-チェックリスト */
-"SettingSection-CheckList" = "Check List";
-/* 設定-リストを追加 */
-"Setting-AddCheckList" = "Add List";
-/* 設定-Evernoteアカウント */
-"Setting-EvernoteAccount" = "Evernote Account";
 /* 設定-Evernoteアカウント-サインイン済み */
 "Setting-EvernoteAccount-Signed" = "Signed";
 /* 設定-Evernoteアカウント-サインアウト済み */
 "Setting-EvernoteAccount-SignOut" = "Sign out";
 
 
-/* 設定-iCLoud */
-"SettingSection-iCloud" = "iCloud";
-/* 設定-iCLoud-Backup & Restore */
-"Setting-iCloud" = "Backup & Restore";
 
-
-/* 設定-購入 */
-"SettingSection-InAppPurchase" = "Purchase";
-/* 設定-購入-TapMailer Pro */
-"Setting-InAppPurchase" = "%@ Pro";
 /* 設定-購入-未購入 */
 "Setting-InAppPurchase-NotYet" = "Not Yet";
 /* 設定-購入-購入済み */
@@ -146,7 +116,6 @@
 
 
 /* ----- iCloudバックアップ画面用 ----- */
-"titleiCloud" = "iCloud";
 "iCloud-Backup-Footer" = "Last backup:%@";
 "iCloud-Restore-Footer" = "\n\nBackup to iCloud.
 You can also restore the device to the same iCloud account(Apple ID).";

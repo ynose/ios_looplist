@@ -60,7 +60,7 @@
     self.colorLabelButton.colorLabelIndex = self.checkItem.colorLabelIndex;
     [self.colorLabelButton setTitle:self.numberLabel.text forState:UIControlStateNormal];
 
-    self.captionTextField.placeholder = LSTR(@"NewCheckCaption");
+//    self.captionTextField.placeholder = LSTR(@"NewCheckCaption");
 }
 
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated

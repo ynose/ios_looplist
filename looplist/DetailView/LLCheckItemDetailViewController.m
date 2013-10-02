@@ -41,7 +41,6 @@
 
 
     // リストタイトル
-    self.captionTextField.placeholder = LSTR(@"NewCheckCaption");
     self.captionTextField.text = self.checkItem.caption;
 
 
@@ -55,7 +54,6 @@
 
 
     // メモ
-    self.memoLabel.text = LSTR(@"MemoCaption");
     self.memoTextView.text = self.checkItem.memo;
     [self.memoTextView setEditable:NO];
 

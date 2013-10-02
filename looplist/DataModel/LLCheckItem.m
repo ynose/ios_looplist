@@ -17,7 +17,7 @@
         return nil;
     }
 
-    self.caption = nil;//LSTR(@"NewCheckCaption");
+    self.caption = nil;
     self.checkedDate = nil;
     self.memo = nil;
     self.colorLabelIndex = 0;

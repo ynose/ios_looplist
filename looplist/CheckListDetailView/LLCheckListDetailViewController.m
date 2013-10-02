@@ -37,7 +37,7 @@
 
     // キャプション編集テキストフィールド
     self.captionTextField.delegate = self;
-    self.captionTextField.placeholder = LSTR(@"ListTitlePlaceholder");
+//    self.captionTextField.placeholder = LSTR(@"ListTitlePlaceholder");
     self.captionTextField.text = self.checkList.caption;
 
     // セクション編集テーブル
@@ -50,7 +50,6 @@
 
     // Save to Evernote ***Pro版限定***
     if (![ProductManager isAppPro]) {
-//        self.saveToEvernoteLabel.text = LSTR(@"SaveToEvernoteCaption");
         self.saveToEvernoteSwitch.on = self.checkList.saveToEvernote;
         self.saveToEvernoteLabel.hidden = YES;
         self.saveToEvernoteSwitch.hidden = YES;
@@ -63,9 +62,6 @@
         self.createDateLabel.text = @"";
     }
     self.finishCountLabel.text = [NSString stringWithFormat:LSTR(@"FinishCount"), self.checkList.finishCount];
-
-    // 削除ボタン
-//    [self.deleteButton setTitle:LSTR(@"DeleteCheckListCaption") forState:UIControlStateNormal];
 
     // スクロールビューの調整
     self.scrollView.alwaysBounceVertical = YES;

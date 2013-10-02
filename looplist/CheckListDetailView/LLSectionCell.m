@@ -20,7 +20,6 @@
 
     self.textField.delegate = self;
     self.textField.text = self.checkListSection.caption;
-    self.textField.placeholder = LSTR(@"GroupTitlePlaceholder");
 }
 
 #pragma mark - UITextFieldDelegate
