@@ -132,6 +132,8 @@
 		8E88E67017F1B85A00C9E69A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E88E66D17F1B85A00C9E69A /* SVProgressHUD.bundle */; };
 		8E88E67117F1B85A00C9E69A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E66F17F1B85A00C9E69A /* SVProgressHUD.m */; };
 		8E8D08BA17F3F4BD00C9DAC8 /* InAppPurchase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E8D08B817F3F4BD00C9DAC8 /* InAppPurchase.plist */; };
+		8ECD7E3E17FCC91F0071B281 /* LLRootViewController+TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD7E3D17FCC91F0071B281 /* LLRootViewController+TableView.m */; };
+		8ECD7E4117FCD5740071B281 /* UIView+KeyboardNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD7E4017FCD5740071B281 /* UIView+KeyboardNotification.m */; };
 		8ECF983C17F2EE3B0097838A /* LLTouchScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF983917F2EE3B0097838A /* LLTouchScrollView.m */; };
 		8ECF983D17F2EE3B0097838A /* LLTouchTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF983B17F2EE3B0097838A /* LLTouchTextView.m */; };
 		8ECF984217F2EE6E0097838A /* UISettingSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF983F17F2EE6E0097838A /* UISettingSwitchCell.m */; };
@@ -141,6 +143,7 @@
 		8ED20A5F17FA309E0060C690 /* navigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */; };
 		8EE13E0817FB84970076F4E9 /* LLRootFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE13E0A17FB84970076F4E9 /* LLRootFooterView.xib */; };
 		8EE13E1117FB88830076F4E9 /* LLSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE13E1317FB88830076F4E9 /* LLSectionCell.xib */; };
+		8EE77D7617FD80B3000CB65D /* roundButtonBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE77D7517FD80B3000CB65D /* roundButtonBackground@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -375,7 +378,7 @@
 		8E8850B117F0FB290068B13F /* UIView+LayerEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayerEffects.h"; sourceTree = "<group>"; };
 		8E8850B217F0FB290068B13F /* UIView+LayerEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayerEffects.m"; sourceTree = "<group>"; };
 		8E88A54917FC4E70000DB515 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		8E88A54B17FC52BD000DB515 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/LLCheckItemCell.xib; sourceTree = "<group>"; };
+		8E88A54B17FC52BD000DB515 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LLCheckItemCell.xib; sourceTree = "<group>"; };
 		8E88A54F17FC52C9000DB515 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/LLCheckItemCell.xib; sourceTree = "<group>"; };
 		8E88E64517F1AF0200C9E69A /* MSCellAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCellAccessory.h; sourceTree = "<group>"; };
 		8E88E64617F1AF0200C9E69A /* MSCellAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCellAccessory.m; sourceTree = "<group>"; };
@@ -394,6 +397,9 @@
 		8E8D08B917F3F4BD00C9DAC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = looplist/Base.lproj/InAppPurchase.plist; sourceTree = SOURCE_ROOT; };
 		8E8D08BD17F3F5BE00C9DAC8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ja; path = looplist/ja.lproj/InAppPurchase.plist; sourceTree = SOURCE_ROOT; };
 		8E8D08C017F4005000C9DAC8 /* Looplist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Looplist.entitlements; sourceTree = "<group>"; };
+		8ECD7E3D17FCC91F0071B281 /* LLRootViewController+TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LLRootViewController+TableView.m"; sourceTree = "<group>"; };
+		8ECD7E3F17FCD5740071B281 /* UIView+KeyboardNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KeyboardNotification.h"; sourceTree = "<group>"; };
+		8ECD7E4017FCD5740071B281 /* UIView+KeyboardNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KeyboardNotification.m"; sourceTree = "<group>"; };
 		8ECF983817F2EE3B0097838A /* LLTouchScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = LLTouchScrollView.h; path = Classes/LLTouchScrollView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		8ECF983917F2EE3B0097838A /* LLTouchScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = LLTouchScrollView.m; path = Classes/LLTouchScrollView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8ECF983A17F2EE3B0097838A /* LLTouchTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = LLTouchTextView.h; path = Classes/LLTouchTextView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -411,6 +417,7 @@
 		8EE13E1017FB86370076F4E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LLRootFooterView.xib; sourceTree = "<group>"; };
 		8EE13E1217FB88830076F4E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LLSectionCell.xib; sourceTree = "<group>"; };
 		8EE13E1617FB888F0076F4E9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/LLSectionCell.xib; sourceTree = "<group>"; };
+		8EE77D7517FD80B3000CB65D /* roundButtonBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "roundButtonBackground@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -748,6 +755,7 @@
 		8E88375917F255D60063E811 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				8EE77D7517FD80B3000CB65D /* roundButtonBackground@2x.png */,
 				8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */,
 				8E88375A17F255D60063E811 /* checkmark@2x.png */,
 				8E88375B17F255D60063E811 /* settings-button.png */,
@@ -877,6 +885,8 @@
 				8E88507F17F0F0970068B13F /* UILabel+Align.m */,
 				8E88508017F0F0970068B13F /* UITableView+Extension.h */,
 				8E88508117F0F0970068B13F /* UITableView+Extension.m */,
+				8ECD7E3F17FCD5740071B281 /* UIView+KeyboardNotification.h */,
+				8ECD7E4017FCD5740071B281 /* UIView+KeyboardNotification.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -886,6 +896,7 @@
 			children = (
 				8E88509417F0F7A40068B13F /* LLRootViewController.h */,
 				8E88509517F0F7A40068B13F /* LLRootViewController.m */,
+				8ECD7E3D17FCC91F0071B281 /* LLRootViewController+TableView.m */,
 				8E88509717F0F7D60068B13F /* LLCheckItemCell.h */,
 				8E88509817F0F7D60068B13F /* LLCheckItemCell.m */,
 				8E88A54C17FC52BD000DB515 /* LLCheckItemCell.xib */,
@@ -1093,6 +1104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EE13E1117FB88830076F4E9 /* LLSectionCell.xib in Resources */,
+				8EE77D7617FD80B3000CB65D /* roundButtonBackground@2x.png in Resources */,
 				8E36134B17F3C772008CF7E1 /* enml.dtd in Resources */,
 				8E88E67017F1B85A00C9E69A /* SVProgressHUD.bundle in Resources */,
 				8E36135417F3C772008CF7E1 /* xhtml1-strict.dtd in Resources */,
@@ -1179,6 +1191,7 @@
 				8E36133017F3C772008CF7E1 /* TApplicationException.m in Sources */,
 				8E88508417F0F0970068B13F /* NSFileManager+Extension.m in Sources */,
 				8E36132717F3C772008CF7E1 /* NSString+XMLAdditions.m in Sources */,
+				8ECD7E4117FCD5740071B281 /* UIView+KeyboardNotification.m in Sources */,
 				8E88E64A17F1AF0200C9E69A /* UIView+AccessViewController.m in Sources */,
 				8E36136017F3C772008CF7E1 /* ENXMLWriter.m in Sources */,
 				8E36136517F3C772008CF7E1 /* NSDate+EDAMAdditions.m in Sources */,
@@ -1209,6 +1222,7 @@
 				8E36127E17F3C576008CF7E1 /* UIProductCell.m in Sources */,
 				8E36134217F3C772008CF7E1 /* ENApplicationBridge.m in Sources */,
 				8E36133617F3C772008CF7E1 /* EDAMLimits.m in Sources */,
+				8ECD7E3E17FCC91F0071B281 /* LLRootViewController+TableView.m in Sources */,
 				8E88508617F0F0970068B13F /* UILabel+Align.m in Sources */,
 				8E88506F17F0EF9A0068B13F /* LLCheckListManager+CheckItem.m in Sources */,
 				8E36134917F3C772008CF7E1 /* ENSearchRequest.m in Sources */,

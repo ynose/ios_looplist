@@ -16,12 +16,16 @@
 
 #import "UITableView+Extension.h"
 
+
+static NSString *kCellIdentifier = @"Cell";
+
 @interface LLRootViewController : UITableViewController <LLCheckItemCellDelegate, LLRootFooterViewDelegate,
                                                             LLCheckListDetailViewDelegate, LLDetailViewDelegate>
 {
     __strong UILongPressGestureRecognizer *_longPressRecognizer;
     __strong UILongPressGestureRecognizer *_longPressEditRecognizer;
 }
+
 
 @property (assign, nonatomic) NSUInteger checkListIndex;
 @property (strong, nonatomic) LLCheckList *checkList;
@@ -30,5 +34,14 @@
 -(void)refreshTabBarItem;
 -(NSIndexPath *)indexPathOfEndRow;
 -(NSMutableArray *)checkListSections;
+
+
+// LLRootViewController (TableView)で使用できるようにするため
+@property (assign, nonatomic) BOOL finishAction;
+@property (strong, nonatomic) NSIndexPath *editIndexPath;
+
+-(LLCheckListSection *)checkListSection:(NSInteger)section;
+-(LLCheckItem *)checkItemAtIndexPath:(NSIndexPath *)indexPath;
+-(NSIndexPath *)indexPathOfNextRow:(NSIndexPath *)indexPath;
 
 @end

@@ -15,7 +15,7 @@
 
 #import "LLCheckListManager.h"
 
-//#import "LLTabBarController.h"
+#import "LLTabBarController.h"
 #import "ProductManager.h"
 
 
@@ -81,11 +81,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // チェック日時を更新する
-//    UINavigationController *navigationController = (UINavigationController *)[self appTabBarController].selectedViewController;
-//    [((LLRootViewController *)navigationController.topViewController).tableView reloadVisibleRowsAfterDelay:0
-//                                                                                           withRowAnimation:UITableViewRowAnimationNone];
-
+    // Evernote API
     [[EvernoteSession sharedSession] handleDidBecomeActive];
 }
 
