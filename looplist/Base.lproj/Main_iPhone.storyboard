@@ -18,7 +18,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="180"/>
+            <point key="canvasLocation" x="-334" y="776"/>
         </scene>
         <!--App Setting View Controller - Settings-->
         <scene sceneID="fjO-hy-wnR">
@@ -319,7 +319,7 @@
                             <tableViewSection id="O9F-48-Bjc">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="RUM-Jv-5Nk" style="IBUITableViewCellStyleDefault" id="WLo-9I-XkG">
-                                        <rect key="frame" x="0.0" y="35" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WLo-9I-XkG" id="kFR-hF-fZ7">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -340,7 +340,7 @@
                             <tableViewSection id="LbP-hr-dxX">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="RjS-kN-VpQ" style="IBUITableViewCellStyleDefault" id="qgs-hN-GfF">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="163" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qgs-hN-GfF" id="VGY-pl-31g">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -456,7 +456,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWk-x1-Glz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="180"/>
+            <point key="canvasLocation" x="2261" y="776"/>
         </scene>
         <!--Check List Detail View Controller - Edit list-->
         <scene sceneID="EK9-Lz-uTv">
@@ -481,37 +481,27 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save to Evernote" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u3T-Fu-1CH">
-                                <rect key="frame" x="20" y="426" width="223" height="21"/>
+                                <rect key="frame" x="20" y="469" width="223" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="createDate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lA3-f9-pu1">
-                                <rect key="frame" x="20" y="455" width="280" height="21"/>
+                                <rect key="frame" x="20" y="498" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="finishCount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zcO-3C-ctS">
-                                <rect key="frame" x="20" y="484" width="280" height="21"/>
+                                <rect key="frame" x="20" y="527" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lrv-gk-X9R">
-                                <rect key="frame" x="20" y="518" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="Delete">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteTouchUp:" destination="87A-xJ-9nA" eventType="touchUpInside" id="kM4-Ep-Ehn"/>
-                                </connections>
-                            </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="aJM-vP-gZH">
-                                <rect key="frame" x="251" y="421" width="51" height="31"/>
+                                <rect key="frame" x="251" y="464" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grouping" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Il-u5-GEV">
@@ -523,18 +513,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </scrollView>
-                    <navigationItem key="navigationItem" title="Edit list" id="Gr5-Mt-nfN">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="As1-bu-na0">
-                            <connections>
-                                <action selector="doneAction:" destination="87A-xJ-9nA" id="fKv-Mo-Yp5"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Edit list" id="Gr5-Mt-nfN"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="captionTextField" destination="3YO-2V-d3F" id="1kb-S4-Thh"/>
                         <outlet property="createDateLabel" destination="lA3-f9-pu1" id="qBD-gZ-g3R"/>
-                        <outlet property="deleteButton" destination="lrv-gk-X9R" id="peW-8g-H7o"/>
                         <outlet property="finishCountLabel" destination="zcO-3C-ctS" id="6Zx-6j-xqi"/>
                         <outlet property="saveToEvernoteLabel" destination="u3T-Fu-1CH" id="4NN-4P-YUe"/>
                         <outlet property="saveToEvernoteSwitch" destination="aJM-vP-gZH" id="KnY-Sb-EUI"/>
@@ -545,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tYd-c6-Wmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="863"/>
+            <point key="canvasLocation" x="1801" y="1570"/>
         </scene>
         <!--Root View Controller - Root View Controller-->
         <scene sceneID="vzI-3b-y2E">
@@ -570,22 +553,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgQ-bZ-GE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1249" y="180"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="6et-OM-35w">
-            <objects>
-                <navigationController storyboardIdentifier="CheckListDetailViewController" definesPresentationContext="YES" id="t0u-al-v5I" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3q1-M4-ZGX">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="87A-xJ-9nA" kind="relationship" relationship="rootViewController" id="xeF-8a-DJv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mzn-lP-H3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1249" y="863"/>
+            <point key="canvasLocation" x="1801" y="776"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ax9-2L-5PA">
@@ -600,7 +568,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Phh-Kf-yGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527" y="180"/>
+            <point key="canvasLocation" x="132" y="776"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -13,7 +13,7 @@
 
 @class LLRootViewController;
 
-@interface LLTabBarController : UITabBarController //  <LLCheckListDetailDelegate>
+@interface LLTabBarController : UITabBarController
 
 -(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectRootViewController:(LLRootViewController *)rootViewController;
 

@@ -812,7 +812,6 @@
 				8ECCA1591802BEFD00A0BA8D /* TabBarController */,
 				8E36126817F3C576008CF7E1 /* AppSettingView */,
 				8E88509317F0F7A40068B13F /* RootView */,
-				8E88E64F17F1B40100C9E69A /* CheckListDetailView */,
 				8E88506317F0EF9A0068B13F /* DataModel */,
 				8E8850A917F0FA010068B13F /* Classes */,
 				8E88503E17F0EB340068B13F /* Images.xcassets */,
@@ -1004,6 +1003,7 @@
 			children = (
 				8E8C146517FE29AE0067995E /* LLCheckListManageViewController.h */,
 				8E8C146617FE29AE0067995E /* LLCheckListManageViewController.m */,
+				8E88E64F17F1B40100C9E69A /* CheckListDetailView */,
 			);
 			name = CheckListManageView;
 			sourceTree = "<group>";

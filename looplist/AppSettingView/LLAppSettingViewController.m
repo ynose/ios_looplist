@@ -123,37 +123,6 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
     }
 }
 
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [tableView deselectSelectedRow:YES];
-//
-//    switch (indexPath.section) {
-//        case 0:
-//            switch (indexPath.row) {
-//                case 0:
-//                {
-//                    // リスト追加 ***Pro版限定***
-//                    // リスト数の上限を超えていなければ追加可能
-//                    NSInteger checkListCount = [[LLCheckListManager sharedManager].arrayCheckLists count];
-//                    if ([self showAlertAppPro] && checkListCount < MAX_CHECKLIST) {
-//                        [self dismissViewControllerAnimated:YES completion:^{
-//                            if ([self.delegate respondsToSelector:@selector(appSettingViewControllerDidAddCheckList:)]) {
-//                                [self.delegate appSettingViewControllerDidAddCheckList:self];
-//                            }
-//                        }];
-//                    }
-//                }
-//                break;
-//                    
-//                default:
-//                    break;
-//            }
-//            break;
-//
-//        default:
-//            break;
-//    }
-//}
 
 #pragma mark - 完了ボタン
 - (IBAction)doneAction:(id)sender
@@ -186,8 +155,8 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 {
     [self.navigationController popViewControllerAnimated:YES];
 
-    if ([self.delegate respondsToSelector:@selector(appSettingViewControllerDidRestoreCheckList:)]) {
-        [self.delegate appSettingViewControllerDidRestoreCheckList:self];
+    if ([self.delegate respondsToSelector:@selector(appSettingViewControllerRefreshCheckList:)]) {
+        [self.delegate appSettingViewControllerRefreshCheckList:self];
     }
 }
 

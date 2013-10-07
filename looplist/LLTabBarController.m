@@ -47,6 +47,8 @@
 #pragma mark 全タブ内のビューコントローラを再構築
 -(void)refreshViewControllers
 {
+//    self.viewControllers = nil;     // 一旦すべて削除しないとMoreに削除したビューが残ってしまう
+
     // チェックリスト数分のタブを作成する
     NSMutableArray *viewControllers = [NSMutableArray array];
     for (NSInteger index = 0; index < MIN([[LLCheckListManager sharedManager].arrayCheckLists count], SHOWLIST_COUNT); index++) {
@@ -62,7 +64,6 @@
 
         [viewControllers addObject:navigationController];
     }
-    self.viewControllers = nil;     // 一旦すべて削除しないとMoreに削除したビューが残ってしまう
     [self setViewControllers:viewControllers];
 
     // Pro版のみタブバーを表示する
@@ -134,43 +135,5 @@
     // タブバーに反映する
     [self refreshViewControllers];
 }
-
-// チェックリスト追加ボタン
-//-(void)appSettingViewControllerDidAddCheckList:(id)sender
-//{
-//    // チェックリストを新規追加
-//    NSInteger insertIndex = [[LLCheckListManager sharedManager] addObject:[[LLCheckList alloc] initWithCheckItemsFileName]];
-//    [[LLCheckListManager sharedManager] saveCheckLists];
-//    [[LLCheckListManager sharedManager] saveCheckItems];
-//
-//    // タブバーに反映する
-//    [self refreshViewControllers];
-//    [self setSelectedIndex:insertIndex];
-//
-//    // 追加したら編集モードにする
-//    UINavigationController *navController = (UINavigationController *)self.selectedViewController;
-//    LLRootViewController *rootViewController = (LLRootViewController *)navController.topViewController;
-//    [rootViewController setEditing:YES];
-//}
-
--(void)appSettingViewControllerDidRestoreCheckList:(id)sender
-{
-    // タブバーに反映する
-    [self refreshViewControllers];
-}
-
-//#pragma mark チェックリスト削除ボタン
-//-(void)deleteCheckListAtIndex:(NSInteger)checkListIndex
-//{
-//    [self dismissViewControllerAnimated:YES completion:^{
-//        [[LLCheckListManager sharedManager] removeCheckList:checkListIndex];
-//        [[LLCheckListManager sharedManager] saveCheckLists];
-//        [[LLCheckListManager sharedManager] saveCheckItems];
-//
-//        [self refreshViewControllers];
-//        [self setSelectedIndex:0];
-//    }];
-//}
-
 
 @end

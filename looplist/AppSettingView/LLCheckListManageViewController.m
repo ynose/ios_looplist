@@ -112,7 +112,7 @@ static NSString *kListCellIdentifier = @"Cell";
     return cell;
 }
 
-// セル選択
+#pragma mark セル選択
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.checkListIndex = ((indexPath.section == 0) ? 0 : [tableView numberOfRowsInSection:0]) + indexPath.row;
@@ -137,14 +137,14 @@ static NSString *kListCellIdentifier = @"Cell";
 
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
         navController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:LSTR(@"BackButtonCaption")
-                                                                                          style:UIBarButtonItemStyleBordered
+                                                                                          style:UIBarButtonItemStylePlain
                                                                                          target:self action:@selector(backAction:)];
 
         LLTabBarController *tabBarController = [LLTabBarController new];
         tabBarController.title = checkList.caption;
-
         tabBarController.viewControllers = @[navController];
 
+        // RootViewを表示
         [self.navigationController pushViewController:tabBarController animated:YES];
         [self.navigationController setNavigationBarHidden:YES animated:YES];
 
@@ -153,6 +153,7 @@ static NSString *kListCellIdentifier = @"Cell";
     }
 }
 
+// 通常モードはRootView用のBackBarButtonアクション
 -(void)backAction:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
@@ -278,11 +279,12 @@ static NSString *kListCellIdentifier = @"Cell";
 {
     // 変更内容を保存
     [[LLCheckListManager sharedManager] replaceCheckList:self.checkListIndex withObject:checkList];
-    [[LLCheckListManager sharedManager] saveCheckItemsInCheckList:self.checkListIndex];
     [[LLCheckListManager sharedManager] saveCheckLists];
 
     // 変更内容を画面に反映
     [self.tableView reloadData];
+
+    self.changeCheckList = YES;
 }
 
 @end

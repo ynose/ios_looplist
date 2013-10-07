@@ -479,39 +479,6 @@
     [self refreshTabBarItem];
 }
 
-//#pragma mark チェックリスト詳細ボタン
-//-(void)checklistDetailButtonTouchUp:(id)sender
-//{
-//    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-//    UINavigationController *navigationController = [storyBoard instantiateViewControllerWithIdentifier:@"CheckListDetailViewController"];
-//    LLCheckListDetailViewController *viewController = (LLCheckListDetailViewController *)navigationController.topViewController;
-//    viewController.delegate = self;
-//    viewController.checkListDetailDelegate = (LLTabBarController *)self.tabBarController;
-//    viewController.checkListIndex = self.checkListIndex;
-//    viewController.checkList = self.checkList;
-//    viewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//
-//    [self presentViewController:navigationController animated:YES completion:nil];
-//}
-
-
-//#pragma mark - ELCheckListDetailViewDelegate
-//#pragma mark チェックリスト詳細完了ボタン
-//-(void)saveCheckListDetail:(LLCheckList *)checkList
-//{
-//    // 変更内容を保存
-//    self.checkList = checkList;
-//    [[LLCheckListManager sharedManager] replaceCheckList:self.checkListIndex withObject:checkList];
-//    [[LLCheckListManager sharedManager] saveCheckItemsInCheckList:self.checkListIndex];
-//    [[LLCheckListManager sharedManager] saveCheckLists];
-//
-//    // 変更内容を画面に反映
-//    self.title = self.checkList.caption;
-//    [self.tableView reloadData];
-//
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
-
 
 #pragma mark - チェックアイテム詳細ビューを表示
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath

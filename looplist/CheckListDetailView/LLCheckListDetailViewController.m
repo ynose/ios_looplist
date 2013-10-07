@@ -26,7 +26,6 @@
 @property (weak, nonatomic) IBOutlet UISwitch *saveToEvernoteSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *createDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *finishCountLabel;
-@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @end
 
 @implementation LLCheckListDetailViewController
@@ -37,7 +36,6 @@
 
     // キャプション編集テキストフィールド
     self.captionTextField.delegate = self;
-//    self.captionTextField.placeholder = LSTR(@"ListTitlePlaceholder");
     self.captionTextField.text = self.checkList.caption;
 
     // セクション編集テーブル
@@ -49,8 +47,9 @@
     }
 
     // Save to Evernote ***Pro版限定***
-    if (![ProductManager isAppPro]) {
+    if ([ProductManager isAppPro]) {
         self.saveToEvernoteSwitch.on = self.checkList.saveToEvernote;
+    } else {
         self.saveToEvernoteLabel.hidden = YES;
         self.saveToEvernoteSwitch.hidden = YES;
     }
@@ -86,6 +85,7 @@
 {
     [super viewWillDisappear:animated];
 
+    // 変更内容を前画面に送る
     self.checkList.caption = self.captionTextField.text;
     self.checkList.saveToEvernote = self.saveToEvernoteSwitch.on;
 
@@ -120,19 +120,13 @@
 
 
     // 画面の下に配置させるために下のオブジェクトから順に位置決めする
-    // 削除ボタン
-    rect = self.deleteButton.frame;
-    rect.origin.y = MAX(self.view.frame.size.height - rect.size.height - 20,
+    // Finish Count
+    rect = self.finishCountLabel.frame;
+    rect.origin.y = MAX(self.view.frame.size.height - rect.size.height - 88,
                         CGRectGetMaxY(self.sectionTableView.frame)
                             + self.finishCountLabel.frame.size.height + 44
                             + self.createDateLabel.frame.size.height + 7
-                            + self.saveToEvernoteSwitch.frame.size.height + 44
-                            + 44);
-    self.deleteButton.frame = rect;
-
-    // Finish Count
-    rect = self.finishCountLabel.frame;
-    rect.origin.y = self.deleteButton.frame.origin.y - rect.size.height - 44;
+                            + self.saveToEvernoteSwitch.frame.size.height);
     self.finishCountLabel.frame = rect;
 
     // Create Date
@@ -144,7 +138,6 @@
     rect = self.saveToEvernoteSwitch.frame;
     rect.origin.y = self.createDateLabel.frame.origin.y - rect.size.height - 44;
     self.saveToEvernoteSwitch.frame = rect;
-
     CGPoint center = self.saveToEvernoteLabel.center;
     center.y = self.saveToEvernoteSwitch.center.y;
     self.saveToEvernoteLabel.center = center;
@@ -152,7 +145,7 @@
 
 
     // ビューContentSize(サイズ)
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, CGRectGetMaxY(self.deleteButton.frame) + 20);
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, CGRectGetMaxY(self.finishCountLabel.frame) + 20);
 }
 
 
@@ -218,40 +211,5 @@
     [textField resignFirstResponder];
     return YES;
 }
-
-
-#pragma mark - 完了ボタン
-- (IBAction)doneAction:(id)sender {
-    // 詳細情報を反映してRootViewに戻る
-    self.checkList.caption = self.captionTextField.text;
-    self.checkList.saveToEvernote = self.saveToEvernoteSwitch.on;
-
-    if ([self.delegate respondsToSelector:@selector(saveCheckListDetail:)]) {
-        [self.delegate saveCheckListDetail:self.checkList];
-    }
-}
-
-
-#pragma mark チェックリスト削除ボタン
-- (IBAction)deleteTouchUp:(id)sender
-{
-//    YNActionSheet *actionSheet = [[YNActionSheet alloc] init];
-//
-//    // 削除ボタン
-//    [actionSheet addButtonWithTitle:LSTR(@"actionDelete") withBlock:^(NSInteger buttonIndex) {
-//        if ([self.checkListDetailDelegate respondsToSelector:@selector(deleteCheckListAtIndex:)]) {
-//            [self.checkListDetailDelegate deleteCheckListAtIndex:self.checkListIndex];
-//        }
-//    }];
-//    actionSheet.destructiveButtonIndex =  [actionSheet numberOfButtons] - 1;
-//
-//    // キャンセルボタン
-//    // iPadではキャンセルボタンは表示されないがイベントは発生する
-//    [actionSheet addButtonWithTitle:LSTR(@"actionCancel") withBlock:nil];
-//    actionSheet.cancelButtonIndex =  [actionSheet numberOfButtons] - 1;
-//
-//    [actionSheet showInView:self.view];
-}
-
 
 @end

@@ -91,15 +91,6 @@ static NSString *kCellIdentifier = @"Cell";
     // 追加ボタンの上に新しいセクションを追加する
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self rowOfAddButtonCell] - 1 inSection:0];   DEBUGLOG_IndexPath(indexPath);
 
-//    [self.sectionTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft
-//                                 atScrollPosition:UITableViewScrollPositionNone animated:YES completion:^(BOOL finished) {
-//                                     [self.sectionTableView scrollToRowAtIndexPath:indexPath
-//                                                                  atScrollPosition:UITableViewScrollPositionNone animated:YES];
-//
-//                                     LLSectionCell *cell = (LLSectionCell *)[self.sectionTableView cellForRowAtIndexPath:indexPath];
-//                                     [cell becomeFirstResponder];
-//
-//                                 }];
     // 追加行にスクロールしてカーソルをセット
     [self.sectionTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     [self.sectionTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];

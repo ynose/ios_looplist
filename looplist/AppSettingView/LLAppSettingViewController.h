@@ -12,8 +12,6 @@
 @protocol AppSettingViewControllerDelegate <NSObject>
 @required
 - (void)appSettingViewControllerRefreshCheckList:(id)sender;
-//- (void)appSettingViewControllerDidAddCheckList:(id)sender;
-- (void)appSettingViewControllerDidRestoreCheckList:(id)sender;
 @end
 
 @class LLTabBarController;
