@@ -19,8 +19,7 @@
 
 static NSString *kCellIdentifier = @"Cell";
 
-@interface LLRootViewController : UITableViewController <LLCheckItemCellDelegate, LLRootFooterViewDelegate,
-                                                            LLCheckListDetailViewDelegate, LLDetailViewDelegate>
+@interface LLRootViewController : UITableViewController <LLCheckItemCellDelegate, LLRootFooterViewDelegate, LLDetailViewDelegate>
 {
     __strong UILongPressGestureRecognizer *_longPressRecognizer;
     __strong UILongPressGestureRecognizer *_longPressEditRecognizer;
@@ -30,6 +29,7 @@ static NSString *kCellIdentifier = @"Cell";
 @property (assign, nonatomic) NSUInteger checkListIndex;
 @property (strong, nonatomic) LLCheckList *checkList;
 @property (weak, nonatomic, readonly) NSMutableArray *checkItems;
+@property (assign, nonatomic) BOOL singleViewMode;
 
 -(void)refreshTabBarItem;
 -(NSIndexPath *)indexPathOfEndRow;

@@ -19,33 +19,30 @@
 #import "LLCheckListManager.h"
 #import "ProductManager.h"
 
+#import "LLCheckListManageViewController.h"
 #import "LLEvernoteAccountViewController.h"
 #import "iCloudViewController.h"
 #import "InAppPurchaseViewController.h"
 
 
 // Segue名の定義
+static NSString *kCheckListManageSegue = @"CheckListManageSegue";
 static NSString *kEvernoteAccountSegue = @"EvernoteAccountSegue";
 static NSString *kICloudSegueSegue = @"iCloudSegue";
 static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 
 
-@interface LLAppSettingViewController () <EvernoteAccountViewControllerDelegate, iCloudViewControllerDelegate,
-                                          inAppPurchaseViewControllerDelegate>
-@property (weak, nonatomic) IBOutlet UITableViewCell *addListButtonCell;
+@interface LLAppSettingViewController () <CheckListManageViewControllerDelegate, EvernoteAccountViewControllerDelegate,
+                                          iCloudViewControllerDelegate, inAppPurchaseViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UITableViewCell *checkListManageButtonCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *evernoteButtonCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *iCloudButtonCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *inAppPurchaseButtonCell;
+
+@property (nonatomic, assign) BOOL needRefreshCheckList;
 @end
 
 @implementation LLAppSettingViewController
-
--(void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    self.addListButtonCell.textLabel.textColor = UIColorMain;
-}
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -57,7 +54,7 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
     if ([ProductManager isAppPro]) {
         checkListMax = MAX_CHECKLIST;
     }
-    self.addListButtonCell.detailTextLabel.text = [NSString stringWithFormat:@"%d / %d", checkListCount, checkListMax];
+    self.checkListManageButtonCell.detailTextLabel.text = [NSString stringWithFormat:@"%d / %d", checkListCount, checkListMax];
 
     // Evernoteサインイン状態を表示
     EvernoteSession *session = [EvernoteSession sharedSession];
@@ -83,6 +80,13 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 {
     DEBUGLOG(@"shouldPerformSegueWithIdentifier:%@", identifier);
 
+    // リストの管理 ***Pro版限定***
+    if ([identifier isEqualToString:kCheckListManageSegue]) {
+        if (![self showAlertAppPro]) {
+            return NO;
+        }
+    }
+
     // Evernoteアカウント ***Pro版限定***
     if ([identifier isEqualToString:kEvernoteAccountSegue]) {
         if (![self showAlertAppPro]) {
@@ -98,6 +102,10 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     DEBUGLOG(@"prepareForSegue:%@", segue.identifier);
+
+    if ([segue.identifier isEqualToString:kCheckListManageSegue]) {
+        ((LLCheckListManageViewController *)segue.destinationViewController).delegate = self;
+    }
 
     // Evernoteアカウント
     if ([segue.identifier isEqualToString:kEvernoteAccountSegue]) {
@@ -115,41 +123,55 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
     }
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [tableView deselectSelectedRow:YES];
+//
+//    switch (indexPath.section) {
+//        case 0:
+//            switch (indexPath.row) {
+//                case 0:
+//                {
+//                    // リスト追加 ***Pro版限定***
+//                    // リスト数の上限を超えていなければ追加可能
+//                    NSInteger checkListCount = [[LLCheckListManager sharedManager].arrayCheckLists count];
+//                    if ([self showAlertAppPro] && checkListCount < MAX_CHECKLIST) {
+//                        [self dismissViewControllerAnimated:YES completion:^{
+//                            if ([self.delegate respondsToSelector:@selector(appSettingViewControllerDidAddCheckList:)]) {
+//                                [self.delegate appSettingViewControllerDidAddCheckList:self];
+//                            }
+//                        }];
+//                    }
+//                }
+//                break;
+//                    
+//                default:
+//                    break;
+//            }
+//            break;
+//
+//        default:
+//            break;
+//    }
+//}
+
+#pragma mark - 完了ボタン
+- (IBAction)doneAction:(id)sender
 {
-    [tableView deselectSelectedRow:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 
-    switch (indexPath.section) {
-        case 0:
-            switch (indexPath.row) {
-                case 0:
-                {
-                    // リスト追加 ***Pro版限定***
-                    // リスト数の上限を超えていなければ追加可能
-                    NSInteger checkListCount = [[LLCheckListManager sharedManager].arrayCheckLists count];
-                    if ([self showAlertAppPro] && checkListCount < MAX_CHECKLIST) {
-                        [self dismissViewControllerAnimated:YES completion:^{
-                            if ([self.delegate respondsToSelector:@selector(appSettingViewControllerDidAddCheckList:)]) {
-                                [self.delegate appSettingViewControllerDidAddCheckList:self];
-                            }
-                        }];
-                    }
-                }
-                break;
-                    
-                default:
-                    break;
-            }
-            break;
-
-        default:
-            break;
+    // チェックリストの編集あり
+    if (self.needRefreshCheckList) {
+        if ([self.delegate respondsToSelector:@selector(appSettingViewControllerRefreshCheckList:)]) {
+            [self.delegate appSettingViewControllerRefreshCheckList:self];
+        }
     }
 }
 
-#pragma mark - 完了ボタン
-- (IBAction)doneAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+#pragma mark - CheckListManageViewControllerDelegate
+-(void)checkListManageViewControllerChangeCheckList:(id)sender
+{
+    self.needRefreshCheckList = YES;
 }
 
 

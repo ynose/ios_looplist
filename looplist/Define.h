@@ -22,11 +22,16 @@
 
 // UserDefaultキー
 #define SETTING_ACTIVETAB @"ActiveTab"
+#define SETTING_SHOWTABS @"ShowTabs"
 #define SETTING_ICLOUD_AVAILABLE @"iCloudAvailable"
+
+#define SHOWLIST_MAX 5
+#define SHOWLIST_COUNT [[NSUserDefaults standardUserDefaults] integerForKey:SETTING_SHOWTABS]
 
 // カラー
 #define UIColorMain [UIColor colorWithRed:0.216 green:0.396 blue:0.078 alpha:1.000]
 #define UIColorButtonText [UIColor whiteColor]
+#define UIColorTitleMain [UIColor blackColor]
 
 #define UIColorCellUncheck [UIColor whiteColor]
 #define UIColorCellChecked [UIColor colorWithRed:0.902 green:0.902 blue:0.902 alpha:1.000]

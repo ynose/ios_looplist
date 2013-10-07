@@ -98,8 +98,11 @@
 {
     NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
 
-    // タブNo
+    // アクティブタブNo
     [defaults setObject:@0 forKey:SETTING_ACTIVETAB];
+    // 表示リスト数
+    [defaults setObject:@1 forKey:SETTING_SHOWTABS];
+
 
     // Pro版購入フラグ
     [defaults setObject:@"NO" forKey:[ProductManager settingKeyAppPro]];
@@ -121,6 +124,10 @@
     //    // TapMailer Proの機能を有効にする
     //    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:SETTING_TAPMAILER_PRO];
     //#endif
+
+//    // 表示タブ数リセット
+//    [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:SETTING_SHOWTABS];
+
 #ifdef RESET_INAPPPURCHASE
     [ProductManager setAppPro:NO];
 #endif
@@ -147,12 +154,14 @@
 -(void)setupAppearance
 {
     // ステータスバー
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 
     // ナビゲーションバー
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBar"] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setTintColor:UIColorButtonText];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColorButtonText}];
+//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBar"] forBarMetrics:UIBarMetricsDefault];
+//    [[UINavigationBar appearance] setTintColor:UIColorButtonText];
+//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColorButtonText}];
+    [[UINavigationBar appearance] setTintColor:UIColorMain];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColorTitleMain}];
 
     // タブバー
     [[UITabBar appearance] setTintColor:UIColorMain];

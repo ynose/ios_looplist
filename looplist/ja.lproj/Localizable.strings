@@ -79,6 +79,11 @@
 "Setting-AlertProVersionMessage" = "この機能を使うためにはPro版の購入が必要です。";
 "Setting-AlertProVersionPurchase" = "購入画面へ";
 
+/* 設定-リストの管理 */
+"Setting-CheckListManage-ShownList" = "表示";
+"Setting-CheckListManage-UnshowList" = "その他";
+"BackButtonCaption" = "戻る";
+
 /* 設定-Evernoteアカウント-サインイン済み */
 "Setting-EvernoteAccount-Signed" = "認証済み";
 /* 設定-Evernoteアカウント-サインアウト済み */

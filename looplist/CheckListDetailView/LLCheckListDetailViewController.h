@@ -15,9 +15,9 @@
 -(void)saveCheckListDetail:(LLCheckList *)checkList;
 @end
 
-@protocol LLCheckListDetailDelegate <NSObject>
--(void)deleteCheckListAtIndex:(NSInteger)checkListIndex;
-@end
+//@protocol LLCheckListDetailDelegate <NSObject>
+//-(void)deleteCheckListAtIndex:(NSInteger)checkListIndex;
+//@end
 
 @interface LLCheckListDetailViewController : UIViewController
 {
@@ -25,7 +25,7 @@
 }
 
 @property (weak, nonatomic) id<LLCheckListDetailViewDelegate> delegate;
-@property (weak, nonatomic) id<LLCheckListDetailDelegate> checkListDetailDelegate;
+//@property (weak, nonatomic) id<LLCheckListDetailDelegate> checkListDetailDelegate;
 @property (assign, nonatomic) NSUInteger checkListIndex;
 @property (copy, nonatomic) LLCheckList *checkList;
 

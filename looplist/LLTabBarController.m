@@ -13,6 +13,7 @@
 
 #import "Define.h"
 
+#import "ProductManager.h"
 #import "LLCheckListManager.h"
 
 
@@ -48,40 +49,39 @@
 {
     // チェックリスト数分のタブを作成する
     NSMutableArray *viewControllers = [NSMutableArray array];
-    for (NSInteger index = 0; index < [[LLCheckListManager sharedManager].arrayCheckLists count]; index++) {
+    for (NSInteger index = 0; index < MIN([[LLCheckListManager sharedManager].arrayCheckLists count], SHOWLIST_COUNT); index++) {
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
         
         UINavigationController *navigationController = [storyBoard instantiateViewControllerWithIdentifier:@"RootNavigationController"];
-        navigationController.tabBarItem.image = [UIImage imageNamed:@"tabbar-icon"];
-        navigationController.tabBarItem.tag = index;
 
+        LLCheckList *checkList = (LLCheckList *)[LLCheckListManager sharedManager].arrayCheckLists[index];
         LLRootViewController *rootViewController = (LLRootViewController *)navigationController.topViewController;
         rootViewController.checkListIndex = index;
-        rootViewController.checkList = (LLCheckList *)[LLCheckListManager sharedManager].arrayCheckLists[index];
+        rootViewController.checkList = checkList;
         [rootViewController refreshTabBarItem];
 
         [viewControllers addObject:navigationController];
     }
     self.viewControllers = nil;     // 一旦すべて削除しないとMoreに削除したビューが残ってしまう
     [self setViewControllers:viewControllers];
+
+    // Pro版のみタブバーを表示する
+    self.tabBar.hidden = ([ProductManager isAppPro]) ? NO : YES;
 }
 
 
 #pragma mark - タブ選択
 -(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-    DEBUGLOG(@"%@", [viewController class]);
-
-    // MoreViewControllerの場合は無視させる
-    if ([viewController class] != [UINavigationController class]) {
-        return YES;
-    }
-
-
     LLRootViewController *rootViewController = (LLRootViewController *)((UINavigationController *)viewController).visibleViewController;
 
+    return [self tabBarController:tabBarController shouldSelectRootViewController:rootViewController];
+}
+
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectRootViewController:(LLRootViewController *)rootViewController
+{
     // 同じタブをタップした場合は未チェック項目にスクロール
-    if (tabBarController.selectedViewController == viewController) {
+    if (tabBarController.selectedViewController == rootViewController) {
 
         // 一番上の未チェックアイテムを探す
         NSMutableArray *arraySections = [rootViewController checkListSections];
@@ -114,26 +114,6 @@
     }
 }
 
-#pragma mark タブの編集画面終了
--(void)tabBarController:(UITabBarController *)tabBarController willEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
-{
-    // カスタマイズしたタブの順序を保存する
-    NSMutableArray *arrayBeforeCheckLists = [[LLCheckListManager sharedManager].arrayCheckLists copy];
-
-    NSInteger index = 0;
-    for (UINavigationController *navController in viewControllers) {
-        DEBUGLOG(@"Tag = %d", navController.tabBarItem.tag);
-        LLCheckList *checkList = arrayBeforeCheckLists[navController.tabBarItem.tag];
-        [[LLCheckListManager sharedManager] replaceCheckList:index++ withObject:checkList];
-    }
-
-    [[LLCheckListManager sharedManager] saveCheckLists];
-    [[LLCheckListManager sharedManager] saveCheckItems];
-    [[LLCheckListManager sharedManager] loadCheckItems];
-
-    [self refreshViewControllers];
-    [self setSelectedIndex:0];
-}
 
 #pragma mark メニューボタン
 -(void)menuAction:(id)sender
@@ -149,23 +129,29 @@
 
 
 #pragma mark - AppSettingViewControllerDelegate
-// チェックリスト追加ボタン
--(void)appSettingViewControllerDidAddCheckList:(id)sender
+-(void)appSettingViewControllerRefreshCheckList:(id)sender
 {
-    // チェックリストを新規追加
-    NSInteger insertIndex = [[LLCheckListManager sharedManager] addObject:[[LLCheckList alloc] initWithCheckItemsFileName]];
-    [[LLCheckListManager sharedManager] saveCheckLists];
-    [[LLCheckListManager sharedManager] saveCheckItems];
-
     // タブバーに反映する
     [self refreshViewControllers];
-    [self setSelectedIndex:insertIndex];
-
-    // 追加したら編集モードにする
-    UINavigationController *navController = (UINavigationController *)self.selectedViewController;
-    LLRootViewController *rootViewController = (LLRootViewController *)navController.topViewController;
-    [rootViewController setEditing:YES];
 }
+
+// チェックリスト追加ボタン
+//-(void)appSettingViewControllerDidAddCheckList:(id)sender
+//{
+//    // チェックリストを新規追加
+//    NSInteger insertIndex = [[LLCheckListManager sharedManager] addObject:[[LLCheckList alloc] initWithCheckItemsFileName]];
+//    [[LLCheckListManager sharedManager] saveCheckLists];
+//    [[LLCheckListManager sharedManager] saveCheckItems];
+//
+//    // タブバーに反映する
+//    [self refreshViewControllers];
+//    [self setSelectedIndex:insertIndex];
+//
+//    // 追加したら編集モードにする
+//    UINavigationController *navController = (UINavigationController *)self.selectedViewController;
+//    LLRootViewController *rootViewController = (LLRootViewController *)navController.topViewController;
+//    [rootViewController setEditing:YES];
+//}
 
 -(void)appSettingViewControllerDidRestoreCheckList:(id)sender
 {
@@ -173,18 +159,18 @@
     [self refreshViewControllers];
 }
 
-#pragma mark チェックリスト削除ボタン
--(void)deleteCheckListAtIndex:(NSInteger)checkListIndex
-{
-    [self dismissViewControllerAnimated:YES completion:^{
-        [[LLCheckListManager sharedManager] removeCheckList:checkListIndex];
-        [[LLCheckListManager sharedManager] saveCheckLists];
-        [[LLCheckListManager sharedManager] saveCheckItems];
-
-        [self refreshViewControllers];
-        [self setSelectedIndex:0];
-    }];
-}
+//#pragma mark チェックリスト削除ボタン
+//-(void)deleteCheckListAtIndex:(NSInteger)checkListIndex
+//{
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        [[LLCheckListManager sharedManager] removeCheckList:checkListIndex];
+//        [[LLCheckListManager sharedManager] saveCheckLists];
+//        [[LLCheckListManager sharedManager] saveCheckItems];
+//
+//        [self refreshViewControllers];
+//        [self setSelectedIndex:0];
+//    }];
+//}
 
 
 @end

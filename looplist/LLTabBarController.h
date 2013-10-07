@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+
 #import "LLCheckListDetailViewController.h"
 
-@interface LLTabBarController : UITabBarController  <LLCheckListDetailDelegate>
+@class LLRootViewController;
+
+@interface LLTabBarController : UITabBarController //  <LLCheckListDetailDelegate>
+
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectRootViewController:(LLRootViewController *)rootViewController;
 
 -(void)refreshViewControllers;
 -(void)menuAction:(id)sender;

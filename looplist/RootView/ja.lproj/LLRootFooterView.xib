@@ -10,21 +10,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WRu-UM-KGR">
-                    <rect key="frame" x="20" y="31" width="280" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="リストの設定">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="checklistDetailButtonTouchUp:" destination="3" eventType="touchUpInside" id="2H1-LR-RcR"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="stb-Gu-VOt">
                     <rect key="frame" x="20" y="31" width="280" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="チェック完了"/>
+                    <state key="normal" title="チェック完了">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
                         <action selector="completeTouchUp:" destination="3" eventType="touchUpInside" id="eL8-nM-Z7s"/>
                     </connections>
@@ -36,7 +29,6 @@
             </accessibility>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="checklistDetailButton" destination="WRu-UM-KGR" id="H7F-Mh-5Iy"/>
                 <outlet property="completeSwitch" destination="stb-Gu-VOt" id="TgL-8X-eNI"/>
             </connections>
         </view>

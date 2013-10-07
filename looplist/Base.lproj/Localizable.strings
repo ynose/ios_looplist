@@ -78,6 +78,11 @@
 "Setting-AlertProVersionMessage" = "Pro version only";
 "Setting-AlertProVersionPurchase" = "Purchase";
 
+/* 設定-リストの管理 */
+"Setting-CheckListManage-ShownList" = "Show";
+"Setting-CheckListManage-UnshowList" = "Others";
+"BackButtonCaption" = "Back";
+
 /* 設定-Evernoteアカウント-サインイン済み */
 "Setting-EvernoteAccount-Signed" = "Signed";
 /* 設定-Evernoteアカウント-サインアウト済み */

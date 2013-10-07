@@ -82,6 +82,18 @@
                                                  name:UIKeyboardDidHideNotification object:nil];
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+    self.checkList.caption = self.captionTextField.text;
+    self.checkList.saveToEvernote = self.saveToEvernoteSwitch.on;
+
+    if ([self.delegate respondsToSelector:@selector(saveCheckListDetail:)]) {
+        [self.delegate saveCheckListDetail:self.checkList];
+    }
+}
+
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
@@ -223,22 +235,22 @@
 #pragma mark チェックリスト削除ボタン
 - (IBAction)deleteTouchUp:(id)sender
 {
-    YNActionSheet *actionSheet = [[YNActionSheet alloc] init];
-
-    // 削除ボタン
-    [actionSheet addButtonWithTitle:LSTR(@"actionDelete") withBlock:^(NSInteger buttonIndex) {
-        if ([self.checkListDetailDelegate respondsToSelector:@selector(deleteCheckListAtIndex:)]) {
-            [self.checkListDetailDelegate deleteCheckListAtIndex:self.checkListIndex];
-        }
-    }];
-    actionSheet.destructiveButtonIndex =  [actionSheet numberOfButtons] - 1;
-
-    // キャンセルボタン
-    // iPadではキャンセルボタンは表示されないがイベントは発生する
-    [actionSheet addButtonWithTitle:LSTR(@"actionCancel") withBlock:nil];
-    actionSheet.cancelButtonIndex =  [actionSheet numberOfButtons] - 1;
-
-    [actionSheet showInView:self.view];
+//    YNActionSheet *actionSheet = [[YNActionSheet alloc] init];
+//
+//    // 削除ボタン
+//    [actionSheet addButtonWithTitle:LSTR(@"actionDelete") withBlock:^(NSInteger buttonIndex) {
+//        if ([self.checkListDetailDelegate respondsToSelector:@selector(deleteCheckListAtIndex:)]) {
+//            [self.checkListDetailDelegate deleteCheckListAtIndex:self.checkListIndex];
+//        }
+//    }];
+//    actionSheet.destructiveButtonIndex =  [actionSheet numberOfButtons] - 1;
+//
+//    // キャンセルボタン
+//    // iPadではキャンセルボタンは表示されないがイベントは発生する
+//    [actionSheet addButtonWithTitle:LSTR(@"actionCancel") withBlock:nil];
+//    actionSheet.cancelButtonIndex =  [actionSheet numberOfButtons] - 1;
+//
+//    [actionSheet showInView:self.view];
 }
 
 
