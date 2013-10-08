@@ -165,6 +165,8 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 -(void)inAppPurchaseDone:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+
+    self.needRefreshCheckList = YES;
 }
 
 

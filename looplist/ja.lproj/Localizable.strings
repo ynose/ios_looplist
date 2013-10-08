@@ -59,15 +59,11 @@
 
 
 /* ----- リスト詳細画面 ----- */
-
 /* セクション */
 "AddSection" = "追加";
 
-/* チェックリスト作成日 */
-"CreateDate" = "作成日: YYYY年M月d日(E)";
-"FinishDate" = "前回: %@";
-
 /* チェックリスト完了回数 */
+"FinishDate" = "前回: %@";
 "FinishCount" = "チェック: %d回";
 
 
@@ -76,12 +72,12 @@
 
 /* ----- 設定画面用 ----- */
 "Setting-AlertProVersionTitle" = "Pro版限定機能";
-"Setting-AlertProVersionMessage" = "この機能を使うためにはPro版の購入が必要です。";
+"Setting-AlertProVersionMessage" = "この機能を使うためにはPro版への\nアップグレードが必要です。";
 "Setting-AlertProVersionPurchase" = "購入画面へ";
 
 /* 設定-リストの管理 */
 "Setting-CheckListManage-ShownList" = "表示";
-"Setting-CheckListManage-UnshowList" = "その他";
+"Setting-CheckListManage-UnshowList" = "非表示";
 "BackButtonCaption" = "戻る";
 
 /* 設定-Evernoteアカウント-サインイン済み */

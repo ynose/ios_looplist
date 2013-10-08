@@ -4,17 +4,25 @@
 <array>
 	<dict>
 		<key>feature</key>
-		<string>Add List</string>
+		<string>List management</string>
 		<key>description</key>
-		<string>Add List</string>
+		<string>Add more lists.</string>
 		<key>forsale</key>
 		<true/>
 	</dict>
 	<dict>
 		<key>feature</key>
-		<string>Grouping</string>
+		<string>Checklist History</string>
 		<key>description</key>
-		<string>Grouping</string>
+		<string>Checklist History to Evernote.</string>
+		<key>forsale</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>feature</key>
+		<string>Hide Ad</string>
+		<key>description</key>
+		<string>Hide Ad</string>
 		<key>forsale</key>
 		<true/>
 	</dict>

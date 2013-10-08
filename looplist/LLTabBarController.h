@@ -11,9 +11,14 @@
 
 #import "LLCheckListDetailViewController.h"
 
+#import "NADView.h"
+
+
 @class LLRootViewController;
 
 @interface LLTabBarController : UITabBarController
+
+@property (nonatomic, retain) NADView * nadView;
 
 -(void)refreshViewControllers;
 -(void)menuAction:(id)sender;

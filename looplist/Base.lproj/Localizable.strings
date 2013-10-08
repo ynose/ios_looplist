@@ -20,7 +20,7 @@
 "BeforeDay" = "%d day";
 "BeforeHour" = "%d hour";
 "BeforeMinute" = "%d min";
-"WithinMinute" = "one min";
+"WithinMinute" = "One min";
 "JustNow" = "Just Now";
 
 /* 今日 */
@@ -58,16 +58,12 @@
 
 
 /* ----- リスト詳細画面 ----- */
-
 /* セクション */
 "AddSection" = "Add";
 
-/* チェックリスト作成日 */
-"CreateDate" = "Create: d.MMM.YYYY";
-
 /* チェックリスト完了回数 */
-"FinishCount" = "Checked: %d";
 "FinishDate" = "Last: %@";
+"FinishCount" = "Checked: %d";
 
 
 /* ----- チェックアイテム詳細画面 ----- */
@@ -75,12 +71,12 @@
 
 /* ----- 設定画面用 ----- */
 "Setting-AlertProVersionTitle" = "";
-"Setting-AlertProVersionMessage" = "Pro version only";
+"Setting-AlertProVersionMessage" = "Pro version only.";
 "Setting-AlertProVersionPurchase" = "Purchase";
 
 /* 設定-リストの管理 */
-"Setting-CheckListManage-ShownList" = "Show";
-"Setting-CheckListManage-UnshowList" = "Others";
+"Setting-CheckListManage-ShownList" = "Include";
+"Setting-CheckListManage-UnshowList" = "Do not Include";
 "BackButtonCaption" = "Back";
 
 /* 設定-Evernoteアカウント-サインイン済み */

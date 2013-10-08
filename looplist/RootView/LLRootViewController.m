@@ -149,6 +149,12 @@
 {
     [super viewWillAppear:animated];
 
+    // Pro版のみタブバーを表示する
+    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+    tabBarController.tabBar.hidden = ([ProductManager isAppPro]) ? NO : YES;
+    tabBarController.nadView.hidden = ([ProductManager isAppPro]) ? YES : NO;
+
+
     // タブバッチの更新(moreViewControllerでの編集に反映させるためviewWillAppearで行う)
     [self refreshTabBarItem];
 
@@ -166,6 +172,16 @@
                                                           // チェック日時や文字サイズを更新する
                                                           [self.tableView reloadVisibleRowsAfterDelay:0 withRowAnimation:UITableViewRowAnimationNone];
                                                       }];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+    // Pro版のみタブバーを表示する
+    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+    tabBarController.nadView.hidden = YES;
+
 }
 
 -(void)viewDidAppear:(BOOL)animated

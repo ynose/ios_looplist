@@ -4,17 +4,25 @@
 <array>
 	<dict>
 		<key>feature</key>
-		<string>追加リスト</string>
+		<string>リストの管理</string>
 		<key>description</key>
-		<string>複数のリストを作ることができるようになります。</string>
+		<string>複数のリストを作成できるようになります。</string>
 		<key>forsale</key>
 		<true/>
 	</dict>
 	<dict>
 		<key>feature</key>
-		<string>グループ分け</string>
+		<string>チェック記録の保存</string>
 		<key>description</key>
-		<string>チェック項目をグループ分けすることができるようになります。</string>
+		<string>Evernoteにチェック記録を残すことができるようになります。</string>
+		<key>forsale</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>feature</key>
+		<string>広告の削除</string>
+		<key>description</key>
+		<string>広告を削除します。</string>
 		<key>forsale</key>
 		<true/>
 	</dict>

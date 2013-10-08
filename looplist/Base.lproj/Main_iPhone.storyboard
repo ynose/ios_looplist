@@ -292,7 +292,7 @@
                         <color key="tintColor" red="0.015686275440000001" green="0.68235296010000002" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ZZL-OS-cUt">
-                                <rect key="frame" x="0.0" y="55" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZZL-OS-cUt" id="skM-xd-Iyd">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>

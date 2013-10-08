@@ -338,7 +338,7 @@
 		8E88503017F0EB340068B13F /* LLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLAppDelegate.m; sourceTree = "<group>"; };
 		8E88503317F0EB340068B13F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		8E88503617F0EB340068B13F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		8E88503E17F0EB340068B13F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8E88503E17F0EB340068B13F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = looplist/Images.xcassets; sourceTree = "<group>"; };
 		8E88504417F0EB340068B13F /* looplistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = looplistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E88504517F0EB340068B13F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8E88504D17F0EB340068B13F /* looplistTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "looplistTests-Info.plist"; sourceTree = "<group>"; };
@@ -788,6 +788,7 @@
 			isa = PBXGroup;
 			children = (
 				8E88502617F0EB340068B13F /* looplist */,
+				8E88503E17F0EB340068B13F /* Images.xcassets */,
 				8E88504B17F0EB340068B13F /* looplistTests */,
 				8E88501F17F0EB340068B13F /* Frameworks */,
 				8E88501E17F0EB340068B13F /* Products */,
@@ -834,7 +835,6 @@
 				8E88509317F0F7A40068B13F /* RootView */,
 				8E88506317F0EF9A0068B13F /* DataModel */,
 				8E8850A917F0FA010068B13F /* Classes */,
-				8E88503E17F0EB340068B13F /* Images.xcassets */,
 				8E88507517F0F0970068B13F /* Category */,
 				8E88502717F0EB340068B13F /* Supporting Files */,
 			);
@@ -1470,16 +1470,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "looplist/looplist-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					_DEBUG,
-					_PROVERSION,
+					DEBUG,
+					PROVERSION,
 					_APPSTORE_SCREENSHOT,
-					LAUNCH_SCREENSHOT,
+					_LAUNCH_SCREENSHOT,
 					_RESET_INAPPPURCHASE,
 				);
 				HEADER_SEARCH_PATHS = (
@@ -1488,12 +1489,14 @@
 					"${SDKROOT}/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "looplist/looplist-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/yoshio/Documents/iOS\\ App/looplist/looplist/NendAd",
 				);
 				PRODUCT_NAME = Looplist;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1502,6 +1505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1513,12 +1517,14 @@
 					"${SDKROOT}/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "looplist/looplist-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/yoshio/Documents/iOS\\ App/looplist/looplist/NendAd",
 				);
 				PRODUCT_NAME = Looplist;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

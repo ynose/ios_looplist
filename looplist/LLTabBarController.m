@@ -17,8 +17,7 @@
 #import "LLCheckListManager.h"
 
 
-@interface LLTabBarController ()  <UITabBarControllerDelegate, AppSettingViewControllerDelegate>
-
+@interface LLTabBarController ()  <UITabBarControllerDelegate, AppSettingViewControllerDelegate, NADViewDelegate>
 @end
 
 @implementation LLTabBarController
@@ -33,15 +32,55 @@
     [self refreshViewControllers];
     [self setSelectedIndex:[[NSUserDefaults standardUserDefaults] integerForKey:SETTING_ACTIVETAB]];
 
-    [self.moreNavigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationBar"] forBarMetrics:UIBarMetricsDefault];
-    [self.moreNavigationController.navigationBar setTintColor:UIColorButtonText];
-    [self.moreNavigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColorButtonText}];
+    // 無料版のみ広告表示
+    if (![ProductManager isAppPro]) {
+        [self setupAd];
+    }
 }
 
-- (void)didReceiveMemoryWarning
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewWillAppear:animated];
+
+    // 広告の再開
+    [self.nadView resume];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+    // 広告の一時停止
+    [self.nadView pause];
+}
+
+-(void)setupAd
+{
+    // (2) NADView の作成
+    self.nadView = [[NADView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, 320, 50)];
+    // (3) ログ出力の指定
+    [self.nadView setIsOutputLog:NO];
+    // (4) set apiKey, spotId.
+#ifndef DEBUG
+    [self.nadView setNendID:@"1584498c8e4444d600ecb3725c630b1791b22aa0" spotID:@"96305"];
+#else
+    [self.nadView setNendID:@"a6eca9dd074372c898dd1df549301f277c53f2b9" spotID:@"3172"];  // 表示テスト用
+#endif
+    [self.nadView setDelegate:self]; //(5)
+    [self.nadView load]; //(6)
+    self.nadView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+    [self.view addSubview:self.nadView]; // 最初から表示する場合
+}
+
+-(void)nadViewDidFinishLoad:(NADView *)adView
+{
+    DEBUGLOG(@"delegate nadViewDidFinishLoad:");
+}
+
+-(void)dealloc
+{
+    [self.nadView setDelegate:nil]; // delegate に nil をセット
+    self.nadView = nil; // プロパティ経由で release、nil をセット
 }
 
 #pragma mark 全タブ内のビューコントローラを再構築
@@ -127,6 +166,12 @@
 {
     // タブバーに反映する
     [self refreshViewControllers];
+
+    // 無料版のみ広告表示
+    if ([ProductManager isAppPro]) {
+        [self.nadView setDelegate:nil]; // delegate に nil をセット
+        self.nadView = nil; // プロパティ経由で release、nil をセット
+    }
 }
 
 @end
