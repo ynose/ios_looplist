@@ -83,6 +83,7 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
     // リストの管理 ***Pro版限定***
     if ([identifier isEqualToString:kCheckListManageSegue]) {
         if (![self showAlertAppPro]) {
+            [self.tableView deselectCell:(UITableViewCell *)sender animated:YES];
             return NO;
         }
     }
@@ -90,10 +91,10 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
     // Evernoteアカウント ***Pro版限定***
     if ([identifier isEqualToString:kEvernoteAccountSegue]) {
         if (![self showAlertAppPro]) {
+            [self.tableView deselectCell:(UITableViewCell *)sender animated:YES];
             return NO;
         }
     }
-
 
     // その他は無条件にセル選択可能
     return YES;

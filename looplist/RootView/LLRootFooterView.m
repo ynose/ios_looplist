@@ -26,8 +26,8 @@
 {
     [super layoutSubviews];
 
-    self.completeSwitch.layer.backgroundColor = [UIColorMain CGColor];
     self.completeSwitch.layer.cornerRadius = 4.0;
+    self.completeSwitch.layer.backgroundColor = (self.editing) ? [UIColorMainDisable CGColor] : [UIColorMain CGColor];
 }
 
 -(void)setEditing:(BOOL)editing
@@ -36,6 +36,7 @@
 
     // 完了スイッチの有効無効を切り替える
     self.completeSwitch.enabled = !editing;
+    self.completeSwitch.layer.backgroundColor = (self.editing) ? [UIColorMainDisable CGColor] : [UIColorMain CGColor];
 }
 
 

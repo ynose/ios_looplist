@@ -70,9 +70,18 @@
 
 
     // ナビゲーションバーの設定
+    // 編集ボタンの作成
+#ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影
     self.navigationItem.rightBarButtonItem = [self editButtonItem];
+#else
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" "
+                                                                              style:UIBarButtonItemStylePlain
+                                                                             target:self
+                                                                             action:nil];     // 文字なし
+#endif
 
     // 設定ボタンの作成
+#ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影
     self.menuButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain
                                                       target:self.tabBarController
                                                       action:@selector(menuAction:)];
@@ -81,6 +90,7 @@
     } else {
         self.navigationItem.leftBarButtonItem = self.menuButton;
     }
+#endif
 
     // 追加[+]ボタンの作成
     self.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
@@ -95,8 +105,12 @@
     // 再利用セルのクラスを登録(dequeueReusableCellWithIdentifierで使う)
     [self.tableView registerNib:[UINib nibWithNibName:@"LLCheckItemCell" bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:kCellIdentifier];
+#ifdef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+#endif
 
     // ヘッダーの設定
+#ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     headerView.backgroundColor = [UIColor whiteColor];
     self.filterSegmentedControl = [[UISegmentedControl alloc] initWithItems:@[LSTR(@"AllList"), LSTR(@"UncheckedList")]];
@@ -114,12 +128,15 @@
     self.tableView.tableHeaderView = headerView;
     // 初期はヘッダーが隠れるようにする
     self.tableView.contentOffset = CGPointMake(0, self.tableView.tableHeaderView.frame.size.height);
+#endif
 
 
     // フッターの設定
+#ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影
     LLRootFooterView *footerView = [LLRootFooterView view];
     footerView.delegate = self;
     self.tableView.tableFooterView = footerView;
+#endif
 
     // 通常時と編集時のジェスチャー入れ替え
     [self exchangeGestureRecognizer:self.editing];
@@ -493,14 +510,6 @@
     detailViewController.delegate = self;
     detailViewController.checkItem = checkItem;
     detailViewController.sequenceNumber = [self.checkList sequenceOfCheckItem:checkItem];
-
-    if (self.singleViewMode) {
-//        self.navigationItem.title = checkItem.caption;
-//        self.tabBarController.navigationItem.rightBarButtonItem = nil;
-////        self.tabBarController.navigationItem.hidesBackButton = YES;
-//        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(backAction:)];
-//        self.tabBarController.navigationItem.backBarButtonItem = backButton;
-    }
 
     [self.navigationController pushViewController:detailViewController animated:YES];
 }

@@ -22,8 +22,12 @@ static CGFloat kSectionHeight = 24;
 #pragma mark セクション作成
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影
     DEBUGLOG(@"%d", [self.checkList.arraySections count]);
     return [self.checkList.arraySections count];
+#else
+    return 0;
+#endif
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section

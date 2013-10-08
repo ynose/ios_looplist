@@ -47,8 +47,6 @@
 #pragma mark 全タブ内のビューコントローラを再構築
 -(void)refreshViewControllers
 {
-//    self.viewControllers = nil;     // 一旦すべて削除しないとMoreに削除したビューが残ってしまう
-
     // チェックリスト数分のタブを作成する
     NSMutableArray *viewControllers = [NSMutableArray array];
     for (NSInteger index = 0; index < MIN([[LLCheckListManager sharedManager].arrayCheckLists count], SHOWLIST_COUNT); index++) {
@@ -76,13 +74,8 @@
 {
     LLRootViewController *rootViewController = (LLRootViewController *)((UINavigationController *)viewController).visibleViewController;
 
-    return [self tabBarController:tabBarController shouldSelectRootViewController:rootViewController];
-}
-
--(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectRootViewController:(LLRootViewController *)rootViewController
-{
     // 同じタブをタップした場合は未チェック項目にスクロール
-    if (tabBarController.selectedViewController == rootViewController) {
+    if (tabBarController.selectedViewController == viewController) {
 
         // 一番上の未チェックアイテムを探す
         NSMutableArray *arraySections = [rootViewController checkListSections];

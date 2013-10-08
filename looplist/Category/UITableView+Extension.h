@@ -14,6 +14,7 @@
 -(void)deleteRowsAtIndexPaths:(NSArray *)indexPaths duration:(NSTimeInterval)duration withRowAnimation:(UITableViewRowAnimation)animation completion:(void (^)(BOOL finished))completion;
 
 -(void)deselectSelectedRow:(BOOL)animated;
+-(void)deselectCell:(UITableViewCell *)cell animated:(BOOL)animated;
 //-(void)scrollToEndRowAtScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
 
 -(void)reloadDataAfterDelay:(NSTimeInterval)delay;

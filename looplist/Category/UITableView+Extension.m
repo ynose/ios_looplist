@@ -37,6 +37,11 @@
 {
     [self deselectRowAtIndexPath:[self indexPathForSelectedRow] animated:animated];
 }
+// 選択セルの選択解除
+-(void)deselectCell:(UITableViewCell *)cell animated:(BOOL)animated
+{
+    [self deselectRowAtIndexPath:[self indexPathForCell:cell] animated:animated];
+}
 
 // 最終セクションの最終行にスクロール
 -(void)scrollToEndRowAtScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated

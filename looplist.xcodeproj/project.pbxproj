@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E2D6F4C18043EDE0028E111 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2D6F4918043EDE0028E111 /* libNendAd.a */; };
+		8E2D6F4D18043EDE0028E111 /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8E2D6F4B18043EDE0028E111 /* NADView_readme.txt */; };
+		8E2D6F4F18043EFB0028E111 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2D6F4E18043EFB0028E111 /* AdSupport.framework */; };
 		8E36127817F3C576008CF7E1 /* LLAppSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E36126A17F3C576008CF7E1 /* LLAppSettingViewController.m */; };
 		8E36127917F3C576008CF7E1 /* LLEvernoteAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E36126C17F3C576008CF7E1 /* LLEvernoteAccountViewController.m */; };
 		8E36127A17F3C576008CF7E1 /* iCloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E36126E17F3C576008CF7E1 /* iCloudViewController.m */; };
@@ -157,6 +160,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E2D6F4918043EDE0028E111 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
+		8E2D6F4A18043EDE0028E111 /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
+		8E2D6F4B18043EDE0028E111 /* NADView_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NADView_readme.txt; sourceTree = "<group>"; };
+		8E2D6F4E18043EFB0028E111 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8E36126917F3C576008CF7E1 /* LLAppSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LLAppSettingViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		8E36126A17F3C576008CF7E1 /* LLAppSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LLAppSettingViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8E36126B17F3C576008CF7E1 /* LLEvernoteAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LLEvernoteAccountViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -426,9 +433,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E2D6F4F18043EFB0028E111 /* AdSupport.framework in Frameworks */,
 				8E36136D17F3CC88008CF7E1 /* StoreKit.framework in Frameworks */,
 				8E36136B17F3CC7F008CF7E1 /* Security.framework in Frameworks */,
 				8E36136917F3CC34008CF7E1 /* MobileCoreServices.framework in Frameworks */,
+				8E2D6F4C18043EDE0028E111 /* libNendAd.a in Frameworks */,
 				8E36136717F3CC15008CF7E1 /* libxml2.dylib in Frameworks */,
 				8E88502317F0EB340068B13F /* CoreGraphics.framework in Frameworks */,
 				8E88502517F0EB340068B13F /* UIKit.framework in Frameworks */,
@@ -449,6 +458,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E2D6F4818043EDE0028E111 /* NendAd */ = {
+			isa = PBXGroup;
+			children = (
+				8E2D6F4918043EDE0028E111 /* libNendAd.a */,
+				8E2D6F4A18043EDE0028E111 /* NADView.h */,
+				8E2D6F4B18043EDE0028E111 /* NADView_readme.txt */,
+			);
+			path = NendAd;
+			sourceTree = "<group>";
+		};
 		8E36126817F3C576008CF7E1 /* AppSettingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -787,6 +806,7 @@
 		8E88501F17F0EB340068B13F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E2D6F4E18043EFB0028E111 /* AdSupport.framework */,
 				8E36136C17F3CC88008CF7E1 /* StoreKit.framework */,
 				8E36136A17F3CC7F008CF7E1 /* Security.framework */,
 				8E36136817F3CC34008CF7E1 /* MobileCoreServices.framework */,
@@ -931,6 +951,7 @@
 		8E8850AC17F0FA5C0068B13F /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				8E2D6F4818043EDE0028E111 /* NendAd */,
 				8E36127F17F3C771008CF7E1 /* evernote-sdk-ios */,
 				8E88E66C17F1B85A00C9E69A /* SVProgressHUD */,
 				8E88E64417F1AF0200C9E69A /* MSCellAccessory */,
@@ -1124,6 +1145,7 @@
 				8EE13E1117FB88830076F4E9 /* LLSectionCell.xib in Resources */,
 				8E36134B17F3C772008CF7E1 /* enml.dtd in Resources */,
 				8E88E67017F1B85A00C9E69A /* SVProgressHUD.bundle in Resources */,
+				8E2D6F4D18043EDE0028E111 /* NADView_readme.txt in Resources */,
 				8E36135417F3C772008CF7E1 /* xhtml1-strict.dtd in Resources */,
 				8E36135317F3C772008CF7E1 /* xhtml-symbol.ent in Resources */,
 				8E88508E17F0F57C0068B13F /* Localizable.strings in Resources */,
@@ -1448,15 +1470,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "looplist/looplist-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					DEBUG,
-					PROVERSION,
+					_DEBUG,
+					_PROVERSION,
+					_APPSTORE_SCREENSHOT,
+					LAUNCH_SCREENSHOT,
+					_RESET_INAPPPURCHASE,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1464,6 +1488,10 @@
 					"${SDKROOT}/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "looplist/looplist-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/yoshio/Documents/iOS\\ App/looplist/looplist/NendAd",
+				);
 				PRODUCT_NAME = Looplist;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1474,7 +1502,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1486,6 +1513,10 @@
 					"${SDKROOT}/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "looplist/looplist-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/yoshio/Documents/iOS\\ App/looplist/looplist/NendAd",
+				);
 				PRODUCT_NAME = Looplist;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
