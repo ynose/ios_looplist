@@ -121,7 +121,6 @@
 		8E88508E17F0F57C0068B13F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E88509017F0F57C0068B13F /* Localizable.strings */; };
 		8E88509617F0F7A40068B13F /* LLRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88509517F0F7A40068B13F /* LLRootViewController.m */; };
 		8E88509A17F0F7D60068B13F /* LLCheckItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88509817F0F7D60068B13F /* LLCheckItemCell.m */; };
-		8E8850A417F0F80B0068B13F /* LLRootFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850A017F0F80B0068B13F /* LLRootFooterView.m */; };
 		8E8850A817F0F9F80068B13F /* LLColorLabelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850A717F0F9F80068B13F /* LLColorLabelButton.m */; };
 		8E8850B317F0FB290068B13F /* UIGlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850B017F0FB290068B13F /* UIGlossyButton.m */; };
 		8E8850B417F0FB290068B13F /* UIView+LayerEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850B217F0FB290068B13F /* UIView+LayerEffects.m */; };
@@ -145,7 +144,6 @@
 		8ECF984817F2EE910097838A /* YNActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984517F2EE910097838A /* YNActionSheet.m */; };
 		8ECF984917F2EE910097838A /* YNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984717F2EE910097838A /* YNAlertView.m */; };
 		8ED20A5F17FA309E0060C690 /* navigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */; };
-		8EE13E0817FB84970076F4E9 /* LLRootFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE13E0A17FB84970076F4E9 /* LLRootFooterView.xib */; };
 		8EE13E1117FB88830076F4E9 /* LLSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE13E1317FB88830076F4E9 /* LLSectionCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -376,8 +374,6 @@
 		8E88509517F0F7A40068B13F /* LLRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLRootViewController.m; sourceTree = "<group>"; };
 		8E88509717F0F7D60068B13F /* LLCheckItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LLCheckItemCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		8E88509817F0F7D60068B13F /* LLCheckItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LLCheckItemCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		8E88509F17F0F80B0068B13F /* LLRootFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LLRootFooterView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		8E8850A017F0F80B0068B13F /* LLRootFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LLRootFooterView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8E8850A617F0F9F80068B13F /* LLColorLabelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = LLColorLabelButton.h; path = Classes/LLColorLabelButton.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		8E8850A717F0F9F80068B13F /* LLColorLabelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = LLColorLabelButton.m; path = Classes/LLColorLabelButton.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8E8850AF17F0FB290068B13F /* UIGlossyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGlossyButton.h; sourceTree = "<group>"; };
@@ -386,7 +382,6 @@
 		8E8850B217F0FB290068B13F /* UIView+LayerEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayerEffects.m"; sourceTree = "<group>"; };
 		8E88A54917FC4E70000DB515 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		8E88A54B17FC52BD000DB515 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LLCheckItemCell.xib; sourceTree = "<group>"; };
-		8E88A54F17FC52C9000DB515 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/LLCheckItemCell.xib; sourceTree = "<group>"; };
 		8E88E64517F1AF0200C9E69A /* MSCellAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCellAccessory.h; sourceTree = "<group>"; };
 		8E88E64617F1AF0200C9E69A /* MSCellAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCellAccessory.m; sourceTree = "<group>"; };
 		8E88E64717F1AF0200C9E69A /* UIView+AccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AccessViewController.h"; sourceTree = "<group>"; };
@@ -421,9 +416,8 @@
 		8ECF984517F2EE910097838A /* YNActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YNActionSheet.m; path = Classes/YNActionSheet.m; sourceTree = "<group>"; };
 		8ECF984617F2EE910097838A /* YNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNAlertView.h; path = Classes/YNAlertView.h; sourceTree = "<group>"; };
 		8ECF984717F2EE910097838A /* YNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YNAlertView.m; path = Classes/YNAlertView.m; sourceTree = "<group>"; };
+		8ECFCA3618056C52003F6B11 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LLCheckItemCell.strings; sourceTree = "<group>"; };
 		8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationBar@2x.png"; sourceTree = "<group>"; };
-		8EE13E0D17FB84B40076F4E9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/LLRootFooterView.xib; sourceTree = "<group>"; };
-		8EE13E1017FB86370076F4E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LLRootFooterView.xib; sourceTree = "<group>"; };
 		8EE13E1217FB88830076F4E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LLSectionCell.xib; sourceTree = "<group>"; };
 		8EE13E1617FB888F0076F4E9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/LLSectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -916,12 +910,7 @@
 				8E88509417F0F7A40068B13F /* LLRootViewController.h */,
 				8E88509517F0F7A40068B13F /* LLRootViewController.m */,
 				8ECD7E3D17FCC91F0071B281 /* LLRootViewController+TableView.m */,
-				8E88509717F0F7D60068B13F /* LLCheckItemCell.h */,
-				8E88509817F0F7D60068B13F /* LLCheckItemCell.m */,
-				8E88A54C17FC52BD000DB515 /* LLCheckItemCell.xib */,
-				8E88509F17F0F80B0068B13F /* LLRootFooterView.h */,
-				8E8850A017F0F80B0068B13F /* LLRootFooterView.m */,
-				8EE13E0A17FB84970076F4E9 /* LLRootFooterView.xib */,
+				8EB4512D1804C87C000C49D3 /* CheckItemCell */,
 				8E88E64B17F1B36100C9E69A /* DetailView */,
 			);
 			path = RootView;
@@ -1047,6 +1036,16 @@
 			name = EvernoteAccountView;
 			sourceTree = "<group>";
 		};
+		8EB4512D1804C87C000C49D3 /* CheckItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				8E88509717F0F7D60068B13F /* LLCheckItemCell.h */,
+				8E88509817F0F7D60068B13F /* LLCheckItemCell.m */,
+				8E88A54C17FC52BD000DB515 /* LLCheckItemCell.xib */,
+			);
+			name = CheckItemCell;
+			sourceTree = "<group>";
+		};
 		8ECCA1591802BEFD00A0BA8D /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1150,7 +1149,6 @@
 				8E36135317F3C772008CF7E1 /* xhtml-symbol.ent in Resources */,
 				8E88508E17F0F57C0068B13F /* Localizable.strings in Resources */,
 				8E36135217F3C772008CF7E1 /* xhtml-special.ent in Resources */,
-				8EE13E0817FB84970076F4E9 /* LLRootFooterView.xib in Resources */,
 				8E36134A17F3C772008CF7E1 /* .htaccess in Resources */,
 				8E36134E17F3C772008CF7E1 /* index.php in Resources */,
 				8E36135117F3C772008CF7E1 /* xhtml-lat1.ent in Resources */,
@@ -1195,7 +1193,6 @@
 				8E8850B317F0FB290068B13F /* UIGlossyButton.m in Sources */,
 				8ECF984317F2EE6E0097838A /* UISimpleSwitchCell.m in Sources */,
 				8E36133B17F3C772008CF7E1 /* ENConstants.m in Sources */,
-				8E8850A417F0F80B0068B13F /* LLRootFooterView.m in Sources */,
 				8E36134617F3C772008CF7E1 /* ENNoteImportRequest.m in Sources */,
 				8E36132517F3C772008CF7E1 /* KSXMLWriter.m in Sources */,
 				8E8850A817F0F9F80068B13F /* LLColorLabelButton.m in Sources */,
@@ -1356,7 +1353,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8E88A54B17FC52BD000DB515 /* Base */,
-				8E88A54F17FC52C9000DB515 /* ja */,
+				8ECFCA3618056C52003F6B11 /* ja */,
 			);
 			name = LLCheckItemCell.xib;
 			sourceTree = "<group>";
@@ -1369,15 +1366,6 @@
 			);
 			name = InAppPurchase.plist;
 			path = RootView;
-			sourceTree = "<group>";
-		};
-		8EE13E0A17FB84970076F4E9 /* LLRootFooterView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8EE13E0D17FB84B40076F4E9 /* ja */,
-				8EE13E1017FB86370076F4E9 /* en */,
-			);
-			name = LLRootFooterView.xib;
 			sourceTree = "<group>";
 		};
 		8EE13E1317FB88830076F4E9 /* LLSectionCell.xib */ = {
@@ -1469,6 +1457,7 @@
 		8E88505617F0EB340068B13F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;
@@ -1504,6 +1493,7 @@
 		8E88505717F0EB340068B13F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;

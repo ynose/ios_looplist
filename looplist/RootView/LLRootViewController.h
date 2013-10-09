@@ -10,7 +10,6 @@
 
 #import "LLCheckList.h"
 #import "LLCheckItemCell.h"
-#import "LLRootFooterView.h"
 #import "LLCheckItemDetailViewController.h"
 #import "LLCheckListDetailViewController.h"
 
@@ -19,7 +18,7 @@
 
 static NSString *kCellIdentifier = @"Cell";
 
-@interface LLRootViewController : UITableViewController <LLCheckItemCellDelegate, LLRootFooterViewDelegate, LLDetailViewDelegate>
+@interface LLRootViewController : UITableViewController <LLCheckItemCellDelegate, LLDetailViewDelegate>
 {
     __strong UILongPressGestureRecognizer *_longPressRecognizer;
     __strong UILongPressGestureRecognizer *_longPressEditRecognizer;

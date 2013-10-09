@@ -15,7 +15,6 @@
 #import "LLCheckList.h"
 
 #import "LLCheckItemCell.h"
-#import "LLRootFooterView.h"
 #import "LLTabBarController.h"
 #import "YNActionSheet.h"
 #import "UIView+KeyboardNotification.h"
@@ -34,6 +33,9 @@
 @property (strong, nonatomic) UISegmentedControl *filterSegmentedControl;
 @property (strong, nonatomic) NSIndexPath *indexPathOfSelected;
 @property (strong, nonatomic) UITextField *dummyTextField;
+@property (weak, nonatomic) IBOutlet UIView *footerView;
+@property (weak, nonatomic) IBOutlet UIButton *completeButton;
+
 @end
 
 @implementation LLRootViewController
@@ -115,7 +117,7 @@
     headerView.backgroundColor = [UIColor whiteColor];
     self.filterSegmentedControl = [[UISegmentedControl alloc] initWithItems:@[LSTR(@"AllList"), LSTR(@"UncheckedList")]];
     CGRect frame = self.filterSegmentedControl.frame;
-    frame.size.width = headerView.frame.size.width - 44;
+    frame.size.width = 280;
     self.filterSegmentedControl.frame = frame;
     self.filterSegmentedControl.center = headerView.center;
     self.filterSegmentedControl.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
@@ -133,9 +135,9 @@
 
     // フッターの設定
 #ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影
-    LLRootFooterView *footerView = [LLRootFooterView view];
-    footerView.delegate = self;
-    self.tableView.tableFooterView = footerView;
+    self.tableView.tableFooterView = self.footerView;
+    self.completeButton.layer.cornerRadius = 4.0;
+    self.completeButton.layer.backgroundColor = [UIColorMain CGColor];
 #endif
 
     // 通常時と編集時のジェスチャー入れ替え
@@ -246,7 +248,9 @@
     }
 
     // フッタービューの編集モード
-    [(LLRootFooterView *)self.tableView.tableFooterView setEditing:editing];
+    // 完了スイッチの有効無効を切り替える
+    self.completeButton.enabled = !editing;
+    self.completeButton.layer.backgroundColor = (self.editing) ? [UIColorMainDisable CGColor] : [UIColorMain CGColor];
 
     // 通常時と編集時のジェスチャー入れ替え
     [self exchangeGestureRecognizer:editing];
@@ -443,8 +447,7 @@
 
 #pragma mark - ELRootFooterViewDelegate
 #pragma mark チェック完了
--(void)completeCheckList:(UIControl *)sender
-{
+- (IBAction)completeTouchUp:(id)sender {
     YNActionSheet *actionSheet = [YNActionSheet new];
 
     // 完了ボタン
