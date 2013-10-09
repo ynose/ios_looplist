@@ -8,8 +8,6 @@
 
 #import "LLRootViewController.h"
 
-#import "Define.h"
-
 #import "LLCheckListManager.h"
 #import "LLCheckListSection.h"
 #import "LLCheckList.h"
@@ -128,8 +126,8 @@
 
     [headerView addSubview:self.filterSegmentedControl];
     self.tableView.tableHeaderView = headerView;
-    // 初期はヘッダーが隠れるようにする
-    self.tableView.contentOffset = CGPointMake(0, self.tableView.tableHeaderView.frame.size.height);
+//    // 初期はヘッダーが隠れるようにする
+//    self.tableView.contentOffset = CGPointMake(0, self.tableView.tableHeaderView.frame.size.height);
 #endif
 
 
@@ -447,13 +445,15 @@
 
 #pragma mark - ELRootFooterViewDelegate
 #pragma mark チェック完了
-- (IBAction)completeTouchUp:(id)sender {
+- (IBAction)completeTouchUp:(id)sender
+{
+    // アクションシートでチェック完了を確認
     YNActionSheet *actionSheet = [YNActionSheet new];
 
     // 完了ボタン
     [actionSheet addButtonWithTitle:LSTR(@"actionCheckComplete") withBlock:^(NSInteger buttonIndex) {
         // 全行削除
-        [self performSelector:@selector(deleteAllCheckItemRows:) withObject:sender afterDelay:0.1];  // 遅延実行
+        [self performSelector:@selector(completeAllChecks:) withObject:sender afterDelay:0.1];  // 遅延実行
     }];
 
     // キャンセルボタン
@@ -466,10 +466,10 @@
     [actionSheet showFromTabBar:self.tabBarController.tabBar];
 }
 
-// チェック完了時の全行削除
--(void)deleteAllCheckItemRows:(id)sender
+// チェック完了時の全行削除とデータ保存
+-(void)completeAllChecks:(id)sender
 {
-    // 全行削除アニメーション
+    // 全行削除アニメーションの準備
     self.finishAction = YES;
     NSMutableArray *indexPaths = [NSMutableArray array];
     for (NSInteger section = 0; section < [self.tableView numberOfSections]; section++) {
@@ -482,6 +482,7 @@
         delay = 1.3;
     }
 
+    // 全行削除とチェック完了処理
     [self.tableView deleteRowsAtIndexPaths:indexPaths duration:0.4 withRowAnimation:UITableViewRowAnimationFade
                                 completion:^(BOOL finished) {
                                     // チェック完了処理
@@ -494,6 +495,9 @@
                                 }];
 
     [SVProgressHUD showSuccessWithStatus:nil];
+
+    /* GoogleAnalytics API */
+    [YNGAITracker trackActionButton:@"Complete" label:@"CheckItems" value:@(self.checkList.numberOfAllCheckItems)];
 }
 
 // チェック完了時の全行再作成

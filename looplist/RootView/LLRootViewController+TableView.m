@@ -8,8 +8,6 @@
 
 #import "LLRootViewController.h"
 
-#import "Define.h"
-
 #import "LLCheckListManager.h"
 
 #import "MSCellAccessory.h"

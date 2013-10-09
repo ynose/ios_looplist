@@ -7,7 +7,6 @@
 //
 
 #import "UISimpleSwitchCell.h"
-#import "Define.h"
 
 @implementation UISimpleSwitchCell
 

@@ -27,7 +27,6 @@ static NSString *kCellIdentifier = @"Cell";
 
 @property (assign, nonatomic) NSUInteger checkListIndex;
 @property (strong, nonatomic) LLCheckList *checkList;
-@property (weak, nonatomic, readonly) NSMutableArray *checkItems;
 @property (assign, nonatomic) BOOL singleViewMode;
 
 -(void)refreshTabBarItem;

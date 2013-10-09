@@ -40,3 +40,7 @@
 #define DEBUGLOG_RetainCount(p);
 #endif
 
+// 常時使用
+#import "Define.h"
+#import "YNGAITracker.h"
+

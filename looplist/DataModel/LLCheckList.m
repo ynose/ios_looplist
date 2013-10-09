@@ -6,7 +6,6 @@
 //  Copyright (c) 2013年 Yoshio Nose. All rights reserved.
 //
 
-#import "Define.h"
 #import "LLCheckListManager.h"
 #import "LLCheckList.h"
 #import "LLCheckListSection.h"
@@ -150,6 +149,17 @@
         }
     }
     return seq + (row + 1);
+}
+
+#pragma mark チェックリスト内の全チェックアイテム数
+-(NSInteger)numberOfAllCheckItems
+{
+    NSInteger seq = 0;
+
+    for (LLCheckListSection *section in self.arraySections) {
+        seq += [section.checkItems count];
+    }
+    return seq;
 }
 
 

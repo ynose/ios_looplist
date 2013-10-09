@@ -28,7 +28,8 @@ typedef enum _FilterIndex {
 
 @property (strong, nonatomic, readonly) NSMutableArray *arrayUncheckedSections;     // 未チェックアイテムを含むセクション
 @property (strong, nonatomic, readonly) NSMutableArray *arrayCheckedItems;          // チェック済みアイテム（全セクション）
-@property (strong, nonatomic, readonly) NSMutableArray *arrayUncheckedItems;        // チェック済みアイテム（全セクション）
+@property (strong, nonatomic, readonly) NSMutableArray *arrayUncheckedItems;        // 未チェックアイテム（全セクション）
+@property (assign, nonatomic, readonly) NSInteger numberOfAllCheckItems;            // 全セクションの全チェックアイテム数
 
 -(id)initWithCheckItemsFileName;
 -(NSInteger)incrementFinishCount;

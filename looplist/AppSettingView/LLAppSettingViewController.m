@@ -11,8 +11,6 @@
 // Evernote API
 #import "EvernoteSDK.h"
 
-#import "Define.h"
-
 #import "YNAlertView.h"
 #import "UITableView+Extension.h"
 

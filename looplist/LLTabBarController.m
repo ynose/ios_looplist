@@ -11,8 +11,6 @@
 #import "LLAppSettingViewController.h"
 #import "LLRootViewController.h"
 
-#import "Define.h"
-
 #import "ProductManager.h"
 #import "LLCheckListManager.h"
 

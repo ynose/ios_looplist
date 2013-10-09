@@ -72,6 +72,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyborodWasUnshown:)
                                                  name:UIKeyboardDidHideNotification object:nil];
+
+    /* GoogleAnalytics API */
+    [YNGAITracker trackScreenName:@"CheckItem DetailView"];
 }
 
 -(void)viewWillDisappear:(BOOL)animated

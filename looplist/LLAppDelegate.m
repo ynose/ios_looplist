@@ -10,14 +10,12 @@
 
 #import "EvernoteSDK.h"
 
-#import "Define.h"
 #import "NSFileManager+Extension.h"
 
 #import "LLCheckListManager.h"
 
 #import "LLTabBarController.h"
 #import "ProductManager.h"
-
 
 
 @implementation LLAppDelegate
@@ -44,7 +42,17 @@
     }];
 
 
+    /* GoogleAnalytics API */
+    [YNGAITracker setupGoogleAnalytics];
+
     /* Evernote API */
+//    [self setupEvernote];
+
+    return YES;
+}
+
+-(void)setupEvernote
+{
     NSString *EVERNOTE_HOST = BootstrapServerBaseURLStringSandbox;
     NSString *CONSUMER_KEY = @"ynose249-3034";
     NSString *CONSUMER_SECRET = @"00f9a5815f95b1b9";
@@ -52,8 +60,6 @@
     [EvernoteSession setSharedSessionHost:EVERNOTE_HOST
                               consumerKey:CONSUMER_KEY
                            consumerSecret:CONSUMER_SECRET];
-
-    return YES;
 }
 
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
@@ -64,7 +70,7 @@
     }
     return canHandle;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
 }
@@ -73,6 +79,7 @@
 {
     // 設定値を保存する
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [self saveAllFiles];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -81,6 +88,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    /* GoogleAnalytics API */
+    [YNGAITracker trackScreenName:@"Launch App"];
+
     // Evernote API
     [[EvernoteSession sharedSession] handleDidBecomeActive];
 }
@@ -89,7 +99,6 @@
 {
     // 設定値を保存する
     [[NSUserDefaults standardUserDefaults] synchronize];
-
     [self saveAllFiles];
 }
 

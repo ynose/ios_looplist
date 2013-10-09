@@ -8,7 +8,6 @@
 
 #import "LLCheckItemCell.h"
 
-#import "Define.h"
 #import "NSDate+Extension.h"
 
 #import "LLColorLabelButton.h"
