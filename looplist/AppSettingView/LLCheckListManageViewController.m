@@ -8,8 +8,6 @@
 
 #import "LLCheckListManageViewController.h"
 
-#import "Define.h"
-
 #import "LLTabBarController.h"
 #import "LLRootViewController.h"
 #import "LLCheckListDetailViewController.h"

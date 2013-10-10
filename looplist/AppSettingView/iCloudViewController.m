@@ -10,8 +10,6 @@
 
 #import "SVProgressHUD.h"
 
-#import "Define.h"
-
 #import "NSFileManager+Extension.h"
 #import "NSDate+Extension.h"
 #import "NSUbiquitousKeyValueStore+Extension.h"

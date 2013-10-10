@@ -395,7 +395,6 @@
 		8E8850B017F0FB290068B13F /* UIGlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGlossyButton.m; sourceTree = "<group>"; };
 		8E8850B117F0FB290068B13F /* UIView+LayerEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayerEffects.h"; sourceTree = "<group>"; };
 		8E8850B217F0FB290068B13F /* UIView+LayerEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayerEffects.m"; sourceTree = "<group>"; };
-		8E88A54917FC4E70000DB515 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		8E88A54B17FC52BD000DB515 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LLCheckItemCell.xib; sourceTree = "<group>"; };
 		8E88E64517F1AF0200C9E69A /* MSCellAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCellAccessory.h; sourceTree = "<group>"; };
 		8E88E64617F1AF0200C9E69A /* MSCellAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCellAccessory.m; sourceTree = "<group>"; };
@@ -435,8 +434,9 @@
 		8ED03E18180607FC0000E103 /* YNGAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNGAITracker.h; path = Classes/YNGAITracker.h; sourceTree = "<group>"; };
 		8ED03E19180607FC0000E103 /* YNGAITracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YNGAITracker.m; path = Classes/YNGAITracker.m; sourceTree = "<group>"; };
 		8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationBar@2x.png"; sourceTree = "<group>"; };
+		8EE051771807552600E5ECCD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LLSectionCell.strings; sourceTree = "<group>"; };
+		8EE051781807555700E5ECCD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		8EE13E1217FB88830076F4E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LLSectionCell.xib; sourceTree = "<group>"; };
-		8EE13E1617FB888F0076F4E9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/LLSectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1359,7 +1359,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8E88503317F0EB340068B13F /* Base */,
-				8E88A54917FC4E70000DB515 /* ja */,
+				8EE051781807555700E5ECCD /* ja */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -1414,7 +1414,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8EE13E1217FB88830076F4E9 /* Base */,
-				8EE13E1617FB888F0076F4E9 /* ja */,
+				8EE051771807552600E5ECCD /* ja */,
 			);
 			name = LLSectionCell.xib;
 			sourceTree = "<group>";

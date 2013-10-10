@@ -1,0 +1,78 @@
+
+/* Class = "IBUILabel"; text = "メモ"; ObjectID = "1b9-G2-1E6"; */
+"1b9-G2-1E6.text" = "メモ";
+
+/* Class = "IBUITextField"; placeholder = "リストの名前"; ObjectID = "3YO-2V-d3F"; */
+"3YO-2V-d3F.placeholder" = "リストの名前";
+
+/* Class = "IBUINavigationItem"; title = "Evernote アカウント"; ObjectID = "3wC-nL-ufS"; */
+"3wC-nL-ufS.title" = "Evernote アカウント";
+
+/* Class = "IBUITableViewSection"; headerTitle = "購入"; ObjectID = "8dD-lX-zxK"; */
+"8dD-lX-zxK.headerTitle" = "購入";
+
+/* Class = "IBUINavigationItem"; title = "Root View Controller"; ObjectID = "996-uG-2Yi"; */
+"996-uG-2Yi.title" = "Root View Controller";
+
+/* Class = "IBUILabel"; text = "グループ"; ObjectID = "9Il-u5-GEV"; */
+"9Il-u5-GEV.text" = "グループ";
+
+/* Class = "IBUINavigationItem"; title = "購入"; ObjectID = "Gn8-Gx-ZIy"; */
+"Gn8-Gx-ZIy.title" = "購入";
+
+/* Class = "IBUINavigationItem"; title = "リストの設定"; ObjectID = "Gr5-Mt-nfN"; */
+"Gr5-Mt-nfN.title" = "リストの設定";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "Hhi-aN-Wef"; */
+"Hhi-aN-Wef.text" = "Label";
+
+/* Class = "IBUILabel"; text = "バックアップと復元"; ObjectID = "LfS-Ql-xwQ"; */
+"LfS-Ql-xwQ.text" = "バックアップと復元";
+
+/* Class = "IBUILabel"; text = "バックアップ"; ObjectID = "RUM-Jv-5Nk"; */
+"RUM-Jv-5Nk.text" = "バックアップ";
+
+/* Class = "IBUILabel"; text = "復元"; ObjectID = "RjS-kN-VpQ"; */
+"RjS-kN-VpQ.text" = "復元";
+
+/* Class = "IBUILabel"; text = "サインイン"; ObjectID = "WWE-On-Oc5"; */
+"WWE-On-Oc5.text" = "サインイン";
+
+/* Class = "IBUILabel"; text = "Evernote アカウント"; ObjectID = "aPb-mp-A2z"; */
+"aPb-mp-A2z.text" = "Evernote アカウント";
+
+/* Class = "IBUITextField"; placeholder = "新しいチェック"; ObjectID = "b8A-H5-AMg"; */
+"b8A-H5-AMg.placeholder" = "新しいチェック";
+
+/* Class = "IBUINavigationItem"; title = "設定"; ObjectID = "bnr-6m-Zlc"; */
+"bnr-6m-Zlc.title" = "設定";
+
+/* Class = "IBUIButton"; normalTitle = "999"; ObjectID = "g6Z-4u-55k"; */
+"g6Z-4u-55k.normalTitle" = "999";
+
+/* Class = "IBUIButton"; normalTitle = "チェック完了"; ObjectID = "imf-rH-3RY"; */
+"imf-rH-3RY.normalTitle" = "チェック完了";
+
+/* Class = "IBUINavigationItem"; title = "リストの管理"; ObjectID = "inF-kx-rgE"; */
+"inF-kx-rgE.title" = "リストの管理";
+
+/* Class = "IBUILabel"; text = "createDate"; ObjectID = "lA3-f9-pu1"; */
+"lA3-f9-pu1.text" = "createDate";
+
+/* Class = "IBUINavigationItem"; title = "バックアップと復元"; ObjectID = "ltd-N8-1pc"; */
+"ltd-N8-1pc.title" = "バックアップと復元";
+
+/* Class = "IBUILabel"; text = "サインアウト"; ObjectID = "nrA-dd-h1H"; */
+"nrA-dd-h1H.text" = "サインアウト";
+
+/* Class = "IBUILabel"; text = "リストの管理"; ObjectID = "sSO-bL-2hk"; */
+"sSO-bL-2hk.text" = "リストの管理";
+
+/* Class = "IBUILabel"; text = "Evernoteに記録"; ObjectID = "u3T-Fu-1CH"; */
+"u3T-Fu-1CH.text" = "Evernoteに記録";
+
+/* Class = "IBUILabel"; text = "finishCount"; ObjectID = "zcO-3C-ctS"; */
+"zcO-3C-ctS.text" = "finishCount";
+
+/* Class = "IBUILabel"; text = "Pro版にアップグレード"; ObjectID = "zxV-6D-ypp"; */
+"zxV-6D-ypp.text" = "Pro版にアップグレード";

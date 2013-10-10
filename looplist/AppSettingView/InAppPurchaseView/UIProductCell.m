@@ -8,7 +8,6 @@
 
 #import "UIProductCell.h"
 
-#import "Define.h"
 #import "UILabel+Align.h"
 
 @implementation UIProductCell

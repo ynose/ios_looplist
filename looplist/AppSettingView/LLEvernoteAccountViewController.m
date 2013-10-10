@@ -11,8 +11,6 @@
 #import "SVProgressHUD.h"
 #import "EvernoteSDK.h"     // Evernote API
 
-#import "Define.h"
-
 #import "UITableView+Extension.h"
 
 @interface LLEvernoteAccountViewController ()
