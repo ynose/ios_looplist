@@ -1,0 +1,15 @@
+
+/* Class = "IBUILabel"; text = "999"; ObjectID = "3"; */
+//"3.text" = "999";
+
+/* Class = "IBUILabel"; text = "Just Now"; ObjectID = "20"; */
+//"20.text" = "Just Now";
+
+/* Class = "IBUITextField"; placeholder = "チェック"; ObjectID = "335"; */
+"335.placeholder" = "チェック";
+
+/* Class = "IBUITextField"; text = "Check Item"; ObjectID = "335"; */
+//"335.text" = "Check Item";
+
+/* Class = "IBUIButton"; normalTitle = "999"; ObjectID = "342"; */
+//"342.normalTitle" = "999";

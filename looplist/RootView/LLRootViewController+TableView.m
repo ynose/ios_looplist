@@ -109,6 +109,12 @@ static CGFloat kSectionHeight = 24;
     if (checkItem.checkedDate) {
         checkItem.checkedDate = checkItem.checkedDate;
     }
+
+    // 予約されたセルにカーソルをセットする
+    if ([indexPath compare:self.indexPathOfNeedFirstResponder] == NSOrderedSame) {
+        [cell becomeFirstResponder];
+    }
+
     return cell;
 }
 
@@ -127,7 +133,7 @@ static CGFloat kSectionHeight = 24;
 {
     static NSString *KVOCheckedDate = KVO_CHECKEDDATE;
 
-    // 削除
+    // セル削除
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // KVOを削除する
         // オブジェクトが削除されればKVOも消える？いらないかも？
@@ -136,6 +142,9 @@ static CGFloat kSectionHeight = 24;
             [checkItem removeObserver:checkItem.keyValueObserver forKeyPath:KVOCheckedDate];
         }
         checkItem.keyValueObserver = nil;
+
+        // キーボードをしまう
+        [self.view endEditing:YES];
 
         // チェック項目の削除
         [[LLCheckListManager sharedManager] removeCheckItem:checkItem inCheckList:self.checkListIndex];
@@ -212,5 +221,22 @@ static CGFloat kSectionHeight = 24;
 {
     [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
 }
+
+// Enterキーで次のセルに移動する場合も反応してしまうため一旦保留
+//-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+//{
+//    if (self.editing) {
+//        _scrollBeginingPoint = [scrollView contentOffset];
+//    }
+//}
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    if (self.editing) {
+//        CGPoint currentPoint = [scrollView contentOffset];
+//        if (abs(currentPoint.y - _scrollBeginingPoint.y) > 90) {
+//            [self.view endEditing:YES];
+//        }
+//    }
+//}
 
 @end

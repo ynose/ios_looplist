@@ -244,14 +244,18 @@
 {
     [super touchesBegan:touches withEvent:event];
 
+    // メモがタップされたら編集モードに設定する
     if ([event touchesForView:self.memoTextView] != NULL) {
         [self.memoTextView setEditable:YES];
         [self.memoTextView becomeFirstResponder];
         return;
     }
 
-    [self.captionTextField resignFirstResponder];
+    // ビューがタップされたらメモを表示モードに設定する（URLをタップ可能に設定する）
     [self.memoTextView setEditable:NO];
+
+    // キーボードをしまう
+    [self.view endEditing:YES];
 }
 
 

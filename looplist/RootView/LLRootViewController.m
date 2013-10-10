@@ -30,10 +30,8 @@
 @property (strong, nonatomic) UIBarButtonItem *addButton;
 @property (strong, nonatomic) UISegmentedControl *filterSegmentedControl;
 @property (strong, nonatomic) NSIndexPath *indexPathOfSelected;
-@property (strong, nonatomic) UITextField *dummyTextField;
 @property (weak, nonatomic) IBOutlet UIView *footerView;
 @property (weak, nonatomic) IBOutlet UIButton *completeButton;
-
 @end
 
 @implementation LLRootViewController
@@ -216,6 +214,7 @@
         self.editIndexPath = nil;
     } else {
         // 通常モード
+        // データ保存
         [[LLCheckListManager sharedManager] saveCheckLists];
         [[LLCheckListManager sharedManager] saveCheckItemsInCheckList:self.checkListIndex];
     }
@@ -240,9 +239,16 @@
 
     // 編集モードの場合に新規追加ボタンを表示(アニメーション)
     if (self.singleViewMode) {
-        [self.navigationItem setLeftBarButtonItem:(editing) ? self.addButton : self.navigationController.navigationItem.backBarButtonItem animated:animated];
+        [self.navigationItem setLeftBarButtonItem:(editing) ? self.addButton : self.navigationController.navigationItem.backBarButtonItem
+                                         animated:animated];
     } else {
-        [self.navigationItem setLeftBarButtonItem:(editing) ? self.addButton : self.menuButton animated:animated];
+        [self.navigationItem setLeftBarButtonItem:(editing) ? self.addButton : self.menuButton
+                                         animated:animated];
+    }
+
+    // 通常モードに戻るときはキーボードをしまう
+    if (!editing) {
+        [self.view endEditing:YES];
     }
 
     // フッタービューの編集モード
@@ -252,8 +258,6 @@
 
     // 通常時と編集時のジェスチャー入れ替え
     [self exchangeGestureRecognizer:editing];
-
-    [self.dummyTextField resignFirstResponder];
 }
 
 // 通常時と編集時のジェスチャー入れ替え
@@ -272,18 +276,27 @@
 // 次の行のIndexPath
 -(NSIndexPath *)indexPathOfNextRow:(NSIndexPath *)indexPath
 {
-    NSInteger section = indexPath.section;
-    NSInteger row = indexPath.row;
-    if (row < [[self.checkList sectionAtIndex:indexPath.section].checkItems count] - 1) {
-        row++;  // 同じSectionの次のRow
+    NSIndexPath *nextIndexPath = nil;
+
+    if (indexPath.row < [[self.checkList sectionAtIndex:indexPath.section].checkItems count] - 1) {
+        // 同じSectionに次のRowがある場合は
+        nextIndexPath = [NSIndexPath indexPathForRow:indexPath.row + 1      // 次のRowを返す
+                                           inSection:indexPath.section];    // 同じSection
+        DEBUGLOG_IndexPath(nextIndexPath);
     } else {
-        if (section < [self.checkList.arraySections count] - 1) {
-            section++;  // 次のSectionの先頭Row
-            row = 0;
+        // 同じSectionに次のRowがない場合は
+        // 次以降のSectionのうち、Rowを持っているのSectionを探す（SectionにRowがまったく無い場合もある）
+        for (NSInteger i = indexPath.section + 1; i <= [self.checkList.arraySections count] - 1; i++) {
+            if (0 < [[self.checkList sectionAtIndex:i].checkItems count]) {
+                nextIndexPath = [NSIndexPath indexPathForRow:0      // 先頭のRowを返す
+                                                   inSection:i];    // 見つかったSection
+                DEBUGLOG_IndexPath(nextIndexPath);
+                break;
+            }
         }
     }
 
-    return [NSIndexPath indexPathForRow:row inSection:section];
+    return nextIndexPath;
 }
 
 // 最終行のIndexPath
@@ -558,6 +571,8 @@
 {
     // 新規チェック項目を追加
     LLCheckItem *checkItem = [LLCheckItem new];
+
+    // セルにカーソルがある場合はそのセルと同じセクションに追加する
     NSInteger section;
     if (self.editIndexPath) {
         section = self.editIndexPath.section;
@@ -572,7 +587,6 @@
     // 次の行に挿入
     // 追加行にスクロールしてカーソルをセット
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
     [self setCheckItemCellBecomeFirstResponder:indexPath];
 
 
@@ -597,7 +611,13 @@
                           atScrollPosition:UITableViewScrollPositionNone animated:YES];
 
     LLCheckItemCell *cell = (LLCheckItemCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-    [cell becomeFirstResponder];
+    if (cell) {
+        [cell becomeFirstResponder];
+    } else {
+        // 画面の外にあるとnilになってしまい、カーソルがセットされないので
+        // セル生成時のカーソルをセットするように予約する
+        self.indexPathOfNeedFirstResponder = indexPath;
+    }
 }
 
 
@@ -606,8 +626,8 @@
 {
     // アクティブ行を保持
     self.editIndexPath = [self indexPathOfCheckItem:checkItem];   DEBUGLOG_IndexPath(self.editIndexPath);
-    LLCheckItemCell *cell = (LLCheckItemCell *)[self.tableView cellForRowAtIndexPath:self.editIndexPath];
-    self.dummyTextField = cell.captionTextField;
+
+    self.indexPathOfNeedFirstResponder = nil;
 }
 
 -(void)checkItemCellShouldReturn:(LLCheckItem *)checkItem

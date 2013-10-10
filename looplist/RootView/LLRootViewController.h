@@ -22,12 +22,14 @@ static NSString *kCellIdentifier = @"Cell";
 {
     __strong UILongPressGestureRecognizer *_longPressRecognizer;
     __strong UILongPressGestureRecognizer *_longPressEditRecognizer;
+    CGPoint _scrollBeginingPoint;
 }
 
 
 @property (assign, nonatomic) NSUInteger checkListIndex;
 @property (strong, nonatomic) LLCheckList *checkList;
 @property (assign, nonatomic) BOOL singleViewMode;
+@property (strong, nonatomic) NSIndexPath *indexPathOfNeedFirstResponder;
 
 -(void)refreshTabBarItem;
 -(NSIndexPath *)indexPathOfEndRow;
