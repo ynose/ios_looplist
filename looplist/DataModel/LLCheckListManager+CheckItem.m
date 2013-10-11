@@ -120,7 +120,19 @@
 
 -(void)replaceCheckItem:(LLCheckItem *)checkItem atIndexPath:(NSIndexPath *)indexPath inCheckList:(NSUInteger)checkListIndex
 {
-    [((LLCheckListSection *)((LLCheckList *)self.arrayCheckLists[checkListIndex]).arraySections[indexPath.section]).checkItems replaceObjectAtIndex:indexPath.row withObject:checkItem];
+    static NSString *kKVOCheckedDate = KVO_CHECKEDDATE;
+
+    LLCheckListSection *checkItemSection = (LLCheckListSection *)((LLCheckList *)self.arrayCheckLists[checkListIndex]).arraySections[indexPath.section];
+
+    // 古いオブザーバーを削除する
+    LLCheckItem *oldCheckItem = checkItemSection.checkItems[indexPath.row];
+    if (oldCheckItem.keyValueObserver) {
+        [oldCheckItem removeObserver:oldCheckItem.keyValueObserver forKeyPath:kKVOCheckedDate];
+        DEBUGLOG(@"removeObserver IndexPath s=%d,r=%d", indexPath.section, indexPath.row);
+    }
+    oldCheckItem.keyValueObserver = nil;
+
+    [checkItemSection.checkItems replaceObjectAtIndex:indexPath.row withObject:checkItem];
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "LLTouchScrollView.h"
 #import "YNActionSheet.h"
 
+#import "UIView+KeyboardNotification.h"
 #import "NSDate+Extension.h"
 #import "ProductManager.h"
 #import "LLCheckList.h"
@@ -72,10 +73,10 @@
 
     // キーボード表示の通知を設定
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyborodWasShown:)
+                                             selector:@selector(keyboardWasShown:)
                                                  name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyborodWasUnshown:)
+                                             selector:@selector(keyboardWasUnshown:)
                                                  name:UIKeyboardDidHideNotification object:nil];
 }
 
@@ -149,31 +150,25 @@
 
 #pragma mark - Keyboard Notification
 // キーボードが表示された時
--(void)keyborodWasShown:(NSNotification *)notification
+-(void)keyboardWasShown:(NSNotification *)notification
 {
-    NSDictionary *userInfo = [notification userInfo];
-
-    // キーボードのサイズを取得
-    CGRect keybordRect = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    keybordRect = [self.view convertRect:keybordRect fromView:nil];
-
-    // ビューのサイズ調整をキーボード表示のアニメーションにシンクロさせる
-    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    CGRect keyboardRect;
     NSTimeInterval animationDuration;
-    [animationDurationValue getValue:&animationDuration];
 
+    // ビューのサイズ調整
+    [self.view keyboardNotification:notification getKeyboardRect:&keyboardRect getAnimationDuration:&animationDuration];
     [UIView animateWithDuration:animationDuration animations:^{
         // ビューのサイズをキーボードの高さを引いた高さに変更する
         UIScrollView *scrollView = (UIScrollView *)self.view;
         UIEdgeInsets insets = scrollView.contentInset;
-        insets.bottom = keybordRect.size.height;
+        insets.bottom = keyboardRect.size.height;
         scrollView.contentInset = insets;
         scrollView.scrollIndicatorInsets = insets;
 
 
         // フォーカスの当たった入力項目がキーボードに隠れないようにスクロールさせる
         CGRect viewFrame = self.view.frame;
-        viewFrame.size.height -= keybordRect.size.height;
+        viewFrame.size.height -= keyboardRect.size.height;
 
         // カーソルのセル位置にスクロールさせる
         CGRect cursorCellFrame = [self.view convertRect:_activeTextField.superview.superview.frame fromView:self.sectionTableView];
@@ -183,15 +178,13 @@
 }
 
 // キーボードが消された時
--(void)keyborodWasUnshown:(NSNotification *)notification
+-(void)keyboardWasUnshown:(NSNotification *)notification
 {
-    // ビューのサイズ調整をキーボード表示のアニメーションにシンクロさせる
-    NSDictionary *userInfo = [notification userInfo];
-
-    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    CGRect keyboardRect;
     NSTimeInterval animationDuration;
-    [animationDurationValue getValue:&animationDuration];
 
+    // ビューのサイズ調整
+    [self.view keyboardNotification:notification getKeyboardRect:&keyboardRect getAnimationDuration:&animationDuration];
     [UIView animateWithDuration:animationDuration animations:^{
         // ビューのサイズを元のサイズに戻す
         UIScrollView *scrollView = (UIScrollView *)self.view;

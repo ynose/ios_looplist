@@ -77,6 +77,8 @@ static CGFloat kSectionHeight = 24;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    DEBUGLOG(@"IndexPath s=%d,r=%d", indexPath.section, indexPath.row);
+    
     static NSString *kKVOCheckedDate = KVO_CHECKEDDATE;
 
     LLCheckItem *checkItem = [self checkItemAtIndexPath:indexPath];
@@ -100,9 +102,11 @@ static CGFloat kSectionHeight = 24;
     // チェック項目にKVOの登録
     if (checkItem.keyValueObserver) {
         [checkItem removeObserver:checkItem.keyValueObserver forKeyPath:kKVOCheckedDate];
+        DEBUGLOG(@"removeObserver IndexPath s=%d,r=%d", indexPath.section, indexPath.row);
     }
     [checkItem addObserver:cell forKeyPath:kKVOCheckedDate options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
                    context:nil];
+    DEBUGLOG(@"addObserver IndexPath s=%d,r=%d", indexPath.section, indexPath.row);
     checkItem.keyValueObserver = cell;
 
     // KVOでチェック日時をセルに表示させる
