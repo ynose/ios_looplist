@@ -16,8 +16,6 @@
 @property (copy, nonatomic) NSString *memo;
 @property (assign, nonatomic) NSInteger colorLabelIndex;
 
-@property (strong) id keyValueObserver;
-
 -(void)complete;
 -(BOOL)hasDetail;
 

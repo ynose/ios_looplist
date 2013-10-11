@@ -12,7 +12,7 @@
 
 @implementation LLCheckListManager (CheckItem)
 
-static NSString *kKVOCheckedDate = KVO_CHECKEDDATE;
+//static NSString *kKVOCheckedDate = KVO_CHECKEDDATE;
 
 -(void)loadCheckItems
 {
@@ -105,13 +105,6 @@ static NSString *kKVOCheckedDate = KVO_CHECKEDDATE;
 {
     for (LLCheckListSection *checkListSection in ((LLCheckList *)self.arrayCheckLists[checkListIndex]).arraySections) {
         if ([checkListSection.checkItems indexOfObject:checkItem] != NSNotFound) {
-            // 古いオブザーバーの削除
-            if (checkItem.keyValueObserver) {
-                [checkItem removeObserver:checkItem.keyValueObserver forKeyPath:kKVOCheckedDate];
-                DEBUGLOG(@"removeObserver %@", checkItem.caption);
-            }
-            checkItem.keyValueObserver = nil;
-
             [checkListSection.checkItems removeObject:checkItem];
             break;
         }
@@ -130,14 +123,6 @@ static NSString *kKVOCheckedDate = KVO_CHECKEDDATE;
 -(void)replaceCheckItem:(LLCheckItem *)checkItem atIndexPath:(NSIndexPath *)indexPath inCheckList:(NSUInteger)checkListIndex
 {
     LLCheckListSection *checkItemSection = (LLCheckListSection *)((LLCheckList *)self.arrayCheckLists[checkListIndex]).arraySections[indexPath.section];
-
-    // 古いオブザーバーを削除する
-    LLCheckItem *oldCheckItem = checkItemSection.checkItems[indexPath.row];
-    if (oldCheckItem.keyValueObserver) {
-        [oldCheckItem removeObserver:oldCheckItem.keyValueObserver forKeyPath:kKVOCheckedDate];
-        DEBUGLOG(@"removeObserver IndexPath s=%d,r=%d", indexPath.section, indexPath.row);
-    }
-    oldCheckItem.keyValueObserver = nil;
 
     [checkItemSection.checkItems replaceObjectAtIndex:indexPath.row withObject:checkItem];
 }

@@ -23,25 +23,6 @@
 @implementation LLCheckItemCell
 
 
-#pragma mark - チェック状態を監視(KVO)
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    static NSString *KVOCheckedDate = KVO_CHECKEDDATE;
-
-    if ([keyPath isEqualToString:KVOCheckedDate]) {
-        // チェック日時を表示
-        id newDate = [change objectForKey:NSKeyValueChangeNewKey];
-        if (newDate != [NSNull null]) {
-            self.checkedDate = (NSDate *)newDate;
-        } else {
-            self.checkedDate = nil;
-        }
-
-        // チェックON/OFF切り替え
-        [self changeCheckState:(self.checkedDate) ? YES : NO];
-    }
-}
-
 -(void)prepareForReuse
 {
     [super prepareForReuse];
@@ -123,6 +104,9 @@
         }
     }
     self.checkedDateLabel.text = checkDateString;
+
+    // チェックON/OFF切り替え
+    [self changeCheckState:(self.checkedDate) ? YES : NO];
 
     [self setNeedsLayout];
 }

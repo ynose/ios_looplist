@@ -375,6 +375,9 @@
         checkItem.checkedDate = nil;    // KVOでセルの日時が更新される
         [[LLCheckListManager sharedManager] saveCheckItemsInCheckList:self.checkListIndex];
 
+        LLCheckItemCell *cell = (LLCheckItemCell *)[tableView cellForRowAtIndexPath:gestureIndexPath];
+        cell.checkedDate = checkItem.checkedDate;
+
         // タブバッチの更新
         [self refreshTabBarItem];
 

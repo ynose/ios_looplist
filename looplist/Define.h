@@ -17,8 +17,8 @@
 #define MACRO_ICLOUD_AVAILABLE [[NSUserDefaults standardUserDefaults] boolForKey:SETTING_ICLOUD_AVAILABLE]
 #endif
 
-// KeyValuCodingのためのプロパティ名（大文字小文字も識別される）
-#define KVO_CHECKEDDATE @"checkedDate"
+//// KeyValuCodingのためのプロパティ名（大文字小文字も識別される）
+//#define KVO_CHECKEDDATE @"checkedDate"
 
 // UserDefaultキー
 #define SETTING_ACTIVETAB @"ActiveTab"

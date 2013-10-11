@@ -79,7 +79,7 @@ static CGFloat kSectionHeight = 24;
 {
     DEBUGLOG(@"IndexPath s=%d,r=%d", indexPath.section, indexPath.row);
     
-    static NSString *kKVOCheckedDate = KVO_CHECKEDDATE;
+//    static NSString *kKVOCheckedDate = KVO_CHECKEDDATE;
 
     LLCheckItem *checkItem = [self checkItemAtIndexPath:indexPath];
 
@@ -89,7 +89,7 @@ static CGFloat kSectionHeight = 24;
     cell.sequenceNumber = [self.checkList sequenceOfCheckItem:checkItem];
     cell.checkItem = checkItem;
     cell.captionTextField.text = checkItem.caption;
-    cell.checkedDate = nil;
+    cell.checkedDate = checkItem.checkedDate;
     if (checkItem.hasDetail) {
         cell.accessoryView = [MSCellAccessory accessoryWithType:FLAT_DETAIL_BUTTON
                                                           color:UIColorMain];
@@ -98,21 +98,6 @@ static CGFloat kSectionHeight = 24;
                                                           color:[UIColor colorWithRed:0.808 green:0.808 blue:0.808 alpha:1.000]];
     }
 
-
-    // チェック項目にKVOの登録
-    if (checkItem.keyValueObserver) {
-        [checkItem removeObserver:checkItem.keyValueObserver forKeyPath:kKVOCheckedDate];
-        DEBUGLOG(@"removeObserver IndexPath s=%d,r=%d", indexPath.section, indexPath.row);
-    }
-    [checkItem addObserver:cell forKeyPath:kKVOCheckedDate options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
-                   context:nil];
-    DEBUGLOG(@"addObserver IndexPath s=%d,r=%d", indexPath.section, indexPath.row);
-    checkItem.keyValueObserver = cell;
-
-    // KVOでチェック日時をセルに表示させる
-    if (checkItem.checkedDate) {
-        checkItem.checkedDate = checkItem.checkedDate;
-    }
 
     // 予約されたセルにカーソルをセットする
     if ([indexPath compare:self.indexPathOfNeedFirstResponder] == NSOrderedSame) {
@@ -184,9 +169,13 @@ static CGFloat kSectionHeight = 24;
         LLCheckItem *checkItem = [self checkItemAtIndexPath:indexPath];
 
         if (!checkItem.checkedDate) {
-            checkItem.checkedDate = [NSDate date]; // KVOでセルの日時が更新される
+            checkItem.checkedDate = [NSDate date];
             [[LLCheckListManager sharedManager] saveCheckItemsInCheckList:self.checkListIndex];
+
+            LLCheckItemCell *cell = (LLCheckItemCell *)[tableView cellForRowAtIndexPath:indexPath];
+            cell.checkedDate = checkItem.checkedDate;
         }
+
 
         // 選択解除
         [tableView deselectSelectedRow:YES];
