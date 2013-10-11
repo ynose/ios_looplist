@@ -12,7 +12,7 @@
 @implementation LLCheckListManager 
 
 static LLCheckListManager *_sharedInstance = nil;
-static NSString *_checkListDir = @".checklist";
+static NSString *_checkListDir = @"checklist";
 static NSString *_checkListFile = @"checklist.dat";
 
 

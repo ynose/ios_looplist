@@ -31,9 +31,16 @@
     [self setSelectedIndex:[[NSUserDefaults standardUserDefaults] integerForKey:SETTING_ACTIVETAB]];
 
     // 無料版のみ広告表示
+#ifdef APPSTORE_SCREENSHOT
+    // AppStore用スクリーンショット
+    // ダミーの広告枠を表示する
+    [self dummyAd];
+#else
     if (![ProductManager isAppPro]) {
         [self setupAd];
     }
+#endif
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -56,19 +63,39 @@
 {
     // (2) NADView の作成
     self.nadView = [[NADView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, 320, 50)];
+    self.nadView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     // (3) ログ出力の指定
     [self.nadView setIsOutputLog:NO];
     // (4) set apiKey, spotId.
 #ifndef DEBUG
-    [self.nadView setNendID:@"1584498c8e4444d600ecb3725c630b1791b22aa0" spotID:@"96305"];
+    [self.nadView setNendID:@"1584498c8e4444d600ecb3725c630b1791b22aa0" spotID:@"96305"];   // 本番用
 #else
-    [self.nadView setNendID:@"a6eca9dd074372c898dd1df549301f277c53f2b9" spotID:@"3172"];  // 表示テスト用
+    // テスト用でもネットワークにつながっていないと表示されない
+    [self.nadView setNendID:@"a6eca9dd074372c898dd1df549301f277c53f2b9" spotID:@"3172"];    // 表示テスト用
 #endif
     [self.nadView setDelegate:self]; //(5)
     [self.nadView load]; //(6)
-    self.nadView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     [self.view addSubview:self.nadView]; // 最初から表示する場合
 }
+
+#ifdef APPSTORE_SCREENSHOT
+// AppStoreスクリーンショット用ダミー広告枠
+-(void)dummyAd
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, 320, 50)];
+    view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+    view.backgroundColor = [UIColor whiteColor];
+    view.layer.borderColor = [[UIColor grayColor] CGColor];
+    view.layer.borderWidth = 1;
+
+    UILabel *label = [[UILabel alloc] initWithFrame:view.bounds];
+    label.text = @"Ad";
+    label.textAlignment = NSTextAlignmentCenter;
+    [view addSubview:label];
+
+    [self.view addSubview:view]; // 最初から表示する場合
+}
+#endif
 
 -(void)nadViewDidFinishLoad:(NADView *)adView
 {

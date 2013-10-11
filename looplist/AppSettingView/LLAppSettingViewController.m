@@ -9,7 +9,7 @@
 #import "LLAppSettingViewController.h"
 
 // Evernote API
-#import "EvernoteSDK.h"
+//#import "EvernoteSDK.h"
 
 #import "YNAlertView.h"
 #import "UITableView+Extension.h"
@@ -54,14 +54,14 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
     }
     self.checkListManageButtonCell.detailTextLabel.text = [NSString stringWithFormat:@"%d / %d", checkListCount, checkListMax];
 
-    // Evernoteサインイン状態を表示
-    EvernoteSession *session = [EvernoteSession sharedSession];
-    if (session.isAuthenticated) {
-        // 認証済み
-        self.evernoteButtonCell.detailTextLabel.text = LSTR(@"Setting-EvernoteAccount-Signed");
-    } else {
-        self.evernoteButtonCell.detailTextLabel.text = @"";
-    }
+//    // Evernoteサインイン状態を表示
+//    EvernoteSession *session = [EvernoteSession sharedSession];
+//    if (session.isAuthenticated) {
+//        // 認証済み
+//        self.evernoteButtonCell.detailTextLabel.text = LSTR(@"Setting-EvernoteAccount-Signed");
+//    } else {
+//        self.evernoteButtonCell.detailTextLabel.text = @"";
+//    }
 
     // 購入状態を表示する
     if ([ProductManager isAppPro]) {

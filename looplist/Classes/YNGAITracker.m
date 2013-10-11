@@ -24,7 +24,7 @@
     [GAI sharedInstance].dispatchInterval = 20;
 
     // Optional: set Logger to VERBOSE for debug information.
-    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelWarning];
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
 
 #ifndef DEBUG
     [[GAI sharedInstance] setDryRun:NO];    // 本番稼働（トラッキングあり）

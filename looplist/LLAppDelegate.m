@@ -8,7 +8,7 @@
 
 #import "LLAppDelegate.h"
 
-#import "EvernoteSDK.h"
+//#import "EvernoteSDK.h"
 
 #import "NSFileManager+Extension.h"
 
@@ -51,25 +51,25 @@
     return YES;
 }
 
--(void)setupEvernote
-{
-    NSString *EVERNOTE_HOST = BootstrapServerBaseURLStringSandbox;
-    NSString *CONSUMER_KEY = @"ynose249-3034";
-    NSString *CONSUMER_SECRET = @"00f9a5815f95b1b9";
+//-(void)setupEvernote
+//{
+//    NSString *EVERNOTE_HOST = BootstrapServerBaseURLStringSandbox;
+//    NSString *CONSUMER_KEY = @"ynose249-3034";
+//    NSString *CONSUMER_SECRET = @"00f9a5815f95b1b9";
+//
+//    [EvernoteSession setSharedSessionHost:EVERNOTE_HOST
+//                              consumerKey:CONSUMER_KEY
+//                           consumerSecret:CONSUMER_SECRET];
+//}
 
-    [EvernoteSession setSharedSessionHost:EVERNOTE_HOST
-                              consumerKey:CONSUMER_KEY
-                           consumerSecret:CONSUMER_SECRET];
-}
-
--(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    BOOL canHandle = NO;
-    if ([[NSString stringWithFormat:@"en-%@", [[EvernoteSession sharedSession] consumerKey]] isEqualToString:[url scheme]] == YES) {
-        canHandle = [[EvernoteSession sharedSession] canHandleOpenURL:url];
-    }
-    return canHandle;
-}
+//-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+//{
+//    BOOL canHandle = NO;
+//    if ([[NSString stringWithFormat:@"en-%@", [[EvernoteSession sharedSession] consumerKey]] isEqualToString:[url scheme]] == YES) {
+//        canHandle = [[EvernoteSession sharedSession] canHandleOpenURL:url];
+//    }
+//    return canHandle;
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -91,8 +91,8 @@
     /* GoogleAnalytics API */
     [YNGAITracker trackScreenName:@"Launch App"];
 
-    // Evernote API
-    [[EvernoteSession sharedSession] handleDidBecomeActive];
+//    // Evernote API
+//    [[EvernoteSession sharedSession] handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

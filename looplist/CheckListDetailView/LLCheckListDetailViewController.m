@@ -8,8 +8,6 @@
 
 #import "LLCheckListDetailViewController.h"
 
-#import "Define.h"
-
 #import "LLTouchScrollView.h"
 #import "YNActionSheet.h"
 
@@ -208,6 +206,7 @@
 #pragma mark - UITextFieldDelegate
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    // キーボードをしまう
     [textField resignFirstResponder];
     return YES;
 }

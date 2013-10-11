@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E1F2CA418059B5000481439 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA318059B5000481439 /* libGoogleAnalyticsServices.a */; };
 		8E1F2CA618059B7700481439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA518059B7700481439 /* CoreData.framework */; };
 		8E1F2CA818059B8500481439 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA718059B8500481439 /* SystemConfiguration.framework */; };
 		8E1F2CAA18059B8E00481439 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA918059B8E00481439 /* libz.dylib */; };
@@ -147,8 +146,9 @@
 		8ECF984317F2EE6E0097838A /* UISimpleSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984117F2EE6E0097838A /* UISimpleSwitchCell.m */; };
 		8ECF984817F2EE910097838A /* YNActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984517F2EE910097838A /* YNActionSheet.m */; };
 		8ECF984917F2EE910097838A /* YNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984717F2EE910097838A /* YNAlertView.m */; };
-		8ED03E1A180607FC0000E103 /* YNGAITracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED03E19180607FC0000E103 /* YNGAITracker.m */; };
 		8ED20A5F17FA309E0060C690 /* navigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */; };
+		8EDD276D1808050200E593F6 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EDD276C1808050200E593F6 /* libGoogleAnalyticsServices.a */; };
+		8EDD276E1808060F00E593F6 /* YNGAITracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED03E19180607FC0000E103 /* YNGAITracker.m */; };
 		8EE13E1117FB88830076F4E9 /* LLSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE13E1317FB88830076F4E9 /* LLSectionCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -163,13 +163,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8E1F2C9D18059B3F00481439 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/GoogleAnalytics/Library/GAI.h"; sourceTree = "<group>"; };
-		8E1F2C9E18059B3F00481439 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/GoogleAnalytics/Library/GAIDictionaryBuilder.h"; sourceTree = "<group>"; };
-		8E1F2C9F18059B3F00481439 /* GAIFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/GoogleAnalytics/Library/GAIFields.h"; sourceTree = "<group>"; };
-		8E1F2CA018059B3F00481439 /* GAILogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/GoogleAnalytics/Library/GAILogger.h"; sourceTree = "<group>"; };
-		8E1F2CA118059B3F00481439 /* GAITrackedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/GoogleAnalytics/Library/GAITrackedViewController.h"; sourceTree = "<group>"; };
-		8E1F2CA218059B3F00481439 /* GAITracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/GoogleAnalytics/Library/GAITracker.h"; sourceTree = "<group>"; };
-		8E1F2CA318059B5000481439 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/libGoogleAnalyticsServices.a"; sourceTree = "<group>"; };
 		8E1F2CA518059B7700481439 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8E1F2CA718059B8500481439 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8E1F2CA918059B8E00481439 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -434,6 +427,13 @@
 		8ED03E18180607FC0000E103 /* YNGAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNGAITracker.h; path = Classes/YNGAITracker.h; sourceTree = "<group>"; };
 		8ED03E19180607FC0000E103 /* YNGAITracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YNGAITracker.m; path = Classes/YNGAITracker.m; sourceTree = "<group>"; };
 		8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationBar@2x.png"; sourceTree = "<group>"; };
+		8EDD27631808049F00E593F6 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/GoogleAnalytics/Library/GAI.h"; sourceTree = "<group>"; };
+		8EDD27641808049F00E593F6 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/GoogleAnalytics/Library/GAIDictionaryBuilder.h"; sourceTree = "<group>"; };
+		8EDD27651808049F00E593F6 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/GoogleAnalytics/Library/GAIFields.h"; sourceTree = "<group>"; };
+		8EDD27661808049F00E593F6 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/GoogleAnalytics/Library/GAILogger.h"; sourceTree = "<group>"; };
+		8EDD27671808049F00E593F6 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/GoogleAnalytics/Library/GAITrackedViewController.h"; sourceTree = "<group>"; };
+		8EDD27681808049F00E593F6 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/GoogleAnalytics/Library/GAITracker.h"; sourceTree = "<group>"; };
+		8EDD276C1808050200E593F6 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = "../../Google Analytics SDK/GoogleAnalyticsServicesiOS_3.01/libGoogleAnalyticsServices.a"; sourceTree = "<group>"; };
 		8EE051771807552600E5ECCD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LLSectionCell.strings; sourceTree = "<group>"; };
 		8EE051781807555700E5ECCD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		8EE13E1217FB88830076F4E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LLSectionCell.xib; sourceTree = "<group>"; };
@@ -447,10 +447,10 @@
 				8E1F2CAA18059B8E00481439 /* libz.dylib in Frameworks */,
 				8E1F2CA818059B8500481439 /* SystemConfiguration.framework in Frameworks */,
 				8E1F2CA618059B7700481439 /* CoreData.framework in Frameworks */,
+				8EDD276D1808050200E593F6 /* libGoogleAnalyticsServices.a in Frameworks */,
 				8E2D6F4F18043EFB0028E111 /* AdSupport.framework in Frameworks */,
 				8E36136D17F3CC88008CF7E1 /* StoreKit.framework in Frameworks */,
 				8E36136B17F3CC7F008CF7E1 /* Security.framework in Frameworks */,
-				8E1F2CA418059B5000481439 /* libGoogleAnalyticsServices.a in Frameworks */,
 				8E36136917F3CC34008CF7E1 /* MobileCoreServices.framework in Frameworks */,
 				8E2D6F4C18043EDE0028E111 /* libNendAd.a in Frameworks */,
 				8E36136717F3CC15008CF7E1 /* libxml2.dylib in Frameworks */,
@@ -473,20 +473,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8E1F2C9C18059ADA00481439 /* GoogleAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				8E1F2C9D18059B3F00481439 /* GAI.h */,
-				8E1F2C9E18059B3F00481439 /* GAIDictionaryBuilder.h */,
-				8E1F2C9F18059B3F00481439 /* GAIFields.h */,
-				8E1F2CA018059B3F00481439 /* GAILogger.h */,
-				8E1F2CA118059B3F00481439 /* GAITrackedViewController.h */,
-				8E1F2CA218059B3F00481439 /* GAITracker.h */,
-				8E1F2CA318059B5000481439 /* libGoogleAnalyticsServices.a */,
-			);
-			name = GoogleAnalytics;
-			sourceTree = "<group>";
-		};
 		8E2D6F4818043EDE0028E111 /* NendAd */ = {
 			isa = PBXGroup;
 			children = (
@@ -856,7 +842,6 @@
 			isa = PBXGroup;
 			children = (
 				8E8D08C017F4005000C9DAC8 /* Looplist.entitlements */,
-				8E1F2C9C18059ADA00481439 /* GoogleAnalytics */,
 				8E8850AC17F0FA5C0068B13F /* Library */,
 				8E88507217F0F0520068B13F /* Define.h */,
 				8E88502F17F0EB340068B13F /* LLAppDelegate.h */,
@@ -981,6 +966,7 @@
 		8E8850AC17F0FA5C0068B13F /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				8EDD276B180804BE00E593F6 /* GoogleAnalytics */,
 				8E2D6F4818043EDE0028E111 /* NendAd */,
 				8E36127F17F3C771008CF7E1 /* evernote-sdk-ios */,
 				8E88E66C17F1B85A00C9E69A /* SVProgressHUD */,
@@ -1094,6 +1080,20 @@
 				8E88505C17F0ECCF0068B13F /* LLTabBarController.m */,
 			);
 			name = TabBarController;
+			sourceTree = "<group>";
+		};
+		8EDD276B180804BE00E593F6 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				8EDD27631808049F00E593F6 /* GAI.h */,
+				8EDD27641808049F00E593F6 /* GAIDictionaryBuilder.h */,
+				8EDD27651808049F00E593F6 /* GAIFields.h */,
+				8EDD27661808049F00E593F6 /* GAILogger.h */,
+				8EDD27671808049F00E593F6 /* GAITrackedViewController.h */,
+				8EDD27681808049F00E593F6 /* GAITracker.h */,
+				8EDD276C1808050200E593F6 /* libGoogleAnalyticsServices.a */,
+			);
+			name = GoogleAnalytics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1227,6 +1227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EDD276E1808060F00E593F6 /* YNGAITracker.m in Sources */,
 				8E36133F17F3C772008CF7E1 /* EvernoteSession.m in Sources */,
 				8E36133717F3C772008CF7E1 /* EDAMNoteStore.m in Sources */,
 				8E36127817F3C576008CF7E1 /* LLAppSettingViewController.m in Sources */,
@@ -1274,7 +1275,6 @@
 				8E36136517F3C772008CF7E1 /* NSDate+EDAMAdditions.m in Sources */,
 				8E88508717F0F0970068B13F /* UITableView+Extension.m in Sources */,
 				8E88507017F0EF9A0068B13F /* LLCheckListManager.m in Sources */,
-				8ED03E1A180607FC0000E103 /* YNGAITracker.m in Sources */,
 				8E36132D17F3C772008CF7E1 /* TBinaryProtocol.m in Sources */,
 				8E36134417F3C772008CF7E1 /* ENLinkNotebookRequest.m in Sources */,
 				8E8850B417F0FB290068B13F /* UIView+LayerEffects.m in Sources */,
@@ -1499,7 +1499,7 @@
 		8E88505617F0EB340068B13F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;
@@ -1508,8 +1508,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "looplist/looplist-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					DEBUG,
-					PROVERSION,
+					_DEBUG,
+					_PROVERSION,
 					_APPSTORE_SCREENSHOT,
 					_LAUNCH_SCREENSHOT,
 					_RESET_INAPPPURCHASE,
@@ -1536,7 +1536,7 @@
 		8E88505717F0EB340068B13F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;

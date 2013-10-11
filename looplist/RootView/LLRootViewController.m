@@ -69,17 +69,15 @@
 
     // ナビゲーションバーの設定
     // 編集ボタンの作成
-#ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影
+#ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影の場合は表示しない
     self.navigationItem.rightBarButtonItem = [self editButtonItem];
-#else
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" "
-                                                                              style:UIBarButtonItemStylePlain
-                                                                             target:self
-                                                                             action:nil];     // 文字なし
 #endif
 
     // 設定ボタンの作成
-#ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影
+#ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影の場合は表示しない
+    self.menuButton = nil;
+    // Ver1.0では使用しない
+    /*
     self.menuButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain
                                                       target:self.tabBarController
                                                       action:@selector(menuAction:)];
@@ -88,6 +86,7 @@
     } else {
         self.navigationItem.leftBarButtonItem = self.menuButton;
     }
+     */
 #endif
 
     // 追加[+]ボタンの作成
@@ -108,7 +107,7 @@
 #endif
 
     // ヘッダーの設定
-#ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影
+#ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影の場合は表示しない
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     headerView.backgroundColor = [UIColor whiteColor];
     self.filterSegmentedControl = [[UISegmentedControl alloc] initWithItems:@[LSTR(@"AllList"), LSTR(@"UncheckedList")]];
@@ -130,7 +129,7 @@
 
 
     // フッターの設定
-#ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影
+#ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影の場合は表示しない
     self.tableView.tableFooterView = self.footerView;
     self.completeButton.layer.cornerRadius = 4.0;
     self.completeButton.layer.backgroundColor = [UIColorMain CGColor];

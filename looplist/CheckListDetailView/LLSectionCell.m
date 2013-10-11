@@ -52,11 +52,12 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    // キーボードをしまう
     [textField resignFirstResponder];
     return YES;
 }
 
-#pragma mark - パプリックメソッド
+// オーバーライド
 -(BOOL)becomeFirstResponder
 {
     return [self.textField becomeFirstResponder];
