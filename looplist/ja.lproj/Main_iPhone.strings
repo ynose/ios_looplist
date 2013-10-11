@@ -50,8 +50,8 @@
 /* Class = "IBUIButton"; normalTitle = "999"; ObjectID = "g6Z-4u-55k"; */
 "g6Z-4u-55k.normalTitle" = "999";
 
-/* Class = "IBUIButton"; normalTitle = "チェック完了"; ObjectID = "imf-rH-3RY"; */
-"imf-rH-3RY.normalTitle" = "チェック完了";
+/* Class = "IBUIButton"; normalTitle = "チェック完了"; ObjectID = "UXm-7D-PAt"; */
+"UXm-7D-PAt.normalTitle" = "チェック完了";
 
 /* Class = "IBUINavigationItem"; title = "リストの管理"; ObjectID = "inF-kx-rgE"; */
 "inF-kx-rgE.title" = "リストの管理";
