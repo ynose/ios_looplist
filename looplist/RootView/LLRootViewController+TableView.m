@@ -135,22 +135,13 @@ static CGFloat kSectionHeight = 24;
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *KVOCheckedDate = KVO_CHECKEDDATE;
-
     // セル削除
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // KVOを削除する
-        // オブジェクトが削除されればKVOも消える？いらないかも？
-        LLCheckItem *checkItem = [self checkItemAtIndexPath:indexPath];
-        if (checkItem.keyValueObserver) {
-            [checkItem removeObserver:checkItem.keyValueObserver forKeyPath:KVOCheckedDate];
-        }
-        checkItem.keyValueObserver = nil;
-
         // キーボードをしまう
         [self.view endEditing:YES];
 
         // チェック項目の削除
+        LLCheckItem *checkItem = [self checkItemAtIndexPath:indexPath];
         [[LLCheckListManager sharedManager] removeCheckItem:checkItem inCheckList:self.checkListIndex];
 
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
