@@ -132,7 +132,7 @@
 }
 
 
-#pragma mark - チェックアイテムの通し番号
+#pragma mark - チェックアイテムの全セクション通し番号(1始まり)
 -(NSInteger)sequenceOfCheckItem:(LLCheckItem *)checkItem
 {
     NSInteger seq = 0;
@@ -145,13 +145,14 @@
             row = 0;
         }
         if (row == NSNotFound) {
+            // チェックアイテムが見つからなかったら、そのセクションにあるチェックアイテム数を加算することで、全セクションが対象の通し番号を求められる
             seq += [[self sectionAtIndex:section].checkItems count];
         }
     }
     return seq + (row + 1);
 }
 
-#pragma mark チェックリスト内の全チェックアイテム数
+#pragma mark チェックリスト内の全セクションの全チェックアイテム数
 -(NSInteger)numberOfAllCheckItems
 {
     NSInteger seq = 0;

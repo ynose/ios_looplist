@@ -35,7 +35,6 @@ static NSString *kCellIdentifier = @"Cell";
 -(NSIndexPath *)indexPathOfEndRow;
 -(NSMutableArray *)checkListSections;
 
-
 // LLRootViewController (TableView)で使用できるようにするため
 @property (assign, nonatomic) BOOL finishAction;
 @property (strong, nonatomic) NSIndexPath *editIndexPath;

@@ -22,6 +22,15 @@
 
 @implementation LLCheckItemCell
 
+#pragma mark - 連番
+-(void)setSequenceNumber:(NSUInteger)sequenceNumber
+{
+    _sequenceNumber = sequenceNumber;
+
+    self.numberLabel.text = [@(sequenceNumber) stringValue];
+    [self.colorLabelButton setTitle:[@(sequenceNumber) stringValue] forState:UIControlStateNormal];
+    [self.colorLabelButton setNeedsLayout]; // ラベルボタンのTitle反映に必要
+}
 
 -(void)prepareForReuse
 {
@@ -35,10 +44,7 @@
 {
     [super layoutSubviews];
 
-    self.numberLabel.text = [@(self.sequenceNumber) stringValue];
-
     self.colorLabelButton.colorLabelIndex = self.checkItem.colorLabelIndex;
-    [self.colorLabelButton setTitle:self.numberLabel.text forState:UIControlStateNormal];
 
 //    self.captionTextField.placeholder = LSTR(@"NewCheckCaption");
 }

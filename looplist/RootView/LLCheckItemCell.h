@@ -19,7 +19,7 @@
 
 @property(assign, nonatomic) id<LLCheckItemCellDelegate> delegate;
 @property(strong, nonatomic) LLCheckItem *checkItem;
-@property (assign, nonatomic) NSUInteger sequenceNumber;
+@property(assign, nonatomic) NSUInteger sequenceNumber;
 @property(nonatomic) NSDate *checkedDate;
 
 @property (weak, nonatomic) IBOutlet UITextField *captionTextField;

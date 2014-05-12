@@ -48,10 +48,11 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 
     // リストの上限数を表示
     NSInteger checkListCount = [[LLCheckListManager sharedManager].arrayCheckLists count];
-    NSInteger checkListMax = 1;
-    if ([ProductManager isAppPro]) {
-        checkListMax = MAX_CHECKLIST;
-    }
+    NSInteger checkListMax = MAX_CHECKLIST;
+//    NSInteger checkListMax = 1;
+//    if ([ProductManager isAppPro]) {
+//        checkListMax = MAX_CHECKLIST;
+//    }
     self.checkListManageButtonCell.detailTextLabel.text = [NSString stringWithFormat:@"%d / %d", checkListCount, checkListMax];
 
 //    // Evernoteサインイン状態を表示
@@ -63,13 +64,13 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 //        self.evernoteButtonCell.detailTextLabel.text = @"";
 //    }
 
-    // 購入状態を表示する
-    if ([ProductManager isAppPro]) {
-        // 購入済み
-        self.inAppPurchaseButtonCell.detailTextLabel.text = LSTR(@"Setting-InAppPurchase-Purchased");
-    } else {
-        self.inAppPurchaseButtonCell.detailTextLabel.text = LSTR(@"Setting-InAppPurchase-NotYet");
-    }
+//    // 購入状態を表示する
+//    if ([ProductManager isAppPro]) {
+//        // 購入済み
+//        self.inAppPurchaseButtonCell.detailTextLabel.text = LSTR(@"Setting-InAppPurchase-Purchased");
+//    } else {
+//        self.inAppPurchaseButtonCell.detailTextLabel.text = LSTR(@"Setting-InAppPurchase-NotYet");
+//    }
 }
 
 
@@ -78,21 +79,21 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 {
     DEBUGLOG(@"shouldPerformSegueWithIdentifier:%@", identifier);
 
-    // リストの管理 ***Pro版限定***
-    if ([identifier isEqualToString:kCheckListManageSegue]) {
-        if (![self showAlertAppPro]) {
-            [self.tableView deselectCell:(UITableViewCell *)sender animated:YES];
-            return NO;
-        }
-    }
+//    // リストの管理 ***Pro版限定***
+//    if ([identifier isEqualToString:kCheckListManageSegue]) {
+//        if (![self showAlertAppPro]) {
+//            [self.tableView deselectCell:(UITableViewCell *)sender animated:YES];
+//            return NO;
+//        }
+//    }
 
-    // Evernoteアカウント ***Pro版限定***
-    if ([identifier isEqualToString:kEvernoteAccountSegue]) {
-        if (![self showAlertAppPro]) {
-            [self.tableView deselectCell:(UITableViewCell *)sender animated:YES];
-            return NO;
-        }
-    }
+//    // Evernoteアカウント ***Pro版限定***
+//    if ([identifier isEqualToString:kEvernoteAccountSegue]) {
+//        if (![self showAlertAppPro]) {
+//            [self.tableView deselectCell:(UITableViewCell *)sender animated:YES];
+//            return NO;
+//        }
+//    }
 
     // その他は無条件にセル選択可能
     return YES;
@@ -168,33 +169,33 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 }
 
 
-#pragma mark -
-// Pro版限定機能を使用可比判定とアラート表示
--(BOOL)showAlertAppPro
-{
-    if (![ProductManager isAppPro]) {
-
-        YNAlertView *alert = [YNAlertView new];
-
-        alert.title = LSTR(@"Setting-AlertProVersionTitle");
-        alert.message = LSTR(@"Setting-AlertProVersionMessage");
-
-        // キャンセルボタン
-        [alert addButtonWithTitle:LSTR(@"actionCancel")];
-        alert.cancelButtonIndex = 0;
-
-        // 購入画面へボタン
-        [alert addButtonWithTitle:LSTR(@"Setting-AlertProVersionPurchase") withBlock:^(UIAlertView *alertView) {
-            [self performSegueWithIdentifier:kInAppPurchaseSegue sender:self];
-        }];
-
-        [alert show];
-        return NO;
-
-    } else {
-        return YES;
-    }
-}
+//#pragma mark -
+//// Pro版限定機能を使用可否判定とアラート表示
+//-(BOOL)showAlertAppPro
+//{
+//    if (![ProductManager isAppPro]) {
+//
+//        YNAlertView *alert = [YNAlertView new];
+//
+//        alert.title = LSTR(@"Setting-AlertProVersionTitle");
+//        alert.message = LSTR(@"Setting-AlertProVersionMessage");
+//
+//        // キャンセルボタン
+//        [alert addButtonWithTitle:LSTR(@"actionCancel")];
+//        alert.cancelButtonIndex = 0;
+//
+//        // 購入画面へボタン
+//        [alert addButtonWithTitle:LSTR(@"Setting-AlertProVersionPurchase") withBlock:^(UIAlertView *alertView) {
+//            [self performSegueWithIdentifier:kInAppPurchaseSegue sender:self];
+//        }];
+//
+//        [alert show];
+//        return NO;
+//
+//    } else {
+//        return YES;
+//    }
+//}
 
 
 @end

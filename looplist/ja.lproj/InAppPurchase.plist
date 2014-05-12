@@ -4,9 +4,17 @@
 <array>
 	<dict>
 		<key>feature</key>
+		<string>広告削除</string>
+		<key>description</key>
+		<string>広告表示を削除します。</string>
+		<key>forsale</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>feature</key>
 		<string>リストの管理</string>
 		<key>description</key>
-		<string>複数のリストを作成できるようになります。</string>
+		<string>複数リストの作成とチェック項目のグループ化ができるようになります。</string>
 		<key>forsale</key>
 		<true/>
 	</dict>
@@ -17,14 +25,6 @@
 		<string>Evernoteにチェック記録を残すことができるようになります。</string>
 		<key>forsale</key>
 		<false/>
-	</dict>
-	<dict>
-		<key>feature</key>
-		<string>広告の削除</string>
-		<key>description</key>
-		<string>広告を削除します。</string>
-		<key>forsale</key>
-		<true/>
 	</dict>
 </array>
 </plist>

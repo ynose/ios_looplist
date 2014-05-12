@@ -75,9 +75,8 @@
 
     // 設定ボタンの作成
 #ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影の場合は表示しない
-    self.menuButton = nil;
+//    self.menuButton = nil;
     // Ver1.0では使用しない
-    /*
     self.menuButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain
                                                       target:self.tabBarController
                                                       action:@selector(menuAction:)];
@@ -86,7 +85,6 @@
     } else {
         self.navigationItem.leftBarButtonItem = self.menuButton;
     }
-     */
 #endif
 
     // 追加[+]ボタンの作成
@@ -147,9 +145,11 @@
     [super viewWillAppear:animated];
 
     // Pro版のみタブバーを表示する
-    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
-    tabBarController.tabBar.hidden = ([ProductManager isAppPro]) ? NO : YES;
-    tabBarController.nadView.hidden = ([ProductManager isAppPro]) ? YES : NO;
+//    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+//    tabBarController.tabBar.hidden = ([ProductManager isAppPro]) ? NO : YES;
+//    tabBarController.nadView.hidden = ([ProductManager isAppPro]) ? YES : NO;
+//    tabBarController.tabBar.hidden = NO;
+//    tabBarController.nadView.hidden = NO;
 
 
     // タブバッチの更新(moreViewControllerでの編集に反映させるためviewWillAppearで行う)
@@ -169,16 +169,16 @@
                                                           // チェック日時や文字サイズを更新する
                                                           [self.tableView reloadVisibleRowsAfterDelay:0 withRowAnimation:UITableViewRowAnimationNone];
                                                       }];
+
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
 
-    // Pro版のみタブバーを表示する
-    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
-    tabBarController.nadView.hidden = YES;
-
+//    // Pro版のみタブバーを表示する
+//    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+//    tabBarController.nadView.hidden = YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -549,9 +549,13 @@
     detailViewController.checkItem = checkItem;
     detailViewController.sequenceNumber = [self.checkList sequenceOfCheckItem:checkItem];
 
+    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+    tabBarController.nadView.hidden = YES;
+
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
+#pragma mark LLDetailViewDelegate
 -(void)saveDetail:(LLCheckItem *)checkItem
 {
     // 選択していたIndexPathから置換元のチェックアイテムを取得
@@ -562,6 +566,9 @@
 
     [[LLCheckListManager sharedManager] replaceCheckItem:checkItem atIndexPath:indexPath inCheckList:self.checkListIndex];
     [[LLCheckListManager sharedManager] saveCheckItemsInCheckList:self.checkListIndex];
+
+    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+    tabBarController.nadView.hidden = NO;
 
     // 変更内容をリストに反映する
     [self.tableView reloadRowsAtIndexPaths:@[self.indexPathOfSelected] withRowAnimation:UITableViewRowAnimationNone];
@@ -648,8 +655,8 @@
 -(void)refreshTabBarItem
 {
     // タイトルを表示
-//    self.title = self.checkList.caption;
-    self.title = ([ProductManager isAppPro]) ? self.checkList.caption : @"Looplist";
+    self.title = self.checkList.caption;
+//    self.title = ([ProductManager isAppPro]) ? self.checkList.caption : @"Looplist";
 
     // 未チェック数をバッジに表示
     NSInteger unchecked = [self.checkList.arrayUncheckedItems count];

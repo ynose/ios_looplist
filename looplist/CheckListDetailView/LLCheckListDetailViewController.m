@@ -38,20 +38,20 @@
     self.captionTextField.text = self.checkList.caption;
 
     // セクション編集テーブル
-    if ([ProductManager isAppPro]) {
+//    if ([ProductManager isAppPro]) {
         [self setupSectionTableView];
-    } else {
-        self.sectionCaptionLabel.hidden = YES;
-        self.sectionTableView.hidden = YES;
-    }
+//    } else {
+//        self.sectionCaptionLabel.hidden = YES;
+//        self.sectionTableView.hidden = YES;
+//    }
 
-    // Save to Evernote ***Pro版限定***
-    if ([ProductManager isAppPro]) {
-        self.saveToEvernoteSwitch.on = self.checkList.saveToEvernote;
-    } else {
-        self.saveToEvernoteLabel.hidden = YES;
-        self.saveToEvernoteSwitch.hidden = YES;
-    }
+//    // Save to Evernote ***Pro版限定***
+//    if ([ProductManager isAppPro]) {
+//        self.saveToEvernoteSwitch.on = self.checkList.saveToEvernote;
+//    } else {
+//        self.saveToEvernoteLabel.hidden = YES;
+//        self.saveToEvernoteSwitch.hidden = YES;
+//    }
 
     // チェックリスト情報
     if (self.checkList.finishDate) {

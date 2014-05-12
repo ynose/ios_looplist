@@ -4,6 +4,14 @@
 <array>
 	<dict>
 		<key>feature</key>
+		<string>Remove Ad</string>
+		<key>description</key>
+		<string>Remove Ad.</string>
+		<key>forsale</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>feature</key>
 		<string>List management</string>
 		<key>description</key>
 		<string>Add more lists.</string>
@@ -17,14 +25,6 @@
 		<string>Checklist History to Evernote.</string>
 		<key>forsale</key>
 		<false/>
-	</dict>
-	<dict>
-		<key>feature</key>
-		<string>Hide Ad</string>
-		<key>description</key>
-		<string>Hide Ad</string>
-		<key>forsale</key>
-		<true/>
 	</dict>
 </array>
 </plist>

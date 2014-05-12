@@ -16,6 +16,7 @@
 
 
 @interface LLTabBarController ()  <UITabBarControllerDelegate, AppSettingViewControllerDelegate, NADViewDelegate>
+@property (nonatomic, assign) BOOL loadedAd;
 @end
 
 @implementation LLTabBarController
@@ -41,6 +42,10 @@
     }
 #endif
 
+//    [self dummyAd];
+//    [self nadViewDidFinishLoad:nil];
+//    [self nadViewDidReceiveAd:nil];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -62,7 +67,8 @@
 -(void)setupAd
 {
     // (2) NADView の作成
-    self.nadView = [[NADView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, 320, 50)];
+//    self.nadView = [[NADView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, 320, 50)];
+    self.nadView = [[NADView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - self.tabBar.frame.size.height - 50, 320, 50)];
     self.nadView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     // (3) ログ出力の指定
     [self.nadView setIsOutputLog:NO];
@@ -82,7 +88,7 @@
 // AppStoreスクリーンショット用ダミー広告枠
 -(void)dummyAd
 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, 320, 50)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - self.tabBar.frame.size.height - 50, 320, 50)];
     view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     view.backgroundColor = [UIColor whiteColor];
     view.layer.borderColor = [[UIColor grayColor] CGColor];
@@ -100,6 +106,16 @@
 -(void)nadViewDidFinishLoad:(NADView *)adView
 {
     DEBUGLOG(@"delegate nadViewDidFinishLoad:");
+
+    self.loadedAd = YES;
+    for (UINavigationController *navController in self.viewControllers) {
+        LLRootViewController *rootViewController = (LLRootViewController *)navController.topViewController;
+
+        UIEdgeInsets inset = rootViewController.tableView.contentInset;
+        inset.bottom += 50;
+        rootViewController.tableView.contentInset = inset;
+        rootViewController.tableView.scrollIndicatorInsets = inset;
+    }
 }
 
 -(void)dealloc
@@ -128,8 +144,10 @@
     }
     [self setViewControllers:viewControllers];
 
-    // Pro版のみタブバーを表示する
-    self.tabBar.hidden = ([ProductManager isAppPro]) ? NO : YES;
+//    // Pro版のみタブバーを表示する
+//    self.tabBar.hidden = ([ProductManager isAppPro]) ? NO : YES;
+//    self.tabBar.hidden = NO;
+
 }
 
 
@@ -192,11 +210,11 @@
     // タブバーに反映する
     [self refreshViewControllers];
 
-    // 無料版のみ広告表示
-    if ([ProductManager isAppPro]) {
-        [self.nadView setDelegate:nil]; // delegate に nil をセット
-        self.nadView = nil; // プロパティ経由で release、nil をセット
-    }
+//    // 無料版のみ広告表示
+//    if ([ProductManager isAppPro]) {
+//        [self.nadView setDelegate:nil]; // delegate に nil をセット
+//        self.nadView = nil; // プロパティ経由で release、nil をセット
+//    }
 }
 
 @end

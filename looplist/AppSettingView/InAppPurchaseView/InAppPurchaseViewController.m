@@ -8,21 +8,22 @@
 
 #import "InAppPurchaseViewController.h"
 
+#import "PaymentManager.h"
 #import "ProductManager.h"
 #import "UIProductCell.h"
 
 static NSString *kCellIdentifier = @"Cell";
 
-@interface InAppPurchaseViewController ()
+@interface InAppPurchaseViewController () <PaymentManagerDelegete>
 @property (nonatomic, strong) NSArray *productArray;
 @property (nonatomic, strong) NSArray *inAppPurchaseItems;
 @end
 
 @implementation InAppPurchaseViewController
 
--(id)init
+-(id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithStyle:UITableViewStyleGrouped];
+    self = [super initWithCoder:aDecoder];
     if (self) {
         // Pro版の追加機能リストを読み込む
         NSBundle *bundle = [NSBundle mainBundle];
@@ -43,18 +44,6 @@ static NSString *kCellIdentifier = @"Cell";
 #pragma mark - View lifecycle
 - (void)viewDidLoad
 {
-    // Pro版の追加機能リストを読み込む
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *path = [bundle pathForResource:@"InAppPurchase" ofType:@"plist"];
-    NSMutableArray *items = [NSMutableArray arrayWithContentsOfFile:path];
-
-    // フィルタをかけて販売中のもののみにする
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"forsale = %d", YES];
-    [items filterUsingPredicate:predicate];
-
-    self.inAppPurchaseItems = items;
-
-
     // 購入処理の通知受信設定
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:@selector(paymentCompletedNotification:)
@@ -64,9 +53,12 @@ static NSString *kCellIdentifier = @"Cell";
 
 
     // プロダクト情報の取得
+    #ifndef DEBUG
     [[PaymentManager sharedManager] setDelegate:self];
     NSSet *productIds = [ProductManager productIds];
     [[PaymentManager sharedManager] startProductRequest:productIds];
+    #endif
+
 
     // 再利用セルのクラスを登録(dequeueReusableCellWithIdentifierで使う)
     [self.tableView registerClass:[UIProductCell class] forCellReuseIdentifier:kCellIdentifier];

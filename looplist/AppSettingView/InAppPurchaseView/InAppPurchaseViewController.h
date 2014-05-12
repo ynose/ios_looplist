@@ -8,13 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "PaymentManager.h"
-
 @protocol inAppPurchaseViewControllerDelegate <NSObject>
 -(void)inAppPurchaseDone:(id)sender;
 @end
 
-@interface InAppPurchaseViewController : UITableViewController <PaymentManagerDelegete>
+@interface InAppPurchaseViewController : UITableViewController
 
 @property (weak, nonatomic) id <inAppPurchaseViewControllerDelegate>delegate;
 
