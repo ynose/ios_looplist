@@ -19,8 +19,9 @@
 @interface LLTabBarController : UITabBarController
 
 @property (nonatomic, strong) NADView * nadView;
+@property (nonatomic, strong) UIView * dummyAdView;
 
 -(void)refreshViewControllers;
--(void)menuAction:(id)sender;
+-(void)settingAppAction;
 
 @end

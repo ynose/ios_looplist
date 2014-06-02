@@ -26,7 +26,7 @@
 
 @property (nonatomic, assign) NSInteger currentFilterIndex;
 
-@property (strong, nonatomic) UIBarButtonItem *menuButton;
+@property (strong, nonatomic) UIBarButtonItem *appSettingButton;
 @property (strong, nonatomic) UIBarButtonItem *addButton;
 @property (strong, nonatomic) UISegmentedControl *filterSegmentedControl;
 @property (strong, nonatomic) NSIndexPath *indexPathOfSelected;
@@ -75,15 +75,14 @@
 
     // 設定ボタンの作成
 #ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影の場合は表示しない
-//    self.menuButton = nil;
-    // Ver1.0では使用しない
-    self.menuButton = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain
-                                                      target:self.tabBarController
-                                                      action:@selector(menuAction:)];
+    self.appSettingButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"settings-button"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain
+                                                            target:self.tabBarController
+                                                      action:@selector(settingAppAction)];
+
     if (self.singleViewMode) {
         self.navigationItem.leftBarButtonItem = self.navigationController.navigationItem.backBarButtonItem;
     } else {
-        self.navigationItem.leftBarButtonItem = self.menuButton;
+        self.navigationItem.leftBarButtonItem = self.appSettingButton;
     }
 #endif
 
@@ -241,7 +240,7 @@
         [self.navigationItem setLeftBarButtonItem:(editing) ? self.addButton : self.navigationController.navigationItem.backBarButtonItem
                                          animated:animated];
     } else {
-        [self.navigationItem setLeftBarButtonItem:(editing) ? self.addButton : self.menuButton
+        [self.navigationItem setLeftBarButtonItem:(editing) ? self.addButton : self.appSettingButton
                                          animated:animated];
     }
 
@@ -550,8 +549,11 @@
     detailViewController.sequenceNumber = [self.checkList sequenceOfCheckItem:checkItem];
 
     LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+#ifdef APPSTORE_SCREENSHOT
+    tabBarController.dummyAdView.hidden = YES;
+#else
     tabBarController.nadView.hidden = YES;
-
+#endif
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

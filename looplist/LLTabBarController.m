@@ -42,10 +42,6 @@
     }
 #endif
 
-//    [self dummyAd];
-//    [self nadViewDidFinishLoad:nil];
-//    [self nadViewDidReceiveAd:nil];
-
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -67,7 +63,6 @@
 -(void)setupAd
 {
     // (2) NADView の作成
-//    self.nadView = [[NADView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 50, 320, 50)];
     self.nadView = [[NADView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - self.tabBar.frame.size.height - 50, 320, 50)];
     self.nadView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     // (3) ログ出力の指定
@@ -88,18 +83,18 @@
 // AppStoreスクリーンショット用ダミー広告枠
 -(void)dummyAd
 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - self.tabBar.frame.size.height - 50, 320, 50)];
-    view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-    view.backgroundColor = [UIColor whiteColor];
-    view.layer.borderColor = [[UIColor grayColor] CGColor];
-    view.layer.borderWidth = 1;
+    self.dummyAdView = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - self.tabBar.frame.size.height - 50, 320, 50)];
+    self.dummyAdView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+    self.dummyAdView.backgroundColor = [UIColor whiteColor];
+    self.dummyAdView.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.dummyAdView.layer.borderWidth = 1;
 
-    UILabel *label = [[UILabel alloc] initWithFrame:view.bounds];
+    UILabel *label = [[UILabel alloc] initWithFrame:self.dummyAdView.bounds];
     label.text = @"Ad";
     label.textAlignment = NSTextAlignmentCenter;
-    [view addSubview:label];
+    [self.dummyAdView addSubview:label];
 
-    [self.view addSubview:view]; // 最初から表示する場合
+    [self.view addSubview:self.dummyAdView]; // 最初から表示する場合
 }
 #endif
 
@@ -108,11 +103,17 @@
     DEBUGLOG(@"delegate nadViewDidFinishLoad:");
 
     self.loadedAd = YES;
+
+    [self adjustTableViewInset];
+}
+
+-(void)adjustTableViewInset
+{
     for (UINavigationController *navController in self.viewControllers) {
         LLRootViewController *rootViewController = (LLRootViewController *)navController.topViewController;
 
         UIEdgeInsets inset = rootViewController.tableView.contentInset;
-        inset.bottom += 50;
+        inset.bottom = 49 + 50;
         rootViewController.tableView.contentInset = inset;
         rootViewController.tableView.scrollIndicatorInsets = inset;
     }
@@ -122,6 +123,7 @@
 {
     [self.nadView setDelegate:nil]; // delegate に nil をセット
     self.nadView = nil; // プロパティ経由で release、nil をセット
+    self.loadedAd = NO;
 }
 
 #pragma mark 全タブ内のビューコントローラを再構築
@@ -143,6 +145,10 @@
         [viewControllers addObject:navigationController];
     }
     [self setViewControllers:viewControllers];
+
+    if (self.loadedAd) {
+        [self adjustTableViewInset];
+    }
 
 //    // Pro版のみタブバーを表示する
 //    self.tabBar.hidden = ([ProductManager isAppPro]) ? NO : YES;
@@ -186,13 +192,16 @@
         // チェック日時を更新するためにリロードする
         [rootViewController.tableView reloadVisibleRowsAfterDelay:0 withRowAnimation:UITableViewRowAnimationNone];
 
+        if (self.loadedAd) {
+            [self adjustTableViewInset];
+        }
         return YES;
     }
 }
 
 
-#pragma mark メニューボタン
--(void)menuAction:(id)sender
+#pragma mark 設定ボタン
+-(void)settingAppAction
 {
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     UINavigationController *navigationController = [storyBoard instantiateViewControllerWithIdentifier:@"AppSettingViewController"];

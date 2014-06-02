@@ -92,8 +92,9 @@
 		8E36136917F3CC34008CF7E1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E36136817F3CC34008CF7E1 /* MobileCoreServices.framework */; };
 		8E36136B17F3CC7F008CF7E1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E36136A17F3CC7F008CF7E1 /* Security.framework */; };
 		8E36136D17F3CC88008CF7E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E36136C17F3CC88008CF7E1 /* StoreKit.framework */; };
+		8E405BC119222DD200B22B32 /* settings-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E405BBF19222DD200B22B32 /* settings-button.png */; };
+		8E405BC219222DD200B22B32 /* settings-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E405BC019222DD200B22B32 /* settings-button@2x.png */; };
 		8E88375D17F255D60063E811 /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E88375A17F255D60063E811 /* checkmark@2x.png */; };
-		8E88375E17F255D60063E811 /* settings-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E88375B17F255D60063E811 /* settings-button.png */; };
 		8E88375F17F255D60063E811 /* tabbar-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E88375C17F255D60063E811 /* tabbar-icon@2x.png */; };
 		8E88502117F0EB340068B13F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88502017F0EB340068B13F /* Foundation.framework */; };
 		8E88502317F0EB340068B13F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88502217F0EB340068B13F /* CoreGraphics.framework */; };
@@ -329,9 +330,10 @@
 		8E36136817F3CC34008CF7E1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8E36136A17F3CC7F008CF7E1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		8E36136C17F3CC88008CF7E1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8E405BBF19222DD200B22B32 /* settings-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-button.png"; sourceTree = "<group>"; };
+		8E405BC019222DD200B22B32 /* settings-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-button@2x.png"; sourceTree = "<group>"; };
 		8E88260217F991F400451168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8E88375A17F255D60063E811 /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
-		8E88375B17F255D60063E811 /* settings-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-button.png"; sourceTree = "<group>"; };
 		8E88375C17F255D60063E811 /* tabbar-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-icon@2x.png"; sourceTree = "<group>"; };
 		8E88501D17F0EB340068B13F /* Looplist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Looplist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E88502017F0EB340068B13F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -789,9 +791,10 @@
 		8E88375917F255D60063E811 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				8E405BBF19222DD200B22B32 /* settings-button.png */,
+				8E405BC019222DD200B22B32 /* settings-button@2x.png */,
 				8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */,
 				8E88375A17F255D60063E811 /* checkmark@2x.png */,
-				8E88375B17F255D60063E811 /* settings-button.png */,
 				8E88375C17F255D60063E811 /* tabbar-icon@2x.png */,
 			);
 			path = Image;
@@ -1192,6 +1195,7 @@
 			files = (
 				8EE13E1117FB88830076F4E9 /* LLSectionCell.xib in Resources */,
 				8E36134B17F3C772008CF7E1 /* enml.dtd in Resources */,
+				8E405BC119222DD200B22B32 /* settings-button.png in Resources */,
 				8E88E67017F1B85A00C9E69A /* SVProgressHUD.bundle in Resources */,
 				8E2D6F4D18043EDE0028E111 /* NADView_readme.txt in Resources */,
 				8E36135417F3C772008CF7E1 /* xhtml1-strict.dtd in Resources */,
@@ -1206,7 +1210,6 @@
 				8E88375F17F255D60063E811 /* tabbar-icon@2x.png in Resources */,
 				8E36135517F3C772008CF7E1 /* xhtml1-transitional.dtd in Resources */,
 				8E36135A17F3C772008CF7E1 /* EvernoteSDK.strings in Resources */,
-				8E88375E17F255D60063E811 /* settings-button.png in Resources */,
 				8E36135017F3C772008CF7E1 /* recoIndex.dtd in Resources */,
 				8E88503717F0EB340068B13F /* Main_iPad.storyboard in Resources */,
 				8E88503F17F0EB340068B13F /* Images.xcassets in Resources */,
@@ -1215,6 +1218,7 @@
 				8E8D08BA17F3F4BD00C9DAC8 /* InAppPurchase.plist in Resources */,
 				8E36134D17F3C772008CF7E1 /* evernote-export.dtd in Resources */,
 				8ED20A5F17FA309E0060C690 /* navigationBar@2x.png in Resources */,
+				8E405BC219222DD200B22B32 /* settings-button@2x.png in Resources */,
 				8E88A54A17FC52BD000DB515 /* LLCheckItemCell.xib in Resources */,
 				8E88502B17F0EB340068B13F /* InfoPlist.strings in Resources */,
 			);
@@ -1523,7 +1527,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "looplist/looplist-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					DEBUG,
+					_DEBUG,
 					_PROVERSION,
 					_APPSTORE_SCREENSHOT,
 					_LAUNCH_SCREENSHOT,

@@ -20,8 +20,12 @@
 /* Class = "IBUINavigationItem"; title = "購入"; ObjectID = "Gn8-Gx-ZIy"; */
 "Gn8-Gx-ZIy.title" = "購入";
 
-/* Class = "IBUINavigationItem"; title = "リストの設定"; ObjectID = "Gr5-Mt-nfN"; */
-"Gr5-Mt-nfN.title" = "リストの設定";
+/* Class = "IBUINavigationItem"; title = "リストの管理"; ObjectID = "aAf-7D-1k5"; */
+"aAf-7D-1k5.title" = "リストの管理";
+
+/* Class = "IBUINavigationItem"; title = "リストの編集"; ObjectID = "Gr5-Mt-nfN"; */
+"Gr5-Mt-nfN.title" = "リストの編集";
+
 
 /* Class = "IBUILabel"; text = "Label"; ObjectID = "Hhi-aN-Wef"; */
 "Hhi-aN-Wef.text" = "Label";

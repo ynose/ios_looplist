@@ -276,6 +276,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="List" id="aAf-7D-1k5"/>
+                    <connections>
+                        <segue destination="87A-xJ-9nA" kind="push" identifier="CheckListDetailView" id="2Iy-gC-XTK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xjp-13-u83" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -461,12 +464,12 @@
             </objects>
             <point key="canvasLocation" x="2261" y="776"/>
         </scene>
-        <!--Check List Detail View Controller - Edit list-->
+        <!--Check List Detail View Controller - Edit List-->
         <scene sceneID="EK9-Lz-uTv">
             <objects>
                 <viewController storyboardIdentifier="CheckListSettingViewController" id="87A-xJ-9nA" customClass="LLCheckListDetailViewController" sceneMemberID="viewController">
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" id="aU4-HM-tVG" customClass="LLTouchScrollView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="List title" minimumFontSize="17" clearButtonMode="whileEditing" id="3YO-2V-d3F">
@@ -484,27 +487,27 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save to Evernote" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u3T-Fu-1CH">
-                                <rect key="frame" x="20" y="469" width="223" height="21"/>
+                                <rect key="frame" x="20" y="405" width="223" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="createDate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lA3-f9-pu1">
-                                <rect key="frame" x="20" y="498" width="280" height="21"/>
+                                <rect key="frame" x="20" y="434" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="finishCount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zcO-3C-ctS">
-                                <rect key="frame" x="20" y="527" width="280" height="21"/>
+                                <rect key="frame" x="20" y="463" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="aJM-vP-gZH">
-                                <rect key="frame" x="251" y="464" width="51" height="31"/>
+                                <rect key="frame" x="251" y="400" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grouping" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Il-u5-GEV">
@@ -516,8 +519,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </scrollView>
-                    <navigationItem key="navigationItem" title="Edit list" id="Gr5-Mt-nfN"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Edit List" id="Gr5-Mt-nfN">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="RNm-ix-8Qo"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="captionTextField" destination="3YO-2V-d3F" id="1kb-S4-Thh"/>
                         <outlet property="createDateLabel" destination="lA3-f9-pu1" id="qBD-gZ-g3R"/>

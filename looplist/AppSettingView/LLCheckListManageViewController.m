@@ -21,6 +21,7 @@
 @end
 
 static NSString *kListCellIdentifier = @"Cell";
+__strong static NSString *kCheckListDetailViewSegue = @"CheckListDetailView";
 
 @implementation LLCheckListManageViewController
 
@@ -28,7 +29,13 @@ static NSString *kListCellIdentifier = @"Cell";
 {
     [super viewDidLoad];
 
+    // 次画面のナビゲーションを「戻る」ボタンにするために
+    // StoryBoardではなくここでタイトルを設定する
+//    self.title = LSTR(@"titleManageList");
     self.navigationItem.rightBarButtonItem = [self editButtonItem];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:LSTR(@"BackButtonCaption")
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self action:@selector(backAction:)];
 
     self.changeCheckList = NO;
 
@@ -70,7 +77,7 @@ static NSString *kListCellIdentifier = @"Cell";
 
 }
 
-#pragma mark - Table view data source
+#pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 2;
@@ -114,21 +121,18 @@ static NSString *kListCellIdentifier = @"Cell";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.checkListIndex = ((indexPath.section == 0) ? 0 : [tableView numberOfRowsInSection:0]) + indexPath.row;
-    LLCheckList *checkList = [LLCheckListManager sharedManager].arrayCheckLists[self.checkListIndex];
-
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
 
     if (tableView.editing) {
         // 編集モードはリストの設定画面を表示
-        LLCheckListDetailViewController *viewController = [storyBoard instantiateViewControllerWithIdentifier:@"CheckListSettingViewController"];
-        viewController.delegate = self;
-        viewController.checkListIndex = self.checkListIndex;
-        viewController.checkList = checkList;
-
-        [self.navigationController pushViewController:viewController animated:YES];
+        [self performSegueWithIdentifier:kCheckListDetailViewSegue sender:self];
     } else {
         // 通常モードはRootViewを表示
-        LLRootViewController *viewController = [storyBoard  instantiateViewControllerWithIdentifier:@"RootViewController"];
+        // LLTabBarController > UINavigationController > LLRootViewController
+        
+        LLCheckList *checkList = [LLCheckListManager sharedManager].arrayCheckLists[self.checkListIndex];
+
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+        LLRootViewController *viewController = [storyBoard instantiateViewControllerWithIdentifier:@"RootViewController"];
         viewController.checkListIndex = self.checkListIndex;
         viewController.checkList = checkList;
         viewController.singleViewMode = YES;
@@ -149,6 +153,17 @@ static NSString *kListCellIdentifier = @"Cell";
         // 遷移先での変更有無に関わらず変更ありとしてチェックリストをリセットさせる
         self.changeCheckList = YES;
     }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [super prepareForSegue:segue sender:sender];
+
+    LLCheckList *checkList = [LLCheckListManager sharedManager].arrayCheckLists[self.checkListIndex];
+    LLCheckListDetailViewController *viewController = (LLCheckListDetailViewController *)segue.destinationViewController;
+    viewController.delegate = self;
+    viewController.checkListIndex = self.checkListIndex;
+    viewController.checkList = checkList;
 }
 
 // 通常モードはRootView用のBackBarButtonアクション
@@ -221,8 +236,8 @@ static NSString *kListCellIdentifier = @"Cell";
             [[LLCheckListManager sharedManager].arrayCheckLists insertObject:[[LLCheckList alloc] initWithCheckItemsFileName]
                                                                      atIndex:showListCount];
             indexPath = [NSIndexPath indexPathForRow:showListCount inSection:0];
-            [[NSUserDefaults standardUserDefaults] setInteger:MIN(MAX(++showListCount, 1), SHOWLIST_MAX) forKey:SETTING_SHOWTABS];
-            self.changeCheckList = YES;
+            [[NSUserDefaults standardUserDefaults] setInteger:MIN(MAX(showListCount + 1, 1), SHOWLIST_MAX) forKey:SETTING_SHOWTABS];
+//            self.changeCheckList = YES;
         } else {
             // その他に追加する
             [[LLCheckListManager sharedManager] addObject:[[LLCheckList alloc] initWithCheckItemsFileName]];
@@ -230,28 +245,39 @@ static NSString *kListCellIdentifier = @"Cell";
         }
         [[LLCheckListManager sharedManager] saveCheckLists];
 
+        // セルを追加
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 
         self.changeCheckList = YES;
     }
 }
 
+#pragma mark チェックリストの削除
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // チェックリストを削除
+        NSInteger checkListCount = [[LLCheckListManager sharedManager].arrayCheckLists count];
         NSInteger showListCount = [self.tableView numberOfRowsInSection:0];
         NSInteger checkListIndex = ((indexPath.section == 0) ? 0 : showListCount) + indexPath.row;
         [[LLCheckListManager sharedManager] removeCheckList:checkListIndex];
         [[LLCheckListManager sharedManager] saveCheckLists];
 
-        // 表示リストから削除した場合は表示リスト数を減算する
+        // 表示リストから削除した場合は表示リスト数を減算する(ただしリスト数がゼロにならないように最低でも1にする)
         if (indexPath.section == 0) {
-            [[NSUserDefaults standardUserDefaults] setInteger:MIN(MAX(--showListCount, 1), SHOWLIST_MAX) forKey:SETTING_SHOWTABS];
+            [[NSUserDefaults standardUserDefaults] setInteger:MIN(MAX(showListCount - 1, 1), SHOWLIST_MAX) forKey:SETTING_SHOWTABS];
             self.changeCheckList = YES;
         }
 
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+        if (checkListCount == 1) {
+            // 最後の１つを消そうとした場合は、新しいチェックリストを再作成する
+            [tableView beginUpdates];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+            [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+            [tableView endUpdates];
+        } else {
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+        }
     }
 }
 

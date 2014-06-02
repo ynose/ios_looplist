@@ -58,6 +58,9 @@
 
 
 /* ----- リスト詳細画面 ----- */
+/* タイトル */
+"titleManageList" = "List";
+
 /* セクション */
 "AddSection" = "Add";
 
