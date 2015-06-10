@@ -53,7 +53,7 @@ static NSString *kInAppPurchaseSegue = @"InAppPurchaseSegue";
 //    if ([ProductManager isAppPro]) {
 //        checkListMax = MAX_CHECKLIST;
 //    }
-    self.checkListManageButtonCell.detailTextLabel.text = [NSString stringWithFormat:@"%d / %d", checkListCount, checkListMax];
+    self.checkListManageButtonCell.detailTextLabel.text = [NSString stringWithFormat:@"%ld / %ld", (long)checkListCount, (long)checkListMax];
 
 //    // Evernoteサインイン状態を表示
 //    EvernoteSession *session = [EvernoteSession sharedSession];

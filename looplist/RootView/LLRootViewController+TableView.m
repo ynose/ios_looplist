@@ -10,8 +10,6 @@
 
 #import "LLCheckListManager.h"
 
-#import "MSCellAccessory.h"
-
 static CGFloat kSectionHeight = 24;
 
 @implementation LLRootViewController (TableView)
@@ -90,12 +88,11 @@ static CGFloat kSectionHeight = 24;
     cell.checkItem = checkItem;
     cell.captionTextField.text = checkItem.caption;
     cell.checkedDate = checkItem.checkedDate;
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     if (checkItem.hasDetail) {
-        cell.accessoryView = [MSCellAccessory accessoryWithType:FLAT_DETAIL_BUTTON
-                                                          color:UIColorMain];
+        cell.tintColor = UIColorMain;
     } else {
-        cell.accessoryView = [MSCellAccessory accessoryWithType:FLAT_DETAIL_BUTTON
-                                                          color:[UIColor colorWithRed:0.808 green:0.808 blue:0.808 alpha:1.000]];
+        cell.tintColor = [UIColor colorWithRed:0.808 green:0.808 blue:0.808 alpha:1.000];
     }
 
 

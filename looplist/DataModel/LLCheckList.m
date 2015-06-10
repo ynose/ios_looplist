@@ -55,7 +55,7 @@
     }
     self.finishDate = [aDecoder decodeObjectForKey:@"finishDate"];
     self.finishCount = [aDecoder decodeIntegerForKey:@"finishCount"];
-    self.filterIndex = [aDecoder decodeIntegerForKey:@"filterIndex"];
+    self.filterIndex = [aDecoder decodeIntForKey:@"filterIndex"];
     self.saveToEvernote = [aDecoder decodeBoolForKey:@"saveToEvernote"];
     self.checkItemsFileName = [aDecoder decodeObjectForKey:@"checkListFileName"];
 
