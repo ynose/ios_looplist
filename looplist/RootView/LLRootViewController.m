@@ -672,7 +672,11 @@
     if (self.checkList.filterIndex == segmentedControl.selectedSegmentIndex) {
         return; // 同じ選択は無視する
     }
-    self.checkList.filterIndex = segmentedControl.selectedSegmentIndex;
+    if (segmentedControl.selectedSegmentIndex == 0) {
+        self.checkList.filterIndex = kFilterAll;
+    } else {
+        self.checkList.filterIndex = kFilterUnchecked;
+    }
 
     // チェック済みアイテムを画面上から非表示(削除)/表示(追加)するためのインデックスの配列を作る
     NSMutableArray *rowsArray = [NSMutableArray array];
