@@ -114,7 +114,9 @@
 {
     // セクションテーブルビュー
     CGRect rect = self.sectionTableView.frame;
-    rect.size.height = [self.sectionTableView numberOfRowsInSection:0] * self.sectionTableView.rowHeight;
+// iOS8？でself.sectionTableView.rowHeightが取得できずテーブルビューの高さが求められずに表示されないバグ修正
+//    rect.size.height = [self.sectionTableView numberOfRowsInSection:0] * self.sectionTableView.rowHeight;
+    rect.size.height = [self.sectionTableView numberOfRowsInSection:0] * 44;
     self.sectionTableView.frame = rect;
 
 

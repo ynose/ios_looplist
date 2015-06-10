@@ -69,6 +69,7 @@
 		8E88E67117F1B85A00C9E69A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E66F17F1B85A00C9E69A /* SVProgressHUD.m */; };
 		8E8C146717FE29AE0067995E /* LLCheckListManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C146617FE29AE0067995E /* LLCheckListManageViewController.m */; };
 		8E8D08BA17F3F4BD00C9DAC8 /* InAppPurchase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E8D08B817F3F4BD00C9DAC8 /* InAppPurchase.plist */; };
+		8E90247B1B28576300A87982 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E90247A1B28576300A87982 /* Launch Screen.xib */; };
 		8ECD7E3E17FCC91F0071B281 /* LLRootViewController+TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD7E3D17FCC91F0071B281 /* LLRootViewController+TableView.m */; };
 		8ECD7E4117FCD5740071B281 /* UIView+KeyboardNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD7E4017FCD5740071B281 /* UIView+KeyboardNotification.m */; };
 		8ECF983C17F2EE3B0097838A /* LLTouchScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF983917F2EE3B0097838A /* LLTouchScrollView.m */; };
@@ -195,6 +196,7 @@
 		8E8D08B917F3F4BD00C9DAC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = looplist/Base.lproj/InAppPurchase.plist; sourceTree = SOURCE_ROOT; };
 		8E8D08BD17F3F5BE00C9DAC8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ja; path = looplist/ja.lproj/InAppPurchase.plist; sourceTree = SOURCE_ROOT; };
 		8E8D08C017F4005000C9DAC8 /* Looplist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Looplist.entitlements; sourceTree = "<group>"; };
+		8E90247A1B28576300A87982 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		8ECD7E3D17FCC91F0071B281 /* LLRootViewController+TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LLRootViewController+TableView.m"; sourceTree = "<group>"; };
 		8ECD7E3F17FCD5740071B281 /* UIView+KeyboardNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KeyboardNotification.h"; sourceTree = "<group>"; };
 		8ECD7E4017FCD5740071B281 /* UIView+KeyboardNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KeyboardNotification.m"; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				8E88507217F0F0520068B13F /* Define.h */,
 				8E88502F17F0EB340068B13F /* LLAppDelegate.h */,
 				8E88503017F0EB340068B13F /* LLAppDelegate.m */,
+				8E90247A1B28576300A87982 /* Launch Screen.xib */,
 				8E88503217F0EB340068B13F /* Main_iPhone.storyboard */,
 				8E88503517F0EB340068B13F /* Main_iPad.storyboard */,
 				8ECCA1591802BEFD00A0BA8D /* TabBarController */,
@@ -700,6 +703,7 @@
 				8E8D08BA17F3F4BD00C9DAC8 /* InAppPurchase.plist in Resources */,
 				8ED20A5F17FA309E0060C690 /* navigationBar@2x.png in Resources */,
 				8E405BC219222DD200B22B32 /* settings-button@2x.png in Resources */,
+				8E90247B1B28576300A87982 /* Launch Screen.xib in Resources */,
 				8E88A54A17FC52BD000DB515 /* LLCheckItemCell.xib in Resources */,
 				8E88502B17F0EB340068B13F /* InfoPlist.strings in Resources */,
 			);
