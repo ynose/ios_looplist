@@ -975,8 +975,6 @@
 					"$(inherited)",
 					"$(SRCROOT)/looplist/NendAd",
 					"$(SRCROOT)/../Library/GoogleAnalyticsServicesiOS_3.08",
-					/Users/yoshio/Documents/iOS,
-					App/Library/GoogleAnalyticsServicesiOS_3.08,
 					"$(PROJECT_DIR)/looplist/NendAd",
 				);
 				PRODUCT_NAME = Looplist;
@@ -1007,8 +1005,6 @@
 					"$(inherited)",
 					"$(SRCROOT)/looplist/NendAd",
 					"$(SRCROOT)/../Library/GoogleAnalyticsServicesiOS_3.08",
-					/Users/yoshio/Documents/iOS,
-					App/Library/GoogleAnalyticsServicesiOS_3.08,
 					"$(PROJECT_DIR)/looplist/NendAd",
 				);
 				PRODUCT_NAME = Looplist;
@@ -1116,8 +1112,6 @@
 					"$(inherited)",
 					"$(SRCROOT)/looplist/NendAd",
 					"$(SRCROOT)/../Library/GoogleAnalyticsServicesiOS_3.08",
-					/Users/yoshio/Documents/iOS,
-					App/Library/GoogleAnalyticsServicesiOS_3.08,
 					"$(PROJECT_DIR)/looplist/NendAd",
 				);
 				PRODUCT_NAME = Looplist;
