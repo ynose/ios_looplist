@@ -11,7 +11,7 @@
 @class LLCheckItem;
 
 @protocol LLDetailViewDelegate <NSObject>
--(void)saveDetail:(LLCheckItem *)checkItem;
+-(void)saveDetail:(LLCheckItem *)checkItem attachImage:(UIImage *)image;
 @end
 
 @interface LLCheckItemDetailViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
@@ -21,6 +21,9 @@
 
 @property (weak, nonatomic) id<LLDetailViewDelegate> delegate;
 @property (assign, nonatomic) NSUInteger sequenceNumber;
-@property (copy, nonatomic) LLCheckItem *checkItem;
+//@property (copy, nonatomic) LLCheckItem *checkItem;
+@property (strong, nonatomic) LLCheckItem *checkItem;
+@property (strong, nonatomic) UIImage *attachImage;
+@property (weak, nonatomic) IBOutlet UIImageView *attachImageView;
 
 @end

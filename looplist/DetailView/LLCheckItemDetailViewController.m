@@ -58,6 +58,8 @@
     self.memoTextView.text = self.checkItem.memo;
     [self.memoTextView setEditable:NO];
 
+    // 画像
+    self.attachImageView.image = self.attachImage;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -87,8 +89,8 @@
     self.checkItem.memo = self.memoTextView.text;
 
     // デリゲートに通知
-    if ([self.delegate respondsToSelector:@selector(saveDetail:)]) {
-        [self.delegate saveDetail:self.checkItem];
+    if ([self.delegate respondsToSelector:@selector(saveDetail:attachImage:)]) {
+        [self.delegate saveDetail:self.checkItem attachImage:self.attachImage];
     }
 }
 

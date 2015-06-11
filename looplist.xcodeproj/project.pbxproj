@@ -10,6 +10,7 @@
 		8E1F2CA618059B7700481439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA518059B7700481439 /* CoreData.framework */; };
 		8E1F2CA818059B8500481439 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA718059B8500481439 /* SystemConfiguration.framework */; };
 		8E1F2CAA18059B8E00481439 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA918059B8E00481439 /* libz.dylib */; };
+		8E2C99071B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2C99061B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m */; };
 		8E2D6F4C18043EDE0028E111 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2D6F4918043EDE0028E111 /* libNendAd.a */; };
 		8E2D6F4D18043EDE0028E111 /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8E2D6F4B18043EDE0028E111 /* NADView_readme.txt */; };
 		8E2D6F4F18043EFB0028E111 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2D6F4E18043EFB0028E111 /* AdSupport.framework */; };
@@ -99,6 +100,7 @@
 		8E1F2CA518059B7700481439 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8E1F2CA718059B8500481439 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8E1F2CA918059B8E00481439 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		8E2C99061B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LLCheckItemDetailViewController+ImagePicker.m"; sourceTree = "<group>"; };
 		8E2D6F4918043EDE0028E111 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
 		8E2D6F4A18043EDE0028E111 /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
 		8E2D6F4B18043EDE0028E111 /* NADView_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NADView_readme.txt; sourceTree = "<group>"; };
@@ -238,12 +240,12 @@
 				8E416C4E1B28F4DB006BE2DA /* libsqlite3.0.dylib in Frameworks */,
 				8E36136717F3CC15008CF7E1 /* libxml2.dylib in Frameworks */,
 				8E1F2CAA18059B8E00481439 /* libz.dylib in Frameworks */,
+				8E36136917F3CC34008CF7E1 /* MobileCoreServices.framework in Frameworks */,
 				8E1F2CA818059B8500481439 /* SystemConfiguration.framework in Frameworks */,
 				8E1F2CA618059B7700481439 /* CoreData.framework in Frameworks */,
 				8E2D6F4F18043EFB0028E111 /* AdSupport.framework in Frameworks */,
 				8E36136D17F3CC88008CF7E1 /* StoreKit.framework in Frameworks */,
 				8E36136B17F3CC7F008CF7E1 /* Security.framework in Frameworks */,
-				8E36136917F3CC34008CF7E1 /* MobileCoreServices.framework in Frameworks */,
 				8E88502317F0EB340068B13F /* CoreGraphics.framework in Frameworks */,
 				8E88502517F0EB340068B13F /* UIKit.framework in Frameworks */,
 				8E88502117F0EB340068B13F /* Foundation.framework in Frameworks */,
@@ -506,6 +508,7 @@
 			children = (
 				8E88E64C17F1B36100C9E69A /* LLCheckItemDetailViewController.h */,
 				8E88E64D17F1B36100C9E69A /* LLCheckItemDetailViewController.m */,
+				8E2C99061B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m */,
 			);
 			name = DetailView;
 			path = looplist/DetailView;
@@ -733,6 +736,7 @@
 				8E8850B317F0FB290068B13F /* UIGlossyButton.m in Sources */,
 				8ECF984317F2EE6E0097838A /* UISimpleSwitchCell.m in Sources */,
 				8E8850A817F0F9F80068B13F /* LLColorLabelButton.m in Sources */,
+				8E2C99071B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m in Sources */,
 				8E88506E17F0EF9A0068B13F /* LLCheckList.m in Sources */,
 				8E36127C17F3C576008CF7E1 /* PaymentManager.m in Sources */,
 				8E88E65817F1B40100C9E69A /* LLSectionCell.m in Sources */,

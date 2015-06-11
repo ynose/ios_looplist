@@ -15,6 +15,8 @@ static LLCheckListManager *_sharedInstance = nil;
 static NSString *_checkListDir = @"checklist";
 static NSString *_checkListFile = @"checklist.dat";
 
+static NSString *_attachImageDir = @"attachImages";
+
 
 -(id)init
 {
@@ -95,7 +97,48 @@ static NSString *_checkListFile = @"checklist.dat";
     [NSKeyedArchiver archiveRootObject:self.arrayCheckLists toFile:[dir stringByAppendingPathComponent:_checkListFile]];
 }
 
+-(void)saveAttachImage:(UIImage *)image fileName:(NSString *)fileName
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *dir = [self dir];
+    dir = [dir stringByAppendingPathComponent:_attachImageDir];
+    // ディレクトリを作成
+    if (![fileManager fileExistsAtPath:dir]) {
+        NSError *error;
+        [fileManager createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:&error];
+    }
 
+
+    NSString *path = [dir stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", fileName]];
+
+
+    // NSDataのwriteToFileメソッドを使ってファイルに書き込みます
+    // atomically=YESの場合、同名のファイルがあったら、まずは別名で作成して、その後、ファイルの上書きを行います
+    NSData *data = UIImageJPEGRepresentation(image, 0.8f);
+    if ([data writeToFile:path atomically:NO]) {
+        NSLog(@"save OK");
+    } else {
+        NSLog(@"save NG");
+    }
+}
+
+-(UIImage *)loadAttachImage:(NSString *)fileName
+{
+    NSString *dir = [self dir];
+    dir = [dir stringByAppendingPathComponent:_attachImageDir];
+    NSString *path = [dir stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", fileName]];
+
+
+    NSError *error;
+    NSData *data = [NSData dataWithContentsOfFile:path options:NSDataReadingMappedIfSafe error:&error];
+
+    UIImage *image = nil;
+    if (!error) {
+        image = [UIImage imageWithData:data];
+    }
+
+    return image;
+}
 
 #pragma mark - CheckListオブジェクト操作
 -(void)insertObject:(LLCheckList *)checkList inCheckList:(NSUInteger)checkListIndex

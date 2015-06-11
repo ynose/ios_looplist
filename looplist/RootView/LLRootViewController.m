@@ -548,6 +548,11 @@
     detailViewController.checkItem = checkItem;
     detailViewController.sequenceNumber = [self.checkList sequenceOfCheckItem:checkItem];
 
+    // 画像の読み込み
+    UIImage *image = [[LLCheckListManager sharedManager] loadAttachImage:checkItem.identifier];
+    detailViewController.attachImage = image;
+
+
     LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
 #ifdef APPSTORE_SCREENSHOT
     tabBarController.dummyAdView.hidden = YES;
@@ -558,7 +563,7 @@
 }
 
 #pragma mark LLDetailViewDelegate
--(void)saveDetail:(LLCheckItem *)checkItem
+-(void)saveDetail:(LLCheckItem *)checkItem attachImage:(UIImage *)image
 {
     // 選択していたIndexPathから置換元のチェックアイテムを取得
     LLCheckItem *beforeCheckItem = [self checkItemAtIndexPath:self.indexPathOfSelected];
@@ -568,6 +573,11 @@
 
     [[LLCheckListManager sharedManager] replaceCheckItem:checkItem atIndexPath:indexPath inCheckList:self.checkListIndex];
     [[LLCheckListManager sharedManager] saveCheckItemsInCheckList:self.checkListIndex];
+
+    // 画像の保存
+    if (image) {
+        [[LLCheckListManager sharedManager] saveAttachImage:image fileName:checkItem.identifier];
+    }
 
     LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
     tabBarController.nadView.hidden = NO;

@@ -17,6 +17,7 @@
         return nil;
     }
 
+    self.identifier = [self makeIdentifier];
     self.caption = nil;
     self.checkedDate = nil;
     self.memo = nil;
@@ -32,6 +33,12 @@
         return nil;
     }
 
+    self.identifier = [aDecoder decodeObjectForKey:@"identifier"];
+    if (!self.identifier) {
+        // 識別子を作成する
+        self.identifier = [self makeIdentifier];
+    }
+
     self.caption = [aDecoder decodeObjectForKey:@"caption"];
     self.checkedDate = [aDecoder decodeObjectForKey:@"checkedDate"];
     self.memo = [aDecoder decodeObjectForKey:@"memo"];
@@ -42,6 +49,7 @@
 
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
+    [aCoder encodeObject:self.identifier forKey:@"identifier"];
     [aCoder encodeObject:self.caption forKey:@"caption"];
     [aCoder encodeObject:self.checkedDate forKey:@"checkedDate"];
     [aCoder encodeObject:self.memo forKey:@"memo"];
@@ -51,6 +59,7 @@
 -(id)copyWithZone:(NSZone *)zone
 {
     LLCheckItem *clone = [[[self class] allocWithZone:zone] init];
+    clone.identifier = [self makeIdentifier];
     clone.caption = [self caption];
     clone.checkedDate = [self checkedDate];
     clone.memo = [self memo];
@@ -71,4 +80,14 @@
     return (self.memo.length > 0);
 }
 
+// 識別子を作成する
+-(NSString *)makeIdentifier
+{
+    CFUUIDRef uuid;
+    uuid = CFUUIDCreate(NULL);
+    NSString *identifier = (NSString *)CFBridgingRelease(CFUUIDCreateString(NULL, uuid));
+    CFRelease(uuid);
+
+    return identifier;
+}
 @end
