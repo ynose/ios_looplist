@@ -7,6 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import <AVFoundation/AVFoundation.h>
 #import "LLCheckItemDetailViewController.h"
 
 #import "LLColorLabelButton.h"
@@ -19,7 +20,9 @@
 #import "LLCheckItem.h"
 
 
-@interface LLCheckItemDetailViewController ()
+@interface LLCheckItemDetailViewController () <UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet LLTouchScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet LLColorLabelButton *colorLabelButton;
 @property (weak, nonatomic) IBOutlet UITextField *captionTextField;
 @property (weak, nonatomic) IBOutlet UILabel *checkedDateLabel;
@@ -34,7 +37,7 @@
     [super viewDidLoad];
 
     self.navigationItem.title = self.checkItem.caption;
-    ((UIScrollView *)self.view).alwaysBounceVertical = YES;
+    self.scrollView.alwaysBounceVertical = YES;
 
     // ラベル
     [self.colorLabelButton setTitle:[@(self.sequenceNumber) stringValue] forState:UIControlStateNormal];
@@ -60,13 +63,25 @@
 
     // 画像
     self.attachImageView.image = self.attachImage;
+
+    // ドロップシャドウ
+    if (self.attachImage) {
+        self.scrollView.layer.masksToBounds = NO;
+        self.scrollView.layer.shadowOpacity = 0.7f;
+        self.scrollView.layer.shadowColor = [UIColor blackColor].CGColor;
+        self.scrollView.layer.shadowRadius = 4.0f;
+        self.scrollView.layer.shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(-20, 5, self.view.frame.size.width + 40, 20)].CGPath;
+    }
+
+    self.scrollView.delegate = self;
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [self resizeView];
+    [self resizeView:self.view.frame.size];
 
     // キーボード表示の通知を設定
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -115,7 +130,7 @@
     [self.view keyboardNotification:notification getKeyboardRect:&keyboardRect getAnimationDuration:&animationDuration];
     [UIView animateWithDuration:animationDuration animations:^{
         // ビューのサイズをキーボードの高さを引いた高さに変更する
-        UIScrollView *scrollView = (UIScrollView *)self.view;
+        UIScrollView *scrollView = self.scrollView;
         UIEdgeInsets insets = scrollView.contentInset;
         insets.bottom = keyboardRect.size.height;
         scrollView.contentInset = insets;
@@ -165,7 +180,7 @@
     [self.view keyboardNotification:notification getKeyboardRect:&keyboardRect getAnimationDuration:&animationDuration];
     [UIView animateWithDuration:animationDuration animations:^{
         // ビューのサイズを元のサイズに戻す
-        UIScrollView *scrollView = (UIScrollView *)self.view;
+        UIScrollView *scrollView = self.scrollView;
         UIEdgeInsets insets = scrollView.contentInset;
         insets.bottom = 0;
         scrollView.contentInset = insets;
@@ -211,27 +226,62 @@
 
 -(void)textViewDidChange:(UITextView *)textView
 {
-    [self resizeView];
+    [self resizeView:self.view.frame.size];
 }
 
 
--(void)resizeView
+-(void)resizeView:(CGSize)viewSize
 {
-    // メモTextView(位置＋サイズ)
-    CGRect frame = self.memoTextView.frame;
-    frame.size.height = self.memoTextView.contentSize.height;
-    self.memoTextView.frame = frame;
+    // メモ(位置＋サイズ)
+    CGRect memoFrame = self.memoTextView.frame;
+    memoFrame.size.height = self.memoTextView.contentSize.height;
 
-    if (CGRectGetMaxY(self.memoTextView.frame) < CGRectGetMaxY(self.view.frame)) {
-        frame.size.height = self.view.frame.size.height - self.memoTextView.frame.origin.y;
-        self.memoTextView.frame = frame;
+    if (CGRectGetMaxY(memoFrame) < viewSize.height) {
+        memoFrame.size.height = viewSize.height - self.memoTextView.frame.origin.y;
+        self.memoTextView.frame = memoFrame;
+    } else {
+        self.memoTextView.frame = memoFrame;
     }
 
     
-    // ビューContentSize(サイズ)
-    CGSize contentSize = self.view.frame.size;
+    // 画像の位置
+    if (self.attachImage) {
+        // ImageはImageViewの中で中央に表示されているので、Imageが画面上部に表示されるようにImageViewの位置を調整する
+        CGRect bounds = CGRectMake(0, 0, viewSize.width, self.attachImageView.bounds.size.height);
+        CGRect imageFrame = AVMakeRectWithAspectRatioInsideRect(self.attachImage.size, bounds);
+        CGRect imageViewFrame = self.attachImageView.frame;
+        imageViewFrame.origin.y = -imageFrame.origin.y;
+        self.attachImageView.frame = imageViewFrame;
+
+        // Imageのサイズに応じてスクロールビューのcontentInsetを調整する
+        self.scrollView.contentInset = UIEdgeInsetsMake(imageFrame.size.height, 0, 0, 0);
+        CGFloat offsetHeight = 120 - [[UIApplication sharedApplication] statusBarFrame].size.height;    // メモ欄が１行表示されるくらいの高さ
+        if (imageFrame.size.height < viewSize.height) {
+            self.scrollView.contentOffset = CGPointMake(0, -(imageFrame.size.height - ((imageFrame.size.height + offsetHeight < viewSize.height) ? 0 : offsetHeight)));
+        } else {
+            self.scrollView.contentOffset = CGPointMake(0, -(viewSize.height - offsetHeight));
+        }
+    } else {
+        self.scrollView.contentInset = UIEdgeInsetsZero;
+        self.scrollView.contentOffset = CGPointZero;
+    }
+
+
+    // スクロールビューのサイズ
+    CGSize contentSize = viewSize;
     contentSize.height = CGRectGetMaxY(self.memoTextView.frame);
-    ((UIScrollView *)self.view).contentSize = contentSize;
+    self.scrollView.contentSize = contentSize;
+
+
+    // ドロップシャドウのサイズ
+    self.scrollView.layer.shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(-20, 5, viewSize.width + 40, 20)].CGPath;
+}
+
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+
+    [self resizeView:size];
 }
 
 // UIScrollView+Extension.hのタッチイベントから呼ばれる
@@ -253,6 +303,14 @@
     [self.view endEditing:YES];
 }
 
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    CGRect frame = self.attachImageView.frame;
+//    frame.origin.y = scrollView.contentOffset.y / -3;
+//    if (frame.origin.y < 64) {
+//        self.attachImageView.frame = frame;
+//    }
+//}
 
 #pragma mark ラベルボタン
 - (IBAction)colorLabelTouchUp:(id)sender {

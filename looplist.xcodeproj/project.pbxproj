@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E07E9E31B2B22D50067EB31 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E07E9E21B2B22D50067EB31 /* AVFoundation.framework */; };
 		8E1F2CA618059B7700481439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA518059B7700481439 /* CoreData.framework */; };
 		8E1F2CA818059B8500481439 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA718059B8500481439 /* SystemConfiguration.framework */; };
 		8E1F2CAA18059B8E00481439 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA918059B8E00481439 /* libz.dylib */; };
@@ -97,6 +98,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E07E9E01B2B13470067EB31 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8E07E9E21B2B22D50067EB31 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8E1F2CA518059B7700481439 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8E1F2CA718059B8500481439 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8E1F2CA918059B8E00481439 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -240,6 +243,7 @@
 				8E416C4E1B28F4DB006BE2DA /* libsqlite3.0.dylib in Frameworks */,
 				8E36136717F3CC15008CF7E1 /* libxml2.dylib in Frameworks */,
 				8E1F2CAA18059B8E00481439 /* libz.dylib in Frameworks */,
+				8E07E9E31B2B22D50067EB31 /* AVFoundation.framework in Frameworks */,
 				8E36136917F3CC34008CF7E1 /* MobileCoreServices.framework in Frameworks */,
 				8E1F2CA818059B8500481439 /* SystemConfiguration.framework in Frameworks */,
 				8E1F2CA618059B7700481439 /* CoreData.framework in Frameworks */,
@@ -338,6 +342,8 @@
 		8E88501F17F0EB340068B13F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E07E9E21B2B22D50067EB31 /* AVFoundation.framework */,
+				8E07E9E01B2B13470067EB31 /* QuartzCore.framework */,
 				8E416C4D1B28F4DB006BE2DA /* libsqlite3.0.dylib */,
 				8E1F2CA918059B8E00481439 /* libz.dylib */,
 				8E1F2CA718059B8500481439 /* SystemConfiguration.framework */,
