@@ -162,9 +162,6 @@
 
 -(void)setupAppearance
 {
-    // ステータスバー
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
     // ナビゲーションバー
 //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBar"] forBarMetrics:UIBarMetricsDefault];
 //    [[UINavigationBar appearance] setTintColor:UIColorButtonText];

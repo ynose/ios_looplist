@@ -83,9 +83,7 @@
     imagePickerController.allowsEditing = NO;
 
     // iPhoneのカメラ、フォトライブラリ、またはiPadのカメラはモーダル表示
-    [self presentViewController:imagePickerController animated:YES completion:^{
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    }];
+    [self presentViewController:imagePickerController animated:YES completion:nil];
 
 }
 
@@ -97,7 +95,6 @@
 
     // iPhoneの場合カメラを起動した後はステータスバーが消えてしまったままになるので強制的に表示を戻す
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 
     // フォトアルバルまたはカメラから写真が選択された
     if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
@@ -126,8 +123,6 @@
 // ImagePickerキャンセル
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
     [picker dismissViewControllerAnimated:YES completion:nil];
 
 }

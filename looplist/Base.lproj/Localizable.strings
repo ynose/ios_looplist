@@ -68,6 +68,10 @@
 "FinishDate" = "Last: %@";
 "FinishCount" = "Checked: %d";
 
+/* 写真を撮るボタン */
+"actionCamera" = "Take Photo";
+/* 写真を選択ボタン */
+"actionPhoto" = "Choose Existing";
 
 /* ----- チェックアイテム詳細画面 ----- */
 
