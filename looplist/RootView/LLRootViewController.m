@@ -178,6 +178,11 @@
 //    // Pro版のみタブバーを表示する
 //    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
 //    tabBarController.nadView.hidden = YES;
+
+    // 広告の一時停止
+    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+    tabBarController.nadView.hidden = YES;
+    [tabBarController.nadView pause];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -186,6 +191,11 @@
 
     // 選択されたチェックリスト（タブ）を保存
     [[NSUserDefaults standardUserDefaults] setInteger:self.checkListIndex forKey:SETTING_ACTIVETAB];
+
+    // 広告の再開
+    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+    tabBarController.nadView.hidden = NO;
+    [tabBarController.nadView resume];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -557,7 +567,7 @@
 #ifdef APPSTORE_SCREENSHOT
     tabBarController.dummyAdView.hidden = YES;
 #else
-    tabBarController.nadView.hidden = YES;
+//    tabBarController.nadView.hidden = YES;
 #endif
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
@@ -579,8 +589,8 @@
         [[LLCheckListManager sharedManager] saveAttachImage:image fileName:checkItem.identifier];
     }
 
-    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
-    tabBarController.nadView.hidden = NO;
+//    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+//    tabBarController.nadView.hidden = NO;
 
     // 変更内容をリストに反映する
     [self.tableView reloadRowsAtIndexPaths:@[self.indexPathOfSelected] withRowAnimation:UITableViewRowAnimationNone];
