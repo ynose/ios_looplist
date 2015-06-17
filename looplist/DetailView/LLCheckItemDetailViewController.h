@@ -26,4 +26,6 @@
 @property (strong, nonatomic) UIImage *attachImage;
 @property (weak, nonatomic) IBOutlet UIImageView *attachImageView;
 
+-(void)resetScrollViewContentInset:(CGSize)viewSize;
+
 @end

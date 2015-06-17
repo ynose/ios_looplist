@@ -72,6 +72,8 @@
 "actionCamera" = "Take Photo";
 /* 写真を選択ボタン */
 "actionPhoto" = "Choose Existing";
+/* 写真を削除ボタン */
+"actionRemovePhoto" = "Remove Image";
 
 /* ----- チェックアイテム詳細画面 ----- */
 

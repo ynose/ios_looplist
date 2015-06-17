@@ -122,6 +122,24 @@ static NSString *_attachImageDir = @"attachImages";
     }
 }
 
+-(void)removeAttachImageFile:(NSString *)fileName
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *dir = [self dir];
+    dir = [dir stringByAppendingPathComponent:_attachImageDir];
+
+    NSString *path = [dir stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", fileName]];
+
+
+    if (path && [fileManager fileExistsAtPath:path]) {
+        NSError *error;
+        if ([fileManager removeItemAtPath:path error:&error] == NO) {
+            DEBUGLOG(@"deleteAttachImageFile:Code=%d, Desc=%@", [error code], [error localizedDescription]);
+        }
+    }
+
+}
+
 -(UIImage *)loadAttachImage:(NSString *)fileName
 {
     NSString *dir = [self dir];
@@ -156,6 +174,14 @@ static NSString *_attachImageDir = @"attachImages";
 
 -(void)removeCheckList:(NSInteger)checkListIndex
 {
+    // 画像ファイルも同時に削除する
+    LLCheckList *checkList = (LLCheckList *)self.arrayCheckLists[checkListIndex];
+    for (LLCheckListSection *section in checkList.arraySections) {
+        for (LLCheckItem *checkItem in section.checkItems) {
+            [[LLCheckListManager sharedManager] removeAttachImageFile:checkItem.identifier];
+        }
+    }
+
     // ファイルも同時に削除する
     [self deleteFileAtIndex:checkListIndex];
     [self.arrayCheckLists removeObjectAtIndex:checkListIndex];

@@ -298,7 +298,7 @@ __strong static NSString *kCheckListDetailViewSegue = @"CheckListDetailView";
     }
 }
 
-#pragma mark - ELCheckListDetailViewDelegate
+#pragma mark - LLCheckListDetailViewDelegate
 -(void)saveCheckListDetail:(LLCheckList *)checkList
 {
     // 変更内容を保存

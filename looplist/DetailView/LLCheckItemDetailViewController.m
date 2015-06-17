@@ -96,6 +96,7 @@
     [YNGAITracker trackScreenName:@"CheckItem DetailView"];
 }
 
+// ImagePicker表示時にも呼ばれてしまう
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -117,6 +118,26 @@
     // キーボード表示の通知を解除
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
+}
+
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+
+    [self resizeView:size];
+
+    [self resetScrollViewContentInset:size];
+
+    // ドロップシャドウのサイズ
+    self.scrollView.layer.shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 5, size.width, 20)].CGPath;
+}
+
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+
+    self.memoTextView.layer.borderWidth = 1;
+    self.memoTextView.layer.borderColor = [[UIColor colorWithRed:0.875 green:0.875 blue:0.875 alpha:1.000] CGColor];
 }
 
 
@@ -141,13 +162,14 @@
         CGRect viewFrame = self.view.frame;
         viewFrame.size.height -= keyboardRect.size.height;
         if (_activeTextView == self.memoTextView) {
-            // contentInsetをリセットする
-            UIEdgeInsets insets = scrollView.contentInset;
-            insets.top = 0;
-            self.scrollView.contentInset = insets;
+// 保留
+//            // contentInsetをリセットする
+//            UIEdgeInsets insets = scrollView.contentInset;
+//            insets.top = 0;
+//            self.scrollView.contentInset = insets;
 
             // 本文のカーソル位置にスクロールさせる
-            [self scrollView:self.scrollView scrollToCursor:self.memoTextView];
+            [self scrollView:self.scrollView scrollToCursor:self.memoTextView animated:YES];
         }
     }];
     
@@ -173,20 +195,12 @@
     }];
 }
 
--(void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
 
-    self.memoTextView.layer.borderWidth = 1;
-    self.memoTextView.layer.borderColor = [[UIColor colorWithRed:0.875 green:0.875 blue:0.875 alpha:1.000] CGColor];
-}
-
-
+#pragma mark - UITextFieldDelegate
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [self.memoTextView setEditable:NO];
 }
-
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -198,6 +212,7 @@
 }
 
 
+#pragma mark UITextViewDelegate
 -(void)textViewDidBeginEditing:(UITextView *)textView
 {
     _activeTextView = textView;
@@ -209,21 +224,11 @@
     [self resizeView:self.view.frame.size];
 
     // 本文のカーソル位置にスクロールさせる
-    [self scrollView:self.scrollView scrollToCursor:self.memoTextView];
+    [self scrollView:self.scrollView scrollToCursor:self.memoTextView animated:NO];
 }
 
--(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
-{
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 
-    [self resizeView:size];
-
-    [self resetScrollViewContentInset:size];
-
-    // ドロップシャドウのサイズ
-    self.scrollView.layer.shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 5, size.width, 20)].CGPath;
-}
-
+#pragma mark -
 // UIScrollView+Extension.hのタッチイベントから呼ばれる
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -291,7 +296,7 @@
 }
 
 // 本文のカーソル位置にスクロールさせる
--(void)scrollView:(UIScrollView *)scrollView scrollToCursor:(UITextView *)textView
+-(void)scrollView:(UIScrollView *)scrollView scrollToCursor:(UITextView *)textView animated:(BOOL)animated
 {
     // カーソルが表示される位置にスクロールする
     NSString *head = [textView.text substringToIndex:textView.selectedRange.location];
@@ -302,7 +307,7 @@
     textViewFrame.origin.y = CGRectGetMaxY(textViewFrame) - charHeight;
     textViewFrame.size.height = charHeight;
 
-    [scrollView scrollRectToVisible:textViewFrame animated:YES];
+    [scrollView scrollRectToVisible:textViewFrame animated:animated];
 }
 
 // 文字列をTextViewに表示するために必要なサイズを計算する
@@ -340,7 +345,7 @@
 }
 
 
-#pragma mark ラベルボタン
+#pragma mark - ラベルボタン
 - (IBAction)colorLabelTouchUp:(id)sender {
     self.checkItem.colorLabelIndex = (self.checkItem.colorLabelIndex < 5) ? self.checkItem.colorLabelIndex + 1: 0;
     self.colorLabelButton.colorLabelIndex = self.checkItem.colorLabelIndex;

@@ -563,8 +563,8 @@
     detailViewController.attachImage = image;
 
 
-    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
 #ifdef APPSTORE_SCREENSHOT
+    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
     tabBarController.dummyAdView.hidden = YES;
 #else
 //    tabBarController.nadView.hidden = YES;
@@ -572,7 +572,8 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
-#pragma mark LLDetailViewDelegate
+
+#pragma mark - LLDetailViewDelegate
 -(void)saveDetail:(LLCheckItem *)checkItem attachImage:(UIImage *)image
 {
     // 選択していたIndexPathから置換元のチェックアイテムを取得
@@ -587,10 +588,9 @@
     // 画像の保存
     if (image) {
         [[LLCheckListManager sharedManager] saveAttachImage:image fileName:checkItem.identifier];
+    } else {
+        [[LLCheckListManager sharedManager] removeAttachImageFile:checkItem.identifier];
     }
-
-//    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
-//    tabBarController.nadView.hidden = NO;
 
     // 変更内容をリストに反映する
     [self.tableView reloadRowsAtIndexPaths:@[self.indexPathOfSelected] withRowAnimation:UITableViewRowAnimationNone];

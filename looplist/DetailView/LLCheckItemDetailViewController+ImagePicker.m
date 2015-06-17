@@ -11,7 +11,7 @@
 
 #import <MobileCoreServices/UTCoreTypes.h>
 
-@interface LLCheckItemDetailViewController (ImagePicker) <UIImagePickerControllerDelegate>
+@interface LLCheckItemDetailViewController (ImagePicker) <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @end
 
 @implementation LLCheckItemDetailViewController (ImagePicker)
@@ -20,15 +20,16 @@
 - (IBAction)pickImage:(id)sender {
 
     [self launchPhotoLibraryOrCamera];
-
 }
 
 -(void)launchPhotoLibraryOrCamera
 {
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == YES &&
-        [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary] == YES) {
+    if (([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == YES &&
+        [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary] == YES) ||
+        self.attachImage != nil) {
 
-        // カメラもフォトライブラリも両方使用可能な場合はアクションシートで選択する
+        // カメラもフォトライブラリも両方使用可能な場合、
+        // または画像が設定済みの場合はアクションシートで選択する
         [self chooseImageSourceType];
 
     } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary] == YES) {
@@ -51,18 +52,27 @@
                                                   handler:^(UIAlertAction *action) {
                                                   }]];
 
-    // カメラを起動
-    [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"actionCamera")
-                                                    style:UIAlertActionStyleDefault
-                                                  handler:^(UIAlertAction *action) {
-                                                      [self launchImagePicker:UIImagePickerControllerSourceTypeCamera];
-                                                  }]];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == YES) {
+        // カメラを起動
+        [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"actionCamera")
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          [self launchImagePicker:UIImagePickerControllerSourceTypeCamera];
+                                                      }]];
+    }
 
     // フォトライブラリを選起動
     [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"actionPhoto")
                                                     style:UIAlertActionStyleDefault
                                                   handler:^(UIAlertAction *action) {
                                                       [self launchImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
+                                                  }]];
+
+    // 画像を削除
+    [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"actionRemovePhoto")
+                                                    style:UIAlertActionStyleDestructive
+                                                  handler:^(UIAlertAction *action) {
+                                                      [self removeImage];
                                                   }]];
 
     [self presentViewController:actionSheet animated:YES completion:nil];
@@ -87,7 +97,24 @@
 
 }
 
-// UIImagePickerControllerDelegate
+-(void)removeImage
+{
+    // 画像をフェードアウトした後に
+    // ビュー位置を調整するアニメーション
+    NSTimeInterval animationDuration = 0.3; // 秒
+    [UIView animateWithDuration:animationDuration animations:^{
+        self.attachImageView.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.attachImage = nil;
+        self.attachImageView.image = nil;
+        [UIView animateWithDuration:animationDuration animations:^{
+            [self resetScrollViewContentInset:self.view.frame.size];
+        }];
+    }];
+
+}
+
+#pragma mark - UIImagePickerControllerDelegate
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
@@ -111,20 +138,13 @@
         self.attachImage = imageToUse;
         self.attachImageView.image = imageToUse;
 
-
-//        // iPhoneのフォトライブラリ、カメラの場合はモードルを閉じずに次の画面を表示する
-//        [self sendingMail:picker];
-
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
-// UIImagePickerControllerDelegate
-// ImagePickerキャンセル
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [picker dismissViewControllerAnimated:YES completion:nil];
-
 }
 
 @end

@@ -23,6 +23,7 @@
 -(void)saveCheckLists;
 
 -(void)saveAttachImage:(UIImage *)image fileName:(NSString *)fileName;
+-(void)removeAttachImageFile:(NSString *)fileName;
 -(UIImage *)loadAttachImage:(NSString *)fileName;
 
 -(void)insertObject:(LLCheckList *)checkList inCheckList:(NSUInteger)checkListIndex;
