@@ -49,11 +49,10 @@
     // キャンセルボタン
     [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"actionCancel")
                                                     style:UIAlertActionStyleCancel
-                                                  handler:^(UIAlertAction *action) {
-                                                  }]];
+                                                  handler:nil]];
 
+    // カメラを起動
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] == YES) {
-        // カメラを起動
         [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"actionCamera")
                                                         style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction *action) {
@@ -61,7 +60,7 @@
                                                       }]];
     }
 
-    // フォトライブラリを選起動
+    // フォトライブラリを起動
     [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"actionPhoto")
                                                     style:UIAlertActionStyleDefault
                                                   handler:^(UIAlertAction *action) {
@@ -69,14 +68,15 @@
                                                   }]];
 
     // 画像を削除
-    [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"actionRemovePhoto")
-                                                    style:UIAlertActionStyleDestructive
-                                                  handler:^(UIAlertAction *action) {
-                                                      [self removeImage];
-                                                  }]];
+    if (self.attachImage) {
+        [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"actionRemovePhoto")
+                                                        style:UIAlertActionStyleDestructive
+                                                      handler:^(UIAlertAction *action) {
+                                                          [self removeImage];
+                                                      }]];
+    }
 
     [self presentViewController:actionSheet animated:YES completion:nil];
-
 }
 
 -(void)launchImagePicker:(UIImagePickerControllerSourceType)sourceType
@@ -107,6 +107,7 @@
     } completion:^(BOOL finished) {
         self.attachImage = nil;
         self.attachImageView.image = nil;
+        self.attachImageView.alpha = 1;
         [UIView animateWithDuration:animationDuration animations:^{
             [self resetScrollViewContentInset:self.view.frame.size];
         }];
@@ -138,7 +139,7 @@
         self.attachImage = imageToUse;
         self.attachImageView.image = imageToUse;
 
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [picker dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

@@ -374,6 +374,7 @@
 				8E88503517F0EB340068B13F /* Main_iPad.storyboard */,
 				8ECCA1591802BEFD00A0BA8D /* TabBarController */,
 				8E88509317F0F7A40068B13F /* RootView */,
+				8E88E64B17F1B36100C9E69A /* DetailView */,
 				8E36126817F3C576008CF7E1 /* AppSettingView */,
 				8E88506317F0EF9A0068B13F /* DataModel */,
 				8E8850A917F0FA010068B13F /* Classes */,
@@ -458,7 +459,6 @@
 				8E88509517F0F7A40068B13F /* LLRootViewController.m */,
 				8ECD7E3D17FCC91F0071B281 /* LLRootViewController+TableView.m */,
 				8EB4512D1804C87C000C49D3 /* CheckItemCell */,
-				8E88E64B17F1B36100C9E69A /* DetailView */,
 			);
 			path = RootView;
 			sourceTree = "<group>";

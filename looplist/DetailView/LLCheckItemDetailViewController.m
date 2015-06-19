@@ -23,6 +23,7 @@
 @interface LLCheckItemDetailViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet LLTouchScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *baseviewInScrollView;
 @property (weak, nonatomic) IBOutlet LLColorLabelButton *colorLabelButton;
 @property (weak, nonatomic) IBOutlet UITextField *captionTextField;
 @property (weak, nonatomic) IBOutlet UILabel *checkedDateLabel;
@@ -132,14 +133,6 @@
     self.scrollView.layer.shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 5, size.width, 20)].CGPath;
 }
 
--(void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
-
-    self.memoTextView.layer.borderWidth = 1;
-    self.memoTextView.layer.borderColor = [[UIColor colorWithRed:0.875 green:0.875 blue:0.875 alpha:1.000] CGColor];
-}
-
 
 #pragma mark - Keyboard Notification
 // キーボードが表示された時
@@ -158,18 +151,10 @@
         scrollView.contentInset = insets;
         scrollView.scrollIndicatorInsets = insets;
 
-        // フォーカスの当たった入力項目がキーボードに隠れないようにスクロールさせる
-        CGRect viewFrame = self.view.frame;
-        viewFrame.size.height -= keyboardRect.size.height;
+        // 本文のカーソル位置にスクロールさせる
         if (_activeTextView == self.memoTextView) {
-// 保留
-//            // contentInsetをリセットする
-//            UIEdgeInsets insets = scrollView.contentInset;
-//            insets.top = 0;
-//            self.scrollView.contentInset = insets;
-
-            // 本文のカーソル位置にスクロールさせる
             [self scrollView:self.scrollView scrollToCursor:self.memoTextView animated:YES];
+
         }
     }];
     
@@ -234,12 +219,15 @@
 {
     [super touchesBegan:touches withEvent:event];
 
-    // メモがタップされたら編集モードに設定する
-    if ([event touchesForView:self.memoTextView] != NULL) {
+    // メモ(もしくはメモよりも下の領域)がタップされたら、メモを編集モードに設定する
+    UITouch *touch = [touches anyObject];
+    if ([event touchesForView:self.memoTextView] != NULL ||
+        CGRectGetMaxY(self.memoTextView.frame) < [touch locationInView:self.baseviewInScrollView].y) {
         [self.memoTextView setEditable:YES];
         [self.memoTextView becomeFirstResponder];
         return;
     }
+
 
     // ビューがタップされたらメモを表示モードに設定する（URLをタップ可能に設定する）
     [self.memoTextView setEditable:NO];
@@ -256,17 +244,18 @@
     CGRect memoFrame = self.memoTextView.frame;
     memoFrame.size.height = self.memoTextView.contentSize.height;
 
-    if (CGRectGetMaxY(memoFrame) < viewSize.height) {
-        memoFrame.size.height = viewSize.height - self.memoTextView.frame.origin.y;
-        self.memoTextView.frame = memoFrame;
-    } else {
-        self.memoTextView.frame = memoFrame;
-    }
+    CGRect textViewFrame = [self rectWithText:self.memoTextView.text forTextView:self.memoTextView margin:1];
+    self.memoTextView.frame = textViewFrame;
+
 
     // スクロールビューのコンテントサイズをメモのサイズに合わせる
     CGSize contentSize = viewSize;
-    contentSize.height = CGRectGetMaxY(self.memoTextView.frame);
+    contentSize.height = CGRectGetMaxY(textViewFrame);
     self.scrollView.contentSize = contentSize;
+
+    CGRect baseViewFrame = self.baseviewInScrollView.frame;
+    baseViewFrame.size.height = CGRectGetMaxY(textViewFrame) * 2;
+    self.baseviewInScrollView.frame = baseViewFrame;
 }
 
 -(void)resetScrollViewContentInset:(CGSize)viewSize
@@ -307,11 +296,19 @@
     textViewFrame.origin.y = CGRectGetMaxY(textViewFrame) - charHeight;
     textViewFrame.size.height = charHeight;
 
+    CGRect visibleRect = scrollView.frame;
+    UIEdgeInsets insets = scrollView.contentInset;
+    visibleRect.size.height = insets.bottom;
+
     [scrollView scrollRectToVisible:textViewFrame animated:animated];
+//    if (!CGRectIntersectsRect(visibleRect, textViewFrame)) {
+//        [scrollView scrollRectToVisible:textViewFrame animated:animated];
+//    }
+
 }
 
 // 文字列をTextViewに表示するために必要なサイズを計算する
--(CGRect)rectWithText:(NSString *)text forTextView:(UITextView *)textView margin:(NSInteger)margin
+-(CGRect)rectWithText:(NSString *)text forTextView:(UITextView *)textView margin:(float)margin
 {
     NSDictionary *attributes = @{NSFontAttributeName:textView.font};
     NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:text attributes:attributes];
