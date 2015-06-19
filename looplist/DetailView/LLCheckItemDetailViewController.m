@@ -232,8 +232,6 @@
     // ビューがタップされたらメモを表示モードに設定する（URLをタップ可能に設定する）
     [self.memoTextView setEditable:NO];
 
-    [self resetScrollViewContentInset:self.view.frame.size];
-
     // キーボードをしまう
     [self.view endEditing:YES];
 }
