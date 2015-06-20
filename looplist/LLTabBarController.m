@@ -44,22 +44,6 @@
 
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-
-    // 広告の再開
-    [self.nadView resume];
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-
-    // 広告の一時停止
-    [self.nadView pause];
-}
-
 -(void)setupAd
 {
     // (2) NADView の作成

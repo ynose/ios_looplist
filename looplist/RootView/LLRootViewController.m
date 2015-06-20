@@ -178,11 +178,6 @@
 //    // Pro版のみタブバーを表示する
 //    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
 //    tabBarController.nadView.hidden = YES;
-
-    // 広告の一時停止
-    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
-    tabBarController.nadView.hidden = YES;
-    [tabBarController.nadView pause];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -209,7 +204,6 @@
     // アプリアクティブ時の通知解除
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
 }
-
 
 #pragma mark 編集ボタン
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated
@@ -570,6 +564,11 @@
 //    tabBarController.nadView.hidden = YES;
 #endif
     [self.navigationController pushViewController:detailViewController animated:YES];
+
+    // 広告の一時停止
+    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+    tabBarController.nadView.hidden = YES;
+    [tabBarController.nadView pause];
 }
 
 
