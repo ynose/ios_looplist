@@ -63,7 +63,7 @@ static NSString *_attachImageDir = @"attachImages";
 }
 
 
-#pragma mark - ファイル操作
+#pragma mark - チェックリストファイル
 -(void)loadCheckLists
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -97,66 +97,69 @@ static NSString *_attachImageDir = @"attachImages";
     [NSKeyedArchiver archiveRootObject:self.arrayCheckLists toFile:[dir stringByAppendingPathComponent:_checkListFile]];
 }
 
+#pragma mark 画像ファイル
 -(void)saveAttachImage:(UIImage *)image fileName:(NSString *)fileName
 {
+    NSString *dir = [[self dir] stringByAppendingPathComponent:_attachImageDir];
+    NSString *path = [dir stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", fileName]];
+
+    // ディレクトリがなかったら作成
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *dir = [self dir];
-    dir = [dir stringByAppendingPathComponent:_attachImageDir];
-    // ディレクトリを作成
     if (![fileManager fileExistsAtPath:dir]) {
         NSError *error;
         [fileManager createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:&error];
     }
 
-
-    NSString *path = [dir stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", fileName]];
-
-
     // NSDataのwriteToFileメソッドを使ってファイルに書き込みます
     // atomically=YESの場合、同名のファイルがあったら、まずは別名で作成して、その後、ファイルの上書きを行います
     NSData *data = UIImageJPEGRepresentation(image, 0.8f);
     if ([data writeToFile:path atomically:NO]) {
-        NSLog(@"save OK");
+        DEBUGLOG(@"save OK");
     } else {
-        NSLog(@"save NG");
+        DEBUGLOG(@"save NG");
     }
 }
 
 -(void)removeAttachImageFile:(NSString *)fileName
 {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *dir = [self dir];
-    dir = [dir stringByAppendingPathComponent:_attachImageDir];
-
-    NSString *path = [dir stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", fileName]];
-
-
-    if (path && [fileManager fileExistsAtPath:path]) {
+    NSString *path = [self existsAttachImageFile:fileName];
+    if (path) {
         NSError *error;
-        if ([fileManager removeItemAtPath:path error:&error] == NO) {
+        if ([[NSFileManager defaultManager] removeItemAtPath:path error:&error] == NO) {
             DEBUGLOG(@"deleteAttachImageFile:Code=%d, Desc=%@", [error code], [error localizedDescription]);
         }
     }
-
 }
 
 -(UIImage *)loadAttachImage:(NSString *)fileName
 {
-    NSString *dir = [self dir];
-    dir = [dir stringByAppendingPathComponent:_attachImageDir];
-    NSString *path = [dir stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", fileName]];
+    NSString *path = [self existsAttachImageFile:fileName];
 
-
-    NSError *error;
-    NSData *data = [NSData dataWithContentsOfFile:path options:NSDataReadingMappedIfSafe error:&error];
-
+    NSData *data = nil;
     UIImage *image = nil;
-    if (!error) {
-        image = [UIImage imageWithData:data];
+    if (path) {
+        NSError *error;
+        data = [NSData dataWithContentsOfFile:path options:NSDataReadingMappedIfSafe error:&error];
+        if (data) {
+            image = [UIImage imageWithData:data];
+        }
     }
 
     return image;
 }
+
+-(NSString *)existsAttachImageFile:(NSString *)fileName
+{
+    NSString *dir = [[self dir] stringByAppendingPathComponent:_attachImageDir];
+    NSString *path = [dir stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", fileName]];
+
+    if ((path && [[NSFileManager defaultManager] fileExistsAtPath:path])) {
+        return path;
+    } else {
+        return nil;
+    }
+}
+
 
 #pragma mark - CheckListオブジェクト操作
 -(void)insertObject:(LLCheckList *)checkList inCheckList:(NSUInteger)checkListIndex

@@ -31,6 +31,7 @@
 // カラー
 #define UIColorMain [UIColor colorWithRed:0.216 green:0.396 blue:0.078 alpha:1.000]
 #define UIColorMainDisable [UIColor colorWithRed:0.533 green:0.635 blue:0.459 alpha:1.000]
+#define UIColoeHasDetail [UIColor colorWithRed:0.808 green:0.808 blue:0.808 alpha:1.000]
 #define UIColorButtonText [UIColor whiteColor]
 #define UIColorTitleMain [UIColor blackColor]
 

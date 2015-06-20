@@ -12,19 +12,21 @@
 #import "LLCheckItem.h"
 
 
-// チェックリスト
 @class LLCheckList;
 @interface LLCheckListManager : NSObject
 @property (strong) NSMutableArray *arrayCheckLists;     // LLCheckListの配列　checkLists[]sections[]checkItems[]
 
 +(LLCheckListManager *)sharedManager;
 
+// チェックリストファイル
 -(void)loadCheckLists;
 -(void)saveCheckLists;
 
+// 画像ファイル
 -(void)saveAttachImage:(UIImage *)image fileName:(NSString *)fileName;
 -(void)removeAttachImageFile:(NSString *)fileName;
 -(UIImage *)loadAttachImage:(NSString *)fileName;
+-(NSString *)existsAttachImageFile:(NSString *)fileName;
 
 -(void)insertObject:(LLCheckList *)checkList inCheckList:(NSUInteger)checkListIndex;
 -(NSInteger)addObject:(LLCheckList *)checkList;

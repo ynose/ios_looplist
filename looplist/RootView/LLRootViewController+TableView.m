@@ -75,13 +75,11 @@ static CGFloat kSectionHeight = 24;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DEBUGLOG(@"IndexPath s=%d,r=%d", indexPath.section, indexPath.row);
-    
 //    static NSString *kKVOCheckedDate = KVO_CHECKEDDATE;
 
     LLCheckItem *checkItem = [self checkItemAtIndexPath:indexPath];
 
-    // セルの作成（再利用）
+    // セルの作成
     LLCheckItemCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     cell.delegate = self;
     cell.sequenceNumber = [self.checkList sequenceOfCheckItem:checkItem];
@@ -89,12 +87,7 @@ static CGFloat kSectionHeight = 24;
     cell.captionTextField.text = checkItem.caption;
     cell.checkedDate = checkItem.checkedDate;
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    if (checkItem.hasDetail) {
-        cell.tintColor = UIColorMain;
-    } else {
-        cell.tintColor = [UIColor colorWithRed:0.808 green:0.808 blue:0.808 alpha:1.000];
-    }
-
+    cell.tintColor = (checkItem.hasDetail || [[LLCheckListManager sharedManager] existsAttachImageFile:checkItem.identifier] != nil) ? UIColorMain : UIColoeHasDetail;
 
     // 予約されたセルにカーソルをセットする
     if ([indexPath compare:self.indexPathOfNeedFirstResponder] == NSOrderedSame) {
