@@ -27,5 +27,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *attachImageView;
 
 -(void)resetScrollViewContentInset:(CGSize)viewSize;
+-(void)makeShadow;
 
 @end

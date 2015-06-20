@@ -20,7 +20,7 @@
 #import "LLCheckItem.h"
 
 
-@interface LLCheckItemDetailViewController () <UIScrollViewDelegate>
+@interface LLCheckItemDetailViewController () // <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet LLTouchScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *baseviewInScrollView;
@@ -39,6 +39,7 @@
 
     self.navigationItem.title = self.checkItem.caption;
     self.scrollView.alwaysBounceVertical = YES;
+//    self.scrollView.delegate = self;
 
     // ラベル
     [self.colorLabelButton setTitle:[@(self.sequenceNumber) stringValue] forState:UIControlStateNormal];
@@ -66,16 +67,7 @@
     self.attachImageView.image = self.attachImage;
 
     // ドロップシャドウ
-    if (self.attachImage) {
-        self.scrollView.layer.masksToBounds = NO;
-        self.scrollView.layer.shadowOpacity = 0.7f;
-        self.scrollView.layer.shadowColor = [UIColor blackColor].CGColor;
-        self.scrollView.layer.shadowRadius = 4.0f;
-        self.scrollView.layer.shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 5, self.view.frame.size.width, 20)].CGPath;
-    }
-
-    self.scrollView.delegate = self;
-
+    [self makeShadow];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -339,6 +331,19 @@
     return charRect.size.height;
 }
 
+-(void)makeShadow
+{
+    // 画像が表示されている場合はビューに影をつける
+    if (self.attachImage) {
+        self.scrollView.layer.masksToBounds = NO;
+        self.scrollView.layer.shadowOpacity = 0.7f;
+        self.scrollView.layer.shadowColor = [UIColor blackColor].CGColor;
+        self.scrollView.layer.shadowRadius = 4.0f;
+        self.scrollView.layer.shadowPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 5, self.view.frame.size.width, 20)].CGPath;
+    } else {
+        self.scrollView.layer.shadowOpacity = 0;
+    }
+}
 
 #pragma mark - ラベルボタン
 - (IBAction)colorLabelTouchUp:(id)sender {

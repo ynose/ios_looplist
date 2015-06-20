@@ -108,6 +108,8 @@
         self.attachImage = nil;
         self.attachImageView.image = nil;
         self.attachImageView.alpha = 1;
+        [self makeShadow];  // ドロップシャドウ
+
         [UIView animateWithDuration:animationDuration animations:^{
             [self resetScrollViewContentInset:self.view.frame.size];
         }];
@@ -138,6 +140,9 @@
 
         self.attachImage = imageToUse;
         self.attachImageView.image = imageToUse;
+
+        // ドロップシャドウ
+        [self makeShadow];
 
         [picker dismissViewControllerAnimated:YES completion:nil];
     }
