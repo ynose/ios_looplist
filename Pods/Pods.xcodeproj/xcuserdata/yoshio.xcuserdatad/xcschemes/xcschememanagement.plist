@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-looplist-SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-looplist.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -12,7 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0B816C1413672E357BEABD09</key>
+		<key>65CC0E3B2D73B8E48D37BAA8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD7A65E069C0B7B58BC546EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

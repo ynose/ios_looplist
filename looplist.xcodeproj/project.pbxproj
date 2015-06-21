@@ -66,8 +66,6 @@
 		8E88E65617F1B40100C9E69A /* LLCheckListDetailViewController+SectionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E65017F1B40100C9E69A /* LLCheckListDetailViewController+SectionTableView.m */; };
 		8E88E65717F1B40100C9E69A /* LLCheckListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E65217F1B40100C9E69A /* LLCheckListDetailViewController.m */; };
 		8E88E65817F1B40100C9E69A /* LLSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E65417F1B40100C9E69A /* LLSectionCell.m */; };
-		8E88E67017F1B85A00C9E69A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E88E66D17F1B85A00C9E69A /* SVProgressHUD.bundle */; };
-		8E88E67117F1B85A00C9E69A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E66F17F1B85A00C9E69A /* SVProgressHUD.m */; };
 		8E8C146717FE29AE0067995E /* LLCheckListManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C146617FE29AE0067995E /* LLCheckListManageViewController.m */; };
 		8E8D08BA17F3F4BD00C9DAC8 /* InAppPurchase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E8D08B817F3F4BD00C9DAC8 /* InAppPurchase.plist */; };
 		8E90247B1B28576300A87982 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E90247A1B28576300A87982 /* Launch Screen.xib */; };
@@ -192,9 +190,6 @@
 		8E88E65217F1B40100C9E69A /* LLCheckListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LLCheckListDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8E88E65317F1B40100C9E69A /* LLSectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LLSectionCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		8E88E65417F1B40100C9E69A /* LLSectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LLSectionCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		8E88E66D17F1B85A00C9E69A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		8E88E66E17F1B85A00C9E69A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		8E88E66F17F1B85A00C9E69A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		8E8C146517FE29AE0067995E /* LLCheckListManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCheckListManageViewController.h; sourceTree = "<group>"; };
 		8E8C146617FE29AE0067995E /* LLCheckListManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCheckListManageViewController.m; sourceTree = "<group>"; };
 		8E8D08B917F3F4BD00C9DAC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = looplist/Base.lproj/InAppPurchase.plist; sourceTree = SOURCE_ROOT; };
@@ -478,7 +473,6 @@
 			isa = PBXGroup;
 			children = (
 				8EECB5721B27B05E00B4E053 /* GoogleAnalytics */,
-				8E88E66C17F1B85A00C9E69A /* SVProgressHUD */,
 				8E8850AE17F0FB290068B13F /* UIGlossyButton */,
 			);
 			name = Library;
@@ -520,17 +514,6 @@
 			name = CheckListDetailView;
 			path = looplist/CheckListDetailView;
 			sourceTree = SOURCE_ROOT;
-		};
-		8E88E66C17F1B85A00C9E69A /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				8E88E66D17F1B85A00C9E69A /* SVProgressHUD.bundle */,
-				8E88E66E17F1B85A00C9E69A /* SVProgressHUD.h */,
-				8E88E66F17F1B85A00C9E69A /* SVProgressHUD.m */,
-			);
-			name = SVProgressHUD;
-			path = ../../Library/SVProgressHUD;
-			sourceTree = "<group>";
 		};
 		8E8C146817FE29C30067995E /* CheckListManageView */ = {
 			isa = PBXGroup;
@@ -707,7 +690,6 @@
 			files = (
 				8EE13E1117FB88830076F4E9 /* LLSectionCell.xib in Resources */,
 				8E405BC119222DD200B22B32 /* settings-button.png in Resources */,
-				8E88E67017F1B85A00C9E69A /* SVProgressHUD.bundle in Resources */,
 				8E88508E17F0F57C0068B13F /* Localizable.strings in Resources */,
 				8E88375D17F255D60063E811 /* checkmark@2x.png in Resources */,
 				8E88375F17F255D60063E811 /* tabbar-icon@2x.png in Resources */,
@@ -794,7 +776,6 @@
 				8E36127D17F3C576008CF7E1 /* ProductManager.m in Sources */,
 				8ECF983D17F2EE3B0097838A /* LLTouchTextView.m in Sources */,
 				8E88509617F0F7A40068B13F /* LLRootViewController.m in Sources */,
-				8E88E67117F1B85A00C9E69A /* SVProgressHUD.m in Sources */,
 				8E8C146717FE29AE0067995E /* LLCheckListManageViewController.m in Sources */,
 				8ECF983C17F2EE3B0097838A /* LLTouchScrollView.m in Sources */,
 				8E36127E17F3C576008CF7E1 /* UIProductCell.m in Sources */,
@@ -1002,6 +983,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "looplist/looplist-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
 					DEBUG,
 					_PROVERSION,
 					_APPSTORE_SCREENSHOT,

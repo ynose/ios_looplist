@@ -4,6 +4,7 @@
 target 'looplist' do
   platform :ios, "8.0"
   pod 'NendSDK_iOS'
+  pod 'SVProgressHUD'
 end
 
 target 'looplistTests' do
