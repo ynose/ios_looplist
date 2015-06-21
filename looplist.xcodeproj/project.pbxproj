@@ -23,7 +23,6 @@
 		8E36136717F3CC15008CF7E1 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E36136617F3CC15008CF7E1 /* libxml2.dylib */; };
 		8E36136917F3CC34008CF7E1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E36136817F3CC34008CF7E1 /* MobileCoreServices.framework */; };
 		8E36136B17F3CC7F008CF7E1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E36136A17F3CC7F008CF7E1 /* Security.framework */; };
-		8E36136D17F3CC88008CF7E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E36136C17F3CC88008CF7E1 /* StoreKit.framework */; };
 		8E405BC119222DD200B22B32 /* settings-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E405BBF19222DD200B22B32 /* settings-button.png */; };
 		8E405BC219222DD200B22B32 /* settings-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E405BC019222DD200B22B32 /* settings-button@2x.png */; };
 		8E416C4B1B28F3DA006BE2DA /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E416C4A1B28F3DA006BE2DA /* libGoogleAnalyticsServices.a */; };
@@ -123,7 +122,6 @@
 		8E36136617F3CC15008CF7E1 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		8E36136817F3CC34008CF7E1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8E36136A17F3CC7F008CF7E1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		8E36136C17F3CC88008CF7E1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8E405BBF19222DD200B22B32 /* settings-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-button.png"; sourceTree = "<group>"; };
 		8E405BC019222DD200B22B32 /* settings-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-button@2x.png"; sourceTree = "<group>"; };
 		8E416C4A1B28F3DA006BE2DA /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = ../../Library/GoogleAnalyticsServicesiOS_3.08/libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 				8E1F2CA818059B8500481439 /* SystemConfiguration.framework in Frameworks */,
 				8E1F2CA618059B7700481439 /* CoreData.framework in Frameworks */,
 				8E2D6F4F18043EFB0028E111 /* AdSupport.framework in Frameworks */,
-				8E36136D17F3CC88008CF7E1 /* StoreKit.framework in Frameworks */,
 				8E36136B17F3CC7F008CF7E1 /* Security.framework in Frameworks */,
 				8E88502317F0EB340068B13F /* CoreGraphics.framework in Frameworks */,
 				8E88502517F0EB340068B13F /* UIKit.framework in Frameworks */,
@@ -340,7 +337,6 @@
 				8E1F2CA718059B8500481439 /* SystemConfiguration.framework */,
 				8E1F2CA518059B7700481439 /* CoreData.framework */,
 				8E2D6F4E18043EFB0028E111 /* AdSupport.framework */,
-				8E36136C17F3CC88008CF7E1 /* StoreKit.framework */,
 				8E36136A17F3CC7F008CF7E1 /* Security.framework */,
 				8E36136817F3CC34008CF7E1 /* MobileCoreServices.framework */,
 				8E36136617F3CC15008CF7E1 /* libxml2.dylib */,
@@ -671,8 +667,11 @@
 					8E88501C17F0EB340068B13F = {
 						DevelopmentTeam = 762R5CQ89N;
 						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -998,7 +997,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1034,7 +1032,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1140,7 +1137,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
