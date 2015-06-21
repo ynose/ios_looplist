@@ -31,16 +31,16 @@
     [self refreshViewControllers];
     [self setSelectedIndex:[[NSUserDefaults standardUserDefaults] integerForKey:SETTING_ACTIVETAB]];
 
-    // 無料版のみ広告表示
-#ifdef APPSTORE_SCREENSHOT
-    // AppStore用スクリーンショット
-    // ダミーの広告枠を表示する
-    [self dummyAd];
-#else
-    if (![ProductManager isAppPro]) {
-        [self setupAd];
-    }
-#endif
+//    // 無料版のみ広告表示
+//#ifdef APPSTORE_SCREENSHOT
+//    // AppStore用スクリーンショット
+//    // ダミーの広告枠を表示する
+//    [self dummyAd];
+//#else
+//    if (![ProductManager isAppPro]) {
+//        [self setupAd];
+//    }
+//#endif
 
 }
 

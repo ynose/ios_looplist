@@ -19,6 +19,7 @@
 
 #import "ProductManager.h"
 
+#import "NADInterstitial.h"
 #import "SVProgressHUD.h"
 
 
@@ -186,10 +187,10 @@
     // 選択されたチェックリスト（タブ）を保存
     [[NSUserDefaults standardUserDefaults] setInteger:self.checkListIndex forKey:SETTING_ACTIVETAB];
 
-    // 広告の再開
-    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
-    tabBarController.nadView.hidden = NO;
-    [tabBarController.nadView resume];
+//    // 広告の再開
+//    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+//    tabBarController.nadView.hidden = NO;
+//    [tabBarController.nadView resume];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -534,6 +535,34 @@
 
     // バッジ更新
     [self refreshTabBarItem];
+
+    // インタースティシャル広告表jい
+    [self interstitialAdShow];
+}
+
+-(void)interstitialAdShow
+{
+    NADInterstitialShowResult result = [[NADInterstitial sharedInstance] showAd];
+    switch ( result ){
+    case AD_SHOW_SUCCESS:
+        DEBUGLOG(@"広告の表示に成功しました。");
+        break;
+    case AD_SHOW_ALREADY:
+        DEBUGLOG(@"既に広告が表示されています。");
+        break;
+    case AD_FREQUENCY_NOT_REACHABLE:
+        DEBUGLOG(@"広告のフリークエンシーカウントに達していません。");
+        break;
+    case AD_LOAD_INCOMPLETE:
+        DEBUGLOG(@"抽選リクエストが実行されていない、もしくは実行中です。");
+        break;
+    case AD_REQUEST_INCOMPLETE:
+        DEBUGLOG(@"抽選リクエストに失敗しています。");
+        break;
+    case AD_DOWNLOAD_INCOMPLETE:
+        DEBUGLOG(@"広告のダウンロードが完了していません。");
+        break;
+    }
 }
 
 #pragma mark - LLDetailViewDelegate

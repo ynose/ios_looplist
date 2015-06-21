@@ -218,18 +218,18 @@ static CGFloat kSectionHeight = 24;
     detailViewController.attachImage = image;
 
 
-#ifdef APPSTORE_SCREENSHOT
-    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
-    tabBarController.dummyAdView.hidden = YES;
-#else
-    //    tabBarController.nadView.hidden = YES;
-#endif
+//#ifdef APPSTORE_SCREENSHOT
+//    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+//    tabBarController.dummyAdView.hidden = YES;
+//#else
+//    //    tabBarController.nadView.hidden = YES;
+//#endif
     [self.navigationController pushViewController:detailViewController animated:YES];
 
-    // 広告の一時停止
-    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
-    tabBarController.nadView.hidden = YES;
-    [tabBarController.nadView pause];
+//    // 広告の一時停止
+//    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+//    tabBarController.nadView.hidden = YES;
+//    [tabBarController.nadView pause];
 }
 
 

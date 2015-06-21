@@ -9,6 +9,7 @@
 #import "LLAppDelegate.h"
 
 //#import "EvernoteSDK.h"
+#import "NADInterstitial.h"
 
 #import "NSFileManager+Extension.h"
 
@@ -33,13 +34,13 @@
     [[LLCheckListManager sharedManager] loadCheckLists];
     [[LLCheckListManager sharedManager] loadCheckItems];
 
-
-    // iCLoudの使用可否
-    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:SETTING_ICLOUD_AVAILABLE];
-    [NSFileManager iCloudAvailable:^{
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:SETTING_ICLOUD_AVAILABLE];
-        [[NSUbiquitousKeyValueStore defaultStore] synchronize];
-    }];
+// 未実装
+//    // iCLoudの使用可否
+//    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:SETTING_ICLOUD_AVAILABLE];
+//    [NSFileManager iCloudAvailable:^{
+//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:SETTING_ICLOUD_AVAILABLE];
+//        [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+//    }];
 
 
     /* GoogleAnalytics API */
@@ -47,6 +48,13 @@
 
     /* Evernote API */
 //    [self setupEvernote];
+
+#ifndef DEBUG
+    [[NADInterstitial sharedInstance] loadAdWithApiKey:@"1584498c8e4444d600ecb3725c630b1791b22aa0" spotId:@"96305"];    // 本番用
+#else
+     // テスト用でもネットワークにつながっていないと表示されない
+    [[NADInterstitial sharedInstance] loadAdWithApiKey:@"308c2499c75c4a192f03c02b2fcebd16dcb45cc9" spotId:@"213208"]; // 表示テスト用
+#endif
 
     return YES;
 }
