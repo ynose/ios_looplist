@@ -59,8 +59,6 @@
 		8E88509617F0F7A40068B13F /* LLRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88509517F0F7A40068B13F /* LLRootViewController.m */; };
 		8E88509A17F0F7D60068B13F /* LLCheckItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88509817F0F7D60068B13F /* LLCheckItemCell.m */; };
 		8E8850A817F0F9F80068B13F /* LLColorLabelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850A717F0F9F80068B13F /* LLColorLabelButton.m */; };
-		8E8850B317F0FB290068B13F /* UIGlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850B017F0FB290068B13F /* UIGlossyButton.m */; };
-		8E8850B417F0FB290068B13F /* UIView+LayerEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850B217F0FB290068B13F /* UIView+LayerEffects.m */; };
 		8E88A54A17FC52BD000DB515 /* LLCheckItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E88A54C17FC52BD000DB515 /* LLCheckItemCell.xib */; };
 		8E88E64E17F1B36100C9E69A /* LLCheckItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E64D17F1B36100C9E69A /* LLCheckItemDetailViewController.m */; };
 		8E88E65617F1B40100C9E69A /* LLCheckListDetailViewController+SectionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E65017F1B40100C9E69A /* LLCheckListDetailViewController+SectionTableView.m */; };
@@ -178,10 +176,6 @@
 		8E88509817F0F7D60068B13F /* LLCheckItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LLCheckItemCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8E8850A617F0F9F80068B13F /* LLColorLabelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = LLColorLabelButton.h; path = Classes/LLColorLabelButton.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		8E8850A717F0F9F80068B13F /* LLColorLabelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = LLColorLabelButton.m; path = Classes/LLColorLabelButton.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		8E8850AF17F0FB290068B13F /* UIGlossyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGlossyButton.h; sourceTree = "<group>"; };
-		8E8850B017F0FB290068B13F /* UIGlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGlossyButton.m; sourceTree = "<group>"; };
-		8E8850B117F0FB290068B13F /* UIView+LayerEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayerEffects.h"; sourceTree = "<group>"; };
-		8E8850B217F0FB290068B13F /* UIView+LayerEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayerEffects.m"; sourceTree = "<group>"; };
 		8E88A54B17FC52BD000DB515 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LLCheckItemCell.xib; sourceTree = "<group>"; };
 		8E88E64C17F1B36100C9E69A /* LLCheckItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LLCheckItemDetailViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		8E88E64D17F1B36100C9E69A /* LLCheckItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LLCheckItemDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -473,21 +467,8 @@
 			isa = PBXGroup;
 			children = (
 				8EECB5721B27B05E00B4E053 /* GoogleAnalytics */,
-				8E8850AE17F0FB290068B13F /* UIGlossyButton */,
 			);
 			name = Library;
-			sourceTree = "<group>";
-		};
-		8E8850AE17F0FB290068B13F /* UIGlossyButton */ = {
-			isa = PBXGroup;
-			children = (
-				8E8850AF17F0FB290068B13F /* UIGlossyButton.h */,
-				8E8850B017F0FB290068B13F /* UIGlossyButton.m */,
-				8E8850B117F0FB290068B13F /* UIView+LayerEffects.h */,
-				8E8850B217F0FB290068B13F /* UIView+LayerEffects.m */,
-			);
-			name = UIGlossyButton;
-			path = ../../Library/UIGlossyButton;
 			sourceTree = "<group>";
 		};
 		8E88E64B17F1B36100C9E69A /* DetailView */ = {
@@ -755,7 +736,6 @@
 			files = (
 				8EDD276E1808060F00E593F6 /* YNGAITracker.m in Sources */,
 				8E36127817F3C576008CF7E1 /* LLAppSettingViewController.m in Sources */,
-				8E8850B317F0FB290068B13F /* UIGlossyButton.m in Sources */,
 				8ECF984317F2EE6E0097838A /* UISimpleSwitchCell.m in Sources */,
 				8E8850A817F0F9F80068B13F /* LLColorLabelButton.m in Sources */,
 				8E2C99071B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m in Sources */,
@@ -772,7 +752,6 @@
 				8ECD7E4117FCD5740071B281 /* UIView+KeyboardNotification.m in Sources */,
 				8E88508717F0F0970068B13F /* UITableView+Extension.m in Sources */,
 				8E88507017F0EF9A0068B13F /* LLCheckListManager.m in Sources */,
-				8E8850B417F0FB290068B13F /* UIView+LayerEffects.m in Sources */,
 				8E36127D17F3C576008CF7E1 /* ProductManager.m in Sources */,
 				8ECF983D17F2EE3B0097838A /* LLTouchTextView.m in Sources */,
 				8E88509617F0F7A40068B13F /* LLRootViewController.m in Sources */,

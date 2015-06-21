@@ -18,3 +18,21 @@
 #define COCOAPODS_VERSION_MINOR_SVProgressHUD 1
 #define COCOAPODS_VERSION_PATCH_SVProgressHUD 3
 
+// UIGlossyButton
+#define COCOAPODS_POD_AVAILABLE_UIGlossyButton
+#define COCOAPODS_VERSION_MAJOR_UIGlossyButton 0
+#define COCOAPODS_VERSION_MINOR_UIGlossyButton 1
+#define COCOAPODS_VERSION_PATCH_UIGlossyButton 0
+
+// UIGlossyButton/Core
+#define COCOAPODS_POD_AVAILABLE_UIGlossyButton_Core
+#define COCOAPODS_VERSION_MAJOR_UIGlossyButton_Core 0
+#define COCOAPODS_VERSION_MINOR_UIGlossyButton_Core 1
+#define COCOAPODS_VERSION_PATCH_UIGlossyButton_Core 0
+
+// UIGlossyButton/LayerEffects
+#define COCOAPODS_POD_AVAILABLE_UIGlossyButton_LayerEffects
+#define COCOAPODS_VERSION_MAJOR_UIGlossyButton_LayerEffects 0
+#define COCOAPODS_VERSION_MINOR_UIGlossyButton_LayerEffects 1
+#define COCOAPODS_VERSION_PATCH_UIGlossyButton_LayerEffects 0
+

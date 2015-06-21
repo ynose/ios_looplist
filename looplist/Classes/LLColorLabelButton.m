@@ -32,8 +32,8 @@
 {
     _colorLabelIndex = colorLabelIndex;
 
-    self.tintColor = [self labelcolorAtIndex:_colorLabelIndex];
-    self.disabledColor = self.tintColor;
+    self.buttonTintColor = [self labelcolorAtIndex:_colorLabelIndex];
+    self.disabledColor = self.buttonTintColor;
     [self setTitleColor:[self titleColorAtIndex:_colorLabelIndex] forState:UIControlStateNormal];
 }
 
