@@ -8,6 +8,7 @@
 
 #import "LLRootViewController.h"
 
+#import "LLTabBarController.h"
 #import "LLCheckListManager.h"
 
 static CGFloat kSectionHeight = 24;
@@ -86,6 +87,7 @@ static CGFloat kSectionHeight = 24;
     cell.checkItem = checkItem;
     cell.captionTextField.text = checkItem.caption;
     cell.checkedDate = checkItem.checkedDate;
+    cell.attachImageView.image = [[LLCheckListManager sharedManager] loadAttachImage:checkItem.identifier];
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     cell.tintColor = (checkItem.hasDetail || [[LLCheckListManager sharedManager] existsAttachImageFile:checkItem.identifier] != nil) ? UIColorMain : UIColoeHasDetail;
 
@@ -196,6 +198,40 @@ static CGFloat kSectionHeight = 24;
 {
     [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
 }
+
+#pragma mark - チェックアイテム詳細ビューを表示
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    LLCheckItemDetailViewController *detailViewController = [storyBoard instantiateViewControllerWithIdentifier:@"CheckItemDetailViewController"];
+
+    // 選択したIndexPathを保持(saveDetail:で使用するため)
+    self.indexPathOfSelected = indexPath;
+    LLCheckItem *checkItem = [self checkItemAtIndexPath:indexPath];
+
+    detailViewController.delegate = self;
+    detailViewController.checkItem = checkItem;
+    detailViewController.sequenceNumber = [self.checkList sequenceOfCheckItem:checkItem];
+
+    // 画像の読み込み
+    UIImage *image = [[LLCheckListManager sharedManager] loadAttachImage:checkItem.identifier];
+    detailViewController.attachImage = image;
+
+
+#ifdef APPSTORE_SCREENSHOT
+    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+    tabBarController.dummyAdView.hidden = YES;
+#else
+    //    tabBarController.nadView.hidden = YES;
+#endif
+    [self.navigationController pushViewController:detailViewController animated:YES];
+
+    // 広告の一時停止
+    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+    tabBarController.nadView.hidden = YES;
+    [tabBarController.nadView pause];
+}
+
 
 // Enterキーで次のセルに移動する場合も反応してしまうため一旦保留
 //-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView

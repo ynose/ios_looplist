@@ -24,5 +24,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *captionTextField;
 @property (weak, nonatomic) IBOutlet UILabel *checkedDateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *attachImageView;
+
 
 @end

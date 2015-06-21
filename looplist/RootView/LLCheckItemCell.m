@@ -45,8 +45,6 @@
     [super layoutSubviews];
 
     self.colorLabelButton.colorLabelIndex = self.checkItem.colorLabelIndex;
-
-//    self.captionTextField.placeholder = LSTR(@"NewCheckCaption");
 }
 
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated

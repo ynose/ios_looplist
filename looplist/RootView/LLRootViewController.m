@@ -29,7 +29,6 @@
 @property (strong, nonatomic) UIBarButtonItem *appSettingButton;
 @property (strong, nonatomic) UIBarButtonItem *addButton;
 @property (strong, nonatomic) UISegmentedControl *filterSegmentedControl;
-@property (strong, nonatomic) NSIndexPath *indexPathOfSelected;
 @property (weak, nonatomic) IBOutlet UIView *footerView;
 @property (weak, nonatomic) IBOutlet UIButton *completeButton;
 @end
@@ -536,41 +535,6 @@
     // バッジ更新
     [self refreshTabBarItem];
 }
-
-
-#pragma mark - チェックアイテム詳細ビューを表示
--(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    LLCheckItemDetailViewController *detailViewController = [storyBoard instantiateViewControllerWithIdentifier:@"CheckItemDetailViewController"];
-
-    // 選択したIndexPathを保持(saveDetail:で使用するため)
-    self.indexPathOfSelected = indexPath;
-    LLCheckItem *checkItem = [self checkItemAtIndexPath:indexPath];
-
-    detailViewController.delegate = self;
-    detailViewController.checkItem = checkItem;
-    detailViewController.sequenceNumber = [self.checkList sequenceOfCheckItem:checkItem];
-
-    // 画像の読み込み
-    UIImage *image = [[LLCheckListManager sharedManager] loadAttachImage:checkItem.identifier];
-    detailViewController.attachImage = image;
-
-
-#ifdef APPSTORE_SCREENSHOT
-    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
-    tabBarController.dummyAdView.hidden = YES;
-#else
-//    tabBarController.nadView.hidden = YES;
-#endif
-    [self.navigationController pushViewController:detailViewController animated:YES];
-
-    // 広告の一時停止
-    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
-    tabBarController.nadView.hidden = YES;
-    [tabBarController.nadView pause];
-}
-
 
 #pragma mark - LLDetailViewDelegate
 -(void)saveDetail:(LLCheckItem *)checkItem attachImage:(UIImage *)image
