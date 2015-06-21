@@ -20,7 +20,7 @@ static CGFloat kSectionHeight = 24;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 #ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影
-    DEBUGLOG(@"%d", [self.checkList.arraySections count]);
+    DEBUGLOG(@"%ld", [self.checkList.arraySections count]);
     return [self.checkList.arraySections count];
 #else
     return 0;
@@ -69,7 +69,6 @@ static CGFloat kSectionHeight = 24;
     if (self.finishAction == YES) {
         return 0;
     } else {
-        DEBUGLOG(@"numberOfRowsInSection(%d) = %d", section, [[self checkListSection:section].checkItems count]);
         return [[self checkListSection:section].checkItems count];
     }
 }

@@ -27,11 +27,11 @@
 #endif
 
 #ifdef DEBUG
-#define DEBUGLOG_IndexPath(p) NSLog(@"IndexPath s=%d,r=%d", p.section, p.row);
+#define DEBUGLOG_IndexPath(p) NSLog(@"IndexPath s=%ld,r=%ld", p.section, p.row);
 #define DEBUGLOG_Point(p) NSLog(@"Point x=%f,y=%f", p.x, p.y);
 #define DEBUGLOG_Size(p) NSLog(@"Size w=%f,h=%f", p.width, p.height);
 #define DEBUGLOG_Rect(p) NSLog(@"Rect x=%f,y=%f w=%f,h=%f", p.origin.x, p.origin.y, p.size.width, p.size.height);
-#define DEBUGLOG_RetainCount(p) NSLog(@"Retain Count = %d", [p retainCount]);
+#define DEBUGLOG_RetainCount(p) NSLog(@"Retain Count = %ld", [p retainCount]);
 #else
 #define DEBUGLOG_IndexPath(p);
 #define DEBUGLOG_Point(p);

@@ -126,7 +126,7 @@ static NSString *_attachImageDir = @"attachImages";
     if (path) {
         NSError *error;
         if ([[NSFileManager defaultManager] removeItemAtPath:path error:&error] == NO) {
-            DEBUGLOG(@"deleteAttachImageFile:Code=%d, Desc=%@", [error code], [error localizedDescription]);
+            DEBUGLOG(@"deleteAttachImageFile:Code=%ld, Desc=%@", (long)[error code], [error localizedDescription]);
         }
     }
 }
@@ -213,7 +213,7 @@ static NSString *_attachImageDir = @"attachImages";
     if (path && [fileManager fileExistsAtPath:path]) {
         NSError *error;
         if ([fileManager removeItemAtPath:path error:&error] == NO) {
-            DEBUGLOG(@"deleteFileAtIndex:Code=%d, Desc=%@", [error code], [error localizedDescription]);
+            DEBUGLOG(@"deleteFileAtIndex:Code=%ld, Desc=%@", [error code], [error localizedDescription]);
         }
     }
 }
