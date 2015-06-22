@@ -417,7 +417,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Item" minimumFontSize="17" clearButtonMode="whileEditing" id="b8A-H5-AMg">
-                                                <rect key="frame" x="52" y="15" width="206" height="33"/>
+                                                <rect key="frame" x="52" y="15" width="227" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -449,16 +449,6 @@
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BGV-EM-YD7">
-                                                <rect key="frame" x="266" y="15" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Image">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pickImage:" destination="deB-OE-Y5t" eventType="touchUpInside" id="vUo-ew-OKN"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="g6Z-4u-55k" customClass="LLColorLabelButton">
                                                 <rect key="frame" x="8" y="12" width="36" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -475,6 +465,14 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.90196084980000002" green="0.8980392814" blue="0.86274516580000005" alpha="1" colorSpace="deviceRGB"/>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BGV-EM-YD7">
+                                                <rect key="frame" x="287" y="8" width="25" height="47"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="camera-button.png"/>
+                                                <connections>
+                                                    <action selector="pickImage:" destination="deB-OE-Y5t" eventType="touchUpInside" id="vUo-ew-OKN"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -488,6 +486,7 @@
                     <navigationItem key="navigationItem" id="jdu-rx-agZ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="attachImageButton" destination="BGV-EM-YD7" id="oAW-FJ-528"/>
                         <outlet property="attachImageView" destination="b7g-sH-4pK" id="QtG-Vf-fi9"/>
                         <outlet property="baseviewInScrollView" destination="ve0-gv-2jx" id="y3h-3y-g8c"/>
                         <outlet property="captionTextField" destination="b8A-H5-AMg" id="GrD-H5-vdd"/>
@@ -640,6 +639,9 @@
             <point key="canvasLocation" x="132" y="776"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera-button.png" width="25" height="25"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

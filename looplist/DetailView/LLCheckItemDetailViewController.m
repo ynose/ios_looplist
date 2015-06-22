@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIView *baseviewInScrollView;
 @property (weak, nonatomic) IBOutlet LLColorLabelButton *colorLabelButton;
 @property (weak, nonatomic) IBOutlet UITextField *captionTextField;
+@property (weak, nonatomic) IBOutlet UIButton *attachImageButton;
 @property (weak, nonatomic) IBOutlet UILabel *checkedDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *memoLabel;
 @property (weak, nonatomic) IBOutlet LLTouchTextView *memoTextView;
@@ -64,6 +65,7 @@
     [self.memoTextView setEditable:NO];
 
     // 画像
+    self.attachImageButton.tintColor = UIColorMain;
     self.attachImageView.image = self.attachImage;
 
     // ドロップシャドウ

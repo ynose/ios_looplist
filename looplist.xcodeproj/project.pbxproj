@@ -11,6 +11,7 @@
 		8E1F2CA618059B7700481439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA518059B7700481439 /* CoreData.framework */; };
 		8E1F2CA818059B8500481439 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA718059B8500481439 /* SystemConfiguration.framework */; };
 		8E1F2CAA18059B8E00481439 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA918059B8E00481439 /* libz.dylib */; };
+		8E2867D81B37A56E00FA4D14 /* camera-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E2867D71B37A56E00FA4D14 /* camera-button@2x.png */; };
 		8E2C99071B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2C99061B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m */; };
 		8E2D6F4F18043EFB0028E111 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2D6F4E18043EFB0028E111 /* AdSupport.framework */; };
 		8E36127817F3C576008CF7E1 /* LLAppSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E36126A17F3C576008CF7E1 /* LLAppSettingViewController.m */; };
@@ -98,6 +99,7 @@
 		8E1F2CA518059B7700481439 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8E1F2CA718059B8500481439 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8E1F2CA918059B8E00481439 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		8E2867D71B37A56E00FA4D14 /* camera-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-button@2x.png"; sourceTree = "<group>"; };
 		8E2C99061B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LLCheckItemDetailViewController+ImagePicker.m"; sourceTree = "<group>"; };
 		8E2D6F4E18043EFB0028E111 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8E36126917F3C576008CF7E1 /* LLAppSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LLAppSettingViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -288,6 +290,7 @@
 				8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */,
 				8E88375A17F255D60063E811 /* checkmark@2x.png */,
 				8E88375C17F255D60063E811 /* tabbar-icon@2x.png */,
+				8E2867D71B37A56E00FA4D14 /* camera-button@2x.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				8E88503F17F0EB340068B13F /* Images.xcassets in Resources */,
 				8E88503417F0EB340068B13F /* Main_iPhone.storyboard in Resources */,
 				8E8D08BA17F3F4BD00C9DAC8 /* InAppPurchase.plist in Resources */,
+				8E2867D81B37A56E00FA4D14 /* camera-button@2x.png in Resources */,
 				8ED20A5F17FA309E0060C690 /* navigationBar@2x.png in Resources */,
 				8E405BC219222DD200B22B32 /* settings-button@2x.png in Resources */,
 				8E90247B1B28576300A87982 /* Launch Screen.xib in Resources */,
