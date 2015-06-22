@@ -118,8 +118,8 @@ static CGFloat kSectionHeight = 24;
 
         // チェック項目の削除
         LLCheckItem *checkItem = [self checkItemAtIndexPath:indexPath];
-        [[LLCheckListManager sharedManager] removeCheckItem:checkItem inCheckList:self.checkListIndex];
         [[LLCheckListManager sharedManager] removeAttachImageFile:checkItem.identifier];
+        [[LLCheckListManager sharedManager] removeCheckItem:checkItem inCheckList:self.checkListIndex];
 
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
 
