@@ -961,7 +961,6 @@
 				GCC_PREFIX_HEADER = "looplist/looplist-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					DEBUG,
 					_PROVERSION,
 					_APPSTORE_SCREENSHOT,
 					_LAUNCH_SCREENSHOT,

@@ -50,7 +50,7 @@
 //    [self setupEvernote];
 
 #ifndef DEBUG
-    [[NADInterstitial sharedInstance] loadAdWithApiKey:@"1584498c8e4444d600ecb3725c630b1791b22aa0" spotId:@"96305"];    // 本番用
+    [[NADInterstitial sharedInstance] loadAdWithApiKey:@"28bc446df0d2d412ae51f29bd2a5c8bbfe5ede5f" spotId:@"394311"];    // 本番用
 #else
      // テスト用でもネットワークにつながっていないと表示されない
     [[NADInterstitial sharedInstance] loadAdWithApiKey:@"308c2499c75c4a192f03c02b2fcebd16dcb45cc9" spotId:@"213208"]; // 表示テスト用
