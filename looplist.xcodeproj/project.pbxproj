@@ -73,7 +73,6 @@
 		8ECF983D17F2EE3B0097838A /* LLTouchTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF983B17F2EE3B0097838A /* LLTouchTextView.m */; };
 		8ECF984217F2EE6E0097838A /* UISettingSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF983F17F2EE6E0097838A /* UISettingSwitchCell.m */; };
 		8ECF984317F2EE6E0097838A /* UISimpleSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984117F2EE6E0097838A /* UISimpleSwitchCell.m */; };
-		8ECF984817F2EE910097838A /* YNActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984517F2EE910097838A /* YNActionSheet.m */; };
 		8ECF984917F2EE910097838A /* YNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984717F2EE910097838A /* YNAlertView.m */; };
 		8ED20A5F17FA309E0060C690 /* navigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */; };
 		8EDD276E1808060F00E593F6 /* YNGAITracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED03E19180607FC0000E103 /* YNGAITracker.m */; };
@@ -201,8 +200,6 @@
 		8ECF983F17F2EE6E0097838A /* UISettingSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UISettingSwitchCell.m; path = Classes/UISettingSwitchCell.m; sourceTree = "<group>"; };
 		8ECF984017F2EE6E0097838A /* UISimpleSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UISimpleSwitchCell.h; path = Classes/UISimpleSwitchCell.h; sourceTree = "<group>"; };
 		8ECF984117F2EE6E0097838A /* UISimpleSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UISimpleSwitchCell.m; path = Classes/UISimpleSwitchCell.m; sourceTree = "<group>"; };
-		8ECF984417F2EE910097838A /* YNActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNActionSheet.h; path = Classes/YNActionSheet.h; sourceTree = "<group>"; };
-		8ECF984517F2EE910097838A /* YNActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YNActionSheet.m; path = Classes/YNActionSheet.m; sourceTree = "<group>"; };
 		8ECF984617F2EE910097838A /* YNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNAlertView.h; path = Classes/YNAlertView.h; sourceTree = "<group>"; };
 		8ECF984717F2EE910097838A /* YNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YNAlertView.m; path = Classes/YNAlertView.m; sourceTree = "<group>"; };
 		8ECFCA3618056C52003F6B11 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LLCheckItemCell.strings; sourceTree = "<group>"; };
@@ -446,8 +443,6 @@
 				8ED03E18180607FC0000E103 /* YNGAITracker.h */,
 				8ED03E19180607FC0000E103 /* YNGAITracker.m */,
 				8ECF983E17F2EE6E0097838A /* UISettingSwitchCell.h */,
-				8ECF984417F2EE910097838A /* YNActionSheet.h */,
-				8ECF984517F2EE910097838A /* YNActionSheet.m */,
 				8ECF984617F2EE910097838A /* YNAlertView.h */,
 				8ECF984717F2EE910097838A /* YNAlertView.m */,
 				8ECF983F17F2EE6E0097838A /* UISettingSwitchCell.m */,
@@ -745,7 +740,6 @@
 				8E88506D17F0EF9A0068B13F /* LLCheckItem.m in Sources */,
 				8E36127A17F3C576008CF7E1 /* iCloudViewController.m in Sources */,
 				8E88E65617F1B40100C9E69A /* LLCheckListDetailViewController+SectionTableView.m in Sources */,
-				8ECF984817F2EE910097838A /* YNActionSheet.m in Sources */,
 				8E88E65717F1B40100C9E69A /* LLCheckListDetailViewController.m in Sources */,
 				8E88503117F0EB340068B13F /* LLAppDelegate.m in Sources */,
 				8E88508417F0F0970068B13F /* NSFileManager+Extension.m in Sources */,
