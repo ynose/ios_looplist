@@ -148,7 +148,8 @@
         // 本文のカーソル位置にスクロールさせる
         if (_activeTextView == self.memoTextView) {
             [self scrollView:self.scrollView scrollToCursor:self.memoTextView animated:YES];
-
+        } else {
+            [self.scrollView scrollRectToVisible:self.captionTextField.frame animated:YES];
         }
     }];
     
