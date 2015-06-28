@@ -44,6 +44,8 @@
 {
     [super layoutSubviews];
 
+    self.numberLabel.textColor = [LLColorLabelButton titleColorAtIndex:self.checkItem.colorLabelIndex
+                                                             withImage:(self.attachImageView.image != nil)];
     self.colorLabelButton.colorLabelIndex = self.checkItem.colorLabelIndex;
 }
 

@@ -13,4 +13,6 @@
 @property (assign, nonatomic) NSInteger colorLabelIndex;
 @property (copy, nonatomic) NSString *caption;
 
++(UIColor *)titleColorAtIndex:(NSInteger)colorIndex withImage:(BOOL)withImage;
+
 @end

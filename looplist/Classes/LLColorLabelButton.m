@@ -11,15 +11,6 @@
 @implementation LLColorLabelButton
 
 
-//-(id)initWithCoder:(NSCoder *)aDecoder
-//{
-//    self = [super initWithCoder:aDecoder];
-//    if (self) {
-//    }
-//
-//    return self;
-//}
-
 -(void)layoutSubviews
 {
     [super layoutSubviews];
@@ -32,12 +23,12 @@
 {
     _colorLabelIndex = colorLabelIndex;
 
-    self.buttonTintColor = [self labelcolorAtIndex:_colorLabelIndex];
+    self.buttonTintColor = [LLColorLabelButton labelcolorAtIndex:_colorLabelIndex];
     self.disabledColor = self.buttonTintColor;
-    [self setTitleColor:[self titleColorAtIndex:_colorLabelIndex] forState:UIControlStateNormal];
+    [self setTitleColor:[LLColorLabelButton titleColorAtIndex:_colorLabelIndex withImage:NO] forState:UIControlStateNormal];
 }
 
--(UIColor *)labelcolorAtIndex:(NSInteger)colorIndex
++(UIColor *)labelcolorAtIndex:(NSInteger)colorIndex
 {
     switch (colorIndex) {
         case 1:
@@ -61,7 +52,7 @@
     }
 }
 
--(UIColor *)titleColorAtIndex:(NSInteger)colorIndex
++(UIColor *)titleColorAtIndex:(NSInteger)colorIndex withImage:(BOOL)withImage
 {
     switch (colorIndex) {
         case 1:
@@ -72,7 +63,11 @@
             return [UIColor whiteColor];
             break;
         default:
-            return [UIColor colorWithRed:0.784 green:0.788 blue:0.702 alpha:1.000];
+            if (withImage) {
+                return [UIColor colorWithRed:0.298 green:0.302 blue:0.259 alpha:1.000];
+            } else {
+                return [UIColor colorWithRed:0.529 green:0.533 blue:0.455 alpha:1.000];
+            }
             break;
     }
 }

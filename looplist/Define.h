@@ -41,7 +41,7 @@
 #define UIColorTextChecked [UIColor grayColor]
 
 #define UIColorSectionBackground [UIColor colorWithRed:0.729 green:0.737 blue:0.627 alpha:0.9]
-#define UIColorSectionText [UIColor whiteColor]
+#define UIColorSectionText [UIColor blackColor]
 
 // フォントサイズ
 #define UIFontStandard [UIFont systemFontOfSize:17.0f]
