@@ -31,8 +31,15 @@
 
     [self setupAppearance];
 
+#ifndef APPSTORE_SCREENSHOT
     [[LLCheckListManager sharedManager] loadCheckLists];
     [[LLCheckListManager sharedManager] loadCheckItems];
+#endif
+
+#ifdef APPSTORE_SCREENSHOT
+    [[LLCheckListManager sharedManager] loadScreenshotCheckLists];
+    [[NSUserDefaults standardUserDefaults] setInteger:2 forKey:SETTING_SHOWTABS];
+#endif
 
 // 未実装
 //    // iCLoudの使用可否

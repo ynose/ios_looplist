@@ -21,6 +21,9 @@
 // チェックリストファイル
 -(void)loadCheckLists;
 -(void)saveCheckLists;
+#ifdef APPSTORE_SCREENSHOT
+-(void)loadScreenshotCheckLists;
+#endif
 
 // 画像ファイル
 -(void)saveAttachImage:(UIImage *)image fileName:(NSString *)fileName;

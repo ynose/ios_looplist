@@ -82,6 +82,47 @@ static NSString *_attachImageDir = @"attachImages";
     self.arrayCheckLists = array;
 }
 
+#pragma mark AppStoreスクリーンショット用データ
+#ifdef APPSTORE_SCREENSHOT
+-(void)loadScreenshotCheckLists
+{
+    LLCheckList *checkList1 = [[LLCheckList alloc] initWithCheckItemsFileName];
+    checkList1.caption = @"Looplist";
+    checkList1.arraySections = [NSMutableArray arrayWithObject:[LLCheckListSection new]];    // 空データ（必ず１つセクションを作る）
+
+    LLCheckList *checkList2 = [[LLCheckList alloc] initWithCheckItemsFileName];
+    checkList2.caption = @"シンプルなチェックリスト";
+    checkList2.arraySections = [NSMutableArray arrayWithObject:[LLCheckListSection new]];    // 空データ（必ず１つセクションを作る）
+
+    LLCheckList *checkList3 = [[LLCheckList alloc] initWithCheckItemsFileName];
+    checkList3.caption = @"複数のリストが作れる";
+    checkList3.arraySections = [NSMutableArray arrayWithObject:[LLCheckListSection new]];    // 空データ（必ず１つセクションを作る）
+
+
+    self.arrayCheckLists = [NSMutableArray arrayWithObjects:checkList1, checkList2, checkList3, nil];
+
+
+    // チェックアイテムを追加
+    LLCheckItem *checkItem;
+    checkItem = [LLCheckItem new];
+    checkItem.caption = @"Looplistは";
+    checkItem.memo = @"繰り返し使えるチェックリストアプリです\nhttp://looplist.ynoseapps.com";
+    checkItem.colorLabelIndex = 1;
+    [[LLCheckListManager sharedManager] addCheckItem:checkItem section:0 inCheckList:0];
+
+    checkItem = [LLCheckItem new];
+    checkItem.caption = @"繰り返し使える";
+    checkItem.colorLabelIndex = 3;
+    [[LLCheckListManager sharedManager] addCheckItem:checkItem section:0 inCheckList:0];
+
+    checkItem = [LLCheckItem new];
+    checkItem.caption = @"チェックリストアプリです";
+    checkItem.colorLabelIndex = 5;
+    [[LLCheckListManager sharedManager] addCheckItem:checkItem section:0 inCheckList:0];
+
+}
+#endif
+
 -(void)saveCheckLists
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
