@@ -137,3 +137,14 @@
 "alertRestore" = "";
 "msgRestore" = "iCloudから復元します。";
 "None" = "なし";
+
+/* ----- スクリーンショット用 ----- */
+"ScreenShotDataCheckList1" = "Looplist";
+"ScreenShotDataCheckList2" = "シンプルなチェックリスト";
+"ScreenShotDataCheckList3" = "複数のリストが作れる";
+
+"ScreenShotDataCheckItem1" = "Looplistは";
+"ScreenShotDataCheckItemMemo1" = "繰り返し使えるチェックリストアプリです。\n写真も表示できます。\nhttp://looplist.ynoseapps.com";
+"ScreenShotDataCheckItem2" = "繰り返し使える";
+"ScreenShotDataCheckItem3" = "チェックリストアプリです";
+

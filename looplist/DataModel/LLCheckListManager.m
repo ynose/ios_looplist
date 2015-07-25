@@ -87,15 +87,16 @@ static NSString *_attachImageDir = @"attachImages";
 -(void)loadScreenshotCheckLists
 {
     LLCheckList *checkList1 = [[LLCheckList alloc] initWithCheckItemsFileName];
-    checkList1.caption = @"Looplist";
+    checkList1.caption = LSTR(@"ScreenShotDataCheckList1");
+    checkList1.filterIndex = 1;
     checkList1.arraySections = [NSMutableArray arrayWithObject:[LLCheckListSection new]];    // 空データ（必ず１つセクションを作る）
 
     LLCheckList *checkList2 = [[LLCheckList alloc] initWithCheckItemsFileName];
-    checkList2.caption = @"シンプルなチェックリスト";
+    checkList2.caption = LSTR(@"ScreenShotDataCheckList2");
     checkList2.arraySections = [NSMutableArray arrayWithObject:[LLCheckListSection new]];    // 空データ（必ず１つセクションを作る）
 
     LLCheckList *checkList3 = [[LLCheckList alloc] initWithCheckItemsFileName];
-    checkList3.caption = @"複数のリストが作れる";
+    checkList3.caption = LSTR(@"ScreenShotDataCheckList3");
     checkList3.arraySections = [NSMutableArray arrayWithObject:[LLCheckListSection new]];    // 空データ（必ず１つセクションを作る）
 
 
@@ -105,18 +106,18 @@ static NSString *_attachImageDir = @"attachImages";
     // チェックアイテムを追加
     LLCheckItem *checkItem;
     checkItem = [LLCheckItem new];
-    checkItem.caption = @"Looplistは";
-    checkItem.memo = @"繰り返し使えるチェックリストアプリです\nhttp://looplist.ynoseapps.com";
+    checkItem.caption = LSTR(@"ScreenShotDataCheckItem1");
+    checkItem.memo = LSTR(@"ScreenShotDataCheckItemMemo1");
     checkItem.colorLabelIndex = 1;
     [[LLCheckListManager sharedManager] addCheckItem:checkItem section:0 inCheckList:0];
 
     checkItem = [LLCheckItem new];
-    checkItem.caption = @"繰り返し使える";
+    checkItem.caption = LSTR(@"ScreenShotDataCheckItem2");
     checkItem.colorLabelIndex = 3;
     [[LLCheckListManager sharedManager] addCheckItem:checkItem section:0 inCheckList:0];
 
     checkItem = [LLCheckItem new];
-    checkItem.caption = @"チェックリストアプリです";
+    checkItem.caption = LSTR(@"ScreenShotDataCheckItem3");
     checkItem.colorLabelIndex = 5;
     [[LLCheckListManager sharedManager] addCheckItem:checkItem section:0 inCheckList:0];
 

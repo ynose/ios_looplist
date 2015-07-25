@@ -139,3 +139,14 @@ You can also restore the device to the same iCloud account(Apple ID).";
 "alertRestore" = "";
 "msgRestore" = "Restore from iCloud.";
 "None" = "none";
+
+/* ----- スクリーンショット用 ----- */
+"ScreenShotDataCheckList1" = "Looplist";
+"ScreenShotDataCheckList2" = "Simple checklist";
+"ScreenShotDataCheckList3" = "You can make multiple lists";
+
+"ScreenShotDataCheckItem1" = "Looplist is";
+"ScreenShotDataCheckItemMemo1" = "a checklist that can be used repeatedly.\nYou can attach a photo\nhttp://looplist.ynoseapps.com";
+"ScreenShotDataCheckItem2" = "a checklist";
+"ScreenShotDataCheckItem3" = "that can be used repeatedly";
+
