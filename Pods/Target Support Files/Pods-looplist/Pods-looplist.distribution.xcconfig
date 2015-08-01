@@ -1,0 +1,7 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/NendSDK_iOS" "${PODS_ROOT}/Headers/Public/SVProgressHUD" "${PODS_ROOT}/Headers/Public/UIGlossyButton"
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/NendSDK_iOS/NendSDK_iOS-2.7.0/Nend/NendAd"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/NendSDK_iOS" -isystem "${PODS_ROOT}/Headers/Public/SVProgressHUD" -isystem "${PODS_ROOT}/Headers/Public/UIGlossyButton"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"NendAd" -l"Pods-looplist-SVProgressHUD" -l"Pods-looplist-UIGlossyButton" -framework "ImageIO" -framework "QuartzCore" -framework "Security" -framework "UIKit" -weak_framework "AdSupport"
+OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+PODS_ROOT = ${SRCROOT}/Pods
