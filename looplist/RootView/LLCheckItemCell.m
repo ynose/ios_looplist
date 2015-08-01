@@ -44,9 +44,9 @@
 {
     [super layoutSubviews];
 
+    self.numberLabel.textColor = [LLColorLabelButton titleColorAtIndex:self.checkItem.colorLabelIndex
+                                                             withImage:(self.attachImageView.image != nil)];
     self.colorLabelButton.colorLabelIndex = self.checkItem.colorLabelIndex;
-
-//    self.captionTextField.placeholder = LSTR(@"NewCheckCaption");
 }
 
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated
@@ -96,7 +96,7 @@
 
         // 簡易表示
         if (2592000 < secondSinceNow) {         // 30日以上
-            checkDateString = [checkedDate stringDate];
+            checkDateString = [checkedDate stringWithFormat:@"EdMMM"];
         } else if (86400 < secondSinceNow) {    // 1日以上
             checkDateString = [NSString stringWithFormat:LSTR(@"BeforeDay"), secondSinceNow / 86400];
         } else if (3600 < secondSinceNow) {     // 1時間以上

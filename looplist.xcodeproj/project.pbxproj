@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E07E9E31B2B22D50067EB31 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E07E9E21B2B22D50067EB31 /* AVFoundation.framework */; };
 		8E1F2CA618059B7700481439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA518059B7700481439 /* CoreData.framework */; };
 		8E1F2CA818059B8500481439 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA718059B8500481439 /* SystemConfiguration.framework */; };
 		8E1F2CAA18059B8E00481439 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E1F2CA918059B8E00481439 /* libz.dylib */; };
-		8E2D6F4C18043EDE0028E111 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2D6F4918043EDE0028E111 /* libNendAd.a */; };
-		8E2D6F4D18043EDE0028E111 /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8E2D6F4B18043EDE0028E111 /* NADView_readme.txt */; };
+		8E2867D81B37A56E00FA4D14 /* camera-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E2867D71B37A56E00FA4D14 /* camera-button@2x.png */; };
+		8E2C99071B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2C99061B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m */; };
 		8E2D6F4F18043EFB0028E111 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2D6F4E18043EFB0028E111 /* AdSupport.framework */; };
 		8E36127817F3C576008CF7E1 /* LLAppSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E36126A17F3C576008CF7E1 /* LLAppSettingViewController.m */; };
 		8E36127917F3C576008CF7E1 /* LLEvernoteAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E36126C17F3C576008CF7E1 /* LLEvernoteAccountViewController.m */; };
@@ -23,7 +24,6 @@
 		8E36136717F3CC15008CF7E1 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E36136617F3CC15008CF7E1 /* libxml2.dylib */; };
 		8E36136917F3CC34008CF7E1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E36136817F3CC34008CF7E1 /* MobileCoreServices.framework */; };
 		8E36136B17F3CC7F008CF7E1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E36136A17F3CC7F008CF7E1 /* Security.framework */; };
-		8E36136D17F3CC88008CF7E1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E36136C17F3CC88008CF7E1 /* StoreKit.framework */; };
 		8E405BC119222DD200B22B32 /* settings-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E405BBF19222DD200B22B32 /* settings-button.png */; };
 		8E405BC219222DD200B22B32 /* settings-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E405BC019222DD200B22B32 /* settings-button@2x.png */; };
 		8E416C4B1B28F3DA006BE2DA /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E416C4A1B28F3DA006BE2DA /* libGoogleAnalyticsServices.a */; };
@@ -60,15 +60,11 @@
 		8E88509617F0F7A40068B13F /* LLRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88509517F0F7A40068B13F /* LLRootViewController.m */; };
 		8E88509A17F0F7D60068B13F /* LLCheckItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88509817F0F7D60068B13F /* LLCheckItemCell.m */; };
 		8E8850A817F0F9F80068B13F /* LLColorLabelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850A717F0F9F80068B13F /* LLColorLabelButton.m */; };
-		8E8850B317F0FB290068B13F /* UIGlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850B017F0FB290068B13F /* UIGlossyButton.m */; };
-		8E8850B417F0FB290068B13F /* UIView+LayerEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8850B217F0FB290068B13F /* UIView+LayerEffects.m */; };
 		8E88A54A17FC52BD000DB515 /* LLCheckItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E88A54C17FC52BD000DB515 /* LLCheckItemCell.xib */; };
 		8E88E64E17F1B36100C9E69A /* LLCheckItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E64D17F1B36100C9E69A /* LLCheckItemDetailViewController.m */; };
 		8E88E65617F1B40100C9E69A /* LLCheckListDetailViewController+SectionTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E65017F1B40100C9E69A /* LLCheckListDetailViewController+SectionTableView.m */; };
 		8E88E65717F1B40100C9E69A /* LLCheckListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E65217F1B40100C9E69A /* LLCheckListDetailViewController.m */; };
 		8E88E65817F1B40100C9E69A /* LLSectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E65417F1B40100C9E69A /* LLSectionCell.m */; };
-		8E88E67017F1B85A00C9E69A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8E88E66D17F1B85A00C9E69A /* SVProgressHUD.bundle */; };
-		8E88E67117F1B85A00C9E69A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E88E66F17F1B85A00C9E69A /* SVProgressHUD.m */; };
 		8E8C146717FE29AE0067995E /* LLCheckListManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C146617FE29AE0067995E /* LLCheckListManageViewController.m */; };
 		8E8D08BA17F3F4BD00C9DAC8 /* InAppPurchase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E8D08B817F3F4BD00C9DAC8 /* InAppPurchase.plist */; };
 		8E90247B1B28576300A87982 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E90247A1B28576300A87982 /* Launch Screen.xib */; };
@@ -78,12 +74,15 @@
 		8ECF983D17F2EE3B0097838A /* LLTouchTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF983B17F2EE3B0097838A /* LLTouchTextView.m */; };
 		8ECF984217F2EE6E0097838A /* UISettingSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF983F17F2EE6E0097838A /* UISettingSwitchCell.m */; };
 		8ECF984317F2EE6E0097838A /* UISimpleSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984117F2EE6E0097838A /* UISimpleSwitchCell.m */; };
-		8ECF984817F2EE910097838A /* YNActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984517F2EE910097838A /* YNActionSheet.m */; };
 		8ECF984917F2EE910097838A /* YNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECF984717F2EE910097838A /* YNAlertView.m */; };
 		8ED20A5F17FA309E0060C690 /* navigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */; };
 		8EDD276E1808060F00E593F6 /* YNGAITracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED03E19180607FC0000E103 /* YNGAITracker.m */; };
 		8EE13E1117FB88830076F4E9 /* LLSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EE13E1317FB88830076F4E9 /* LLSectionCell.xib */; };
+<<<<<<< HEAD
 		C3560D80B44ABB6906B7E675 /* libPods-looplist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F09433DFA3FB6F1AB470E35 /* libPods-looplist.a */; };
+=======
+		B9E66DEF77B31D1E3FE9286F /* libPods-looplist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDC47609D00A82654AFC42F /* libPods-looplist.a */; };
+>>>>>>> attachimage
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,16 +96,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		23AF3CA5E5A8C077ECDE5974 /* Pods-looplist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-looplist.release.xcconfig"; path = "Pods/Target Support Files/Pods-looplist/Pods-looplist.release.xcconfig"; sourceTree = "<group>"; };
 		4F09433DFA3FB6F1AB470E35 /* libPods-looplist.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-looplist.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		644585AAD3C23A69C1F48F41 /* Pods-looplist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-looplist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-looplist/Pods-looplist.debug.xcconfig"; sourceTree = "<group>"; };
 		897EE697E3EAD1FA2C50A71C /* Pods-looplist.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-looplist.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-looplist/Pods-looplist.distribution.xcconfig"; sourceTree = "<group>"; };
+=======
+		09697D29B9CD39DE3DA2CFBE /* Pods-looplist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-looplist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-looplist/Pods-looplist.debug.xcconfig"; sourceTree = "<group>"; };
+		5F38394783C49A6BAE217C4C /* Pods-looplist.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-looplist.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-looplist/Pods-looplist.distribution.xcconfig"; sourceTree = "<group>"; };
+		8E07E9E01B2B13470067EB31 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8E07E9E21B2B22D50067EB31 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+>>>>>>> attachimage
 		8E1F2CA518059B7700481439 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8E1F2CA718059B8500481439 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8E1F2CA918059B8E00481439 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		8E2D6F4918043EDE0028E111 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
-		8E2D6F4A18043EDE0028E111 /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
-		8E2D6F4B18043EDE0028E111 /* NADView_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NADView_readme.txt; sourceTree = "<group>"; };
+		8E2867D71B37A56E00FA4D14 /* camera-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-button@2x.png"; sourceTree = "<group>"; };
+		8E2C99061B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LLCheckItemDetailViewController+ImagePicker.m"; sourceTree = "<group>"; };
 		8E2D6F4E18043EFB0028E111 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8E36126917F3C576008CF7E1 /* LLAppSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LLAppSettingViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		8E36126A17F3C576008CF7E1 /* LLAppSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LLAppSettingViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -125,7 +130,6 @@
 		8E36136617F3CC15008CF7E1 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		8E36136817F3CC34008CF7E1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8E36136A17F3CC7F008CF7E1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		8E36136C17F3CC88008CF7E1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8E405BBF19222DD200B22B32 /* settings-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-button.png"; sourceTree = "<group>"; };
 		8E405BC019222DD200B22B32 /* settings-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-button@2x.png"; sourceTree = "<group>"; };
 		8E416C4A1B28F3DA006BE2DA /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = ../../Library/GoogleAnalyticsServicesiOS_3.08/libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
@@ -184,10 +188,6 @@
 		8E88509817F0F7D60068B13F /* LLCheckItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LLCheckItemCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8E8850A617F0F9F80068B13F /* LLColorLabelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = LLColorLabelButton.h; path = Classes/LLColorLabelButton.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		8E8850A717F0F9F80068B13F /* LLColorLabelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = LLColorLabelButton.m; path = Classes/LLColorLabelButton.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		8E8850AF17F0FB290068B13F /* UIGlossyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGlossyButton.h; sourceTree = "<group>"; };
-		8E8850B017F0FB290068B13F /* UIGlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGlossyButton.m; sourceTree = "<group>"; };
-		8E8850B117F0FB290068B13F /* UIView+LayerEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayerEffects.h"; sourceTree = "<group>"; };
-		8E8850B217F0FB290068B13F /* UIView+LayerEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayerEffects.m"; sourceTree = "<group>"; };
 		8E88A54B17FC52BD000DB515 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LLCheckItemCell.xib; sourceTree = "<group>"; };
 		8E88E64C17F1B36100C9E69A /* LLCheckItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LLCheckItemDetailViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		8E88E64D17F1B36100C9E69A /* LLCheckItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LLCheckItemDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -196,9 +196,6 @@
 		8E88E65217F1B40100C9E69A /* LLCheckListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LLCheckListDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		8E88E65317F1B40100C9E69A /* LLSectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LLSectionCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		8E88E65417F1B40100C9E69A /* LLSectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LLSectionCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		8E88E66D17F1B85A00C9E69A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		8E88E66E17F1B85A00C9E69A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		8E88E66F17F1B85A00C9E69A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		8E8C146517FE29AE0067995E /* LLCheckListManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLCheckListManageViewController.h; sourceTree = "<group>"; };
 		8E8C146617FE29AE0067995E /* LLCheckListManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLCheckListManageViewController.m; sourceTree = "<group>"; };
 		8E8D08B917F3F4BD00C9DAC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = looplist/Base.lproj/InAppPurchase.plist; sourceTree = SOURCE_ROOT; };
@@ -216,8 +213,6 @@
 		8ECF983F17F2EE6E0097838A /* UISettingSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UISettingSwitchCell.m; path = Classes/UISettingSwitchCell.m; sourceTree = "<group>"; };
 		8ECF984017F2EE6E0097838A /* UISimpleSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UISimpleSwitchCell.h; path = Classes/UISimpleSwitchCell.h; sourceTree = "<group>"; };
 		8ECF984117F2EE6E0097838A /* UISimpleSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UISimpleSwitchCell.m; path = Classes/UISimpleSwitchCell.m; sourceTree = "<group>"; };
-		8ECF984417F2EE910097838A /* YNActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNActionSheet.h; path = Classes/YNActionSheet.h; sourceTree = "<group>"; };
-		8ECF984517F2EE910097838A /* YNActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YNActionSheet.m; path = Classes/YNActionSheet.m; sourceTree = "<group>"; };
 		8ECF984617F2EE910097838A /* YNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YNAlertView.h; path = Classes/YNAlertView.h; sourceTree = "<group>"; };
 		8ECF984717F2EE910097838A /* YNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YNAlertView.m; path = Classes/YNAlertView.m; sourceTree = "<group>"; };
 		8ECFCA3618056C52003F6B11 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LLCheckItemCell.strings; sourceTree = "<group>"; };
@@ -233,6 +228,8 @@
 		8EECB5761B27B08F00B4E053 /* GAILogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = ../../Library/GoogleAnalyticsServicesiOS_3.08/GoogleAnalytics/Library/GAILogger.h; sourceTree = "<group>"; };
 		8EECB5771B27B08F00B4E053 /* GAITrackedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = ../../Library/GoogleAnalyticsServicesiOS_3.08/GoogleAnalytics/Library/GAITrackedViewController.h; sourceTree = "<group>"; };
 		8EECB5781B27B08F00B4E053 /* GAITracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = ../../Library/GoogleAnalyticsServicesiOS_3.08/GoogleAnalytics/Library/GAITracker.h; sourceTree = "<group>"; };
+		B2DB1B39947653F99BEAAA54 /* Pods-looplist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-looplist.release.xcconfig"; path = "Pods/Target Support Files/Pods-looplist/Pods-looplist.release.xcconfig"; sourceTree = "<group>"; };
+		DEDC47609D00A82654AFC42F /* libPods-looplist.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-looplist.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,18 +240,22 @@
 				8E416C4E1B28F4DB006BE2DA /* libsqlite3.0.dylib in Frameworks */,
 				8E36136717F3CC15008CF7E1 /* libxml2.dylib in Frameworks */,
 				8E1F2CAA18059B8E00481439 /* libz.dylib in Frameworks */,
+				8E07E9E31B2B22D50067EB31 /* AVFoundation.framework in Frameworks */,
+				8E36136917F3CC34008CF7E1 /* MobileCoreServices.framework in Frameworks */,
 				8E1F2CA818059B8500481439 /* SystemConfiguration.framework in Frameworks */,
 				8E1F2CA618059B7700481439 /* CoreData.framework in Frameworks */,
 				8E2D6F4F18043EFB0028E111 /* AdSupport.framework in Frameworks */,
-				8E36136D17F3CC88008CF7E1 /* StoreKit.framework in Frameworks */,
 				8E36136B17F3CC7F008CF7E1 /* Security.framework in Frameworks */,
-				8E36136917F3CC34008CF7E1 /* MobileCoreServices.framework in Frameworks */,
 				8E88502317F0EB340068B13F /* CoreGraphics.framework in Frameworks */,
 				8E88502517F0EB340068B13F /* UIKit.framework in Frameworks */,
 				8E88502117F0EB340068B13F /* Foundation.framework in Frameworks */,
 				8E416C4B1B28F3DA006BE2DA /* libGoogleAnalyticsServices.a in Frameworks */,
+<<<<<<< HEAD
 				8E2D6F4C18043EDE0028E111 /* libNendAd.a in Frameworks */,
 				C3560D80B44ABB6906B7E675 /* libPods-looplist.a in Frameworks */,
+=======
+				B9E66DEF77B31D1E3FE9286F /* libPods-looplist.a in Frameworks */,
+>>>>>>> attachimage
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +272,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		74036B48ED7D23A90ED7D794 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +293,8 @@
 			path = NendAd;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> attachimage
 		8E36126817F3C576008CF7E1 /* AppSettingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +329,7 @@
 				8ED20A5E17FA309E0060C690 /* navigationBar@2x.png */,
 				8E88375A17F255D60063E811 /* checkmark@2x.png */,
 				8E88375C17F255D60063E811 /* tabbar-icon@2x.png */,
+				8E2867D71B37A56E00FA4D14 /* camera-button@2x.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -337,7 +342,11 @@
 				8E88504B17F0EB340068B13F /* looplistTests */,
 				8E88501F17F0EB340068B13F /* Frameworks */,
 				8E88501E17F0EB340068B13F /* Products */,
+<<<<<<< HEAD
 				74036B48ED7D23A90ED7D794 /* Pods */,
+=======
+				D1456F3A13A5D1CA4EFEE714 /* Pods */,
+>>>>>>> attachimage
 			);
 			sourceTree = "<group>";
 		};
@@ -353,12 +362,13 @@
 		8E88501F17F0EB340068B13F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E07E9E21B2B22D50067EB31 /* AVFoundation.framework */,
+				8E07E9E01B2B13470067EB31 /* QuartzCore.framework */,
 				8E416C4D1B28F4DB006BE2DA /* libsqlite3.0.dylib */,
 				8E1F2CA918059B8E00481439 /* libz.dylib */,
 				8E1F2CA718059B8500481439 /* SystemConfiguration.framework */,
 				8E1F2CA518059B7700481439 /* CoreData.framework */,
 				8E2D6F4E18043EFB0028E111 /* AdSupport.framework */,
-				8E36136C17F3CC88008CF7E1 /* StoreKit.framework */,
 				8E36136A17F3CC7F008CF7E1 /* Security.framework */,
 				8E36136817F3CC34008CF7E1 /* MobileCoreServices.framework */,
 				8E36136617F3CC15008CF7E1 /* libxml2.dylib */,
@@ -366,7 +376,11 @@
 				8E88502217F0EB340068B13F /* CoreGraphics.framework */,
 				8E88502417F0EB340068B13F /* UIKit.framework */,
 				8E88504517F0EB340068B13F /* XCTest.framework */,
+<<<<<<< HEAD
 				4F09433DFA3FB6F1AB470E35 /* libPods-looplist.a */,
+=======
+				DEDC47609D00A82654AFC42F /* libPods-looplist.a */,
+>>>>>>> attachimage
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -384,6 +398,7 @@
 				8E88503517F0EB340068B13F /* Main_iPad.storyboard */,
 				8ECCA1591802BEFD00A0BA8D /* TabBarController */,
 				8E88509317F0F7A40068B13F /* RootView */,
+				8E88E64B17F1B36100C9E69A /* DetailView */,
 				8E36126817F3C576008CF7E1 /* AppSettingView */,
 				8E88506317F0EF9A0068B13F /* DataModel */,
 				8E8850A917F0FA010068B13F /* Classes */,
@@ -468,7 +483,6 @@
 				8E88509517F0F7A40068B13F /* LLRootViewController.m */,
 				8ECD7E3D17FCC91F0071B281 /* LLRootViewController+TableView.m */,
 				8EB4512D1804C87C000C49D3 /* CheckItemCell */,
-				8E88E64B17F1B36100C9E69A /* DetailView */,
 			);
 			path = RootView;
 			sourceTree = "<group>";
@@ -479,8 +493,6 @@
 				8ED03E18180607FC0000E103 /* YNGAITracker.h */,
 				8ED03E19180607FC0000E103 /* YNGAITracker.m */,
 				8ECF983E17F2EE6E0097838A /* UISettingSwitchCell.h */,
-				8ECF984417F2EE910097838A /* YNActionSheet.h */,
-				8ECF984517F2EE910097838A /* YNActionSheet.m */,
 				8ECF984617F2EE910097838A /* YNAlertView.h */,
 				8ECF984717F2EE910097838A /* YNAlertView.m */,
 				8ECF983F17F2EE6E0097838A /* UISettingSwitchCell.m */,
@@ -500,23 +512,8 @@
 			isa = PBXGroup;
 			children = (
 				8EECB5721B27B05E00B4E053 /* GoogleAnalytics */,
-				8E2D6F4818043EDE0028E111 /* NendAd */,
-				8E88E66C17F1B85A00C9E69A /* SVProgressHUD */,
-				8E8850AE17F0FB290068B13F /* UIGlossyButton */,
 			);
 			name = Library;
-			sourceTree = "<group>";
-		};
-		8E8850AE17F0FB290068B13F /* UIGlossyButton */ = {
-			isa = PBXGroup;
-			children = (
-				8E8850AF17F0FB290068B13F /* UIGlossyButton.h */,
-				8E8850B017F0FB290068B13F /* UIGlossyButton.m */,
-				8E8850B117F0FB290068B13F /* UIView+LayerEffects.h */,
-				8E8850B217F0FB290068B13F /* UIView+LayerEffects.m */,
-			);
-			name = UIGlossyButton;
-			path = ../../Library/UIGlossyButton;
 			sourceTree = "<group>";
 		};
 		8E88E64B17F1B36100C9E69A /* DetailView */ = {
@@ -524,6 +521,7 @@
 			children = (
 				8E88E64C17F1B36100C9E69A /* LLCheckItemDetailViewController.h */,
 				8E88E64D17F1B36100C9E69A /* LLCheckItemDetailViewController.m */,
+				8E2C99061B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m */,
 			);
 			name = DetailView;
 			path = looplist/DetailView;
@@ -542,17 +540,6 @@
 			name = CheckListDetailView;
 			path = looplist/CheckListDetailView;
 			sourceTree = SOURCE_ROOT;
-		};
-		8E88E66C17F1B85A00C9E69A /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				8E88E66D17F1B85A00C9E69A /* SVProgressHUD.bundle */,
-				8E88E66E17F1B85A00C9E69A /* SVProgressHUD.h */,
-				8E88E66F17F1B85A00C9E69A /* SVProgressHUD.m */,
-			);
-			name = SVProgressHUD;
-			path = ../../Library/SVProgressHUD;
-			sourceTree = "<group>";
 		};
 		8E8C146817FE29C30067995E /* CheckListManageView */ = {
 			isa = PBXGroup;
@@ -626,6 +613,16 @@
 			name = GoogleAnalytics;
 			sourceTree = "<group>";
 		};
+		D1456F3A13A5D1CA4EFEE714 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				09697D29B9CD39DE3DA2CFBE /* Pods-looplist.debug.xcconfig */,
+				B2DB1B39947653F99BEAAA54 /* Pods-looplist.release.xcconfig */,
+				5F38394783C49A6BAE217C4C /* Pods-looplist.distribution.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -633,11 +630,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E88505517F0EB340068B13F /* Build configuration list for PBXNativeTarget "looplist" */;
 			buildPhases = (
+<<<<<<< HEAD
 				68E6C0D5F1EF9CBBDB843AEB /* Check Pods Manifest.lock */,
 				8E88501917F0EB340068B13F /* Sources */,
 				8E88501A17F0EB340068B13F /* Frameworks */,
 				8E88501B17F0EB340068B13F /* Resources */,
 				03F6A7D544A5F2F9B0F1FFAA /* Copy Pods Resources */,
+=======
+				76A9303218579F09EF00980B /* Check Pods Manifest.lock */,
+				8E88501917F0EB340068B13F /* Sources */,
+				8E88501A17F0EB340068B13F /* Frameworks */,
+				8E88501B17F0EB340068B13F /* Resources */,
+				4A91AB7A542C4CC11CF02659 /* Copy Pods Resources */,
+>>>>>>> attachimage
 			);
 			buildRules = (
 			);
@@ -679,8 +684,11 @@
 					8E88501C17F0EB340068B13F = {
 						DevelopmentTeam = 762R5CQ89N;
 						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -716,8 +724,6 @@
 			files = (
 				8EE13E1117FB88830076F4E9 /* LLSectionCell.xib in Resources */,
 				8E405BC119222DD200B22B32 /* settings-button.png in Resources */,
-				8E88E67017F1B85A00C9E69A /* SVProgressHUD.bundle in Resources */,
-				8E2D6F4D18043EDE0028E111 /* NADView_readme.txt in Resources */,
 				8E88508E17F0F57C0068B13F /* Localizable.strings in Resources */,
 				8E88375D17F255D60063E811 /* checkmark@2x.png in Resources */,
 				8E88375F17F255D60063E811 /* tabbar-icon@2x.png in Resources */,
@@ -725,6 +731,7 @@
 				8E88503F17F0EB340068B13F /* Images.xcassets in Resources */,
 				8E88503417F0EB340068B13F /* Main_iPhone.storyboard in Resources */,
 				8E8D08BA17F3F4BD00C9DAC8 /* InAppPurchase.plist in Resources */,
+				8E2867D81B37A56E00FA4D14 /* camera-button@2x.png in Resources */,
 				8ED20A5F17FA309E0060C690 /* navigationBar@2x.png in Resources */,
 				8E405BC219222DD200B22B32 /* settings-button@2x.png in Resources */,
 				8E90247B1B28576300A87982 /* Launch Screen.xib in Resources */,
@@ -744,7 +751,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+<<<<<<< HEAD
 		03F6A7D544A5F2F9B0F1FFAA /* Copy Pods Resources */ = {
+=======
+		4A91AB7A542C4CC11CF02659 /* Copy Pods Resources */ = {
+>>>>>>> attachimage
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -759,7 +770,11 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-looplist/Pods-looplist-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+<<<<<<< HEAD
 		68E6C0D5F1EF9CBBDB843AEB /* Check Pods Manifest.lock */ = {
+=======
+		76A9303218579F09EF00980B /* Check Pods Manifest.lock */ = {
+>>>>>>> attachimage
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -783,27 +798,24 @@
 			files = (
 				8EDD276E1808060F00E593F6 /* YNGAITracker.m in Sources */,
 				8E36127817F3C576008CF7E1 /* LLAppSettingViewController.m in Sources */,
-				8E8850B317F0FB290068B13F /* UIGlossyButton.m in Sources */,
 				8ECF984317F2EE6E0097838A /* UISimpleSwitchCell.m in Sources */,
 				8E8850A817F0F9F80068B13F /* LLColorLabelButton.m in Sources */,
+				8E2C99071B2996D70000A9DC /* LLCheckItemDetailViewController+ImagePicker.m in Sources */,
 				8E88506E17F0EF9A0068B13F /* LLCheckList.m in Sources */,
 				8E36127C17F3C576008CF7E1 /* PaymentManager.m in Sources */,
 				8E88E65817F1B40100C9E69A /* LLSectionCell.m in Sources */,
 				8E88506D17F0EF9A0068B13F /* LLCheckItem.m in Sources */,
 				8E36127A17F3C576008CF7E1 /* iCloudViewController.m in Sources */,
 				8E88E65617F1B40100C9E69A /* LLCheckListDetailViewController+SectionTableView.m in Sources */,
-				8ECF984817F2EE910097838A /* YNActionSheet.m in Sources */,
 				8E88E65717F1B40100C9E69A /* LLCheckListDetailViewController.m in Sources */,
 				8E88503117F0EB340068B13F /* LLAppDelegate.m in Sources */,
 				8E88508417F0F0970068B13F /* NSFileManager+Extension.m in Sources */,
 				8ECD7E4117FCD5740071B281 /* UIView+KeyboardNotification.m in Sources */,
 				8E88508717F0F0970068B13F /* UITableView+Extension.m in Sources */,
 				8E88507017F0EF9A0068B13F /* LLCheckListManager.m in Sources */,
-				8E8850B417F0FB290068B13F /* UIView+LayerEffects.m in Sources */,
 				8E36127D17F3C576008CF7E1 /* ProductManager.m in Sources */,
 				8ECF983D17F2EE3B0097838A /* LLTouchTextView.m in Sources */,
 				8E88509617F0F7A40068B13F /* LLRootViewController.m in Sources */,
-				8E88E67117F1B85A00C9E69A /* SVProgressHUD.m in Sources */,
 				8E8C146717FE29AE0067995E /* LLCheckListManageViewController.m in Sources */,
 				8ECF983C17F2EE3B0097838A /* LLTouchScrollView.m in Sources */,
 				8E36127E17F3C576008CF7E1 /* UIProductCell.m in Sources */,
@@ -954,7 +966,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "7071FD09-F4CA-4F39-B0C6-3F7C88A818B1";
@@ -991,7 +1003,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "7071FD09-F4CA-4F39-B0C6-3F7C88A818B1";
 				SDKROOT = iphoneos;
@@ -1002,19 +1014,22 @@
 		};
 		8E88505617F0EB340068B13F /* Debug */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
 			baseConfigurationReference = 644585AAD3C23A69C1F48F41 /* Pods-looplist.debug.xcconfig */;
+=======
+			baseConfigurationReference = 09697D29B9CD39DE3DA2CFBE /* Pods-looplist.debug.xcconfig */;
+>>>>>>> attachimage
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "looplist/looplist-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					_DEBUG,
+					"$(inherited)",
 					_PROVERSION,
-					_APPSTORE_SCREENSHOT,
+					APPSTORE_SCREENSHOT,
 					_LAUNCH_SCREENSHOT,
 					_RESET_INAPPPURCHASE,
 				);
@@ -1024,12 +1039,10 @@
 					"${SDKROOT}/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "looplist/looplist-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/looplist/NendAd",
 					"$(SRCROOT)/../Library/GoogleAnalyticsServicesiOS_3.08",
-					"$(PROJECT_DIR)/looplist/NendAd",
 				);
 				PRODUCT_NAME = Looplist;
 				PROVISIONING_PROFILE = "";
@@ -1040,11 +1053,14 @@
 		};
 		8E88505717F0EB340068B13F /* Release */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
 			baseConfigurationReference = 23AF3CA5E5A8C077ECDE5974 /* Pods-looplist.release.xcconfig */;
+=======
+			baseConfigurationReference = B2DB1B39947653F99BEAAA54 /* Pods-looplist.release.xcconfig */;
+>>>>>>> attachimage
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1055,12 +1071,10 @@
 					"${SDKROOT}/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "looplist/looplist-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/looplist/NendAd",
 					"$(SRCROOT)/../Library/GoogleAnalyticsServicesiOS_3.08",
-					"$(PROJECT_DIR)/looplist/NendAd",
 				);
 				PRODUCT_NAME = Looplist;
 				PROVISIONING_PROFILE = "";
@@ -1137,7 +1151,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "E50A3A88-B8C5-42A2-A17E-9D4CD7ADCB1F";
 				SDKROOT = iphoneos;
@@ -1148,11 +1162,14 @@
 		};
 		8EC5AF5A180EDC9C00EEB683 /* Distribution */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
 			baseConfigurationReference = 897EE697E3EAD1FA2C50A71C /* Pods-looplist.distribution.xcconfig */;
+=======
+			baseConfigurationReference = 5F38394783C49A6BAE217C4C /* Pods-looplist.distribution.xcconfig */;
+>>>>>>> attachimage
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = looplist/Looplist.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1163,12 +1180,10 @@
 					"${SDKROOT}/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "looplist/looplist-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/looplist/NendAd",
 					"$(SRCROOT)/../Library/GoogleAnalyticsServicesiOS_3.08",
-					"$(PROJECT_DIR)/looplist/NendAd",
 				);
 				PRODUCT_NAME = Looplist;
 				PROVISIONING_PROFILE = "";

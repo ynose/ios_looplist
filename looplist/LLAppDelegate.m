@@ -9,6 +9,7 @@
 #import "LLAppDelegate.h"
 
 //#import "EvernoteSDK.h"
+#import "NADInterstitial.h"
 
 #import "NSFileManager+Extension.h"
 
@@ -30,16 +31,23 @@
 
     [self setupAppearance];
 
+#ifndef APPSTORE_SCREENSHOT
     [[LLCheckListManager sharedManager] loadCheckLists];
     [[LLCheckListManager sharedManager] loadCheckItems];
+#endif
 
+#ifdef APPSTORE_SCREENSHOT
+    [[LLCheckListManager sharedManager] loadScreenshotCheckLists];
+    [[NSUserDefaults standardUserDefaults] setInteger:2 forKey:SETTING_SHOWTABS];
+#endif
 
-    // iCLoudの使用可否
-    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:SETTING_ICLOUD_AVAILABLE];
-    [NSFileManager iCloudAvailable:^{
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:SETTING_ICLOUD_AVAILABLE];
-        [[NSUbiquitousKeyValueStore defaultStore] synchronize];
-    }];
+// 未実装
+//    // iCLoudの使用可否
+//    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:SETTING_ICLOUD_AVAILABLE];
+//    [NSFileManager iCloudAvailable:^{
+//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:SETTING_ICLOUD_AVAILABLE];
+//        [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+//    }];
 
 
     /* GoogleAnalytics API */
@@ -47,6 +55,13 @@
 
     /* Evernote API */
 //    [self setupEvernote];
+
+#ifndef DEBUG
+    [[NADInterstitial sharedInstance] loadAdWithApiKey:@"28bc446df0d2d412ae51f29bd2a5c8bbfe5ede5f" spotId:@"394311"];    // 本番用
+#else
+     // テスト用でもネットワークにつながっていないと表示されない
+    [[NADInterstitial sharedInstance] loadAdWithApiKey:@"308c2499c75c4a192f03c02b2fcebd16dcb45cc9" spotId:@"213208"]; // 表示テスト用
+#endif
 
     return YES;
 }
@@ -162,9 +177,6 @@
 
 -(void)setupAppearance
 {
-    // ステータスバー
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-
     // ナビゲーションバー
 //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBar"] forBarMetrics:UIBarMetricsDefault];
 //    [[UINavigationBar appearance] setTintColor:UIColorButtonText];

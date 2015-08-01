@@ -9,7 +9,6 @@
 #import "LLCheckListDetailViewController.h"
 
 #import "LLTouchScrollView.h"
-#import "YNActionSheet.h"
 
 #import "UIView+KeyboardNotification.h"
 #import "NSDate+Extension.h"

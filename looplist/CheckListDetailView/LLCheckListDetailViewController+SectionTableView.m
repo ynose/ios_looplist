@@ -87,7 +87,7 @@ static NSString *kCellIdentifier = @"Cell";
     [self.checkList addSection];
 
     // 追加ボタンの上に新しいセクションを追加する
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self rowOfAddButtonCell] - 1 inSection:0];   DEBUGLOG_IndexPath(indexPath);
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self rowOfAddButtonCell] - 1 inSection:0];
 
     // 追加行にスクロールしてカーソルをセット
     [self.sectionTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];

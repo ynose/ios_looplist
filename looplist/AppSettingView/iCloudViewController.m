@@ -208,7 +208,7 @@ __strong static NSTimer *_timer;
                             [_oldTemplateURLs addObject:url];
                         }
                     }
-                    DEBUGLOG(@"Old CheckLists Count:%d", [_oldTemplateURLs count]);
+                    DEBUGLOG(@"Old CheckLists Count:%lu", (unsigned long)[_oldTemplateURLs count]);
                     
                     [iCloudViewController moveFromiCloud];
                     

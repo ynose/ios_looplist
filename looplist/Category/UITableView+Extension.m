@@ -59,13 +59,18 @@
     [self performSelector:@selector(reloadData) withObject:nil afterDelay:delay];
 }
 
+static BOOL _reloading;
 -(void)reloadVisibleRowsAfterDelay:(NSTimeInterval)delay withRowAnimation:(UITableViewRowAnimation)animation
 {
-    [self performSelector:@selector(_reloadVisibleRowsWithRowAnimation:) withObject:@(animation) afterDelay:delay];
+    if (_reloading == NO) {
+        _reloading = YES;
+        [self performSelector:@selector(_reloadVisibleRowsWithRowAnimation:) withObject:@(animation) afterDelay:delay];
+    }
 }
 -(void)_reloadVisibleRowsWithRowAnimation:(id)animation
 {
     [self reloadRowsAtIndexPaths:[self indexPathsForVisibleRows] withRowAnimation:(UITableViewRowAnimation)animation];
+    _reloading = NO;
 }
 
 @end

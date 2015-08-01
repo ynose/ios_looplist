@@ -8,6 +8,7 @@
 
 #import "LLRootViewController.h"
 
+#import "LLTabBarController.h"
 #import "LLCheckListManager.h"
 
 static CGFloat kSectionHeight = 24;
@@ -19,7 +20,7 @@ static CGFloat kSectionHeight = 24;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 #ifndef LAUNCH_SCREENSHOT    // 起動画像スクリーンショット撮影
-    DEBUGLOG(@"%d", [self.checkList.arraySections count]);
+    DEBUGLOG(@"%ld", [self.checkList.arraySections count]);
     return [self.checkList.arraySections count];
 #else
     return 0;
@@ -68,33 +69,26 @@ static CGFloat kSectionHeight = 24;
     if (self.finishAction == YES) {
         return 0;
     } else {
-        DEBUGLOG(@"numberOfRowsInSection(%d) = %d", section, [[self checkListSection:section].checkItems count]);
         return [[self checkListSection:section].checkItems count];
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DEBUGLOG(@"IndexPath s=%d,r=%d", indexPath.section, indexPath.row);
-    
 //    static NSString *kKVOCheckedDate = KVO_CHECKEDDATE;
 
     LLCheckItem *checkItem = [self checkItemAtIndexPath:indexPath];
 
-    // セルの作成（再利用）
+    // セルの作成
     LLCheckItemCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     cell.delegate = self;
     cell.sequenceNumber = [self.checkList sequenceOfCheckItem:checkItem];
     cell.checkItem = checkItem;
     cell.captionTextField.text = checkItem.caption;
     cell.checkedDate = checkItem.checkedDate;
+    cell.attachImageView.image = [[LLCheckListManager sharedManager] loadAttachImage:checkItem.identifier];
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-    if (checkItem.hasDetail) {
-        cell.tintColor = UIColorMain;
-    } else {
-        cell.tintColor = [UIColor colorWithRed:0.808 green:0.808 blue:0.808 alpha:1.000];
-    }
-
+    cell.tintColor = (checkItem.hasDetail || [[LLCheckListManager sharedManager] existsAttachImageFile:checkItem.identifier] != nil) ? UIColorMain : UIColoeHasDetail;
 
     // 予約されたセルにカーソルをセットする
     if ([indexPath compare:self.indexPathOfNeedFirstResponder] == NSOrderedSame) {
@@ -124,6 +118,7 @@ static CGFloat kSectionHeight = 24;
 
         // チェック項目の削除
         LLCheckItem *checkItem = [self checkItemAtIndexPath:indexPath];
+        [[LLCheckListManager sharedManager] removeAttachImageFile:checkItem.identifier];
         [[LLCheckListManager sharedManager] removeCheckItem:checkItem inCheckList:self.checkListIndex];
 
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
@@ -202,6 +197,40 @@ static CGFloat kSectionHeight = 24;
 {
     [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
 }
+
+#pragma mark - チェックアイテム詳細ビューを表示
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    LLCheckItemDetailViewController *detailViewController = [storyBoard instantiateViewControllerWithIdentifier:@"CheckItemDetailViewController"];
+
+    // 選択したIndexPathを保持(saveDetail:で使用するため)
+    self.indexPathOfSelected = indexPath;
+    LLCheckItem *checkItem = [self checkItemAtIndexPath:indexPath];
+
+    detailViewController.delegate = self;
+    detailViewController.checkItem = checkItem;
+    detailViewController.sequenceNumber = [self.checkList sequenceOfCheckItem:checkItem];
+
+    // 画像の読み込み
+    UIImage *image = [[LLCheckListManager sharedManager] loadAttachImage:checkItem.identifier];
+    detailViewController.attachImage = image;
+
+
+//#ifdef APPSTORE_SCREENSHOT
+//    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+//    tabBarController.dummyAdView.hidden = YES;
+//#else
+//    //    tabBarController.nadView.hidden = YES;
+//#endif
+    [self.navigationController pushViewController:detailViewController animated:YES];
+
+//    // 広告の一時停止
+//    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+//    tabBarController.nadView.hidden = YES;
+//    [tabBarController.nadView pause];
+}
+
 
 // Enterキーで次のセルに移動する場合も反応してしまうため一旦保留
 //-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView

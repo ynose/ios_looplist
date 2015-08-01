@@ -11,6 +11,7 @@
 @interface LLCheckItem : NSObject <NSCoding, NSCopying>
 
 // データ部
+@property (copy, nonatomic) NSString *identifier;
 @property (copy, nonatomic) NSString *caption;
 @property (copy, nonatomic) NSDate *checkedDate;
 @property (copy, nonatomic) NSString *memo;

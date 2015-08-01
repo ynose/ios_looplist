@@ -31,33 +31,17 @@
     [self refreshViewControllers];
     [self setSelectedIndex:[[NSUserDefaults standardUserDefaults] integerForKey:SETTING_ACTIVETAB]];
 
-    // 無料版のみ広告表示
-#ifdef APPSTORE_SCREENSHOT
-    // AppStore用スクリーンショット
-    // ダミーの広告枠を表示する
-    [self dummyAd];
-#else
-    if (![ProductManager isAppPro]) {
-        [self setupAd];
-    }
-#endif
+//    // 無料版のみ広告表示
+//#ifdef APPSTORE_SCREENSHOT
+//    // AppStore用スクリーンショット
+//    // ダミーの広告枠を表示する
+//    [self dummyAd];
+//#else
+//    if (![ProductManager isAppPro]) {
+//        [self setupAd];
+//    }
+//#endif
 
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-
-    // 広告の再開
-    [self.nadView resume];
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-
-    // 広告の一時停止
-    [self.nadView pause];
 }
 
 -(void)setupAd

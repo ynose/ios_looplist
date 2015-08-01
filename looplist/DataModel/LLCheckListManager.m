@@ -15,6 +15,8 @@ static LLCheckListManager *_sharedInstance = nil;
 static NSString *_checkListDir = @"checklist";
 static NSString *_checkListFile = @"checklist.dat";
 
+static NSString *_attachImageDir = @"attachImages";
+
 
 -(id)init
 {
@@ -61,7 +63,7 @@ static NSString *_checkListFile = @"checklist.dat";
 }
 
 
-#pragma mark - ファイル操作
+#pragma mark - チェックリストファイル
 -(void)loadCheckLists
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -80,6 +82,48 @@ static NSString *_checkListFile = @"checklist.dat";
     self.arrayCheckLists = array;
 }
 
+#pragma mark AppStoreスクリーンショット用データ
+#ifdef APPSTORE_SCREENSHOT
+-(void)loadScreenshotCheckLists
+{
+    LLCheckList *checkList1 = [[LLCheckList alloc] initWithCheckItemsFileName];
+    checkList1.caption = LSTR(@"ScreenShotDataCheckList1");
+    checkList1.filterIndex = 1;
+    checkList1.arraySections = [NSMutableArray arrayWithObject:[LLCheckListSection new]];    // 空データ（必ず１つセクションを作る）
+
+    LLCheckList *checkList2 = [[LLCheckList alloc] initWithCheckItemsFileName];
+    checkList2.caption = LSTR(@"ScreenShotDataCheckList2");
+    checkList2.arraySections = [NSMutableArray arrayWithObject:[LLCheckListSection new]];    // 空データ（必ず１つセクションを作る）
+
+    LLCheckList *checkList3 = [[LLCheckList alloc] initWithCheckItemsFileName];
+    checkList3.caption = LSTR(@"ScreenShotDataCheckList3");
+    checkList3.arraySections = [NSMutableArray arrayWithObject:[LLCheckListSection new]];    // 空データ（必ず１つセクションを作る）
+
+
+    self.arrayCheckLists = [NSMutableArray arrayWithObjects:checkList1, checkList2, checkList3, nil];
+
+
+    // チェックアイテムを追加
+    LLCheckItem *checkItem;
+    checkItem = [LLCheckItem new];
+    checkItem.caption = LSTR(@"ScreenShotDataCheckItem1");
+    checkItem.memo = LSTR(@"ScreenShotDataCheckItemMemo1");
+    checkItem.colorLabelIndex = 1;
+    [[LLCheckListManager sharedManager] addCheckItem:checkItem section:0 inCheckList:0];
+
+    checkItem = [LLCheckItem new];
+    checkItem.caption = LSTR(@"ScreenShotDataCheckItem2");
+    checkItem.colorLabelIndex = 3;
+    [[LLCheckListManager sharedManager] addCheckItem:checkItem section:0 inCheckList:0];
+
+    checkItem = [LLCheckItem new];
+    checkItem.caption = LSTR(@"ScreenShotDataCheckItem3");
+    checkItem.colorLabelIndex = 5;
+    [[LLCheckListManager sharedManager] addCheckItem:checkItem section:0 inCheckList:0];
+
+}
+#endif
+
 -(void)saveCheckLists
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -95,6 +139,68 @@ static NSString *_checkListFile = @"checklist.dat";
     [NSKeyedArchiver archiveRootObject:self.arrayCheckLists toFile:[dir stringByAppendingPathComponent:_checkListFile]];
 }
 
+#pragma mark 画像ファイル
+-(void)saveAttachImage:(UIImage *)image fileName:(NSString *)fileName
+{
+    NSString *dir = [[self dir] stringByAppendingPathComponent:_attachImageDir];
+    NSString *path = [dir stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", fileName]];
+
+    // ディレクトリがなかったら作成
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:dir]) {
+        NSError *error;
+        [fileManager createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:&error];
+    }
+
+    // NSDataのwriteToFileメソッドを使ってファイルに書き込みます
+    // atomically=YESの場合、同名のファイルがあったら、まずは別名で作成して、その後、ファイルの上書きを行います
+    NSData *data = UIImageJPEGRepresentation(image, 0.8f);
+    if ([data writeToFile:path atomically:NO]) {
+        DEBUGLOG(@"save OK");
+    } else {
+        DEBUGLOG(@"save NG");
+    }
+}
+
+-(void)removeAttachImageFile:(NSString *)fileName
+{
+    NSString *path = [self existsAttachImageFile:fileName];
+    if (path) {
+        NSError *error;
+        if ([[NSFileManager defaultManager] removeItemAtPath:path error:&error] == NO) {
+            DEBUGLOG(@"deleteAttachImageFile:Code=%ld, Desc=%@", (long)[error code], [error localizedDescription]);
+        }
+    }
+}
+
+-(UIImage *)loadAttachImage:(NSString *)fileName
+{
+    NSString *path = [self existsAttachImageFile:fileName];
+
+    NSData *data = nil;
+    UIImage *image = nil;
+    if (path) {
+        NSError *error;
+        data = [NSData dataWithContentsOfFile:path options:NSDataReadingMappedIfSafe error:&error];
+        if (data) {
+            image = [UIImage imageWithData:data];
+        }
+    }
+
+    return image;
+}
+
+-(NSString *)existsAttachImageFile:(NSString *)fileName
+{
+    NSString *dir = [[self dir] stringByAppendingPathComponent:_attachImageDir];
+    NSString *path = [dir stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", fileName]];
+
+    if ((path && [[NSFileManager defaultManager] fileExistsAtPath:path])) {
+        return path;
+    } else {
+        return nil;
+    }
+}
 
 
 #pragma mark - CheckListオブジェクト操作
@@ -113,6 +219,14 @@ static NSString *_checkListFile = @"checklist.dat";
 
 -(void)removeCheckList:(NSInteger)checkListIndex
 {
+    // 画像ファイルも同時に削除する
+    LLCheckList *checkList = (LLCheckList *)self.arrayCheckLists[checkListIndex];
+    for (LLCheckListSection *section in checkList.arraySections) {
+        for (LLCheckItem *checkItem in section.checkItems) {
+            [[LLCheckListManager sharedManager] removeAttachImageFile:checkItem.identifier];
+        }
+    }
+
     // ファイルも同時に削除する
     [self deleteFileAtIndex:checkListIndex];
     [self.arrayCheckLists removeObjectAtIndex:checkListIndex];
@@ -141,7 +255,7 @@ static NSString *_checkListFile = @"checklist.dat";
     if (path && [fileManager fileExistsAtPath:path]) {
         NSError *error;
         if ([fileManager removeItemAtPath:path error:&error] == NO) {
-            DEBUGLOG(@"deleteFileAtIndex:Code=%d, Desc=%@", [error code], [error localizedDescription]);
+            DEBUGLOG(@"deleteFileAtIndex:Code=%ld, Desc=%@", [error code], [error localizedDescription]);
         }
     }
 }

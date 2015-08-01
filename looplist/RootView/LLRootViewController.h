@@ -30,6 +30,7 @@ static NSString *kCellIdentifier = @"Cell";
 @property (strong, nonatomic) LLCheckList *checkList;
 @property (assign, nonatomic) BOOL singleViewMode;
 @property (strong, nonatomic) NSIndexPath *indexPathOfNeedFirstResponder;
+@property (strong, nonatomic) NSIndexPath *indexPathOfSelected;
 
 -(void)refreshTabBarItem;
 -(NSIndexPath *)indexPathOfEndRow;

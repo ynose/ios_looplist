@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		36E823F0C91D1C300EC6064C /* Pods-looplist-SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AC3C1F612AE430042C8D86 /* Pods-looplist-SVProgressHUD-dummy.m */; };
 		434AD52EFA6490F31B815108 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F360283F72C8752BF88F13B /* QuartzCore.framework */; };
 		4864B69ED7731757AAEEDE2A /* Pods-looplist-UIGlossyButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 566D1BF1718BA058E6E805D2 /* Pods-looplist-UIGlossyButton-dummy.m */; };
@@ -39,11 +40,46 @@
 			containerPortal = DD068914B3A49A4461265A6A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0E4A00FCE13743DAF9E1E13B;
+=======
+		07E64B288F33F95E39B57CA5 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D63E4968C20A54EA4CB1CCA /* SVProgressHUD.m */; };
+		0F330FE4C9C10BCB446BF43E /* UIView+LayerEffects.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A2D4D760EEAB83F95DBFFC5 /* UIView+LayerEffects.h */; };
+		122A4FA31B76CEF80B86AA5B /* UIGlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C04B0B8BED7180620FBF0235 /* UIGlossyButton.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4D94C0265B5392FC154431C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806FA6C3FC1063A0AA224351 /* Foundation.framework */; };
+		5771FEB2A8AA84CC317B9506 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806FA6C3FC1063A0AA224351 /* Foundation.framework */; };
+		5CA0BCB933799787AD84641D /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E5CAF728D939875E436706 /* SVProgressHUD.h */; };
+		6AE62FE944DBF7C888FF20AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC25ED1E46478102BDADD8AA /* QuartzCore.framework */; };
+		6B315FFD8A2BDDECE2FBCD53 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6843D66E984ABD313C70CF47 /* SVIndefiniteAnimatedView.m */; };
+		72B066DD0ECA363F091D69C3 /* Pods-looplist-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 087DB2C4A682B0D44B45EE56 /* Pods-looplist-dummy.m */; };
+		824B1750680B361065E35E4E /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DF48B46DC0358D954411B95 /* SVIndefiniteAnimatedView.h */; };
+		A52F02F571AAE213C772823B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806FA6C3FC1063A0AA224351 /* Foundation.framework */; };
+		A5C38F9774BD9CCEFA7A1F67 /* Pods-looplist-UIGlossyButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B75F01BEAB535256896C2B46 /* Pods-looplist-UIGlossyButton-dummy.m */; };
+		B35E9C2ABEEFF1755C29046F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC25ED1E46478102BDADD8AA /* QuartzCore.framework */; };
+		B3786B62D95B724DF39D1053 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F2247AD63915E261DECA99 /* UIKit.framework */; };
+		B42C1CA3B75F35881BB59B30 /* UIView+LayerEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CABA8D36D00C1EF28A6D7ED0 /* UIView+LayerEffects.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		CD49D32CDB83598B3FF9C163 /* UIGlossyButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 91EB4203D3DD403E43EE00E5 /* UIGlossyButton.h */; };
+		D1C47B1A8F129B26CDBE0CB7 /* Pods-looplist-SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B66F1DCD0B9FB55BE741B /* Pods-looplist-SVProgressHUD-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		940183B5A9F9C06F306480D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3A181AFADA2C61BDF790C19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A194D41429400F7FEAB6EB2;
+			remoteInfo = "Pods-looplist-SVProgressHUD";
+		};
+		A4E7A0EAADD7E257FF029142 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3A181AFADA2C61BDF790C19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7BB55327BFEA9B3A75D4D2B;
+>>>>>>> attachimage
 			remoteInfo = "Pods-looplist-UIGlossyButton";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		0A7D1677C94DCF0C2D9FE8C3 /* Pods-looplist-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-looplist-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0BE7E10A96211C564C7AA0AC /* Pods-looplist-SVProgressHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-looplist-SVProgressHUD-Private.xcconfig"; sourceTree = "<group>"; };
 		0C7FECD241F0E44641BE4CDD /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -106,12 +142,77 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9A54D5075DEF84EE816DBD8 /* Foundation.framework in Frameworks */,
+=======
+		087DB2C4A682B0D44B45EE56 /* Pods-looplist-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-looplist-dummy.m"; sourceTree = "<group>"; };
+		0DF48B46DC0358D954411B95 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		174274D2E98EF40DEC7199E5 /* Pods-looplist-SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-looplist-SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		1B0848E71992AF5DCC160455 /* Pods-looplist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-looplist.release.xcconfig"; sourceTree = "<group>"; };
+		2B41FC71FA44F1A344A71868 /* libNendAd.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libNendAd.a; path = "NendSDK_iOS-2.7.0/Nend/NendAd/libNendAd.a"; sourceTree = "<group>"; };
+		31E52E17F35EC23C01D606F7 /* Pods-looplist-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-looplist-environment.h"; sourceTree = "<group>"; };
+		3F044C21BDF07A5424EB5909 /* NADView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NADView.h; path = "NendSDK_iOS-2.7.0/Nend/NendAd/NADView.h"; sourceTree = "<group>"; };
+		4236F9D13EE19612B8471AB9 /* Pods-looplist-UIGlossyButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-looplist-UIGlossyButton.xcconfig"; sourceTree = "<group>"; };
+		5770CE35BA318E53BC17CB99 /* Pods-looplist.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-looplist.distribution.xcconfig"; sourceTree = "<group>"; };
+		5C82341C64A194470D2CD330 /* libPods-looplist.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-looplist.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		608301731D049175B70A1C8E /* Pods-looplist-SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-looplist-SVProgressHUD.xcconfig"; sourceTree = "<group>"; };
+		6175A2F0DF1B246C7A976102 /* libPods-looplist-UIGlossyButton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-looplist-UIGlossyButton.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6843D66E984ABD313C70CF47 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		6A2D4D760EEAB83F95DBFFC5 /* UIView+LayerEffects.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+LayerEffects.h"; path = "UIGlossyButton/UIView+LayerEffects.h"; sourceTree = "<group>"; };
+		71AC11DEE8CC6B7C253F9F68 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		806FA6C3FC1063A0AA224351 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		8E8C6964638A48C2AF520A11 /* NADInterstitial.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NADInterstitial.h; path = "NendSDK_iOS-2.7.0/Nend/NendAd/NADInterstitial.h"; sourceTree = "<group>"; };
+		91EB4203D3DD403E43EE00E5 /* UIGlossyButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UIGlossyButton.h; path = UIGlossyButton/UIGlossyButton.h; sourceTree = "<group>"; };
+		91F2247AD63915E261DECA99 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		9D63E4968C20A54EA4CB1CCA /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		9F6B66F1DCD0B9FB55BE741B /* Pods-looplist-SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-looplist-SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		A576E1B971E1E6BA8BF0ECF4 /* Pods-looplist-UIGlossyButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-looplist-UIGlossyButton-prefix.pch"; sourceTree = "<group>"; };
+		B75F01BEAB535256896C2B46 /* Pods-looplist-UIGlossyButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-looplist-UIGlossyButton-dummy.m"; sourceTree = "<group>"; };
+		C04B0B8BED7180620FBF0235 /* UIGlossyButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UIGlossyButton.m; path = UIGlossyButton/UIGlossyButton.m; sourceTree = "<group>"; };
+		C865171109085D7678F1F9D4 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		CABA8D36D00C1EF28A6D7ED0 /* UIView+LayerEffects.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+LayerEffects.m"; path = "UIGlossyButton/UIView+LayerEffects.m"; sourceTree = "<group>"; };
+		CE93F7A2503D99186B2C7350 /* Pods-looplist-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-looplist-resources.sh"; sourceTree = "<group>"; };
+		CF8671CE7BCB65B6651D829D /* Pods-looplist-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-looplist-acknowledgements.plist"; sourceTree = "<group>"; };
+		D57587EB971EEC586631C9D4 /* Pods-looplist-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-looplist-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D7E5CAF728D939875E436706 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		E09F3A27388930CF218AB350 /* Pods-looplist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-looplist.debug.xcconfig"; sourceTree = "<group>"; };
+		EA7ECB261CB1AB0E8F3C20EC /* libPods-looplist-SVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-looplist-SVProgressHUD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED27A081879F9EA231496773 /* Pods-looplist-SVProgressHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-looplist-SVProgressHUD-Private.xcconfig"; sourceTree = "<group>"; };
+		EDD94176F39D08F3204B34ED /* Pods-looplist-UIGlossyButton-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-looplist-UIGlossyButton-Private.xcconfig"; sourceTree = "<group>"; };
+		FC25ED1E46478102BDADD8AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30FD201D8E3C550277B8FFD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A52F02F571AAE213C772823B /* Foundation.framework in Frameworks */,
+				6AE62FE944DBF7C888FF20AD /* QuartzCore.framework in Frameworks */,
+				B3786B62D95B724DF39D1053 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B61D228843A715D866807159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D94C0265B5392FC154431C5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E62C1442C1BF88C90AC11174 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5771FEB2A8AA84CC317B9506 /* Foundation.framework in Frameworks */,
+				B35E9C2ABEEFF1755C29046F /* QuartzCore.framework in Frameworks */,
+>>>>>>> attachimage
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		31E21CE833CE47A92FBBBBF3 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,11 +356,155 @@
 				EA782FF9936F60C27FF6EAB6 /* Pods-looplist.debug.xcconfig */,
 				BFE5DACE01321BCF78487B3E /* Pods-looplist.distribution.xcconfig */,
 				A439C1153F4BA1AA8A33B453 /* Pods-looplist.release.xcconfig */,
+=======
+		1727A489BEB6D93A39EF6491 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				608301731D049175B70A1C8E /* Pods-looplist-SVProgressHUD.xcconfig */,
+				ED27A081879F9EA231496773 /* Pods-looplist-SVProgressHUD-Private.xcconfig */,
+				9F6B66F1DCD0B9FB55BE741B /* Pods-looplist-SVProgressHUD-dummy.m */,
+				174274D2E98EF40DEC7199E5 /* Pods-looplist-SVProgressHUD-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-looplist-SVProgressHUD";
+			sourceTree = "<group>";
+		};
+		37F42B1F7219D9653E017699 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				0DF48B46DC0358D954411B95 /* SVIndefiniteAnimatedView.h */,
+				6843D66E984ABD313C70CF47 /* SVIndefiniteAnimatedView.m */,
+				D7E5CAF728D939875E436706 /* SVProgressHUD.h */,
+				9D63E4968C20A54EA4CB1CCA /* SVProgressHUD.m */,
+				DA4B5BFB00FD1AD43D35A633 /* Resources */,
+				1727A489BEB6D93A39EF6491 /* Support Files */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		3CDB727C10F93928F38AA442 /* UIGlossyButton */ = {
+			isa = PBXGroup;
+			children = (
+				EDEE764220564D17C2FF708E /* Core */,
+				FBD008EDB71BFAC38F77FD72 /* LayerEffects */,
+				96C1833A194CB94047DC6318 /* Support Files */,
+			);
+			path = UIGlossyButton;
+			sourceTree = "<group>";
+		};
+		46C79E29AD849337BEAE5260 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B41FC71FA44F1A344A71868 /* libNendAd.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B2A3D657EE5E99588BD2B8E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCB5D4BE0168115445E9DACD /* Pods-looplist */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		96C1833A194CB94047DC6318 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4236F9D13EE19612B8471AB9 /* Pods-looplist-UIGlossyButton.xcconfig */,
+				EDD94176F39D08F3204B34ED /* Pods-looplist-UIGlossyButton-Private.xcconfig */,
+				B75F01BEAB535256896C2B46 /* Pods-looplist-UIGlossyButton-dummy.m */,
+				A576E1B971E1E6BA8BF0ECF4 /* Pods-looplist-UIGlossyButton-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-looplist-UIGlossyButton";
+			sourceTree = "<group>";
+		};
+		9A5CC78536C2C255F94CACF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C82341C64A194470D2CD330 /* libPods-looplist.a */,
+				EA7ECB261CB1AB0E8F3C20EC /* libPods-looplist-SVProgressHUD.a */,
+				6175A2F0DF1B246C7A976102 /* libPods-looplist-UIGlossyButton.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B1E5DF45F79AC6660BB5DCD /* NendSDK_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8E8C6964638A48C2AF520A11 /* NADInterstitial.h */,
+				3F044C21BDF07A5424EB5909 /* NADView.h */,
+				46C79E29AD849337BEAE5260 /* Frameworks */,
+			);
+			path = NendSDK_iOS;
+			sourceTree = "<group>";
+		};
+		B588F2E98F238444465104ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B1E5DF45F79AC6660BB5DCD /* NendSDK_iOS */,
+				37F42B1F7219D9653E017699 /* SVProgressHUD */,
+				3CDB727C10F93928F38AA442 /* UIGlossyButton */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BD880E9206B6DE5546FF2E47 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				806FA6C3FC1063A0AA224351 /* Foundation.framework */,
+				FC25ED1E46478102BDADD8AA /* QuartzCore.framework */,
+				91F2247AD63915E261DECA99 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		BDA5A03EECC13ED6DD0FC926 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD880E9206B6DE5546FF2E47 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D437D380CF0C5F91192F54B6 = {
+			isa = PBXGroup;
+			children = (
+				71AC11DEE8CC6B7C253F9F68 /* Podfile */,
+				BDA5A03EECC13ED6DD0FC926 /* Frameworks */,
+				B588F2E98F238444465104ED /* Pods */,
+				9A5CC78536C2C255F94CACF6 /* Products */,
+				5B2A3D657EE5E99588BD2B8E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		DA4B5BFB00FD1AD43D35A633 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C865171109085D7678F1F9D4 /* SVProgressHUD.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DCB5D4BE0168115445E9DACD /* Pods-looplist */ = {
+			isa = PBXGroup;
+			children = (
+				D57587EB971EEC586631C9D4 /* Pods-looplist-acknowledgements.markdown */,
+				CF8671CE7BCB65B6651D829D /* Pods-looplist-acknowledgements.plist */,
+				087DB2C4A682B0D44B45EE56 /* Pods-looplist-dummy.m */,
+				31E52E17F35EC23C01D606F7 /* Pods-looplist-environment.h */,
+				CE93F7A2503D99186B2C7350 /* Pods-looplist-resources.sh */,
+				E09F3A27388930CF218AB350 /* Pods-looplist.debug.xcconfig */,
+				5770CE35BA318E53BC17CB99 /* Pods-looplist.distribution.xcconfig */,
+				1B0848E71992AF5DCC160455 /* Pods-looplist.release.xcconfig */,
+>>>>>>> attachimage
 			);
 			name = "Pods-looplist";
 			path = "Target Support Files/Pods-looplist";
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		F50A35E327B5061571376BAF /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,11 +519,30 @@
 				4082FCCA7DDC4F3E3A0DDBFA /* iOS */,
 			);
 			name = Frameworks;
+=======
+		EDEE764220564D17C2FF708E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				91EB4203D3DD403E43EE00E5 /* UIGlossyButton.h */,
+				C04B0B8BED7180620FBF0235 /* UIGlossyButton.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		FBD008EDB71BFAC38F77FD72 /* LayerEffects */ = {
+			isa = PBXGroup;
+			children = (
+				6A2D4D760EEAB83F95DBFFC5 /* UIView+LayerEffects.h */,
+				CABA8D36D00C1EF28A6D7ED0 /* UIView+LayerEffects.m */,
+			);
+			name = LayerEffects;
+>>>>>>> attachimage
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+<<<<<<< HEAD
 		9750611D2A6CB2E873C86A4B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,12 +558,30 @@
 			files = (
 				4F3A8FCB2C104DD9E3FF079E /* SVIndefiniteAnimatedView.h in Headers */,
 				7C573CAE30C345F9CFFC40D7 /* SVProgressHUD.h in Headers */,
+=======
+		5A0228988D98C7F76F6B72BB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD49D32CDB83598B3FF9C163 /* UIGlossyButton.h in Headers */,
+				0F330FE4C9C10BCB446BF43E /* UIView+LayerEffects.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA5F26C9E978306FBD9797EB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				824B1750680B361065E35E4E /* SVIndefiniteAnimatedView.h in Headers */,
+				5CA0BCB933799787AD84641D /* SVProgressHUD.h in Headers */,
+>>>>>>> attachimage
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+<<<<<<< HEAD
 		0E4A00FCE13743DAF9E1E13B /* Pods-looplist-UIGlossyButton */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 152FAFE5BAE45083C374C880 /* Build configuration list for PBXNativeTarget "Pods-looplist-UIGlossyButton" */;
@@ -307,11 +589,21 @@
 				2DB4203A1131EEAA93CDA626 /* Sources */,
 				E4B5378185891E1BF6FA18EF /* Frameworks */,
 				9750611D2A6CB2E873C86A4B /* Headers */,
+=======
+		4A194D41429400F7FEAB6EB2 /* Pods-looplist-SVProgressHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BBBBA6956308E7E4FE21B1C /* Build configuration list for PBXNativeTarget "Pods-looplist-SVProgressHUD" */;
+			buildPhases = (
+				67D7B1489AA48E005031C0E1 /* Sources */,
+				E62C1442C1BF88C90AC11174 /* Frameworks */,
+				BA5F26C9E978306FBD9797EB /* Headers */,
+>>>>>>> attachimage
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+<<<<<<< HEAD
 			name = "Pods-looplist-UIGlossyButton";
 			productName = "Pods-looplist-UIGlossyButton";
 			productReference = A7233DDD9376A7DF764C1BDB /* libPods-looplist-UIGlossyButton.a */;
@@ -323,10 +615,24 @@
 			buildPhases = (
 				ED0E3A09FD792783B8539AA2 /* Sources */,
 				E5D77F3C2917E5C2E59F1F28 /* Frameworks */,
+=======
+			name = "Pods-looplist-SVProgressHUD";
+			productName = "Pods-looplist-SVProgressHUD";
+			productReference = EA7ECB261CB1AB0E8F3C20EC /* libPods-looplist-SVProgressHUD.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		890D95E87F6D218602D1BB34 /* Pods-looplist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 965178FE22138C7A4998C2F7 /* Build configuration list for PBXNativeTarget "Pods-looplist" */;
+			buildPhases = (
+				EBC16EF0BD2AC028B07CBB60 /* Sources */,
+				B61D228843A715D866807159 /* Frameworks */,
+>>>>>>> attachimage
 			);
 			buildRules = (
 			);
 			dependencies = (
+<<<<<<< HEAD
 				8F300E5EC0BB0C74BFF37E0F /* PBXTargetDependency */,
 				36140CE002C3A4AA21C926CC /* PBXTargetDependency */,
 			);
@@ -342,31 +648,63 @@
 				05702CBA63BFC2B485EFE701 /* Sources */,
 				3D63451060D13113552CFA18 /* Frameworks */,
 				DE41B662E4083A350820E1D1 /* Headers */,
+=======
+				1ECA5071A78E2850CD5B2769 /* PBXTargetDependency */,
+				C2D4D34A88666E13CBFD90D3 /* PBXTargetDependency */,
+			);
+			name = "Pods-looplist";
+			productName = "Pods-looplist";
+			productReference = 5C82341C64A194470D2CD330 /* libPods-looplist.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D7BB55327BFEA9B3A75D4D2B /* Pods-looplist-UIGlossyButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA3F913EDB0A5D3305271D4A /* Build configuration list for PBXNativeTarget "Pods-looplist-UIGlossyButton" */;
+			buildPhases = (
+				F2C17DFDCCE0BB1999F1C712 /* Sources */,
+				30FD201D8E3C550277B8FFD8 /* Frameworks */,
+				5A0228988D98C7F76F6B72BB /* Headers */,
+>>>>>>> attachimage
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+<<<<<<< HEAD
 			name = "Pods-looplist-SVProgressHUD";
 			productName = "Pods-looplist-SVProgressHUD";
 			productReference = 3B4BA8D44E12FD40FC4CC7B3 /* libPods-looplist-SVProgressHUD.a */;
+=======
+			name = "Pods-looplist-UIGlossyButton";
+			productName = "Pods-looplist-UIGlossyButton";
+			productReference = 6175A2F0DF1B246C7A976102 /* libPods-looplist-UIGlossyButton.a */;
+>>>>>>> attachimage
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
+<<<<<<< HEAD
 		DD068914B3A49A4461265A6A /* Project object */ = {
+=======
+		A3A181AFADA2C61BDF790C19 /* Project object */ = {
+>>>>>>> attachimage
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
+<<<<<<< HEAD
 			buildConfigurationList = D20FD2C476D3D609F8C39684 /* Build configuration list for PBXProject "Pods" */;
+=======
+			buildConfigurationList = C3002328187171F899B22313 /* Build configuration list for PBXProject "Pods" */;
+>>>>>>> attachimage
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
+<<<<<<< HEAD
 			mainGroup = 806102BDF8D18CE6ADFEBC0A;
 			productRefGroup = DD5EBFD3EC7CDEA7A38C773A /* Products */;
 			projectDirPath = "";
@@ -375,11 +713,22 @@
 				A65014ABE0B8FC278F8B5F80 /* Pods-looplist */,
 				D373FE2C52CE01ED850B847F /* Pods-looplist-SVProgressHUD */,
 				0E4A00FCE13743DAF9E1E13B /* Pods-looplist-UIGlossyButton */,
+=======
+			mainGroup = D437D380CF0C5F91192F54B6;
+			productRefGroup = 9A5CC78536C2C255F94CACF6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				890D95E87F6D218602D1BB34 /* Pods-looplist */,
+				4A194D41429400F7FEAB6EB2 /* Pods-looplist-SVProgressHUD */,
+				D7BB55327BFEA9B3A75D4D2B /* Pods-looplist-UIGlossyButton */,
+>>>>>>> attachimage
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+<<<<<<< HEAD
 		05702CBA63BFC2B485EFE701 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,12 +754,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CD8FC79CEB23B98164EB768 /* Pods-looplist-dummy.m in Sources */,
+=======
+		67D7B1489AA48E005031C0E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1C47B1A8F129B26CDBE0CB7 /* Pods-looplist-SVProgressHUD-dummy.m in Sources */,
+				6B315FFD8A2BDDECE2FBCD53 /* SVIndefiniteAnimatedView.m in Sources */,
+				07E64B288F33F95E39B57CA5 /* SVProgressHUD.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBC16EF0BD2AC028B07CBB60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72B066DD0ECA363F091D69C3 /* Pods-looplist-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2C17DFDCCE0BB1999F1C712 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5C38F9774BD9CCEFA7A1F67 /* Pods-looplist-UIGlossyButton-dummy.m in Sources */,
+				122A4FA31B76CEF80B86AA5B /* UIGlossyButton.m in Sources */,
+				B42C1CA3B75F35881BB59B30 /* UIView+LayerEffects.m in Sources */,
+>>>>>>> attachimage
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+<<<<<<< HEAD
 		36140CE002C3A4AA21C926CC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-looplist-UIGlossyButton";
@@ -422,26 +799,52 @@
 			name = "Pods-looplist-SVProgressHUD";
 			target = D373FE2C52CE01ED850B847F /* Pods-looplist-SVProgressHUD */;
 			targetProxy = 1C60853CCDE17F240D67A5E8 /* PBXContainerItemProxy */;
+=======
+		1ECA5071A78E2850CD5B2769 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-looplist-SVProgressHUD";
+			target = 4A194D41429400F7FEAB6EB2 /* Pods-looplist-SVProgressHUD */;
+			targetProxy = 940183B5A9F9C06F306480D4 /* PBXContainerItemProxy */;
+		};
+		C2D4D34A88666E13CBFD90D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-looplist-UIGlossyButton";
+			target = D7BB55327BFEA9B3A75D4D2B /* Pods-looplist-UIGlossyButton */;
+			targetProxy = A4E7A0EAADD7E257FF029142 /* PBXContainerItemProxy */;
+>>>>>>> attachimage
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+<<<<<<< HEAD
 		0DDFACE31FD92AD79FF37363 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BE7E10A96211C564C7AA0AC /* Pods-looplist-SVProgressHUD-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-looplist-SVProgressHUD/Pods-looplist-SVProgressHUD-prefix.pch";
+=======
+		0CE919587025D0238E43EE23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E09F3A27388930CF218AB350 /* Pods-looplist.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+>>>>>>> attachimage
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
+<<<<<<< HEAD
+=======
+				PODS_ROOT = "$(SRCROOT)";
+>>>>>>> attachimage
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 		13C472F0043C68AC911C11A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -484,6 +887,43 @@
 		2B18ACC15ADCC27EC2BBA0C8 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8471BC260855DBF822FCFFDE /* Pods-looplist-UIGlossyButton-Private.xcconfig */;
+=======
+		385C29EF2144D9092242B30E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED27A081879F9EA231496773 /* Pods-looplist-SVProgressHUD-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-looplist-SVProgressHUD/Pods-looplist-SVProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3B532A98A753C2BA905622AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDD94176F39D08F3204B34ED /* Pods-looplist-UIGlossyButton-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-looplist-UIGlossyButton/Pods-looplist-UIGlossyButton-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		65D6298A8F9E14A7F6D68A20 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDD94176F39D08F3204B34ED /* Pods-looplist-UIGlossyButton-Private.xcconfig */;
+>>>>>>> attachimage
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-looplist-UIGlossyButton/Pods-looplist-UIGlossyButton-prefix.pch";
@@ -497,7 +937,11 @@
 			};
 			name = Distribution;
 		};
+<<<<<<< HEAD
 		68B54B34B76DDE763867D8B6 /* Release */ = {
+=======
+		7773B4309EACCDC8586992A1 /* Distribution */ = {
+>>>>>>> attachimage
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -517,13 +961,18 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+<<<<<<< HEAD
 				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+=======
+				GCC_PREPROCESSOR_DEFINITIONS = "DISTRIBUTION=1";
+>>>>>>> attachimage
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -534,6 +983,17 @@
 		69658B40EF184267BFAD39AD /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BE7E10A96211C564C7AA0AC /* Pods-looplist-SVProgressHUD-Private.xcconfig */;
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
+		81E8186E809FC02E0EAE093A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED27A081879F9EA231496773 /* Pods-looplist-SVProgressHUD-Private.xcconfig */;
+>>>>>>> attachimage
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-looplist-SVProgressHUD/Pods-looplist-SVProgressHUD-prefix.pch";
@@ -545,9 +1005,31 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
+<<<<<<< HEAD
 			name = Distribution;
 		};
 		7923BA47EF30430315D9E918 /* Distribution */ = {
+=======
+			name = Release;
+		};
+		A06D4A9B075122D230B65EF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B0848E71992AF5DCC160455 /* Pods-looplist.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A2CE19BD82643E3493EF8B42 /* Debug */ = {
+>>>>>>> attachimage
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -564,16 +1046,29 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+<<<<<<< HEAD
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = "DISTRIBUTION=1";
+=======
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+>>>>>>> attachimage
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				VALIDATE_PRODUCT = YES;
@@ -615,6 +1110,18 @@
 		CC60AC694159FA3F22B6E333 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8471BC260855DBF822FCFFDE /* Pods-looplist-UIGlossyButton-Private.xcconfig */;
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C4520FB6EF9F57F60EFDB44B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDD94176F39D08F3204B34ED /* Pods-looplist-UIGlossyButton-Private.xcconfig */;
+>>>>>>> attachimage
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-looplist-UIGlossyButton/Pods-looplist-UIGlossyButton-prefix.pch";
@@ -628,9 +1135,15 @@
 			};
 			name = Debug;
 		};
+<<<<<<< HEAD
 		EAADDE693809379FD786C60C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A439C1153F4BA1AA8A33B453 /* Pods-looplist.release.xcconfig */;
+=======
+		C5F09E8711B6D87A24BA6F86 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5770CE35BA318E53BC17CB99 /* Pods-looplist.distribution.xcconfig */;
+>>>>>>> attachimage
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -642,11 +1155,19 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
+<<<<<<< HEAD
 			name = Release;
 		};
 		EEF6154E0C98C57D314D4778 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BE7E10A96211C564C7AA0AC /* Pods-looplist-SVProgressHUD-Private.xcconfig */;
+=======
+			name = Distribution;
+		};
+		CF953D7DF7483398AD5EB8F6 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED27A081879F9EA231496773 /* Pods-looplist-SVProgressHUD-Private.xcconfig */;
+>>>>>>> attachimage
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-looplist-SVProgressHUD/Pods-looplist-SVProgressHUD-prefix.pch";
@@ -658,6 +1179,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
+<<<<<<< HEAD
 			name = Release;
 		};
 		F4D82C8FF64E06C56EB38F0D /* Release */ = {
@@ -673,53 +1195,128 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+=======
+			name = Distribution;
+		};
+		F40EC819DE65F24E71AE9119 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+>>>>>>> attachimage
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+<<<<<<< HEAD
 		152FAFE5BAE45083C374C880 /* Build configuration list for PBXNativeTarget "Pods-looplist-UIGlossyButton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CC60AC694159FA3F22B6E333 /* Debug */,
 				2B18ACC15ADCC27EC2BBA0C8 /* Distribution */,
 				F4D82C8FF64E06C56EB38F0D /* Release */,
+=======
+		8BBBBA6956308E7E4FE21B1C /* Build configuration list for PBXNativeTarget "Pods-looplist-SVProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				385C29EF2144D9092242B30E /* Debug */,
+				CF953D7DF7483398AD5EB8F6 /* Distribution */,
+				81E8186E809FC02E0EAE093A /* Release */,
+>>>>>>> attachimage
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 		7E620D738778D1909B1ED90E /* Build configuration list for PBXNativeTarget "Pods-looplist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C2FEE97686FDCEEC7D679476 /* Debug */,
 				C9E13DD105C38ABF25351001 /* Distribution */,
 				EAADDE693809379FD786C60C /* Release */,
+=======
+		965178FE22138C7A4998C2F7 /* Build configuration list for PBXNativeTarget "Pods-looplist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CE919587025D0238E43EE23 /* Debug */,
+				C5F09E8711B6D87A24BA6F86 /* Distribution */,
+				A06D4A9B075122D230B65EF6 /* Release */,
+>>>>>>> attachimage
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 		B30933069AA21AA4210DB1D8 /* Build configuration list for PBXNativeTarget "Pods-looplist-SVProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DDFACE31FD92AD79FF37363 /* Debug */,
 				69658B40EF184267BFAD39AD /* Distribution */,
 				EEF6154E0C98C57D314D4778 /* Release */,
+=======
+		C3002328187171F899B22313 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2CE19BD82643E3493EF8B42 /* Debug */,
+				7773B4309EACCDC8586992A1 /* Distribution */,
+				F40EC819DE65F24E71AE9119 /* Release */,
+>>>>>>> attachimage
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+<<<<<<< HEAD
 		D20FD2C476D3D609F8C39684 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13C472F0043C68AC911C11A9 /* Debug */,
 				7923BA47EF30430315D9E918 /* Distribution */,
 				68B54B34B76DDE763867D8B6 /* Release */,
+=======
+		FA3F913EDB0A5D3305271D4A /* Build configuration list for PBXNativeTarget "Pods-looplist-UIGlossyButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4520FB6EF9F57F60EFDB44B /* Debug */,
+				65D6298A8F9E14A7F6D68A20 /* Distribution */,
+				3B532A98A753C2BA905622AA /* Release */,
+>>>>>>> attachimage
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
+<<<<<<< HEAD
 	rootObject = DD068914B3A49A4461265A6A /* Project object */;
+=======
+	rootObject = A3A181AFADA2C61BDF790C19 /* Project object */;
+>>>>>>> attachimage
 }

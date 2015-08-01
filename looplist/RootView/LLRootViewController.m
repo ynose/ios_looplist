@@ -14,11 +14,11 @@
 
 #import "LLCheckItemCell.h"
 #import "LLTabBarController.h"
-#import "YNActionSheet.h"
 #import "UIView+KeyboardNotification.h"
 
 #import "ProductManager.h"
 
+#import "NADInterstitial.h"
 #import "SVProgressHUD.h"
 
 
@@ -29,7 +29,6 @@
 @property (strong, nonatomic) UIBarButtonItem *appSettingButton;
 @property (strong, nonatomic) UIBarButtonItem *addButton;
 @property (strong, nonatomic) UISegmentedControl *filterSegmentedControl;
-@property (strong, nonatomic) NSIndexPath *indexPathOfSelected;
 @property (weak, nonatomic) IBOutlet UIView *footerView;
 @property (weak, nonatomic) IBOutlet UIButton *completeButton;
 @end
@@ -186,6 +185,11 @@
 
     // 選択されたチェックリスト（タブ）を保存
     [[NSUserDefaults standardUserDefaults] setInteger:self.checkListIndex forKey:SETTING_ACTIVETAB];
+
+//    // 広告の再開
+//    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
+//    tabBarController.nadView.hidden = NO;
+//    [tabBarController.nadView resume];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -199,7 +203,6 @@
     // アプリアクティブ時の通知解除
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
 }
-
 
 #pragma mark 編集ボタン
 -(void)setEditing:(BOOL)editing animated:(BOOL)animated
@@ -402,35 +405,28 @@
         [tableView selectRowAtIndexPath:gestureIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 
         // 編集モードのアクションシートを表示
-        YNActionSheet *actionSheet = [YNActionSheet new];
-
-        // コピーボタン
-        [actionSheet addButtonWithTitle:LSTR(@"actionCopy") withBlock:^(NSInteger buttonIndex) {
-            // コピーしたチェック項目を挿入
-            [self copyCheckItem:gestureIndexPath];
-            // バッジ更新
-            [self refreshTabBarItem];
-        }];
-
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
 
         // キャンセルボタン
-        // iPadではキャンセルボタンは表示されないがイベントは発生する
-        [actionSheet addButtonWithTitle:LSTR(@"actionCancel") withBlock:nil];
-        actionSheet.cancelButtonIndex =  [actionSheet numberOfButtons] - 1;
+        [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"actionCancel")
+                                                        style:UIAlertActionStyleCancel
+                                                      handler:^(UIAlertAction *action) {
+                                                          [tableView deselectSelectedRow:YES];
+                                                      }]];
 
-        actionSheet.didDismissBlock = ^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
-            [tableView deselectSelectedRow:YES];
-        };
+        // コピーボタン
+        [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"actionCopy")
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          // コピーしたチェック項目を挿入
+                                                          [self copyCheckItem:gestureIndexPath];
+                                                          // バッジ更新
+                                                          [self refreshTabBarItem];
+                                                      }]];
 
-
-        if (DEVICE_IPAD) {
-            // iPadは選択したテンプレートリストの位置に表示する
-            [actionSheet showFromTableViewSelectedRow:tableView animated:YES];
-        } else {
-            // TabBarが表示されているとCancelボタンがTabBarにかぶって押せなくなるためTabBarから表示が必要
-            [actionSheet showFromTabBar:self.tabBarController.tabBar];
-        }
-        
+        [self presentViewController:actionSheet animated:YES completion:nil];
     }
 }
 
@@ -462,22 +458,24 @@
 - (IBAction)completeTouchUp:(id)sender
 {
     // アクションシートでチェック完了を確認
-    YNActionSheet *actionSheet = [YNActionSheet new];
-
-    // 完了ボタン
-    [actionSheet addButtonWithTitle:LSTR(@"actionCheckComplete") withBlock:^(NSInteger buttonIndex) {
-        // 全行削除
-        [self performSelector:@selector(completeAllChecks:) withObject:sender afterDelay:0.1];  // 遅延実行
-    }];
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil
+                                                                         message:nil
+                                                                  preferredStyle:UIAlertControllerStyleActionSheet];
 
     // キャンセルボタン
-    // iPadではキャンセルボタンは表示されないがイベントは発生する
-    [actionSheet addButtonWithTitle:LSTR(@"actionCancel") withBlock:nil];
-    actionSheet.cancelButtonIndex =  [actionSheet numberOfButtons] - 1;
+    [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"actionCancel")
+                                                    style:UIAlertActionStyleCancel
+                                                  handler:nil]];
 
+    // 完了ボタン
+    [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"actionCheckComplete")
+                                                    style:UIAlertActionStyleDefault
+                                                  handler:^(UIAlertAction *action) {
+                                                      // 全行削除
+                                                      [self performSelector:@selector(completeAllChecks:) withObject:sender afterDelay:0.1];  // 遅延実行
+                                                  }]];
 
-    // TabBarが表示されているとCancelボタンがTabBarにかぶって押せなくなるためTabBarから表示が必要
-    [actionSheet showFromTabBar:self.tabBarController.tabBar];
+    [self presentViewController:actionSheet animated:YES completion:nil];
 }
 
 // チェック完了時の全行削除とデータ保存
@@ -531,34 +529,38 @@
 
     // バッジ更新
     [self refreshTabBarItem];
+
+    // インタースティシャル広告表jい
+    [self interstitialAdShow];
 }
 
-
-#pragma mark - チェックアイテム詳細ビューを表示
--(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+-(void)interstitialAdShow
 {
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    LLCheckItemDetailViewController *detailViewController = [storyBoard instantiateViewControllerWithIdentifier:@"CheckItemDetailViewController"];
-
-    // 選択したIndexPathを保持(saveDetail:で使用するため)
-    self.indexPathOfSelected = indexPath;
-    LLCheckItem *checkItem = [self checkItemAtIndexPath:indexPath];
-
-    detailViewController.delegate = self;
-    detailViewController.checkItem = checkItem;
-    detailViewController.sequenceNumber = [self.checkList sequenceOfCheckItem:checkItem];
-
-    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
-#ifdef APPSTORE_SCREENSHOT
-    tabBarController.dummyAdView.hidden = YES;
-#else
-    tabBarController.nadView.hidden = YES;
-#endif
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    NADInterstitialShowResult result = [[NADInterstitial sharedInstance] showAd];
+    switch ( result ){
+    case AD_SHOW_SUCCESS:
+        DEBUGLOG(@"広告の表示に成功しました。");
+        break;
+    case AD_SHOW_ALREADY:
+        DEBUGLOG(@"既に広告が表示されています。");
+        break;
+    case AD_FREQUENCY_NOT_REACHABLE:
+        DEBUGLOG(@"広告のフリークエンシーカウントに達していません。");
+        break;
+    case AD_LOAD_INCOMPLETE:
+        DEBUGLOG(@"抽選リクエストが実行されていない、もしくは実行中です。");
+        break;
+    case AD_REQUEST_INCOMPLETE:
+        DEBUGLOG(@"抽選リクエストに失敗しています。");
+        break;
+    case AD_DOWNLOAD_INCOMPLETE:
+        DEBUGLOG(@"広告のダウンロードが完了していません。");
+        break;
+    }
 }
 
-#pragma mark LLDetailViewDelegate
--(void)saveDetail:(LLCheckItem *)checkItem
+#pragma mark - LLDetailViewDelegate
+-(void)saveDetail:(LLCheckItem *)checkItem attachImage:(UIImage *)image
 {
     // 選択していたIndexPathから置換元のチェックアイテムを取得
     LLCheckItem *beforeCheckItem = [self checkItemAtIndexPath:self.indexPathOfSelected];
@@ -569,8 +571,12 @@
     [[LLCheckListManager sharedManager] replaceCheckItem:checkItem atIndexPath:indexPath inCheckList:self.checkListIndex];
     [[LLCheckListManager sharedManager] saveCheckItemsInCheckList:self.checkListIndex];
 
-    LLTabBarController *tabBarController = (LLTabBarController *)self.tabBarController;
-    tabBarController.nadView.hidden = NO;
+    // 画像の保存
+    if (image) {
+        [[LLCheckListManager sharedManager] saveAttachImage:image fileName:checkItem.identifier];
+    } else {
+        [[LLCheckListManager sharedManager] removeAttachImageFile:checkItem.identifier];
+    }
 
     // 変更内容をリストに反映する
     [self.tableView reloadRowsAtIndexPaths:@[self.indexPathOfSelected] withRowAnimation:UITableViewRowAnimationNone];
