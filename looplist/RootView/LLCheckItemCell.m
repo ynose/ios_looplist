@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (weak, nonatomic) IBOutlet LLColorLabelButton *colorLabelButton;
 @property (weak, nonatomic) IBOutlet UIImageView *checkmarkImageView;
+@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @end
 
 
@@ -66,7 +67,10 @@
 
 
     self.colorLabelButton.enabled = editing;
-    self.captionTextField.enabled = editing;
+//    self.captionTextField.enabled = editing;
+    self.captionTextField.hidden = !editing;
+    self.captionLabel.hidden = editing;
+    self.captionLabel.text = self.captionTextField.text;
 }
 
 // チェック状態に応じた画面オブジェクトの表示切り替え
