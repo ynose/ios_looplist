@@ -31,6 +31,7 @@
 @property (strong, nonatomic) UISegmentedControl *filterSegmentedControl;
 @property (weak, nonatomic) IBOutlet UIView *footerView;
 @property (weak, nonatomic) IBOutlet UIButton *completeButton;
+@property (weak, nonatomic) IBOutlet UILabel *AppVersionLabel;
 @end
 
 @implementation LLRootViewController
@@ -130,6 +131,12 @@
     self.completeButton.layer.cornerRadius = 4.0;
     self.completeButton.layer.backgroundColor = [UIColorMain CGColor];
 #endif
+
+    // アプリのバージョン表示
+    self.AppVersionLabel.text = [NSString stringWithFormat:@"%@ ver.%@",
+                                 [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"],
+                                 [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+
 
     // 通常時と編集時のジェスチャー入れ替え
     [self exchangeGestureRecognizer:self.editing];

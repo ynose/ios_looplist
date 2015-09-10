@@ -599,6 +599,13 @@
                                         <action selector="completeTouchUp:" destination="7Kl-bk-qc4" eventType="touchUpInside" id="fYr-Ka-U5Q"/>
                                     </connections>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looplist  ver.X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8dg-Zk-BRK">
+                                    <rect key="frame" x="20" y="71" width="280" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -615,6 +622,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="996-uG-2Yi"/>
                     <connections>
+                        <outlet property="AppVersionLabel" destination="8dg-Zk-BRK" id="Rll-Fl-Faw"/>
                         <outlet property="completeButton" destination="UXm-7D-PAt" id="3ew-Ga-zvh"/>
                         <outlet property="footerView" destination="OZ3-mj-gae" id="QMI-gZ-K7a"/>
                     </connections>
